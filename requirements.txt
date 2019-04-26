@@ -1,0 +1,8 @@
+discord.py[voice]
+youtube_dl
+cleverwrap
+cleverbot
+weather-api
+beautifulsoup4
+praw
+lxml
