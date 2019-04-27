@@ -60,11 +60,17 @@ import asyncio
 from discord.ext import commands
 from bs4 import BeautifulSoup
 
+initial_extensions = ['image']
+
 
 #bot = commands.Bot(command_prefix= '<@' + str(bot.user.id) + '> ')
 #do not leave '' here
 bot = commands.Bot(command_prefix= tb_prefix)
 client = discord.client
+
+if __name__ == '__main__':
+    for extension in initial_extensions:
+        bot.load_extension(extension)
 
 
 #Prefix
@@ -106,46 +112,16 @@ async def on_message(message):
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
+    
 
 
-#now the fun part, getting these working...
-#this works, just need to add the embeds
-#aaand we have embeds    
-@bot.command()
-async def tenshi(ctx):
-    char = 'hinanawi_tenshi'
-    r = requests.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char)
-    if r.status_code == 200:
-            soup = BeautifulSoup(r.text, "lxml")
-            num = int(soup.find('posts')['count'])
-            maxpage = int(round(num/100))
-            page = random.randint(0, maxpage)
-            t = soup.find('posts')
-            p = t.find_all('post')
-            source = ((soup.find('post'))['source'])
-            if num == 0:
-                msg = 'No posts found'
-            else:
-                if num < 100:
-                    pic = p[random.randint(0,num-1)]
-                elif page == maxpage:
-                    pic = p[random.randint(0,num%100 - 1)]
-                else:
-                    pic = p[random.randint(0,99)]
-                msg = pic['file_url']
-                em = discord.Embed(title='', description='Image Source: ' + source, colour=0x42D4F4)
-                em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                em.set_image(url=booruappend + msg)
-            await ctx.send(embed=em)
-    else:
-            msg = 'An error has occured'
-            await ctx.send(msg)
-
+#Touhou Image commands
+#th_img
 
 #testing this with aiohttp instead of requests, aiohttp is more efficent?
 #This now works            
 @bot.command()
-async def tenshi2(ctx):
+async def tenshi(ctx):
     char = 'hinanawi_tenshi'
     async with aiohttp.ClientSession() as session:
         async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
@@ -167,10 +143,7 @@ async def tenshi2(ctx):
                 em = discord.Embed(title='', description='Image Source: ' + source, colour=0x42D4F4)
                 em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                 em.set_image(url=booruappend + msg)
-                await ctx.send(embed=em)
-            #else:
-                #msg = 'An error has occured'
-                #await ctx.send(msg)            
+                await ctx.send(embed=em)            
 
 
 
