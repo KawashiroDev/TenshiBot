@@ -1,5 +1,4 @@
 #TenshiBot Slipstream version
-#aka "that rewrite version that doesn't use musicbot base code"
 
 #this version is still in early development and NOT ready to replace the main version
 
@@ -10,11 +9,11 @@
 
 ##Parameters##
 
-#Token
-#perhaps i can read this from an external file?
+#token
 tkn = open("test/token.txt", "r")
 token = tkn.read()
-#token = ''
+tkn.close()
+
 
 #Discordbots.org API key
 dbo_api = ''
@@ -28,9 +27,7 @@ bot_version = '1.5'
 #prefix
 #Debug account has user ID 571094749537239042
 #Normal account has user ID 252442396879486976
-#i tried not hardcoding this, it didn't work 
 tb_prefix = ('<@571094749537239042> ')
-#tb_prefix = ('<@' + str(bot.user.id) + '>')
 
 
 #Booting text
@@ -38,21 +35,22 @@ print('Please wait warmly...')
 
 import discord
 import requests
+import praw
+import lxml
 
 from discord.ext import commands
+from bs4 import BeautifulSoup
 
 
 #bot = commands.Bot(command_prefix= '<@' + str(bot.user.id) + '> ')
-bot = commands.Bot(command_prefix= 'tb_prefix')
-client = discord.Client()
+
+bot = commands.Bot(command_prefix= tb_prefix)
+
 
 #Prefix
-#Tenshi's Prefix, this has to be below the imports
-#ok, so i want this to be a mention and actually work this time, nvm it doesn't
 #tb_prefix = ('<@' + client.user.id + '> ')
 
 #bot will display this on startup when accepting commands
-#NTS: Try using bot where there would normally be client eg client.user.name > bot.user.name
 
 @bot.event
 async def on_ready():
@@ -69,22 +67,20 @@ async def on_ready():
 
 
 #other bot ignoring code 
-@client.event
+@bot.event
 async def on_message(message):
     # we do not want the bot to reply to itself
-    if message.author == client.user:
+    if message.author == bot.user:
         return
     if message.author.bot:
         return
+    await bot.process_commands(message)
 
-#test commands
+
+    
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
-
-@bot.command()
-async def foo(ctx, arg):
-    await ctx.send(arg)
 
 
 
