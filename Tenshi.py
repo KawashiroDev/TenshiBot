@@ -11,7 +11,10 @@
 ##Parameters##
 
 #Token
-token = ''
+#perhaps i can read this from an external file?
+tkn = open("test/token.txt", "r")
+token = tkn.read()
+#token = ''
 
 #Discordbots.org API key
 dbo_api = ''
