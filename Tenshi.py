@@ -51,9 +51,11 @@ print('Please wait warmly...')
 
 import discord
 import requests
+import aiohttp
 import praw
 import lxml
 import random
+import asyncio
 
 from discord.ext import commands
 from bs4 import BeautifulSoup
@@ -72,6 +74,7 @@ client = discord.client
 
 @bot.event
 async def on_ready():
+    #await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='Bhava-agra As Seen Through a Childs Mind'))
     print(' ')
     print('TenshiBot startup complete ')
     print(' ')
@@ -82,6 +85,10 @@ async def on_ready():
     print(' ')
     print('servercount - ' + str(len(bot.guilds)))
     print(discord.version_info)
+    await bot.change_presence(activity=discord.Game(name="Startup complete"))
+    await asyncio.sleep(7)
+    await bot.change_presence(activity=discord.Streaming(name="TenshiBot", url='https://twitch.tv/99710'))
+    
 
 
 #other bot ignoring code 
@@ -102,7 +109,8 @@ async def ping(ctx):
 
 
 #now the fun part, getting these working...
-#this works, just need to add the embeds    
+#this works, just need to add the embeds
+#aaand we have embeds    
 @bot.command()
 async def tenshi(ctx):
     char = 'hinanawi_tenshi'
@@ -132,6 +140,37 @@ async def tenshi(ctx):
     else:
             msg = 'An error has occured'
             await ctx.send(msg)
+
+
+#testing this with aiohttp instead of requests, aiohttp is more efficent?
+#This now works            
+@bot.command()
+async def tenshi2(ctx):
+    char = 'hinanawi_tenshi'
+    async with aiohttp.ClientSession() as session:
+        async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            if r.status == 200:
+                soup = BeautifulSoup(await r.text(), "lxml")
+                num = int(soup.find('posts')['count'])
+                maxpage = int(round(num/100))
+                page = random.randint(0, maxpage)
+                t = soup.find('posts')
+                p = t.find_all('post')
+                source = ((soup.find('post'))['source'])
+                if num < 100:
+                    pic = p[random.randint(0,num-1)]
+                elif page == maxpage:
+                    pic = p[random.randint(0,num%100 - 1)]
+                else:
+                    pic = p[random.randint(0,99)]
+                msg = pic['file_url']
+                em = discord.Embed(title='', description='Image Source: ' + source, colour=0x42D4F4)
+                em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                em.set_image(url=booruappend + msg)
+                await ctx.send(embed=em)
+            #else:
+                #msg = 'An error has occured'
+                #await ctx.send(msg)            
 
 
 
