@@ -114,6 +114,7 @@ async def tenshi(ctx):
             page = random.randint(0, maxpage)
             t = soup.find('posts')
             p = t.find_all('post')
+            source = ((soup.find('post'))['source'])
             if num == 0:
                 msg = 'No posts found'
             else:
@@ -124,7 +125,10 @@ async def tenshi(ctx):
                 else:
                     pic = p[random.randint(0,99)]
                 msg = pic['file_url']
-            await ctx.send(booruappend + msg)
+                em = discord.Embed(title='', description='Image Source: ' + source, colour=0x42D4F4)
+                em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                em.set_image(url=booruappend + msg)
+            await ctx.send(embed=em)
     else:
             msg = 'An error has occured'
             await ctx.send(msg)
