@@ -9,28 +9,6 @@
 
 ##Parameters##
 
-#token
-tkn = open("test/token.txt", "r")
-token = tkn.read()
-tkn.close()
-
-#booru URL, used for touhou images and safebooru command
-booru = 'safebooru.org'
-
-#booru rating
-#options are: safe, questionable, explicit
-#affects the safebooru command only
-boorurating = 'safe'
-
-#booru tag blacklist
-#results which have these tags won't be shown in the touhou commands
-#does not affect the safebooru command
-boorublacklist = '-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini'
-
-#append text to the start of booru url output
-#change this if the bot is sending malformed booru urls
-booruappend = 'http:'
-
 #Discordbots.org API key
 dbo_api = ''
 
@@ -39,12 +17,6 @@ bot_variant = 'slipstream'
 
 #Version
 bot_version = '1.5'
-
-#prefix
-#Debug account has user ID 571094749537239042
-#Normal account has user ID 252442396879486976
-tb_prefix = ('<@571094749537239042> ')
-
 
 #Booting text
 print('Please wait warmly...')
@@ -61,10 +33,6 @@ from discord.ext import commands
 from bs4 import BeautifulSoup
 
 initial_extensions = ['image']
-
-
-#bot = commands.Bot(command_prefix= '<@' + str(bot.user.id) + '> ')
-#do not leave '' here
 
 #ok so with this we can have Tenshi also respond to the = prefix, i'll leave this enabled for a short time then switch to just mention
 #Leave error code commented out until = is disabled because that'll cause chaos
@@ -85,7 +53,6 @@ if __name__ == '__main__':
 
 @bot.event
 async def on_ready():
-    #await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='Bhava-agra As Seen Through a Childs Mind'))
     print(' ')
     print('TenshiBot startup complete ')
     print(' ')
@@ -119,7 +86,6 @@ async def on_message(message):
         return
     await bot.process_commands(message)
 
-
     
 @bot.command()
 async def ping(ctx):
@@ -132,4 +98,7 @@ async def errortest(ctx):
 
 #this has to be at the end of the code
 #client.run(token)
+tkn = open("test/token.txt", "r")
+token = tkn.read()
+tkn.close()    
 bot.run(token, bot=True, reconnect=True)
