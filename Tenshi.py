@@ -12,7 +12,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '1.5'
+bot_version = '2.0'
 
 #Booting text
 print('Please wait warmly...')
@@ -26,8 +26,11 @@ import random
 import asyncio
 import os
 import subprocess
+import cleverbot_io
+import time
 
 from discord.ext import commands
+from random import randint
 
 initial_extensions = ['Modules.image', 'Modules.booru']
 
@@ -39,6 +42,8 @@ bot.remove_command("help")
 
 #Sharding! should help with performance since the bot is on 1000+ servers
 client = discord.AutoShardedClient()
+
+st = time.time()
 
 if __name__ == '__main__':
     for extension in initial_extensions:
@@ -107,7 +112,7 @@ async def on_message(message):
 #command logging
 @bot.event
 async def on_command(ctx):
-    print(ctx.message.content)
+    print("[command] " + ctx.message.content[len("<@571094749537239042>"):].strip() + " / " + str(ctx.guild))
     return
 
 #owner check
@@ -183,8 +188,68 @@ async def console(ctx):
     cmd=ctx.message.content[len("<@571094749537239042> console"):].strip()
     result = subprocess.check_output([cmd], stderr=subprocess.STDOUT)
     #os.system(ctx.message.content)
-    await ctx.send(result)    
-    
+    await ctx.send(result)
+
+
+@bot.command()
+async def about(ctx):
+    second = time.time() - st
+    minute, second = divmod(second, 60)
+    hour, minute = divmod(minute, 60)
+    day, hour = divmod(hour, 24)
+    week, day = divmod(day, 7)
+
+    em = discord.Embed(title='Currently on ' + str(len(bot.guilds)) + ' servers', description='Uptime= %d weeks,' % (week) + ' %d days,' % (day) + ' %d hours,' % (hour) + ' %d minutes,' % (minute) + ' and %d seconds.' % (second) + '\n Created by 99710', colour=0x00ffff)
+    em.set_author(name='TenshiBot ' + bot_version , icon_url=bot.user.avatar_url)
+    await ctx.send(embed=em)
+
+@bot.command()
+async def invite(ctx):
+    await ctx.send('Use this link to add me to your server: <https://discordapp.com/oauth2/authorize?client_id=252442396879486976&scope=bot&permissions=67161152>')    
+
+@bot.command()
+async def support(ctx):
+    await ctx.send('Need help with something or just want to chat with other users? Join TenshiBot Hangout: https://discord.gg/vAbzRG9')
+
+@bot.command()
+async def rate(ctx):
+    await ctx.send("I rate it " + str(randint(0,10)) + "/10")
+
+@bot.command()
+async def md(ctx):
+    await ctx.send("`" + ctx.message.content[len("<@571094749537239042> md"):].strip() + "`")
+
+@bot.command()
+async def emote(ctx):
+    await ctx.send("<" + ctx.message.content[len("<@571094749537239042> emote"):].strip() + ">")
+
+@bot.command()
+async def say(ctx):
+    await ctx.send(ctx.message.content[len("<@571094749537239042> say"):].strip())
+
+@bot.command()
+async def dsay(ctx, message):
+    await ctx.message.delete()
+    await ctx.send(ctx.message.content[len("<@571094749537239042> dsay"):].strip())
+
+@bot.command()
+async def patreon(ctx):
+    await ctx.send('Want to support TenshiBot on patreon? \nPatreon donators get featued in the help command as well as a donator role in the TenshiBot Hangout Discord\nhttp://patreon.com/tenshibot')    
+
+
+
+cb_user = ''
+cb_key = ''
+cb_nick = 'Tenko_Slipstream'
+
+#@bot.command
+#async def ai(ctx):
+#    ai2 = cleverbot_io.set(user= cb_user , key= cb_key , nick= cb_nick )
+    #this cleverbot engine has a delay so send a typing status to look like something is happening
+    #await client.send_typing(channel)
+#    answer = (ai2.ask(ctx.message.content[len("<@571094749537239042> ai"):].strip()))
+    #await client.send_typing(channel)
+#    await ctx.send(answer)
 
 #this has to be at the end of the code
 #client.run(token)
