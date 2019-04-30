@@ -3,3 +3,4 @@ test/token.txt
 *.pyc
 test/token_debug.txt
 test/token_production.txt
+test/token_dbo.txt
