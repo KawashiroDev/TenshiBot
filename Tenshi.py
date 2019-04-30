@@ -29,7 +29,7 @@ import subprocess
 
 from discord.ext import commands
 
-initial_extensions = ['image', 'booru']
+initial_extensions = ['Modules.image', 'Modules.booru']
 
 #ok so with this we can have Tenshi also respond to the = prefix, i'll leave this enabled for a short time then switch to just mention
 #bot = commands.Bot(command_prefix=commands.when_mentioned_or('='), case_insensitive=True)
@@ -46,7 +46,7 @@ if __name__ == '__main__':
 
 
 #Discordbots.org API stuff
-tkn_dbo = open("test/token_dbo.txt", "r")
+tkn_dbo = open("Tokens/dbl_api.txt", "r")
 token_dbo = tkn_dbo.read()
 tkn_dbo.close() 
 dbltoken = token_dbo
@@ -188,8 +188,8 @@ async def console(ctx):
 
 #this has to be at the end of the code
 #client.run(token)
-tkn = open("test/token_debug.txt", "r")
-#tkn = open("test/token_production.txt", "r")
+tkn = open("Tokens/tenshi_debug.txt", "r")
+#tkn = open("Tokens/tenshi_production.txt", "r")
 token = tkn.read()
 tkn.close()    
 bot.run(token, bot=True, reconnect=True)
