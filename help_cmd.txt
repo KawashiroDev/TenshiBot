@@ -1,0 +1,27 @@
+```
+  _______             _     _ ____        _   
+ |__   __|           | |   (_)  _ \      | |  
+    | | ___ _ __  ___| |__  _| |_) | ___ | |_ 
+    | |/ _ \ '_ \/ __| '_ \| |  _ < / _ \| __|
+    | |  __/ | | \__ \ | | | | |_) | (_) | |_ 
+    |_|\___|_| |_|___/_| |_|_|____/ \___/ \__|
+                                  V2  by 99710
+```
+
+**Common commands**
+```
+about - Bot info
+support - Join TenshiBot's server
+invite - Bot invite link
+ai <question> - Cleverbot.io AI
+safebooru <tag(s)> - Search safebooru
+
+```
+To view all commands visit https://github.com/99710/TenshiBot/wiki/Commands
+
+**Patreon supporters**
+```
+Daciks
+Sousy
+```
+Avatar : <https://twitter.com/skmmt3/status/1084726096094912513?s=19>
