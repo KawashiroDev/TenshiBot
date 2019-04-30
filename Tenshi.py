@@ -1,4 +1,5 @@
 #TenshiBot Slipstream version
+#Created by 99710
 
 #this version is still in early development and NOT ready to replace the main version
 
@@ -41,6 +42,8 @@ initial_extensions = ['image', 'booru']
 #ok so with this we can have Tenshi also respond to the = prefix, i'll leave this enabled for a short time then switch to just mention
 #bot = commands.Bot(command_prefix=commands.when_mentioned_or('='), case_insensitive=True)
 bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned, case_insensitive=True)
+#removes the built in help command, we don't need it
+bot.remove_command("help")
 
 #Sharding! should help with performance since the bot is on 1000+ servers
 client = discord.AutoShardedClient()
@@ -119,9 +122,24 @@ async def on_guild_remove(guild):
         print("[Info] Kicked from a server - " + str(guild))
 
     
+#help command
+@bot.command()
+async def help(ctx):
+    hlp = open("help_cmd.txt", "r")
+    help_cmd = hlp.read()
+    await ctx.send(help_cmd)        
+
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
+
+#nsfw flag check
+@bot.command()
+async def nsfwtest(ctx):
+    if ctx.channel.is_nsfw():
+        await ctx.send('nsfw')
+    else:
+        await ctx.send('not nsfw')
 
 @bot.command()
 @is_owner()
