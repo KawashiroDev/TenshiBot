@@ -1,30 +1,26 @@
-#touhou image cog test
+#TenshiBot Booru module
+#Credits: EcchiBot by KaitoKid - The booru code is based on booru code from that bot however it has been modified to work with Tenshi
+#https://github.com/KaitoKid/EcchiBot
 
-#these have to be defined in here too
-#booru URL, used for touhou images and safebooru command
+#booru URL, used for safebooru command
 booru = 'safebooru.org'
 
 #NSFW booru URL, used for gelbooru command
 booru_nsfw = 'gelbooru.com'
 
-#booru rating
+#safebooru rating
 #options are: safe, questionable, explicit
-#affects the safebooru command only
 boorurating = 'safe'
 
-#booru tag blacklist
-#results which have these tags won't be shown in the touhou commands
-#does not affect the safebooru command
-boorublacklist = '-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini'
-
+#NSFW tag blacklist
+#loli and shota are against Discord TOS
+#Could also blacklist things like guro and futa but i don't want to become too restrictive with the booru stuff
 boorublacklist_nsfw = '-loli+-lolicon+-shota+-shotacon'
 
-#append text to the start of booru url output
-#change this if the bot is sending malformed booru urls
+#appends text to the start of booru url output, gelbooru doesn't use this
 booruappend = 'http:'
 
 import discord
-import requests
 import aiohttp
 import praw
 import lxml
@@ -45,7 +41,7 @@ class booruCog(commands.Cog):
     async def safebooru(self, ctx, message):
         tag = ctx.message.content[len("<@571094749537239042> safebooru"):].strip()
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=+' + boorublacklist + '+' + tag) as r:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=+' + tag) as r:
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
@@ -53,22 +49,27 @@ class booruCog(commands.Cog):
                     page = random.randint(0, maxpage)
                     t = soup.find('posts')
                     p = t.find_all('post')
-                    source = ((soup.find('post'))['source'])
-                    if num < 100:
-                        pic = p[random.randint(0,num-1)]
-                    elif page == maxpage:
-                        pic = p[random.randint(0,num%100 - 1)]
+                    if num == 0: 
+                        msg = 'No posts found, are the tags spelt correctly?'
+                        await ctx.send(msg)
+                        return
+
                     else:
-                        pic = p[random.randint(0,99)]
-                    msg = pic['file_url']
-                    em = discord.Embed(title='', description='Image Source: ' + source, colour=0x42D4F4)
-                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Booru image')
-                    em.set_image(url=booruappend + msg)
-                    await ctx.send(embed=em)
+                        source = ((soup.find('post'))['source'])
+                        if num < 100:
+                            pic = p[random.randint(0,num-1)]
+                        elif page == maxpage:
+                            pic = p[random.randint(0,num%100 - 1)]
+                        else:
+                            pic = p[random.randint(0,99)]
+                        msg = pic['file_url']
+                        em = discord.Embed(title='', description='Image Source: ' + source, colour=0x42D4F4)
+                        em.set_author(name='Booru image')
+                        em.set_image(url=booruappend + msg)
+                        await ctx.send(embed=em)
 
 
-#EXPERIMENTAL!
+#This command requires the channel to be marked as a NSFW channel to work, this should prevent people abusing it
     @commands.command()
     async def gelbooru(self, ctx, message):
         if ctx.channel.is_nsfw():
@@ -82,21 +83,26 @@ class booruCog(commands.Cog):
                         page = random.randint(0, maxpage)
                         t = soup.find('posts')
                         p = t.find_all('post')
-                        source = ((soup.find('post'))['source'])
-                        if num < 100:
-                            pic = p[random.randint(0,num-1)]
-                        elif page == maxpage:
-                            pic = p[random.randint(0,num%100 - 1)]
+                        if num == 0: 
+                            msg = 'No posts found, are the tags spelt correctly?'
+                            await ctx.send(msg)
+                            return
+
                         else:
-                            pic = p[random.randint(0,99)]
-                        msg = pic['file_url']
-                        em = discord.Embed(title='', description='Image Source: ' + source, colour=0x42D4F4)
-                        #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                        em.set_author(name='gelbooru image')
-                        em.set_image(url=msg)
-                        await ctx.send(embed=em)               
+                            source = ((soup.find('post'))['source'])
+                            if num < 100:
+                                pic = p[random.randint(0,num-1)]
+                            elif page == maxpage:
+                                pic = p[random.randint(0,num%100 - 1)]
+                            else:
+                                pic = p[random.randint(0,99)]
+                            msg = pic['file_url']
+                            em = discord.Embed(title='', description='Image Source: ' + source, colour=0x42D4F4)
+                            em.set_author(name='gelbooru image')
+                            em.set_image(url=msg)
+                            await ctx.send(embed=em)               
         else:
-            await ctx.send('not nsfw channel')
+            await ctx.send('Error: This command can only be used in NSFW channels')
 					                    
 
 def setup(bot):
