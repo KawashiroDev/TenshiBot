@@ -4,3 +4,6 @@ test/token.txt
 test/token_debug.txt
 test/token_production.txt
 test/token_dbo.txt
+Tokens/dbl_api.txt
+Tokens/tenshi_debug.txt
+Tokens/tenshi_production.txt
