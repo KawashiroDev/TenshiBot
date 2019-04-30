@@ -1,17 +1,12 @@
 #TenshiBot Slipstream version
 #Created by 99710
 
-#this version is still in early development and NOT ready to replace the main version
-
 #todo
-#server count display and posting
-#dev id checking for some commands
+#server count posting
 
 
 ##Parameters##
 
-#Discordbots.org API key
-dbo_api = ''
 
 #Variant
 bot_variant = 'slipstream'
@@ -27,15 +22,12 @@ print('Please wait warmly...')
 import discord
 import requests
 import aiohttp
-import praw
-import lxml
 import random
 import asyncio
 import os
 import subprocess
 
 from discord.ext import commands
-from bs4 import BeautifulSoup
 
 initial_extensions = ['image', 'booru']
 
@@ -51,6 +43,15 @@ client = discord.AutoShardedClient()
 if __name__ == '__main__':
     for extension in initial_extensions:
         bot.load_extension(extension)
+
+
+#Discordbots.org API stuff
+tkn_dbo = open("test/token_dbo.txt", "r")
+token_dbo = tkn_dbo.read()
+tkn_dbo.close() 
+dbltoken = token_dbo
+url = ("https://discordbots.org/api/bots/252442396879486976/stats")
+headers = {"Authorization" : dbltoken}        
 
 
 #Prefix
@@ -71,6 +72,9 @@ async def on_ready():
     print(' ')
     print('servercount - ' + str(len(bot.guilds)))
     print(discord.version_info)
+    payload = {"server_count"  : str(len(bot.guilds))}
+#    async with aiohttp.ClientSession() as aioclient:
+#        await aioclient.post(url, data=payload, headers=headers)
     await bot.change_presence(activity=discord.Game(name="Startup complete"))
     await asyncio.sleep(7)
     await bot.change_presence(activity=discord.Streaming(name="TenshiBot", url='https://twitch.tv/99710'))
@@ -116,11 +120,16 @@ def is_owner():
 @bot.event
 async def on_guild_join(guild):
         print("[Info] New server get! - " + str(guild))
+        payload = {"server_count"  : str(len(bot.guilds))}
+#    async with aiohttp.ClientSession() as aioclient:
+#        await aioclient.post(url, data=payload, headers=headers)
         
 @bot.event
 async def on_guild_remove(guild):
         print("[Info] Kicked from a server - " + str(guild))
-
+        payload = {"server_count"  : str(len(bot.guilds))}
+#        async with aiohttp.ClientSession() as aioclient:
+#            await aioclient.post(url, data=payload, headers=headers)
     
 #help command
 @bot.command()
