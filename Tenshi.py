@@ -1,12 +1,8 @@
 #TenshiBot Slipstream version
 #Created by 99710
 
-#todo
-#server count posting
-
 
 ##Parameters##
-
 
 #Variant
 bot_variant = 'slipstream'
@@ -35,8 +31,8 @@ from random import randint
 initial_extensions = ['Modules.image', 'Modules.booru']
 
 #ok so with this we can have Tenshi also respond to the = prefix, i'll leave this enabled for a short time then switch to just mention
-#bot = commands.Bot(command_prefix=commands.when_mentioned_or('='), case_insensitive=True)
-bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned, case_insensitive=True)
+bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or('='), case_insensitive=True, shard_count=4)
+#bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned, case_insensitive=True)
 #removes the built in help command, we don't need it
 bot.remove_command("help")
 
@@ -78,8 +74,8 @@ async def on_ready():
     print('servercount - ' + str(len(bot.guilds)))
     print(discord.version_info)
     payload = {"server_count"  : str(len(bot.guilds))}
-#    async with aiohttp.ClientSession() as aioclient:
-#        await aioclient.post(url, data=payload, headers=headers)
+    async with aiohttp.ClientSession() as aioclient:
+        await aioclient.post(url, data=payload, headers=headers)
     await bot.change_presence(activity=discord.Game(name="Startup complete"))
     await asyncio.sleep(7)
     await bot.change_presence(activity=discord.Streaming(name="TenshiBot", url='https://twitch.tv/99710'))
@@ -126,15 +122,15 @@ def is_owner():
 async def on_guild_join(guild):
         print("[Info] New server get! - " + str(guild))
         payload = {"server_count"  : str(len(bot.guilds))}
-#    async with aiohttp.ClientSession() as aioclient:
-#        await aioclient.post(url, data=payload, headers=headers)
+        async with aiohttp.ClientSession() as aioclient:
+            await aioclient.post(url, data=payload, headers=headers)
         
 @bot.event
 async def on_guild_remove(guild):
         print("[Info] Kicked from a server - " + str(guild))
         payload = {"server_count"  : str(len(bot.guilds))}
-#        async with aiohttp.ClientSession() as aioclient:
-#            await aioclient.post(url, data=payload, headers=headers)
+        async with aiohttp.ClientSession() as aioclient:
+            await aioclient.post(url, data=payload, headers=headers)
     
 #help command
 @bot.command()
@@ -253,8 +249,8 @@ cb_nick = 'Tenko_Slipstream'
 
 #this has to be at the end of the code
 #client.run(token)
-tkn = open("Tokens/tenshi_debug.txt", "r")
-#tkn = open("Tokens/tenshi_production.txt", "r")
+#tkn = open("Tokens/tenshi_debug.txt", "r")
+tkn = open("Tokens/tenshi_production.txt", "r")
 token = tkn.read()
 tkn.close()    
 bot.run(token, bot=True, reconnect=True)
