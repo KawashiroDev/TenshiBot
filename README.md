@@ -1,5 +1,8 @@
 # TenshiBot
-<p>GitHub repo for TenshiBot (Slipstream version)</p>
-<p>This version is written from scratch for the rewrite version of discord.py and should work a lot better than the existing version</p>
+<p>GitHub repo for TenshiBot</p>
+<p>`Touhou Project` and `Tenshi Hinanawi` © Team Shanghai Alice</p>
+<p>`100% Orange Juice` © Orange Juice/Fruitbat Factory</p>
 
-<p>Bot is still in development, please wait warmly</p>
+<a href="https://discordbots.org/bot/252442396879486976" >
+  <img src="https://discordbots.org/api/widget/252442396879486976.svg" alt="TenshiBot" />
+</a>
