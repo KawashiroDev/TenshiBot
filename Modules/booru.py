@@ -63,7 +63,7 @@ class booruCog(commands.Cog):
                         else:
                             pic = p[random.randint(0,99)]
                         msg = pic['file_url']
-                        em = discord.Embed(title='', description='Image Source: ' + source, colour=0x42D4F4)
+                        em = discord.Embed(title='', description='', colour=0x42D4F4)
                         em.set_author(name='Booru image')
                         em.set_image(url=booruappend + msg)
                         await ctx.send(embed=em)
@@ -97,7 +97,7 @@ class booruCog(commands.Cog):
                             else:
                                 pic = p[random.randint(0,99)]
                             msg = pic['file_url']
-                            em = discord.Embed(title='', description='Image Source: ' + source, colour=0x42D4F4)
+                            em = discord.Embed(title='', description='', colour=0x42D4F4)
                             em.set_author(name='gelbooru image')
                             em.set_image(url=msg)
                             await ctx.send(embed=em)               
