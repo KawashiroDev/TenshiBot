@@ -108,7 +108,7 @@ async def on_message(message):
 #command logging
 @bot.event
 async def on_command(ctx):
-    print("[command] " + ctx.message.content[len("<@571094749537239042>"):].strip() + " / " + str(ctx.guild))
+    print("[command] " + ctx.message.content[len("="):].strip() + " / " + str(ctx.guild))
     return
 
 #owner check
@@ -135,7 +135,7 @@ async def on_guild_remove(guild):
 #help command
 @bot.command()
 async def help(ctx):
-    hlp = open("help_cmd.txt", "r")
+    hlp = open("txt/help.txt", "r")
     help_cmd = hlp.read()
     await ctx.send(help_cmd)        
 
@@ -211,22 +211,22 @@ async def support(ctx):
 async def rate(ctx):
     await ctx.send("I rate it " + str(randint(0,10)) + "/10")
 
-@bot.command()
-async def md(ctx):
+#@bot.command()
+#async def md(ctx):
     await ctx.send("`" + ctx.message.content[len("<@571094749537239042> md"):].strip() + "`")
 
-@bot.command()
-async def emote(ctx):
-    await ctx.send("<" + ctx.message.content[len("<@571094749537239042> emote"):].strip() + ">")
+#@bot.command()
+#async def emote(ctx):
+#    await ctx.send("<" + ctx.message.content[len("<@571094749537239042> emote"):].strip() + ">")
 
-@bot.command()
-async def say(ctx):
-    await ctx.send(ctx.message.content[len("<@571094749537239042> say"):].strip())
+#@bot.command()
+#async def say(ctx):
+#    await ctx.send(ctx.message.content[len("<@571094749537239042> say"):].strip())
 
-@bot.command()
-async def dsay(ctx, message):
-    await ctx.message.delete()
-    await ctx.send(ctx.message.content[len("<@571094749537239042> dsay"):].strip())
+#@bot.command()
+#async def dsay(ctx, message):
+#    await ctx.message.delete()
+#    await ctx.send(ctx.message.content[len("<@571094749537239042> dsay"):].strip())
 
 @bot.command()
 async def patreon(ctx):
