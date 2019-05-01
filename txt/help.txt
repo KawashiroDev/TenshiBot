@@ -13,11 +13,10 @@
 about - Bot info
 support - Join TenshiBot's server
 invite - Bot invite link
-ai <question> - Cleverbot.io AI
 safebooru <tag(s)> - Search safebooru
 
 ```
-To view all commands visit https://github.com/99710/TenshiBot/wiki/Commands
+To view all commands visit https://github.com/99710/TenshiBot_Legacy/wiki/Commands
 
 **Patreon supporters**
 ```
