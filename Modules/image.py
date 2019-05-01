@@ -566,7 +566,7 @@ class ImageCog(commands.Cog):
 
     @commands.command()
     async def hatate(self, ctx):
-        char = 'himedoku_hatate'
+        char = 'himekaidou_hatate'
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
