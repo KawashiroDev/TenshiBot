@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.0.3'
+bot_version = '2.0.4'
 
 #Booting text
 print('Please wait warmly...')
@@ -28,7 +28,7 @@ import time
 from discord.ext import commands
 from random import randint
 
-initial_extensions = ['Modules.image', 'Modules.booru']
+initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.rtel']
 
 #ok so with this we can have Tenshi also respond to the = prefix, i'll leave this enabled for a short time then switch to just mention
 bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or('='), case_insensitive=True, shard_count=4)
@@ -142,6 +142,7 @@ async def help(ctx):
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
+    
 
 #nsfw flag check
 @bot.command()
