@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.0'
+bot_version = '2.0.2'
 
 #Booting text
 print('Please wait warmly...')
@@ -211,22 +211,23 @@ async def support(ctx):
 async def rate(ctx):
     await ctx.send("I rate it " + str(randint(0,10)) + "/10")
 
-#@bot.command()
-#async def md(ctx):
-    await ctx.send("`" + ctx.message.content[len("<@571094749537239042> md"):].strip() + "`")
+@bot.command()
+async def md(ctx, arg):
+    await ctx.send("`" + arg + "`")
 
-#@bot.command()
-#async def emote(ctx):
-#    await ctx.send("<" + ctx.message.content[len("<@571094749537239042> emote"):].strip() + ">")
+@bot.command()
+async def emote(ctx, arg):
+    await ctx.send("<" + arg + ">")
 
-#@bot.command()
-#async def say(ctx):
-#    await ctx.send(ctx.message.content[len("<@571094749537239042> say"):].strip())
+@bot.command()
+async def say(ctx, arg):
+    await ctx.send(arg)
 
-#@bot.command()
-#async def dsay(ctx, message):
-#    await ctx.message.delete()
-#    await ctx.send(ctx.message.content[len("<@571094749537239042> dsay"):].strip())
+@bot.command()
+async def dsay(ctx, arg):
+    await ctx.send(arg)
+    await ctx.message.delete()
+
 
 @bot.command()
 async def patreon(ctx):
