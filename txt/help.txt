@@ -16,7 +16,7 @@ invite - Bot invite link
 safebooru <tag(s)> - Search safebooru
 
 ```
-To view all commands visit https://github.com/99710/TenshiBot_Legacy/wiki/Commands
+To view all commands visit https://github.com/99710/TenshiBot/wiki/Commands
 
 **Patreon supporters**
 ```
