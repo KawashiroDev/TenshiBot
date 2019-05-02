@@ -28,7 +28,7 @@ import time
 from discord.ext import commands
 from random import randint
 
-initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.rtel']
+initial_extensions = ['Modules.image', 'Modules.booru']
 
 #ok so with this we can have Tenshi also respond to the = prefix, i'll leave this enabled for a short time then switch to just mention
 bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or('='), case_insensitive=True, shard_count=4)
@@ -234,6 +234,26 @@ async def dsay(ctx, *, args):
 async def patreon(ctx):
     await ctx.send('Want to support TenshiBot on patreon? \nPatreon donators get featued in the help command as well as a donator role in the TenshiBot Hangout Discord\nhttp://patreon.com/tenshibot')    
 
+
+@bot.command()
+async def jojo(ctx, arg):
+    await ctx.send(arg + ' has been stopped!', file=discord.File('pics/stop.jpg'))
+
+@bot.command()
+async def banana(ctx, arg):
+    await ctx.send(arg + ' has been banaed!', file=discord.File('pics/banana.png'))
+
+@bot.command()
+async def oil(ctx, arg):
+    await ctx.send(arg + ' has been oiled!', file=discord.File('pics/oil.png'))
+
+@bot.command()
+async def confused(ctx, arg):
+    await ctx.send(file=discord.File('pics/confused.png'))
+
+@bot.command()
+async def thonk(ctx, arg):
+    await ctx.send(file=discord.File('pics/thonk.gif'))
 
 
 cb_user = ''
