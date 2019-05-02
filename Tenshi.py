@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.0.2'
+bot_version = '2.0.3'
 
 #Booting text
 print('Please wait warmly...')
@@ -220,12 +220,12 @@ async def emote(ctx, arg):
     await ctx.send("<" + arg + ">")
 
 @bot.command()
-async def say(ctx, arg):
-    await ctx.send(arg)
+async def say(ctx, *, args):
+    await ctx.send(args)
 
 @bot.command()
-async def dsay(ctx, arg):
-    await ctx.send(arg)
+async def dsay(ctx, *, args):
+    await ctx.send(args)
     await ctx.message.delete()
 
 
