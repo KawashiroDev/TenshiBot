@@ -248,11 +248,15 @@ async def oil(ctx, arg):
     await ctx.send(arg + ' has been oiled!', file=discord.File('pics/oil.png'))
 
 @bot.command()
-async def confused(ctx, arg):
-    await ctx.send(file=discord.File('pics/confused.png'))
+async def confused(ctx):
+    await ctx.send(file=discord.File('pics/confused.jpg'))
 
 @bot.command()
-async def thonk(ctx, arg):
+async def hooray(ctx):
+    await ctx.send(file=discord.File('pics/hooray.png'))    
+
+@bot.command()
+async def thonk(ctx):
     await ctx.send(file=discord.File('pics/thonk.gif'))
 
 
