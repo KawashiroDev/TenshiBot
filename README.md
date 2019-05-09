@@ -6,7 +6,7 @@
 <h2>Features</h2>
 <p>Touhou images from safebooru at your fingertips</p>
 <p>Safebooru and Gelbooru searching</p>
-<p>More features coming soon</p>
+<p>Jojo and Bananae your friends!</p>
 
 <h2>How to use</h2>
 <p>Add Tenshi to your server https://discordapp.com/oauth2/authorize?client_id=252442396879486976&scope=bot&permissions=67161152</p>
