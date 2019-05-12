@@ -85,12 +85,18 @@ async def on_ready():
 #print the error to the console and inform the user   
 @bot.event
 async def on_command_error(ctx, error):
-    #command not failed
+    #command not found
     if isinstance(error, commands.CommandNotFound):
         return
-    #user failed owner check
+    #user failed check
     if isinstance(error, commands.CheckFailure):
-        await ctx.send("not owner")
+        #this if statement checks what check was failed as i couldn't figure that out
+        #if the server id doesn't match hangout then it was likely an owner check fail
+        #if it does then was a hangout check fail. pretty sure there's a better way of doing this also        
+        if ctx.author.id != 166189271244472320:
+            await ctx.send("Error: Only the owner can use this command")
+        else:
+            await ctx.send("Error: This command can only be used in TenshiBot Hangout")
     else:
         print(error)
         await ctx.send(error)
@@ -115,6 +121,13 @@ async def on_command(ctx):
 def is_owner():
     async def predicate(ctx):
         return ctx.author.id == 166189271244472320
+    return commands.check(predicate)
+
+#TenshiBot Hangout check (the name of the Tenshi's server)
+#This should check if the command is being ran in that server or not
+def is_hangout():
+    async def predicate(ctx):
+        return ctx.guild.id == 273086604866748426
     return commands.check(predicate)
 
 #bot added/kicked from server messages
@@ -155,7 +168,12 @@ async def nsfwtest(ctx):
 @bot.command()
 @is_owner()
 async def ping2(ctx):
-    await ctx.send('pong')    
+    await ctx.send('pong')
+
+@bot.command()
+@is_hangout()
+async def ping3(ctx):
+    await ctx.send('ok')    
 
 @bot.command()
 async def errortest(ctx):
