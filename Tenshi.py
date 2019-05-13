@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.0.4'
+bot_version = '2.0.5'
 
 #Booting text
 print('Please wait warmly...')
@@ -204,6 +204,24 @@ async def console(ctx):
     result = subprocess.check_output([cmd], stderr=subprocess.STDOUT)
     #os.system(ctx.message.content)
     await ctx.send(result)
+
+#role creation testing command
+#this may be intresting to have as a hangout exclusive command
+#and let users make roles with custom colours
+   
+@bot.command()
+@is_owner()
+async def makerole(ctx):
+    #refer to this for permissions values https://discordapi.com/permissions.html
+    #it's best to leave this on 0 unless testing
+    perms=discord.Permissions(0)
+    #need to figure out how to set colour and letting users choose it
+    #this seems to like int values instead of names
+    #1 is black, 255 is blue, 510 is also blue but darker
+    #audit log reports 255 is #0000FF and 510 is #0001FE which means that value is decimal
+    col=discord.Colour(510)
+    await ctx.guild.create_role(name='test', permissions=perms, colour=col, reason='role creation test')
+    #await ctx.guild.create_role(name='test')
 
 
 @bot.command()
