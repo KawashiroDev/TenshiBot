@@ -2,13 +2,14 @@
 #Created by 99710
 
 
+
 ##Parameters##
 
 #Variant
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.0.5'
+bot_version = '2.0.6'
 
 #Booting text
 print('Please wait warmly...')
@@ -118,6 +119,7 @@ async def on_command(ctx):
     return
 
 #owner check
+#19/05 U+1F382
 def is_owner():
     async def predicate(ctx):
         return ctx.author.id == 166189271244472320
