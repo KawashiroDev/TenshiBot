@@ -9,7 +9,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.0.6'
+bot_version = '2.1.0'
 
 #Booting text
 print('Please wait warmly...')
