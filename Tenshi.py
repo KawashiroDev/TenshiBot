@@ -2,17 +2,21 @@
 #Created by 99710
 
 
-
 ##Parameters##
 
 #Variant
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.1.0'
+bot_version = '2.1.1'
 
 #Booting text
 print('Please wait warmly...')
+
+#windows check
+#if this directory exists then run in debug mode
+#if not then run in production mode
+win_dir_check = '/windows'
 
 #owner id
 
@@ -29,10 +33,31 @@ import time
 from discord.ext import commands
 from random import randint
 
+#Windows or linux check
+#basically i can use this to autoswitch the bot between debug/production modes
+#as the server is linux and i use windows PC's when coding
+#standard win10 is crap imo, LTSC win10 is somewhat decent
+
+if (os.path.isdir(win_dir_check)) == True:
+    print('[Startup] Detected a windows PC, running in debug mode')
+    bot_mode = 'Debug'
+else:
+    print('[Startup] Running in production mode')
+    bot_mode = 'Production'
+
+
 initial_extensions = ['Modules.image', 'Modules.booru']
 
+
 #ok so with this we can have Tenshi also respond to the = prefix, i'll leave this enabled for a short time then switch to just mention
-bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or('='), case_insensitive=True, shard_count=4)
+#never did, people were too used to using =
+
+#Disable sharding and = prefix if in debug mode
+#if you want to have the bot run as normal on a windows machine then change the windows folder check to a non existent folder
+if (os.path.isdir(win_dir_check)) == True:
+    bot = commands.Bot(command_prefix=commands.when_mentioned, case_insensitive=True)
+else:
+    bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or('='), case_insensitive=True, shard_count=4)
 #bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned, case_insensitive=True)
 #removes the built in help command, we don't need it
 bot.remove_command("help")
@@ -48,7 +73,12 @@ if __name__ == '__main__':
 
 
 #Discordbots.org API stuff
-tkn_dbo = open("Tokens/dbl_api.txt", "r")
+#if in debug mode then open a blank token file which will cause the server count
+#to not be posted because i don't want the debug acc posting it's server count
+if (os.path.isdir(win_dir_check)) == True:        
+    tkn_dbo = open("Tokens/dbl_api_blank.txt", "r")
+else:
+    tkn_dbo = open("Tokens/dbl_api.txt", "r")
 token_dbo = tkn_dbo.read()
 tkn_dbo.close() 
 dbltoken = token_dbo
@@ -71,6 +101,7 @@ async def on_ready():
     print('Shard Count - ' + str(bot.shard_count))
     print('TenshiBot Ver - ' + bot_version)
     print('System Variant - ' + bot_variant)
+    print('System Mode - ' + bot_mode)
     print(' ')
     print('servercount - ' + str(len(bot.guilds)))
     print(discord.version_info)
@@ -189,6 +220,12 @@ async def vpsreboot(ctx):
     #os.system("sudo reboot")
     os.system("shutdown -r -t 30")
     await ctx.send('Rebooting the VPS')
+
+#status changing command
+@bot.command()
+@is_owner()  
+async def setstatus(ctx, *, args):
+    await bot.change_presence(activity=discord.Streaming(name= args, url='https://twitch.tv/99710'))    
 
 #ban test command
 @bot.command()
@@ -313,8 +350,10 @@ cb_nick = 'Tenko_Slipstream'
 
 #this has to be at the end of the code
 #client.run(token)
-#tkn = open("Tokens/tenshi_debug.txt", "r")
-tkn = open("Tokens/tenshi_production.txt", "r")
+if (os.path.isdir(win_dir_check)) == True:
+    tkn = open("Tokens/tenshi_debug.txt", "r")
+else:
+    tkn = open("Tokens/tenshi_production.txt", "r")
 token = tkn.read()
 tkn.close()    
 bot.run(token, bot=True, reconnect=True)
