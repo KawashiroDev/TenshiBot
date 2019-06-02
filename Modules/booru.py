@@ -18,7 +18,7 @@ boorurating = 'safe'
 boorublacklist_nsfw = '-loli+-lolicon+-shota+-shotacon'
 
 #appends text to the start of booru url output, gelbooru doesn't use this
-booruappend = 'http:'
+booruappend = ''
 
 import discord
 import aiohttp
