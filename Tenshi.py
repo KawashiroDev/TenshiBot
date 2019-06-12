@@ -29,9 +29,11 @@ import os
 import subprocess
 import cleverbot_io
 import time
+import Cleverbotio
 
 from discord.ext import commands
 from random import randint
+#from Cleverbotio import 'async' as cleverbot
 
 #Windows or linux check
 #basically i can use this to autoswitch the bot between debug/production modes
@@ -41,12 +43,12 @@ from random import randint
 if (os.path.isdir(win_dir_check)) == True:
     print('[Startup] Detected a windows PC, running in debug mode')
     bot_mode = 'Debug'
+    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.debug']
+    print('[Debug] /Modules/debug.py loaded')
 else:
     print('[Startup] Running in production mode')
     bot_mode = 'Production'
-
-
-initial_extensions = ['Modules.image', 'Modules.booru']
+    initial_extensions = ['Modules.image', 'Modules.booru']
 
 
 #ok so with this we can have Tenshi also respond to the = prefix, i'll leave this enabled for a short time then switch to just mention
@@ -335,18 +337,38 @@ async def thonk(ctx):
     await ctx.send(file=discord.File('pics/thonk.gif'))
 
 
+#ai stuff
+#the issue with ai stuff is i can't find a good async cb.io module to use
+#ai commands take a few seconds to respond which freezes the bot
+
+#for now i'm just going leave ai disabled    
 cb_user = ''
 cb_key = ''
-cb_nick = 'Tenko_Slipstream'
+cb_nick = 'Tenko_AI'
 
-#@bot.command
-#async def ai(ctx):
-#    ai2 = cleverbot_io.set(user= cb_user , key= cb_key , nick= cb_nick )
+@bot.command()
+@is_owner()
+async def tenko_ai(ctx, *, args):
+    ai2 = cleverbot_io.set(user= cb_user , key= cb_key , nick= cb_nick )
     #this cleverbot engine has a delay so send a typing status to look like something is happening
     #await client.send_typing(channel)
-#    answer = (ai2.ask(ctx.message.content[len("<@571094749537239042> ai"):].strip()))
+    #answer = (ai2.ask(ctx.message.content[len("<@571094749537239042> ai"):].strip()))
+    answer = ai2.ask(args)
     #await client.send_typing(channel)
-#    await ctx.send(answer)
+    await ctx.send(answer)
+
+
+#alternate cleverbot.io interface module
+#this one has an async option but i can't get it to work as async
+#https://pypi.org/project/cleverbotio/
+@bot.command()
+@is_owner()
+async def tenko_ai2(ctx, *, args):    
+
+    cb = Cleverbotio.Cleverbot(cb_user, cb_key, cb_nick)
+    cb.create_session()
+    answer2 = cb.say(args)
+    await ctx.send(answer2)
 
 #this has to be at the end of the code
 #client.run(token)
