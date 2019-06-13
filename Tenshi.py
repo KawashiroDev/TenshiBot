@@ -27,9 +27,9 @@ import random
 import asyncio
 import os
 import subprocess
-import cleverbot_io
+#import cleverbot_io
 import time
-import Cleverbotio
+#import Cleverbotio
 
 from discord.ext import commands
 from random import randint
@@ -51,6 +51,12 @@ else:
     initial_extensions = ['Modules.image', 'Modules.booru']
 
 
+mentioned_nomsg = [
+"Hm..",
+"You want something?",
+"Yes?",
+]
+
 #ok so with this we can have Tenshi also respond to the = prefix, i'll leave this enabled for a short time then switch to just mention
 #never did, people were too used to using =
 
@@ -66,6 +72,7 @@ bot.remove_command("help")
 
 #Sharding! should help with performance since the bot is on 1000+ servers
 client = discord.AutoShardedClient()
+#client = discord.Client()
 
 st = time.time()
 
@@ -143,6 +150,15 @@ async def on_message(message):
         return
     if message.author.bot:
         return
+    #non command test
+    #debug id - !571094749537239042
+    #production id - 252442396879486976
+    if message.content == '<@!571094749537239042>':
+        await message.channel.send(random.choice(mentioned_nomsg))
+
+
+
+    print(message.content)
     await bot.process_commands(message)
 
 #command logging
