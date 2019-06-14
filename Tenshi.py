@@ -130,7 +130,7 @@ async def on_ready():
     payload = {"server_count"  : str(len(bot.guilds))}
     async with aiohttp.ClientSession() as aioclient:
         await aioclient.post(url, data=payload, headers=headers)
-    await bot.change_presence(activity=discord.Game(name="TenshiBot " + bot_version))
+    await bot.change_presence(activity=discord.Game(name="Startup Complete"))
     await asyncio.sleep(7)
     await bot.change_presence(activity=discord.Streaming(name="TenshiBot", url='https://twitch.tv/99710'))
 
