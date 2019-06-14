@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.1.1'
+bot_version = '2.1.3'
 
 #Booting text
 print('Please wait warmly...')
@@ -55,6 +55,13 @@ mentioned_nomsg = [
 "Hm..",
 "You want something?",
 "Yes?",
+"*Stares*",
+"*Eating a peach~*",
+"*Is eating a peach~*",
+"*Zzz...*",
+
+"*♪Nagareteku toki no naka de demo kedarusa ga hora guruguru mawatte♪*",
+"*♪Blushing faces covered in pink♪\n♪Rushing bombs, exploding ink!♪*",
 ]
 
 #ok so with this we can have Tenshi also respond to the = prefix, i'll leave this enabled for a short time then switch to just mention
@@ -153,12 +160,14 @@ async def on_message(message):
     #non command test
     #debug id - !571094749537239042
     #production id - 252442396879486976
-    if message.content == '<@!571094749537239042>':
+    if message.content == '<@252442396879486976>':
         await message.channel.send(random.choice(mentioned_nomsg))
+    if message.content == '<@!252442396879486976>':
+        await message.channel.send(random.choice(mentioned_nomsg))    
 
 
 
-    print(message.content)
+#    print(message.content)
     await bot.process_commands(message)
 
 #command logging
