@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.1.3'
+bot_version = '2.1.4'
 
 #Booting text
 print('Please wait warmly...')
@@ -56,9 +56,15 @@ mentioned_nomsg = [
 "You want something?",
 "Yes?",
 "*Stares*",
-"*Eating a peach~*",
+"*Looks around*",
+"*Stares at you*",
+#"*Eating a peach~*",
 "*Is eating a peach~*",
+"*Is eating a corndog~*",
 "*Zzz...*",
+"*Humming Wonderful Heaven~*",
+"*Humming Flowering Night~*",
+#"Hack the planet",
 
 "*♪Nagareteku toki no naka de demo kedarusa ga hora guruguru mawatte♪*",
 "*♪Blushing faces covered in pink♪\n♪Rushing bombs, exploding ink!♪*",
@@ -149,6 +155,8 @@ async def on_command_error(ctx, error):
         print(error)
         await ctx.send(error)
 
+
+secure_random = random.SystemRandom()
 #other bot ignoring code 
 @bot.event
 async def on_message(message):
@@ -158,12 +166,14 @@ async def on_message(message):
     if message.author.bot:
         return
     #non command test
-    #debug id - !571094749537239042
+    #debug id - 571094749537239042
     #production id - 252442396879486976
+
+    #! is needed if Tenshi has a nickname set on the server
     if message.content == '<@252442396879486976>':
-        await message.channel.send(random.choice(mentioned_nomsg))
+        await message.channel.send(secure_random.choice(mentioned_nomsg))
     if message.content == '<@!252442396879486976>':
-        await message.channel.send(random.choice(mentioned_nomsg))    
+        await message.channel.send(secure_random.choice(mentioned_nomsg))    
 
 
 
