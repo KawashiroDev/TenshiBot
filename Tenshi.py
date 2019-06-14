@@ -130,7 +130,7 @@ async def on_ready():
     payload = {"server_count"  : str(len(bot.guilds))}
     async with aiohttp.ClientSession() as aioclient:
         await aioclient.post(url, data=payload, headers=headers)
-    await bot.change_presence(activity=discord.Game(name="Startup complete"))
+    await bot.change_presence(activity=discord.Game(name="TenshiBot " + bot_version))
     await asyncio.sleep(7)
     await bot.change_presence(activity=discord.Streaming(name="TenshiBot", url='https://twitch.tv/99710'))
 
@@ -261,8 +261,13 @@ async def vpsreboot(ctx):
 #status changing command
 @bot.command()
 @is_owner()  
+async def setstatus_stream(ctx, *, args):
+    await bot.change_presence(activity=discord.Streaming(name= args, url='https://twitch.tv/99710'))
+
+@bot.command()
+@is_owner()  
 async def setstatus(ctx, *, args):
-    await bot.change_presence(activity=discord.Streaming(name= args, url='https://twitch.tv/99710'))    
+    await bot.change_presence(activity=discord.Game(name= args))    
 
 #ban test command
 @bot.command()
