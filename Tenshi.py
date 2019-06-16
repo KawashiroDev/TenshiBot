@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.1.4'
+bot_version = '2.1.7'
 
 #Booting text
 print('Please wait warmly...')
@@ -61,7 +61,10 @@ mentioned_nomsg = [
 #"*Eating a peach~*",
 "*Is eating a peach~*",
 "*Is eating a corndog~*",
+"*Is looking at Shion~*",
+"*Is playing with Shion's hair~*",
 "*Zzz...*",
+#"U+1F351",
 "*Humming Wonderful Heaven~*",
 "*Humming Flowering Night~*",
 #"Hack the planet",
