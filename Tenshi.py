@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.1.7'
+bot_version = '2.1.8'
 
 #Booting text
 print('Please wait warmly...')
@@ -186,7 +186,7 @@ async def on_message(message):
 #command logging
 @bot.event
 async def on_command(ctx):
-    print("[command] " + ctx.message.content[len("="):].strip() + " / " + str(ctx.guild))
+    print("[command] " + ctx.message.content + " / " + str(ctx.guild))
     return
 
 #owner check
