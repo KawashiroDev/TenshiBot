@@ -3219,6 +3219,62 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Moko Image')
                     em.set_image(url=booruappend + msg)
+                    await ctx.send(embed=em)
+
+
+
+    @commands.command()
+    async def gif(self, ctx):
+        char = 'touhou+animated_gif'
+        async with aiohttp.ClientSession() as session:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorublacklist + '+' + char) as r:
+                if r.status == 200:
+                    soup = BeautifulSoup(await r.text(), "lxml")
+                    num = int(soup.find('posts')['count'])
+                    maxpage = int(round(num/100))
+                    page = random.randint(0, maxpage)
+                    t = soup.find('posts')
+                    p = t.find_all('post')
+                    source = ((soup.find('post'))['source'])
+                    if num < 100:
+                        pic = p[random.randint(0,num-1)]
+                    elif page == maxpage:
+                        pic = p[random.randint(0,num%100 - 1)]
+                    else:
+                        pic = p[random.randint(0,99)]
+                    msg = pic['file_url']
+                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                    em.set_author(name='GIF Image')
+                    em.set_image(url=booruappend + msg)
+                    await ctx.send(embed=em)
+
+
+
+    @commands.command()
+    async def gif2(self, ctx):
+        char = 'touhou+animated'
+        async with aiohttp.ClientSession() as session:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorublacklist + '+' + char) as r:
+                if r.status == 200:
+                    soup = BeautifulSoup(await r.text(), "lxml")
+                    num = int(soup.find('posts')['count'])
+                    maxpage = int(round(num/100))
+                    page = random.randint(0, maxpage)
+                    t = soup.find('posts')
+                    p = t.find_all('post')
+                    source = ((soup.find('post'))['source'])
+                    if num < 100:
+                        pic = p[random.randint(0,num-1)]
+                    elif page == maxpage:
+                        pic = p[random.randint(0,num%100 - 1)]
+                    else:
+                        pic = p[random.randint(0,99)]
+                    msg = pic['file_url']
+                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                    em.set_author(name='GIF Image')
+                    em.set_image(url=booruappend + msg)
                     await ctx.send(embed=em)                    
 
 #oj_img
