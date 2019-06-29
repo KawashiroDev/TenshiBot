@@ -12,7 +12,7 @@ boorurating = 'safe'
 #booru tag blacklist
 #results which have these tags won't be shown in the touhou commands
 #does not affect the safebooru command
-boorublacklist = '-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini'
+boorublacklist = '-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini+-6%2Bgirls+-comic+-greyscale'
 
 #append text to the start of booru url output
 #change this if the bot is sending malformed booru urls
@@ -56,7 +56,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0xb50404)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -83,7 +83,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0xf5e942)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -166,7 +166,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0xc7c7c7)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -192,7 +192,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0x00e5ff)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -219,7 +219,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0x04b548)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -246,7 +246,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0xb50404)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -273,7 +273,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0xf5da42)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -502,7 +502,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0x04b548)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -614,7 +614,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0xb50480)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -698,7 +698,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0x048cb5)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -782,7 +782,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0x990000)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -1144,7 +1144,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0x000000)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -1312,7 +1312,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0xff40d9)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -1424,7 +1424,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0x009917)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -1452,7 +1452,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0xc646e0)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -1480,7 +1480,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0x79eb50)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -1508,7 +1508,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0x62f500)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -1536,7 +1536,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0xf50000)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -1564,7 +1564,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0xa700f5)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -1704,7 +1704,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0xf94aff)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -1760,7 +1760,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0xfd8cff)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -1843,7 +1843,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0x24b343)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -1927,7 +1927,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0x24b343)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -2795,35 +2795,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
-                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
-                    em.set_image(url=booruappend + msg)
-                    await ctx.send(embed=em)
-
-
-
-    @commands.command()
-    async def kaguya(self, ctx):
-        char = 'houraisan_kaguya'
-        async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
-                if r.status == 200:
-                    soup = BeautifulSoup(await r.text(), "lxml")
-                    num = int(soup.find('posts')['count'])
-                    maxpage = int(round(num/100))
-                    page = random.randint(0, maxpage)
-                    t = soup.find('posts')
-                    p = t.find_all('post')
-                    source = ((soup.find('post'))['source'])
-                    if num < 100:
-                        pic = p[random.randint(0,num-1)]
-                    elif page == maxpage:
-                        pic = p[random.randint(0,num%100 - 1)]
-                    else:
-                        pic = p[random.randint(0,99)]
-                    msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em = discord.Embed(title='', description=' ', colour=0xef61ff)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -3274,6 +3246,150 @@ class ImageCog(commands.Cog):
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='GIF Image')
+                    em.set_image(url=booruappend + msg)
+                    await ctx.send(embed=em)
+
+
+
+#th_img_fan
+
+
+
+    @commands.command()
+    async def youka(self, ctx):
+        char = 'kazami_youka'
+        async with aiohttp.ClientSession() as session:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorublacklist + '+' + char) as r:
+                if r.status == 200:
+                    soup = BeautifulSoup(await r.text(), "lxml")
+                    num = int(soup.find('posts')['count'])
+                    maxpage = int(round(num/100))
+                    page = random.randint(0, maxpage)
+                    t = soup.find('posts')
+                    p = t.find_all('post')
+                    source = ((soup.find('post'))['source'])
+                    if num < 100:
+                        pic = p[random.randint(0,num-1)]
+                    elif page == maxpage:
+                        pic = p[random.randint(0,num%100 - 1)]
+                    else:
+                        pic = p[random.randint(0,99)]
+                    msg = pic['file_url']
+                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                    em.set_author(name='Character Image')
+                    em.set_image(url=booruappend + msg)
+                    await ctx.send(embed=em)
+
+
+
+    @commands.command()
+    async def kokuu(self, ctx):
+        char = 'kokuu_haruto'
+        async with aiohttp.ClientSession() as session:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorublacklist + '+' + char) as r:
+                if r.status == 200:
+                    soup = BeautifulSoup(await r.text(), "lxml")
+                    num = int(soup.find('posts')['count'])
+                    maxpage = int(round(num/100))
+                    page = random.randint(0, maxpage)
+                    t = soup.find('posts')
+                    p = t.find_all('post')
+                    source = ((soup.find('post'))['source'])
+                    if num < 100:
+                        pic = p[random.randint(0,num-1)]
+                    elif page == maxpage:
+                        pic = p[random.randint(0,num%100 - 1)]
+                    else:
+                        pic = p[random.randint(0,99)]
+                    msg = pic['file_url']
+                    em = discord.Embed(title='', description=' ', colour=0x14a625)
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                    em.set_author(name='Character Image')
+                    em.set_image(url=booruappend + msg)
+                    await ctx.send(embed=em)
+
+
+
+    @commands.command()
+    async def ex_rumia(self, ctx):
+        char = 'ex-rumia'
+        async with aiohttp.ClientSession() as session:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorublacklist + '+' + char) as r:
+                if r.status == 200:
+                    soup = BeautifulSoup(await r.text(), "lxml")
+                    num = int(soup.find('posts')['count'])
+                    maxpage = int(round(num/100))
+                    page = random.randint(0, maxpage)
+                    t = soup.find('posts')
+                    p = t.find_all('post')
+                    source = ((soup.find('post'))['source'])
+                    if num < 100:
+                        pic = p[random.randint(0,num-1)]
+                    elif page == maxpage:
+                        pic = p[random.randint(0,num%100 - 1)]
+                    else:
+                        pic = p[random.randint(0,99)]
+                    msg = pic['file_url']
+                    em = discord.Embed(title='', description=' ', colour=0xf5da42)
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                    em.set_author(name='Character Image')
+                    em.set_image(url=booruappend + msg)
+                    await ctx.send(embed=em)
+
+
+
+    @commands.command()
+    async def hei(self, ctx):
+        char = 'hei_meiling'
+        async with aiohttp.ClientSession() as session:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorublacklist + '+' + char) as r:
+                if r.status == 200:
+                    soup = BeautifulSoup(await r.text(), "lxml")
+                    num = int(soup.find('posts')['count'])
+                    maxpage = int(round(num/100))
+                    page = random.randint(0, maxpage)
+                    t = soup.find('posts')
+                    p = t.find_all('post')
+                    source = ((soup.find('post'))['source'])
+                    if num < 100:
+                        pic = p[random.randint(0,num-1)]
+                    elif page == maxpage:
+                        pic = p[random.randint(0,num%100 - 1)]
+                    else:
+                        pic = p[random.randint(0,99)]
+                    msg = pic['file_url']
+                    em = discord.Embed(title='', description=' ', colour=0x88008c)
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                    em.set_author(name='Character Image')
+                    em.set_image(url=booruappend + msg)
+                    await ctx.send(embed=em)
+
+
+
+    @commands.command()
+    async def flan_maman(self, ctx):
+        char = 'flan-maman'
+        async with aiohttp.ClientSession() as session:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorublacklist + '+' + char) as r:
+                if r.status == 200:
+                    soup = BeautifulSoup(await r.text(), "lxml")
+                    num = int(soup.find('posts')['count'])
+                    maxpage = int(round(num/100))
+                    page = random.randint(0, maxpage)
+                    t = soup.find('posts')
+                    p = t.find_all('post')
+                    source = ((soup.find('post'))['source'])
+                    if num < 100:
+                        pic = p[random.randint(0,num-1)]
+                    elif page == maxpage:
+                        pic = p[random.randint(0,num%100 - 1)]
+                    else:
+                        pic = p[random.randint(0,99)]
+                    msg = pic['file_url']
+                    em = discord.Embed(title='', description=' ', colour=0x8c0000)
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                    em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
                     await ctx.send(embed=em)                    
 
