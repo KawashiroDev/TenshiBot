@@ -135,7 +135,8 @@ async def on_ready():
         await aioclient.post(url, data=payload, headers=headers)
     await bot.change_presence(activity=discord.Game(name="Startup Complete"))
     await asyncio.sleep(7)
-    await bot.change_presence(activity=discord.Streaming(name="TenshiBot", url='https://twitch.tv/99710'))
+    #await bot.change_presence(activity=discord.Streaming(name="TenshiBot", url='https://twitch.tv/99710'))
+    await bot.change_presence(activity=discord.Game(name="TenshiBot"))
 
     
 #error event code
@@ -257,9 +258,10 @@ async def errortest(ctx):
 @bot.command()
 @is_owner()    
 async def vpsreboot(ctx):
-    #os.system("sudo reboot")
-    os.system("shutdown -r -t 30")
+    await bot.change_presence(activity=discord.Game(name="Rebooting..."))
     await ctx.send('Rebooting the VPS')
+    os.system("sudo reboot")
+    #os.system("shutdown -r -t 30")
 
 #status changing command
 @bot.command()
@@ -270,7 +272,28 @@ async def setstatus_stream(ctx, *, args):
 @bot.command()
 @is_owner()  
 async def setstatus(ctx, *, args):
-    await bot.change_presence(activity=discord.Game(name= args))    
+    await bot.change_presence(activity=discord.Game(name= args))
+    await ctx.send("status set to " + "`" + args + "`")
+
+@bot.command()
+@is_owner()  
+async def setname(ctx, *, args):
+    await bot.user.edit(username= args)
+
+@bot.command()
+@is_owner()  
+async def setnick(ctx, *, args):
+    await bot.user.edit(nickname= args)
+    await ctx.send("nickname set to " + "`" + args + "`")
+
+#doesn't work
+@bot.command()
+@is_owner()
+async def setavatar(ctx, *, args):
+    #image = args   
+    image = "C:/Users/H99710/Pictures/koishi.jpg"
+    newavatar = open(image, 'rb')
+    await bot.user.edit(avatar = newavatar.read() )     
 
 #ban test command
 @bot.command()
@@ -278,6 +301,12 @@ async def setstatus(ctx, *, args):
 async def bantest(ctx):
     await ctx.author.ban(reason=':)')
     await ctx.author.unban
+
+#kick test command
+@bot.command()
+@is_owner()
+async def kickme(ctx):
+    await ctx.author.kick(reason='.')   
 
 #console command
 @bot.command()
@@ -292,10 +321,22 @@ async def console(ctx):
 #role creation testing command
 #this may be intresting to have as a hangout exclusive command
 #and let users make roles with custom colours
+
+#role creation command V2, currently throws an error when trying to assign the role
+@bot.command()
+@is_owner()
+async def makerole(ctx, colour):
+    perms=discord.Permissions(0)
+    col=discord.Colour(int(colour))
+    userid=ctx.author.id
+    await ctx.guild.create_role(name=userid, permissions=perms, colour=col, reason='role creation test')
+    user=ctx.message.author
+    role=discord.utils.get(ctx.guild.roles, name=str(userid))
+    await user.add_roles(user, role)
    
 @bot.command()
 @is_owner()
-async def makerole(ctx):
+async def makerole2(ctx, *, args):
     #refer to this for permissions values https://discordapi.com/permissions.html
     #it's best to leave this on 0 unless testing
     perms=discord.Permissions(0)
@@ -303,7 +344,9 @@ async def makerole(ctx):
     #this seems to like int values instead of names
     #1 is black, 255 is blue, 510 is also blue but darker
     #audit log reports 255 is #0000FF and 510 is #0001FE which means that value is decimal
-    col=discord.Colour(510)
+    #col=discord.Colour(510)
+    #this also supports hex
+    col=discord.Colour(args)
     await ctx.guild.create_role(name='test', permissions=perms, colour=col, reason='role creation test')
     #await ctx.guild.create_role(name='test')
 
