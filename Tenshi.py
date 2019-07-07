@@ -73,6 +73,13 @@ mentioned_nomsg = [
 "*♪Blushing faces covered in pink♪\n♪Rushing bombs, exploding ink!♪*",
 ]
 
+shuffle_test = [
+"avatars/test/1.png",
+"avatars/test/2.png",
+"avatars/test/3.png",
+"avatars/test/4.png",
+]
+
 #ok so with this we can have Tenshi also respond to the = prefix, i'll leave this enabled for a short time then switch to just mention
 #never did, people were too used to using =
 
@@ -286,14 +293,41 @@ async def setnick(ctx, *, args):
     await bot.user.edit(nickname= args)
     await ctx.send("nickname set to " + "`" + args + "`")
 
-#doesn't work
+#has to point to a png file
 @bot.command()
 @is_owner()
-async def setavatar(ctx, *, args):
+#async def setavatar(ctx, *, args):
+async def setavatar(ctx):
     #image = args   
-    image = "C:/Users/H99710/Pictures/koishi.jpg"
+    image = "C:/Users/H99710/Pictures/TenshiBot_avatar.png"
     newavatar = open(image, 'rb')
-    await bot.user.edit(avatar = newavatar.read() )     
+    await bot.user.edit(avatar = newavatar.read() )
+
+@bot.command()
+@is_owner()
+async def shuffleavatar(ctx):   
+#    image = (secure_random.choice(shuffle_test))
+    image =  "avatars/normal/" + random.choice(os.listdir("avatars/normal"))
+    newavatar = open(image, 'rb')
+    await bot.user.edit(avatar = newavatar.read())
+
+@bot.command()
+@is_owner()
+async def cirnomode(ctx):   
+    image = "avatars/alt_char/cirno/" + random.choice(os.listdir("avatars/alt_char/cirno"))
+    newavatar = open(image, 'rb')
+    await bot.user.edit(username="CirnoBot", avatar = newavatar.read())
+    await bot.change_presence(activity=discord.Game(name="with Daiyousei"))
+    await ctx.send("Enabled Cirnomode, Reset to Tenshi with `tenkomode`")
+
+@bot.command()
+@is_owner()
+async def tenkomode(ctx):   
+    image = random.choice(os.listdir("avatars/normal"))
+    newavatar = open(image, 'rb')
+    await bot.user.edit(username="TenshiBot", avatar = newavatar.read())
+    await bot.change_presence(activity=discord.Game(name="with Iku"))
+    await ctx.send("Enabled Tenshimode")    
 
 #ban test command
 @bot.command()
