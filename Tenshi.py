@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.2.0'
+bot_version = '2.2.1'
 
 #Booting text
 print('Please wait warmly...')
@@ -55,6 +55,9 @@ mentioned_nomsg = [
 "Hm..",
 "You want something?",
 "Yes?",
+"Peaches are delicious, you should try one sometime",
+"In Soviet Russia, bot tags you",
+"(￣ω￣;)",
 "*Stares*",
 "*Looks around*",
 "*Stares at you*",
