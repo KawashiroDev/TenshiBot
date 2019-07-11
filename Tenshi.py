@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.2.1'
+bot_version = '2.2.1 R1'
 
 #Booting text
 print('Please wait warmly...')
@@ -58,6 +58,16 @@ mentioned_nomsg = [
 "Peaches are delicious, you should try one sometime",
 "In Soviet Russia, bot tags you",
 "(￣ω￣;)",
+"¡ǝɹǝɥ sɐʍ ɐɾᴉǝS",
+"You picked the wrong heaven fool!",
+"A red spy is in the base?!",
+"Eh?!, some MrBeast guy just gave Shion ¥100,000",
+"Wait... Yukari is here?",
+"Chang'e are you watching?",
+"!",
+"!!",
+"?!",
+
 "*Stares*",
 "*Looks around*",
 "*Stares at you*",
@@ -74,6 +84,7 @@ mentioned_nomsg = [
 
 "*♪Nagareteku toki no naka de demo kedarusa ga hora guruguru mawatte♪*",
 "*♪Blushing faces covered in pink♪\n♪Rushing bombs, exploding ink!♪*",
+"*♪Too many shadows whispering voices♪\n♪Faces on posters too many choices♪*",
 ]
 
 shuffle_test = [
@@ -313,7 +324,9 @@ async def shuffleavatar(ctx):
     image =  "avatars/normal/" + random.choice(os.listdir("avatars/normal"))
     newavatar = open(image, 'rb')
     await bot.user.edit(avatar = newavatar.read())
+    await ctx.send("Avatar shuffled!")
 
+        
 @bot.command()
 @is_owner()
 async def cirnomode(ctx):   
