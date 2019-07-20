@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.2.1 R1'
+bot_version = '2.2.2'
 
 #Booting text
 print('Please wait warmly...')
@@ -30,9 +30,13 @@ import subprocess
 #import cleverbot_io
 import time
 #import Cleverbotio
+import traceback
+import praw
+import lxml
 
 from discord.ext import commands
 from random import randint
+from bs4 import BeautifulSoup
 #from Cleverbotio import 'async' as cleverbot
 
 #Windows or linux check
@@ -62,8 +66,12 @@ mentioned_nomsg = [
 "You picked the wrong heaven fool!",
 "A red spy is in the base?!",
 "Eh?!, some MrBeast guy just gave Shion ¥100,000",
+"You seen John Connor around here? Tell him i said hi",
+"CrashOverride? What kind of username is that?",
+"ZeroCool? Sounds like one of Cirno's aliases",
 "Wait... Yukari is here?",
-"Chang'e are you watching?",
+"Chang'e are you watching? \nSome fox lady said hi",
+"Hold on a sec i just saw Sakuya with some coffee",
 "!",
 "!!",
 "?!",
@@ -85,6 +93,8 @@ mentioned_nomsg = [
 "*♪Nagareteku toki no naka de demo kedarusa ga hora guruguru mawatte♪*",
 "*♪Blushing faces covered in pink♪\n♪Rushing bombs, exploding ink!♪*",
 "*♪Too many shadows whispering voices♪\n♪Faces on posters too many choices♪*",
+"*♪Lights and any more♪*",
+"*♪Let's move into the brand new world♪\n♪Let's dive into the brand new trip♪*",
 ]
 
 shuffle_test = [
@@ -176,9 +186,26 @@ async def on_command_error(ctx, error):
             await ctx.send("Error: Only the owner can use this command")
         else:
             await ctx.send("Error: This command can only be used in TenshiBot Hangout")
+    if isinstance(error, commands.MissingRequiredArgument):
+        await ctx.send("Error: This command requires an argument")
+            
     else:
         print(error)
-        await ctx.send(error)
+        #print(str(traceback.print_exc()))
+        errormsg = await ctx.send("An error has occured, The dev has been notified")
+        #todo: actually put code here that notifies me
+
+#check to see if the user reacts with a peach, if they have then show them detailed error info
+        def check(reaction, user):
+            return (str(reaction.emoji) == '\U0001f351')
+                                   
+        try:
+            reaction, user = await bot.wait_for('reaction_add', timeout=30, check=check)
+        except asyncio.TimeoutError:
+            return
+        else:
+            if ((reaction.emoji) == '\U0001f351') and reaction.message.id == errormsg.id:
+                await ctx.send("Error info: `" + str(error) + "`")
 
 
 secure_random = random.SystemRandom()
@@ -283,6 +310,17 @@ async def vpsreboot(ctx):
     await ctx.send('Rebooting the VPS')
     os.system("sudo reboot")
     #os.system("shutdown -r -t 30")
+
+@bot.command()
+@is_owner()
+async def vpsreboot_u(ctx):
+    await bot.change_presence(activity=discord.Game(name="Updating..."))
+    await ctx.send('Updating...')
+    os.system("python3.5 -m pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U")
+    await bot.change_presence(activity=discord.Game(name="Rebooting..."))
+    await ctx.send('Updates complete, Restarting server')
+    os.system("sudo reboot")
+
 
 #status changing command
 @bot.command()
@@ -401,6 +439,62 @@ async def makerole2(ctx, *, args):
     #await ctx.guild.create_role(name='test')
 
 
+#safebooru reaction support test
+booru = 'safebooru.org'
+boorurating = 'safe'
+booruappend = ''
+@bot.command()
+async def safebooru_react(ctx, *, tags):
+    async with aiohttp.ClientSession() as session:
+        async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=+' + tags) as r:
+            if r.status == 200:
+                soup = BeautifulSoup(await r.text(), "lxml")
+                num = int(soup.find('posts')['count'])
+                maxpage = int(round(num/100))
+                page = random.randint(0, maxpage)
+                t = soup.find('posts')
+                p = t.find_all('post')
+                if num == 0: 
+                    msg = 'No posts found, are the tags spelt correctly?'
+                    await ctx.send(msg)
+                    return
+
+                else:
+                    source = ((soup.find('post'))['source'])
+                    if num < 100:
+                        pic = p[random.randint(0,num-1)]
+                    elif page == maxpage:
+                        pic = p[random.randint(0,num%100 - 1)]
+                    else:
+                        pic = p[random.randint(0,99)]
+                    msg = pic['file_url']
+                    em = discord.Embed(title='', description='', colour=0x42D4F4)
+                    em.set_author(name='Booru image')
+                    em.set_image(url=booruappend + msg)
+                    sb_img = await ctx.send(embed=em)
+
+
+                    def img_check(reaction, user):
+                        return (str(reaction.emoji) == '\U0001f351')or(str(reaction.emoji) == '\U0000274c')
+                                   
+                    try:
+                        reaction, user = await bot.wait_for('reaction_add', timeout=30, check=img_check)
+                    except asyncio.TimeoutError:
+                        return
+                    else:
+                        #x emoji
+                        if ((reaction.emoji) == '\U0000274c') and reaction.message.id == sb_img.id:
+                            await ctx.send("1")
+                            await ctx.message.delete(sb_img)
+                        #peach emoji    
+                        if ((reaction.emoji) == '\U0001f351') and reaction.message.id == sb_img.id:
+                            await ctx.send("2")
+            else:
+                msg = 'Safebooru is unavailable at this time'
+                await ctx.send(msg)
+                return    
+
+
 @bot.command()
 async def about(ctx):
     second = time.time() - st
@@ -412,6 +506,10 @@ async def about(ctx):
     em = discord.Embed(title='Currently on ' + str(len(bot.guilds)) + ' servers', description='Uptime= %d weeks,' % (week) + ' %d days,' % (day) + ' %d hours,' % (hour) + ' %d minutes,' % (minute) + ' and %d seconds.' % (second) + '\n Created by 99710', colour=0x00ffff)
     em.set_author(name='TenshiBot ' + bot_version , icon_url=bot.user.avatar_url)
     await ctx.send(embed=em)
+
+@bot.command()
+async def about_adv(ctx):    
+    await ctx.send('``` [about2] \n```')
 
 @bot.command()
 async def invite(ctx):
