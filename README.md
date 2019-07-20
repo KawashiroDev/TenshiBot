@@ -21,4 +21,3 @@
 <h2>Have issues? want to help add features or chat with other users?</h2>
 <p>Join TenshiBot Hangout using the `@TenshiBot support` command</p>
 
-[![Build Status](https://travis-ci.org/99710/TenshiBot.svg?branch=master)](https://travis-ci.org/99710/TenshiBot)
