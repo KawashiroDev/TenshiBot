@@ -143,7 +143,7 @@ class ImageCog(commands.Cog):
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
                     await ctx.send(msg)
-                    #await ctx.send('img_source:' + source)
+                    await ctx.send('img_source:' + source)
 
 
     @commands.command()
@@ -2580,7 +2580,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    async def yamae(self, ctx):
+    async def yamame(self, ctx):
         char = 'kurodani_yamame'
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
