@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.2.2'
+bot_version = '2.2.3'
 
 #Booting text
 print('Please wait warmly...')
@@ -277,6 +277,12 @@ async def help(ctx):
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
+    await bot.send_typing(channel)
+
+@bot.command()
+async def typingtest(ctx):
+    await ctx.send('pong')
+    await bot.send_typing(channel)    
     
 
 #nsfw flag check
@@ -533,13 +539,24 @@ async def emote(ctx, arg):
 
 @bot.command()
 async def say(ctx, *, args):
-    await ctx.send(args)
+    if "@everyone" in args:
+        await ctx.send("`" + args + "`")
+    if "@here" in args:
+        await ctx.send("`" + args + "`")    
+    else:
+        await ctx.send(args)    
 
 @bot.command()
 async def dsay(ctx, *, args):
-    await ctx.send(args)
-    await ctx.message.delete()
-
+    if "@everyone" in args:
+        await ctx.send("`" + args + "`")
+        await ctx.message.delete()
+    if "@here" in args:
+        await ctx.send("`" + args + "`")
+        await ctx.message.delete()    
+    else:
+        await ctx.send(args)    
+        await ctx.message.delete()
 
 @bot.command()
 async def patreon(ctx):
@@ -548,15 +565,39 @@ async def patreon(ctx):
 
 @bot.command()
 async def jojo(ctx, arg):
-    await ctx.send(arg + ' has been stopped!', file=discord.File('pics/stop.jpg'))
-
+    if "@everyone" in arg:
+        await ctx.send("`" + arg + "`" + ' has been stopped!', file=discord.File('pics/stop.jpg'))
+        return
+    if "@here" in arg:
+        await ctx.send("`" + arg + "`" + ' has been stopped!', file=discord.File('pics/stop.jpg'))
+        return
+    else:    
+        await ctx.send(arg + ' has been stopped!', file=discord.File('pics/stop.jpg'))
+        return
+    
 @bot.command()
 async def banana(ctx, arg):
-    await ctx.send(arg + ' has been banaed!', file=discord.File('pics/banana.png'))
+    if "@everyone" in arg:
+        await ctx.send("`" + arg + "`" + ' has been banaed!', file=discord.File('pics/banana.png'))
+        return
+    if "@here" in arg:
+        await ctx.send("`" + arg + "`" + ' has been banaed!', file=discord.File('pics/banana.png'))
+        return
+    else:    
+        await ctx.send(arg + ' has been banaed!', file=discord.File('pics/banana.png'))
+        return    
 
 @bot.command()
 async def oil(ctx, arg):
-    await ctx.send(arg + ' has been oiled!', file=discord.File('pics/oil.png'))
+    if "@everyone" in arg:
+        await ctx.send("`" + arg + "`" + ' has been oiled!', file=discord.File('pics/oil.png'))
+        return
+    if "@here" in arg:
+        await ctx.send("`" + arg + "`" + ' has been oiled!', file=discord.File('pics/oil.png'))
+        return
+    else:    
+        await ctx.send(arg + ' has been oiled!', file=discord.File('pics/oil.png'))
+        return    
 
 @bot.command()
 async def confused(ctx):
