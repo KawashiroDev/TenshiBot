@@ -6,3 +6,4 @@ weather-api
 beautifulsoup4
 praw
 lxml
+saucenaopy
