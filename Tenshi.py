@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.2.3'
+bot_version = '2.2.3 R1'
 
 #Booting text
 print('Please wait warmly...')
@@ -33,16 +33,16 @@ import time
 import traceback
 import praw
 import lxml
+#import saucenaopy
 
 from discord.ext import commands
 from random import randint
 from bs4 import BeautifulSoup
 #from Cleverbotio import 'async' as cleverbot
+#from saucenaopy import SauceNAO
 
 #Windows or linux check
-#basically i can use this to autoswitch the bot between debug/production modes
-#as the server is linux and i use windows PC's when coding
-#standard win10 is crap imo, LTSC win10 is somewhat decent
+#used to autoswitch the bot between debug/production modes
 
 if (os.path.isdir(win_dir_check)) == True:
     print('[Startup] Detected a windows PC, running in debug mode')
@@ -53,6 +53,10 @@ else:
     print('[Startup] Running in production mode')
     bot_mode = 'Production'
     initial_extensions = ['Modules.image', 'Modules.booru']
+
+test = "test"
+
+staring_satori = discord.File('pics/satori_stare.jpg')
 
 
 mentioned_nomsg = [
@@ -72,6 +76,7 @@ mentioned_nomsg = [
 "Wait... Yukari is here?",
 "Chang'e are you watching? \nSome fox lady said hi",
 "Hold on a sec i just saw Sakuya with some coffee",
+"Guys the thermal drill, go get it",
 "!",
 "!!",
 "?!",
@@ -95,6 +100,10 @@ mentioned_nomsg = [
 "*♪Too many shadows whispering voices♪\n♪Faces on posters too many choices♪*",
 "*♪Lights and any more♪*",
 "*♪Let's move into the brand new world♪\n♪Let's dive into the brand new trip♪*",
+"*♪Running in the 90's♪\n♪It's a new way to set me free♪*",
+"♪Freedom is... *invisible*♪",
+"♪*I'll never find the sound of silence*♪",
+"♪*Stay where you are~*♪",
 ]
 
 shuffle_test = [
@@ -104,8 +113,6 @@ shuffle_test = [
 "avatars/test/4.png",
 ]
 
-#ok so with this we can have Tenshi also respond to the = prefix, i'll leave this enabled for a short time then switch to just mention
-#never did, people were too used to using =
 
 #Disable sharding and = prefix if in debug mode
 #if you want to have the bot run as normal on a windows machine then change the windows folder check to a non existent folder
@@ -122,6 +129,11 @@ client = discord.AutoShardedClient()
 #client = discord.Client()
 
 st = time.time()
+
+#saucenao api stuff
+#saucekey = open("Tokens/sn_api.txt", "r")
+#sn_key = saucekey.read()
+#sn = SauceNAO(sn_key)
 
 if __name__ == '__main__':
     for extension in initial_extensions:
@@ -141,11 +153,6 @@ dbltoken = token_dbo
 url = ("https://discordbots.org/api/bots/252442396879486976/stats")
 headers = {"Authorization" : dbltoken}        
 
-
-#Prefix
-#tb_prefix = ('<@' + client.user.id + '> ')
-
-#bot will display this on startup when accepting commands
 
 @bot.event
 async def on_ready():
@@ -177,18 +184,26 @@ async def on_command_error(ctx, error):
     #command not found
     if isinstance(error, commands.CommandNotFound):
         return
+    #user has invalid permissions
+    if isinstance(error, commands.MissingPermissions):
+        await ctx.send(error)
+        return
     #user failed check
     if isinstance(error, commands.CheckFailure):
-        #this if statement checks what check was failed as i couldn't figure that out
-        #if the server id doesn't match hangout then it was likely an owner check fail
-        #if it does then was a hangout check fail. pretty sure there's a better way of doing this also        
+    #note to self: fix this when adding hangout commands       
         if ctx.author.id != 166189271244472320:
             await ctx.send("Error: Only the owner can use this command")
+            return
+            
         else:
-            await ctx.send("Error: This command can only be used in TenshiBot Hangout")
+            await ctx.send("Error: This command can only be used in TenshiBot Hangout")#
+
+    #user ran command without an argument         
     if isinstance(error, commands.MissingRequiredArgument):
         await ctx.send("Error: This command requires an argument")
-            
+        return
+
+    #none of the above         
     else:
         print(error)
         #print(str(traceback.print_exc()))
@@ -246,7 +261,6 @@ def is_owner():
     return commands.check(predicate)
 
 #TenshiBot Hangout check (the name of the Tenshi's server)
-#This should check if the command is being ran in that server or not
 def is_hangout():
     async def predicate(ctx):
         return ctx.guild.id == 273086604866748426
@@ -292,6 +306,12 @@ async def nsfwtest(ctx):
         await ctx.send('nsfw')
     else:
         await ctx.send('not nsfw')
+
+
+@commands.has_permissions(administrator=True)
+@bot.command()
+async def permstest(ctx):
+    await ctx.send('ok')       
 
 @bot.command()
 @is_owner()
@@ -383,7 +403,7 @@ async def cirnomode(ctx):
 @bot.command()
 @is_owner()
 async def tenkomode(ctx):   
-    image = random.choice(os.listdir("avatars/normal"))
+    image =  "avatars/normal/" + random.choice(os.listdir("avatars/normal"))
     newavatar = open(image, 'rb')
     await bot.user.edit(username="TenshiBot", avatar = newavatar.read())
     await bot.change_presence(activity=discord.Game(name="with Iku"))
@@ -434,10 +454,6 @@ async def makerole2(ctx, *, args):
     #refer to this for permissions values https://discordapi.com/permissions.html
     #it's best to leave this on 0 unless testing
     perms=discord.Permissions(0)
-    #need to figure out how to set colour and letting users choose it
-    #this seems to like int values instead of names
-    #1 is black, 255 is blue, 510 is also blue but darker
-    #audit log reports 255 is #0000FF and 510 is #0001FE which means that value is decimal
     #col=discord.Colour(510)
     #this also supports hex
     col=discord.Colour(args)
@@ -500,6 +516,13 @@ async def safebooru_react(ctx, *, tags):
                 await ctx.send(msg)
                 return    
 
+
+@bot.command()
+@is_owner()
+async def saucenao(ctx, link):
+    sauce = sn.get_sauce(link)
+    await ctx.send(sauce)
+    
 
 @bot.command()
 async def about(ctx):
