@@ -1713,7 +1713,7 @@ class ImageCog(commands.Cog):
 
 
 
-@commands.command()
+    @commands.command()
     async def reisen2(self, ctx):
         char = 'reisen'
         async with aiohttp.ClientSession() as session:
@@ -1742,7 +1742,7 @@ class ImageCog(commands.Cog):
 
 
 
-@commands.command()
+    @commands.command()
     async def rei(self, ctx):
         char = 'reisen'
         async with aiohttp.ClientSession() as session:
