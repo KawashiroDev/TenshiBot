@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.2.4'
+bot_version = '2.2.5'
 
 #Booting text
 print('Please wait warmly...')
@@ -239,8 +239,38 @@ async def on_message(message):
     #! is needed if Tenshi has a nickname set on the server
     if message.content == '<@252442396879486976>':
         await message.channel.send(secure_random.choice(mentioned_nomsg))
+        print("[command] mention_nomsg")
     if message.content == '<@!252442396879486976>':
-        await message.channel.send(secure_random.choice(mentioned_nomsg))    
+        await message.channel.send(secure_random.choice(mentioned_nomsg))
+        print("[command] mention_nomsg")
+
+#'f' command uses on_message instead of async def due to ayana clash
+    if message.content == '<@252442396879486976> f':
+        if '@everyone' in message.author.display_name:
+            await message.channel.send(message.author.display_name + ' has paid their respects')
+            print("[command] f")
+            return
+        if '@here' in message.author.display_name:
+            await message.channel.send('`' + message.author.display_name + '` has paid their respects')
+            print("[command] f")
+            return
+        else:
+            await message.channel.send('`' + message.author.display_name + '` has paid their respects')
+            print("[command] f")
+            return
+    if message.content == '<@!252442396879486976> f':
+        if '@everyone' in message.author.display_name:
+            await message.channel.send('`' + message.author.display_name + '` has paid their respects')
+            print("[command] f")
+            return
+        if '@here' in message.author.display_name:
+            await message.channel.send('`' + message.author.display_name + '` has paid their respects')
+            print("[command] f")
+            return
+        else:
+            await message.channel.send(message.author.display_name + ' has paid their respects')
+            print("[command] f")
+            return
 
 
 
@@ -292,6 +322,49 @@ async def help(ctx):
 async def ping(ctx):
     await ctx.send('pong')
     await bot.send_typing(channel)
+
+@bot.command()
+async def nestedreacttest(ctx):
+    L1 = await ctx.send('Level 1')
+
+    def check(reaction, user):
+        return (str(reaction.emoji) == '\U0001f351') or (str(reaction.emoji) == '\U0001f352')
+                                   
+    try:
+        reaction, user = await bot.wait_for('reaction_add', timeout=30, check=check)
+    except asyncio.TimeoutError:
+        await ctx.send('Timeout')
+        return
+    else:
+        if ((reaction.emoji) == '\U0001f351') and reaction.message.id == L1.id:
+            L2 = await ctx.send('Level 2')
+
+            def check(reaction, user):
+                return (str(reaction.emoji) == '\U0001f351')
+                                   
+            try:
+                reaction, user = await bot.wait_for('reaction_add', timeout=30, check=check)
+            except asyncio.TimeoutError:
+                await ctx.send('Timeout')
+                return
+            else:
+                if ((reaction.emoji) == '\U0001f351') and reaction.message.id == L2.id:
+                    await ctx.send('Success')
+        #cherry                
+        if ((reaction.emoji) == '\U0001f352') and reaction.message.id == L1.id:                 
+            L2a = await ctx.send('Level 2 alternate')
+            def check(reaction, user):
+                return (str(reaction.emoji) == '\U0001f351')
+                                   
+            try:
+                reaction, user = await bot.wait_for('reaction_add', timeout=30, check=check)
+            except asyncio.TimeoutError:
+                await ctx.send('Timeout')
+                return
+            else:
+                if ((reaction.emoji) == '\U0001f351') and reaction.message.id == L2a.id:
+                    await ctx.send('Success alternate')
+    
 
 @bot.command()
 async def typingtest(ctx):
