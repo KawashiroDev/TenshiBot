@@ -1734,7 +1734,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0xf94aff)
+                    em = discord.Embed(title='', description=' ', colour=0x2291ba)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
@@ -1763,7 +1763,7 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
-                    em = discord.Embed(title='', description=' ', colour=0xf94aff)
+                    em = discord.Embed(title='', description=' ', colour=0x2291ba)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
