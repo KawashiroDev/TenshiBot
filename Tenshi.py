@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.2.7'
+bot_version = '2.2.7 R1'
 
 #Booting text
 print('Please wait warmly...')
@@ -351,6 +351,10 @@ async def help(ctx):
 async def ping(ctx):
     await ctx.send('pong')
     await bot.send_typing(channel)
+
+@bot.command()
+async def kofi(ctx):
+    await ctx.send('https://ko-fi.com/h99710')
 
 
 def strip_non_ascii(string):
