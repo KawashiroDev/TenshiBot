@@ -276,7 +276,7 @@ async def on_message(message):
 #'f' command uses on_message instead of async def due to ayana clash
     if message.content == '<@252442396879486976> f':
         if '@everyone' in message.author.display_name:
-            await message.channel.send(message.author.display_name + ' has paid their respects')
+            await message.channel.send('`' + message.author.display_name + '` has paid their respects')
             print("[command] f")
             return
         if '@here' in message.author.display_name:
@@ -284,7 +284,7 @@ async def on_message(message):
             print("[command] f")
             return
         else:
-            await message.channel.send('`' + message.author.display_name + '` has paid their respects')
+            await message.channel.send(message.author.display_name + ' has paid their respects')
             print("[command] f")
             return
     if message.content == '<@!252442396879486976> f':
