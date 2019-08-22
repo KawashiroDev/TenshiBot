@@ -1,12 +1,4 @@
-```
-  _______             _     _ ____        _   
- |__   __|           | |   (_)  _ \      | |  
-    | | ___ _ __  ___| |__  _| |_) | ___ | |_ 
-    | |/ _ \ '_ \/ __| '_ \| |  _ < / _ \| __|
-    | |  __/ | | \__ \ | | | | |_) | (_) | |_ 
-    |_|\___|_| |_|___/_| |_|_|____/ \___/ \__|
-                                  V2  by 99710
-```
+**TenshiBot Help**
 
 **Common commands**
 ```
@@ -14,13 +6,13 @@ about - Bot info
 support - Join TenshiBot's server
 invite - Bot invite link
 safebooru <tag(s)> - Search safebooru
-
+gif - Random Touhou GIF
 ```
 To view all commands visit https://github.com/99710/TenshiBot/wiki/Commands
 
 **Patreon supporters**
 ```
-Daciks
 Sousy
 ```
-Avatar : <https://twitter.com/skmmt3/status/1084726096094912513?s=19>
+
+Created by 99710
