@@ -139,12 +139,16 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    msg2 = pic['change']
                     em = discord.Embed(title='', description='' + source, colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
                     await ctx.send(msg)
                     await ctx.send('img_source:' + source)
+                    await ctx.send(str(pic))
+                    print(pic)
+                    print(msg2)
 
 
     @commands.command()
