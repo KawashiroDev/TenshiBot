@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.2.8'
+bot_version = '2.2.8 R1'
 
 #Booting text
 print('Please wait warmly...')
@@ -215,6 +215,13 @@ async def on_command_error(ctx, error):
         #await ctx.send(embed=em)
         await ctx.send(error)
         return
+
+    if isinstance(error, commands.CommandOnCooldown):
+        #em = discord.Embed(title='Error', description = error, colour=0xc91616)
+        #em.set_author(icon_url=bot.user.avatar_url)
+        #await ctx.send(embed=em)
+        await ctx.send(error)
+        return
     #user failed check
     if isinstance(error, commands.CheckFailure):
     #note to self: fix this when adding hangout commands       
@@ -362,7 +369,9 @@ def strip_non_ascii(string):
     stripped = (c for c in string if 0 < ord(c) < 127)
     return ''.join(stripped)
 
+
 @bot.command()
+@commands.cooldown(2, 60, commands.BucketType.default)
 @is_owner()
 async def asciitest(ctx, *, args):
     asciitext = strip_non_ascii(args)
@@ -373,6 +382,7 @@ async def asciitest(ctx, *, args):
     
 
 @bot.command()
+@commands.cooldown(2, 60, commands.BucketType.default)
 async def sendtweet(ctx, *, args):
     #convert text to ascii
     asciitext = strip_non_ascii(args)
