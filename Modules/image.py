@@ -57,10 +57,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xb50404)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)  
 					
 					
@@ -84,10 +95,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xf5e942)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -111,10 +133,25 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
+                    
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -139,6 +176,9 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     msg2 = pic['change']
                     em = discord.Embed(title='', description='' + source, colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
@@ -171,10 +211,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xc7c7c7)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
                     
     @commands.command()
@@ -197,10 +248,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x00e5ff)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -224,10 +286,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x04b548)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -251,10 +324,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xb50404)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -278,10 +362,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xf5da42)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -306,10 +401,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)                    
 
 					
@@ -335,10 +441,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)					
 
 					
@@ -364,10 +481,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)					
 
 
@@ -393,10 +521,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)                    
 
 					
@@ -422,10 +561,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -450,10 +600,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)					
 
 
@@ -479,10 +640,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 					
@@ -507,10 +679,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x04b548)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 					
@@ -535,10 +718,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -563,10 +757,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -591,10 +796,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -619,10 +835,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xb50480)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -647,10 +874,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -675,10 +913,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -703,10 +952,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x048cb5)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -731,10 +991,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -759,10 +1030,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -787,10 +1069,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x990000)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -815,10 +1108,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -843,10 +1147,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -871,10 +1186,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -899,10 +1225,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 					
 					
@@ -927,10 +1264,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -955,10 +1303,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -983,10 +1342,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
     @commands.command()
@@ -1009,6 +1379,9 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='ǝƃɐɯI ɹǝʇɔɐɹɐɥƆ')
@@ -1037,10 +1410,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1065,10 +1449,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1093,10 +1488,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1121,10 +1527,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1149,10 +1566,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x000000)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1177,10 +1605,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1205,10 +1644,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1233,10 +1683,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1261,10 +1722,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1289,10 +1761,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1317,10 +1800,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xff40d9)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1345,10 +1839,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1373,10 +1878,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1401,10 +1917,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1429,10 +1956,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x009917)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1457,10 +1995,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xc646e0)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1485,10 +2034,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x79eb50)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1513,10 +2073,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x62f500)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1541,10 +2112,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xf50000)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1569,10 +2151,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xa700f5)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1597,10 +2190,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1625,10 +2229,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)                    
 
 
@@ -1653,10 +2268,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1681,10 +2307,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1709,10 +2346,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xf94aff)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1738,10 +2386,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x2291ba)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1767,10 +2426,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x2291ba)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)                    
 
 
@@ -1796,10 +2466,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1824,10 +2505,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xfd8cff)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1851,10 +2543,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1879,10 +2582,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1907,10 +2621,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x24b343)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1935,10 +2660,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1963,10 +2699,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -1991,10 +2738,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x24b343)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2019,10 +2777,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2047,10 +2816,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2075,10 +2855,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2103,10 +2894,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2131,10 +2933,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2159,10 +2972,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2187,10 +3011,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2215,10 +3050,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2243,10 +3089,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2271,10 +3128,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2299,10 +3167,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2327,10 +3206,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2355,10 +3245,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2383,10 +3284,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2411,10 +3323,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2439,10 +3362,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2467,10 +3401,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2495,10 +3440,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2523,10 +3479,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2551,10 +3518,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2579,10 +3557,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2607,10 +3596,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 					
@@ -2635,10 +3635,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2663,10 +3674,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 					
@@ -2691,10 +3713,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2719,10 +3752,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2747,10 +3791,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2775,10 +3830,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2803,10 +3869,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2831,10 +3908,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2859,10 +3947,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xef61ff)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2887,10 +3986,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2915,10 +4025,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2943,10 +4064,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2971,10 +4103,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -2999,10 +4142,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -3027,10 +4181,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -3055,10 +4220,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -3083,10 +4259,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -3111,10 +4298,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -3139,10 +4337,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -3167,10 +4376,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -3195,10 +4415,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)                    
 
 
@@ -3223,10 +4454,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -3251,6 +4493,9 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Moko Image')
@@ -3279,6 +4524,9 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='GIF Image')
@@ -3307,6 +4555,9 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='GIF Image')
@@ -3336,10 +4587,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -3365,10 +4627,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -3394,10 +4667,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -3423,10 +4707,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)                    
 
 
@@ -3455,10 +4750,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -3483,10 +4789,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x14a625)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -3511,10 +4828,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xf5da42)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -3539,10 +4867,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x88008c)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -3567,10 +4906,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x8c0000)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)                    
 
 #oj_img
@@ -3595,10 +4945,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 					
 					
@@ -3623,10 +4984,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)
 
 
@@ -3651,10 +5023,21 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0,99)]
                     msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
+                    if 'ehentai.org' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'img-original' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    if 'pbs.twimg.com' in sbooru_sauce:
+                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    else:
+                        em.set_footer(text="Image Source: " + sbooru_sauce)    
                     await ctx.send(embed=em)					
 
 					
