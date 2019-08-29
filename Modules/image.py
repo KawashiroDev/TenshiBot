@@ -64,14 +64,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)  
 					
 					
@@ -102,14 +95,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -144,14 +130,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -218,14 +197,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
                     
     @commands.command()
@@ -255,14 +227,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -293,14 +258,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -331,14 +289,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -369,14 +320,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -408,14 +352,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)                    
 
 					
@@ -448,14 +385,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)					
 
 					
@@ -488,14 +418,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)					
 
 
@@ -528,14 +451,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)                    
 
 					
@@ -568,14 +484,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -607,14 +516,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)					
 
 
@@ -647,14 +549,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 					
@@ -686,14 +581,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 					
@@ -725,14 +613,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -764,14 +645,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -803,14 +677,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -842,14 +709,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -881,14 +741,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -920,14 +773,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -959,14 +805,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -998,14 +837,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1037,14 +869,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1076,14 +901,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1115,14 +933,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1154,14 +965,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1193,14 +997,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1232,14 +1029,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 					
 					
@@ -1271,14 +1061,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1310,14 +1093,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1349,14 +1125,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
     @commands.command()
@@ -1417,14 +1186,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1456,14 +1218,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1495,14 +1250,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1534,14 +1282,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1573,14 +1314,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1612,14 +1346,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1651,14 +1378,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1690,14 +1410,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1729,14 +1442,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1768,14 +1474,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1807,14 +1506,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1846,14 +1538,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1885,14 +1570,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1924,14 +1602,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -1963,14 +1634,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2002,14 +1666,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2041,14 +1698,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2080,14 +1730,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2119,14 +1762,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2158,14 +1794,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2197,14 +1826,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2236,14 +1858,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)                    
 
 
@@ -2275,14 +1890,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2314,14 +1922,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2353,14 +1954,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2393,14 +1987,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2433,14 +2020,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)                    
 
 
@@ -2473,14 +2053,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2512,14 +2085,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2550,14 +2116,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2589,14 +2148,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2628,14 +2180,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2667,14 +2212,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2706,14 +2244,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2745,14 +2276,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2784,14 +2308,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2823,14 +2340,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2862,14 +2372,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2901,14 +2404,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2940,14 +2436,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -2979,14 +2468,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3018,14 +2500,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3057,14 +2532,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3096,14 +2564,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3135,14 +2596,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3174,14 +2628,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3213,14 +2660,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3252,14 +2692,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3291,14 +2724,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3330,14 +2756,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3369,14 +2788,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3408,14 +2820,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3447,14 +2852,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3486,14 +2884,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3525,14 +2916,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3564,14 +2948,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3603,14 +2980,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 					
@@ -3642,14 +3012,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3681,14 +3044,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 					
@@ -3720,14 +3076,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3759,14 +3108,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3798,14 +3140,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3837,14 +3172,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3876,14 +3204,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3915,14 +3236,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3954,14 +3268,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -3993,14 +3300,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4032,14 +3332,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4071,14 +3364,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4110,14 +3396,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4149,14 +3428,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4188,14 +3460,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4227,14 +3492,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4266,14 +3524,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4305,14 +3556,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4344,14 +3588,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4383,14 +3620,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4422,14 +3652,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)                    
 
 
@@ -4461,14 +3684,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4500,6 +3716,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Moko Image')
                     em.set_image(url=booruappend + msg)
+                    em.set_footer(text="Image Artist: Shangguan Feiying")
                     await ctx.send(embed=em)
 
 
@@ -4531,6 +3748,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='GIF Image')
                     em.set_image(url=booruappend + msg)
+                    em.set_footer(text="GIF Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
                     await ctx.send(embed=em)
 
 
@@ -4594,14 +3812,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4634,14 +3845,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4674,14 +3878,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4714,14 +3911,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)                    
 
 
@@ -4757,14 +3947,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4796,14 +3979,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4835,14 +4011,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4874,14 +4043,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -4913,14 +4075,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)                    
 
 #oj_img
@@ -4952,14 +4107,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 					
 					
@@ -4991,14 +4139,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)
 
 
@@ -5030,14 +4171,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    if 'ehentai.org' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'img-original' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    if 'pbs.twimg.com' in sbooru_sauce:
-                        em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
-                    else:
-                        em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     await ctx.send(embed=em)					
 
 					
