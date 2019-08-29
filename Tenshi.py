@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.2.8 R1'
+bot_version = '2.2.8 R2'
 
 #Booting text
 print('Please wait warmly...')
@@ -354,10 +354,10 @@ async def help(ctx):
     help_cmd = hlp.read()
     await ctx.send(help_cmd)        
 
-@bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
-    await bot.send_typing(channel)
+#@bot.command()
+#async def ping(ctx):
+#    await ctx.send('pong')
+#    await bot.send_typing(channel)
 
 @bot.command()
 async def kofi(ctx):
