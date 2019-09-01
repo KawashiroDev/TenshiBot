@@ -401,7 +401,7 @@ async def sendtweet(ctx, *, args):
         else:
             em = discord.Embed(title='Are you sure you want to tweet this?', description = asciitext, colour=0x6aeb7b)
             em.set_author(name='KawashiroLink Subsystem' , icon_url=bot.user.avatar_url)
-            #em.set_footer(text="Follow me @HinanawiBot")
+            em.set_footer(text="Follow me @HinanawiBot")
             tweetconfirm = await ctx.send(embed=em)
         #tweetconfirm = await ctx.send('Are you sure you want to tweet this?')
         #add tick and X reactions for user to react to
@@ -435,6 +435,7 @@ async def sendtweet(ctx, *, args):
         else:
             em = discord.Embed(title='Are you sure you want to tweet this?', description = asciitext, colour=0x6aeb7b)
             em.set_author(name='KawashiroLink Subsystem' , icon_url=bot.user.avatar_url)
+            em.set_footer(text="Follow me @HinanawiBot")
             tweetconfirm = await ctx.send(embed=em)
         #tweetconfirm = await ctx.send('Are you sure you want to tweet this?')
         #add tick and X reactions for user to react to
@@ -465,6 +466,7 @@ async def sendtweet(ctx, *, args):
         
         em = discord.Embed(title='Are you sure you want to tweet this?', description = asciitext, colour=0x6aeb7b)
         em.set_author(name='KawashiroLink Subsystem' , icon_url=bot.user.avatar_url)
+        em.set_footer(text="Follow me @HinanawiBot")
         tweetconfirm = await ctx.send(embed=em)
         #tweetconfirm = await ctx.send('Are you sure you want to tweet this?')
         #add tick and X reactions for user to react to
