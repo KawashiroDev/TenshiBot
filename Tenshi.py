@@ -494,9 +494,34 @@ async def sendtweet(ctx, *, args):
 
 @bot.command()
 @is_owner()
-async def sendtweet2(ctx, *, args):
-    api.PostUpdate(args)
-    await ctx.send('posted')
+async def posttweet(ctx, *, args):
+        em = discord.Embed(title='Are you sure you want to tweet this?', description = args, colour=0x6aeb7b)
+        em.set_author(name='KawashiroLink (Admin Mode)' , icon_url=bot.user.avatar_url)
+        tweetconfirm = await ctx.send(embed=em)
+        #tweetconfirm = await ctx.send('Are you sure you want to tweet this?')
+        #add tick and X reactions for user to react to
+        await tweetconfirm.add_reaction('\U00002705')
+        await tweetconfirm.add_reaction('\U0000274e')
+
+        def ays_tweet(reaction, user):
+            return (user == ctx.author and str(reaction.emoji) == '\U00002705') or (user == ctx.author and str(reaction.emoji) == '\U0000274e')
+                                   
+        try:
+            reaction, user = await bot.wait_for('reaction_add', timeout=30, check=ays_tweet)
+        except asyncio.TimeoutError:
+            await ctx.send('Error: Timed out waiting for user response')
+            return
+        else:
+            if ((reaction.emoji) == '\U00002705') and reaction.message.id == tweetconfirm.id:
+                #Profanity check tweet and add username before sending
+                finaltweet = ('[' + ctx.author.name + '] ' + args)
+                api.PostUpdate(finaltweet)
+                print('[tweet] "' + finaltweet + '" User ID: :' + str(ctx.author.id))
+                await ctx.send('Tweet Posted')
+                return
+            elif ((reaction.emoji) == '\U0000274e'):
+                await ctx.send('Operation canceled')
+                return
 
 @bot.command()
 @is_owner()
