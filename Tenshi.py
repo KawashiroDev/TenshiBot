@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.2.8 R2'
+bot_version = '2.2.9'
 
 #Booting text
 print('Please wait warmly...')
@@ -827,7 +827,7 @@ async def about(ctx):
     week, day = divmod(day, 7)
 
     em = discord.Embed(title='Currently on ' + str(len(bot.guilds)) + ' servers', description='Uptime= %d weeks,' % (week) + ' %d days,' % (day) + ' %d hours,' % (hour) + ' %d minutes,' % (minute) + ' and %d seconds.' % (second) + '\n Created by 99710', colour=0x00ffff)
-    em.set_author(name='TenshiBot ' + bot_version , icon_url=bot.user.avatar_url)
+    em.set_author(name= bot.user.name + ' ' + bot_version , icon_url=bot.user.avatar_url)
     await ctx.send(embed=em)
 
 @bot.command()
