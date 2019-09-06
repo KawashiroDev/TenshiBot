@@ -99,7 +99,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -204,7 +204,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -313,7 +313,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -424,7 +424,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -568,7 +568,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -672,7 +672,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -777,7 +777,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -882,7 +882,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -987,7 +987,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -1093,7 +1093,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -1200,7 +1200,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -1307,7 +1307,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -1414,7 +1414,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -1521,7 +1521,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -1627,7 +1627,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -1734,7 +1734,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -1840,7 +1840,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -1946,7 +1946,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -2052,7 +2052,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -2158,7 +2158,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -2264,7 +2264,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -2370,7 +2370,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -2476,7 +2476,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -2582,7 +2582,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -2688,7 +2688,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -2794,7 +2794,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -2900,7 +2900,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -3006,7 +3006,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -3112,7 +3112,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -3218,7 +3218,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -3324,7 +3324,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -3430,7 +3430,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -3536,7 +3536,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -3642,7 +3642,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -3745,7 +3745,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -3851,7 +3851,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -3957,7 +3957,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -4063,7 +4063,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -4169,7 +4169,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -4275,7 +4275,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -4381,7 +4381,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -4487,7 +4487,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -4593,7 +4593,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -4699,7 +4699,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -4805,7 +4805,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -4911,7 +4911,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -5017,7 +5017,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -5123,7 +5123,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -5229,7 +5229,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -5335,7 +5335,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -5441,7 +5441,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -5547,7 +5547,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -5653,7 +5653,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -5759,7 +5759,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -5865,7 +5865,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -5971,7 +5971,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -6077,7 +6077,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -6183,7 +6183,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -6289,7 +6289,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -6395,7 +6395,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -6502,7 +6502,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -6609,7 +6609,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -6716,7 +6716,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -6822,7 +6822,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -6927,7 +6927,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -7033,7 +7033,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -7139,7 +7139,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -7245,7 +7245,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -7351,7 +7351,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -7457,7 +7457,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -7563,7 +7563,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -7669,7 +7669,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -7775,7 +7775,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -7881,7 +7881,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -7987,7 +7987,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -8093,7 +8093,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -8199,7 +8199,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -8305,7 +8305,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -8411,7 +8411,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -8517,7 +8517,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -8623,7 +8623,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -8729,7 +8729,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -8835,7 +8835,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -8941,7 +8941,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -9047,7 +9047,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -9153,7 +9153,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -9259,7 +9259,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -9365,7 +9365,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -9471,7 +9471,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -9577,7 +9577,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -9683,7 +9683,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -9789,7 +9789,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -9895,7 +9895,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -10001,7 +10001,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -10107,7 +10107,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -10213,7 +10213,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -10319,7 +10319,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -10425,7 +10425,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -10531,7 +10531,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -10637,7 +10637,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -10743,7 +10743,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -10849,7 +10849,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -10955,7 +10955,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -11061,7 +11061,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -11167,7 +11167,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -11273,7 +11273,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -11379,7 +11379,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -11485,7 +11485,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -11591,7 +11591,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -11697,7 +11697,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -11803,7 +11803,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -11909,7 +11909,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -12015,7 +12015,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -12121,7 +12121,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -12227,7 +12227,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -12333,7 +12333,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -12438,7 +12438,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -12545,7 +12545,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -12652,7 +12652,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -12759,7 +12759,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -12866,7 +12866,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -12976,7 +12976,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -13082,7 +13082,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -13188,7 +13188,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -13294,7 +13294,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -13400,7 +13400,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -13506,7 +13506,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -13612,7 +13612,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
@@ -13718,7 +13718,7 @@ class ImageCog(commands.Cog):
                         return
                     else:
                         #pin
-                        if ((reaction.emoji) == '\U0001F4CC') and reaction.message.id == sbooru_img.id:
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
                             em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
                             #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
                             pinconfirm = await ctx.send(embed=em)
