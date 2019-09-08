@@ -662,7 +662,7 @@ async def setname(ctx, *, args):
 @bot.command()
 @is_owner()  
 async def setnick(ctx, *, args):
-    await bot.user.edit(nickname= args)
+    await ctx.guild.me.edit(nick = args)
     await ctx.send("nickname set to " + "`" + args + "`")
 
 #has to point to a png file
