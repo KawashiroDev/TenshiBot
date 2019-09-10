@@ -20,6 +20,13 @@ boorublacklist_nsfw = '-loli+-lolicon+-shota+-shotacon'
 #appends text to the start of booru url output, gelbooru doesn't use this
 booruappend = ''
 
+#ratelimiting options
+#number of commands which can be ran in timeframe
+rlimit_cmd = 5
+#timeframe (seconds)
+rlimit_time = 10
+#
+
 import discord
 import aiohttp
 import praw
@@ -38,6 +45,7 @@ class booruCog(commands.Cog):
 
 
     @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def safebooru(self, ctx, *, tags):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=+' + tags) as r:
@@ -66,7 +74,8 @@ class booruCog(commands.Cog):
                         em.set_author(name='Booru image')
                         em.set_image(url=booruappend + msg)
                         await ctx.send(embed=em)
-                        return
+                        return 
+                    
                 else:
                     msg = 'Safebooru is unavailable at this time'
                     await ctx.send(msg)
@@ -75,6 +84,7 @@ class booruCog(commands.Cog):
 				
 #This command requires the channel to be marked as a NSFW channel to work, this should prevent people abusing it
     @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def gelbooru(self, ctx, *, tags):
         if ctx.channel.is_nsfw():
             async with aiohttp.ClientSession() as session:
