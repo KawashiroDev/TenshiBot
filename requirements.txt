@@ -8,3 +8,4 @@ lxml
 saucenaopy
 python-twitter
 profanityfilter
+urlextract
