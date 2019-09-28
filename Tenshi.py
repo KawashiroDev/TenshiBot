@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.3.0'
+bot_version = '2.3.0 R1'
 
 #Booting text
 print('Please wait warmly...')
@@ -118,6 +118,12 @@ shuffle_test = [
 "avatars/test/4.png",
 ]
 
+playingstatus = [
+"TenshiBot",
+"with Iku",
+"with the weather",
+]
+
 
 #Disable sharding and = prefix if in debug mode
 #if you want to have the bot run as normal on a windows machine then change the windows folder check to a non existent folder
@@ -125,6 +131,7 @@ if (os.path.isdir(win_dir_check)) == True:
     bot = commands.Bot(command_prefix=commands.when_mentioned, case_insensitive=True)
 else:
     bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or('='), case_insensitive=True, shard_count=4)
+    
 #bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned, case_insensitive=True)
 #removes the built in help command, we don't need it
 bot.remove_command("help")
@@ -199,10 +206,12 @@ async def on_ready():
     payload = {"server_count"  : str(len(bot.guilds))}
     async with aiohttp.ClientSession() as aioclient:
         await aioclient.post(url, data=payload, headers=headers)
-    await bot.change_presence(activity=discord.Game(name="Startup Complete"))
-    await asyncio.sleep(7)
+    await bot.change_presence(activity=discord.Game(name="TB [" + bot_version + "]"))
+    await asyncio.sleep(15)
+    await bot.change_presence(activity=discord.Game(name="Startup complete"))
+    await asyncio.sleep(5)
     #await bot.change_presence(activity=discord.Streaming(name="TenshiBot", url='https://twitch.tv/99710'))
-    await bot.change_presence(activity=discord.Game(name="TenshiBot"))
+    await bot.change_presence(activity=discord.Game(name=random.choice(playingstatus)))
 
     
 #error event code
@@ -366,6 +375,25 @@ async def help(ctx):
 @bot.command()
 async def kofi(ctx):
     await ctx.send('https://ko-fi.com/h99710')
+
+@bot.command()
+@commands.cooldown(1, 90, commands.BucketType.default)
+async def techno(ctx):
+    await ctx.send("***TECHNO TECHNO TECHNO***")
+    await asyncio.sleep(0.9)
+    await ctx.send("*** TECHNO TECHNO TECHNO***")
+    await asyncio.sleep(0.9)
+    await ctx.send("***  TECHNO TECHNO TECHNO***")
+    await asyncio.sleep(0.9)
+    await ctx.send(">Don't touch the keyboard<")
+    await asyncio.sleep(0.9)
+    await ctx.send("***   TECHNO TECHNO TECHNO***")
+    await asyncio.sleep(0.9)
+    await ctx.send("***    TECHNO TECHNO TECHNO***")
+    await asyncio.sleep(0.9)
+    await ctx.send("***     TECHNO TECHNO TECHNO***")
+    await asyncio.sleep(0.9)
+    await ctx.send(file=discord.File('pics/techno.png'))
 
 
 def strip_non_ascii(string):
