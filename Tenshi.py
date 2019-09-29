@@ -395,6 +395,10 @@ async def techno(ctx):
     await asyncio.sleep(0.9)
     await ctx.send(file=discord.File('pics/techno.png'))
 
+@bot.command()
+async def honk(ctx):
+    await ctx.send(file=discord.File("pics/honk/" + random.choice(os.listdir("pics/honk"))))    
+
 
 def strip_non_ascii(string):
     ''' Returns the string without non ASCII characters'''
