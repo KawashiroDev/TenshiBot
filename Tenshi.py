@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.3.0 R1'
+bot_version = '2.3.0 R2'
 
 #Booting text
 print('Please wait warmly...')
@@ -405,6 +405,9 @@ def strip_non_ascii(string):
     stripped = (c for c in string if 0 < ord(c) < 127)
     return ''.join(stripped)
 
+@bot.command()
+async def dumpserverid(ctx):
+    await ctx.send(ctx.guild.id)
 
 @bot.command()
 @commands.cooldown(2, 60, commands.BucketType.default)
@@ -432,6 +435,9 @@ async def sendtweet(ctx, *, args):
     #link check
     if extractor.has_urls(asciitext):
         await ctx.send('Error: URL is unsupported')
+        return
+    if int(ctx.guild.id) == int("162861213309599744"):
+        await ctx.send('Error: Please use 1CCBot here')
         return
 
     else:
