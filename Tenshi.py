@@ -52,12 +52,12 @@ from profanityfilter import ProfanityFilter
 if (os.path.isdir(win_dir_check)) == True:
     print('[Startup] Detected a windows PC, running in debug mode')
     bot_mode = 'Debug'
-    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.debug']
+    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.debug']
     print('[Debug] /Modules/debug.py loaded')
 else:
     print('[Startup] Running in production mode')
     bot_mode = 'Production'
-    initial_extensions = ['Modules.image', 'Modules.booru']
+    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter']
 
 test = "test"
 
@@ -399,129 +399,9 @@ async def techno(ctx):
 async def honk(ctx):
     await ctx.send(file=discord.File("pics/honk/" + random.choice(os.listdir("pics/honk"))))    
 
-
-def strip_non_ascii(string):
-    ''' Returns the string without non ASCII characters'''
-    stripped = (c for c in string if 0 < ord(c) < 127)
-    return ''.join(stripped)
-
 @bot.command()
 async def dumpserverid(ctx):
     await ctx.send(ctx.guild.id)
-
-@bot.command()
-@commands.cooldown(2, 60, commands.BucketType.default)
-@is_owner()
-async def asciitest(ctx, *, args):
-    asciitext = strip_non_ascii(args)
-    if asciitext == '':
-        await ctx.send('invalid char')
-    else:
-        await ctx.send(asciitext)
-    
-
-@bot.command()
-@commands.cooldown(2, 60, commands.BucketType.default)
-async def sendtweet(ctx, *, args):
-    #convert text to ascii
-    asciitext = strip_non_ascii(args)
-    asciiusername = strip_non_ascii(ctx.author.name)
-    if asciitext == '':
-        await ctx.send('Error: Tweet contains no alphanumeric characters')
-    #check username for profanity
-    if pf.is_profane(asciiusername) == True:
-        await ctx.send('Error: Your Discord username is unsupported')
-        return
-    #link check
-    if extractor.has_urls(asciitext):
-        await ctx.send('Error: URL is unsupported')
-        return
-    if int(ctx.guild.id) == int("162861213309599744"):
-        await ctx.send('Error: Please use 1CCBot here')
-        return
-
-    else:
-            em = discord.Embed(title='Are you sure you want to tweet this?', description = asciitext, colour=0x6aeb7b)
-            em.set_author(name='KawashiroLink Subsystem' , icon_url=bot.user.avatar_url)
-            em.set_footer(text="Follow me @HinanawiBot")
-            tweetconfirm = await ctx.send(embed=em)
-        #tweetconfirm = await ctx.send('Are you sure you want to tweet this?')
-        #add tick and X reactions for user to react to
-            await tweetconfirm.add_reaction('\U00002705')
-            await tweetconfirm.add_reaction('\U0000274e')
-
-            def ays_tweet(reaction, user):
-                return (user == ctx.author and str(reaction.emoji) == '\U00002705') or (user == ctx.author and str(reaction.emoji) == '\U0000274e')
-                                   
-            try:
-                reaction, user = await bot.wait_for('reaction_add', timeout=30, check=ays_tweet)
-            except asyncio.TimeoutError:
-                await ctx.send('Error: Timed out waiting for user response')
-                return
-            else:
-                if ((reaction.emoji) == '\U00002705') and reaction.message.id == tweetconfirm.id:
-                    #Profanity check tweet and add username before sending
-                    finaltweet = ('[' + ctx.author.name + '] ' + pf.censor(asciitext))
-                    api.PostUpdate(finaltweet)
-                    print('[tweet] "' + finaltweet + '" User ID: :' + str(ctx.author.id))
-                    await ctx.send('Tweet Posted')
-                    return
-                elif ((reaction.emoji) == '\U0000274e'):
-                    await ctx.send('Operation canceled')
-                    return
-
-
-@bot.command()
-@is_owner()
-async def posttweet(ctx, *, args):
-        em = discord.Embed(title='Are you sure you want to tweet this?', description = args, colour=0x6aeb7b)
-        em.set_author(name='KawashiroLink (Admin Mode)' , icon_url=bot.user.avatar_url)
-        tweetconfirm = await ctx.send(embed=em)
-        #tweetconfirm = await ctx.send('Are you sure you want to tweet this?')
-        #add tick and X reactions for user to react to
-        await tweetconfirm.add_reaction('\U00002705')
-        await tweetconfirm.add_reaction('\U0000274e')
-
-        def ays_tweet(reaction, user):
-            return (user == ctx.author and str(reaction.emoji) == '\U00002705') or (user == ctx.author and str(reaction.emoji) == '\U0000274e')
-                                   
-        try:
-            reaction, user = await bot.wait_for('reaction_add', timeout=30, check=ays_tweet)
-        except asyncio.TimeoutError:
-            await ctx.send('Error: Timed out waiting for user response')
-            return
-        else:
-            if ((reaction.emoji) == '\U00002705') and reaction.message.id == tweetconfirm.id:
-                #Profanity check tweet and add username before sending
-                finaltweet = ('[' + ctx.author.name + '] ' + args)
-                api.PostUpdate(finaltweet)
-                print('[tweet] "' + finaltweet + '" User ID: :' + str(ctx.author.id))
-                await ctx.send('Tweet Posted')
-                return
-            elif ((reaction.emoji) == '\U0000274e'):
-                await ctx.send('Operation canceled')
-                return
-
-@bot.command()
-@is_owner()
-async def dumptwitterinfo(ctx):
-    await ctx.send(api.VerifyCredentials())
-
-@bot.command()
-@is_owner()
-async def censortest(ctx, *, args):
-    await ctx.send(pf.censor(args))
-
-@bot.command()
-@is_owner()
-async def censortestascii(ctx, *, args):
-    asciitext = strip_non_ascii(args)
-    await ctx.send(pf.censor(asciitext))    
-
-@bot.command()
-@is_owner()
-async def extendedcensortest(ctx, *, args):
-    await ctx.send(pf_extended.censor(args))    
 
 @bot.command()
 async def nestedreacttest(ctx):
