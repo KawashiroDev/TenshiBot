@@ -12,7 +12,7 @@
 <p>Add Tenshi to your server https://discordapp.com/oauth2/authorize?client_id=252442396879486976&scope=bot&permissions=67161152</p>
 <p>Tenshi uses @TenshiBot and = as command prefixes</p>
 
-<h2>Like Tenshi? vote for her on DBL</h2>
+<h2>If you enjoy using Tenshi vote for her on DBL</h2>
 
 <a href="https://discordbots.org/bot/252442396879486976" >
   <img src="https://discordbots.org/api/widget/252442396879486976.svg" alt="TenshiBot" />
