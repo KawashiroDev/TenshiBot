@@ -1,0 +1,4 @@
+Server id's in this file will have Tenshi warn the user if a danbooru image contains an unsafe tag
+id - name
+486699197131915264 Touhou Project lovers
+273086604866748426 TenshiBot Hangout (testing only)
