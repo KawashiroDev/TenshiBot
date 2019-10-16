@@ -20,6 +20,20 @@ boorublacklist_nsfw = '-loli+-lolicon+-shota+-shotacon'
 #appends text to the start of booru url output, gelbooru doesn't use this
 booruappend = ''
 
+#unsafe tags
+unsafetags = [
+"underwear",
+"sideboob",
+"pov_feet",
+"underboob",
+"upskirt",
+"sexually_suggestive",
+"ass",
+"bikini",
+"bdsm",
+"lovestruck",
+]
+
 #ratelimiting options
 #number of commands which can be ran in timeframe
 rlimit_cmd = 5
@@ -36,6 +50,9 @@ import asyncio
 
 from discord.ext import commands
 from bs4 import BeautifulSoup
+
+wou = open("txt/warn_on_unsafe.txt", "r")
+safeservers = wou.read()
 
 
 class booruCog(commands.Cog):
@@ -70,11 +87,30 @@ class booruCog(commands.Cog):
                         else:
                             pic = p[random.randint(0,99)]
                         msg = pic['file_url']
+                        sbooru_tags = pic['tags']
                         em = discord.Embed(title='', description='', colour=0x42D4F4)
                         em.set_author(name='Booru image')
                         em.set_image(url=booruappend + msg)
-                        await ctx.send(embed=em)
-                        return 
+                        
+                        if str(ctx.guild.id) in safeservers and any(c in sbooru_tags for c in unsafetags):
+                                    unsafeimg = await ctx.send("This image may not be safe to view in public, React to view")
+                                    await unsafeimg.add_reaction('\U0001f351')
+                                    def check(reaction, user):
+                                        return (str(reaction.emoji) == '\U0001f351')
+                                   
+                                    try:
+                                        reaction, user = await self.bot.wait_for('reaction_add', timeout=30, check=check)
+                                    except asyncio.TimeoutError:
+                                        return
+                                    else:
+                                        if ((reaction.emoji) == '\U0001f351') and reaction.message.id == unsafeimg.id:
+                                            em.set_footer(text="test")
+                                            await ctx.send(embed=em)
+                                            return
+                        else:
+                            await ctx.send(embed=em)
+                            print (str(unsafetags))
+                            print (sbooru_tags)
                     
                 else:
                     msg = 'Safebooru is unavailable at this time'
