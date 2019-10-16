@@ -109,8 +109,8 @@ class booruCog(commands.Cog):
                                             return
                         else:
                             await ctx.send(embed=em)
-                            print (str(unsafetags))
-                            print (sbooru_tags)
+                            #print (str(unsafetags))
+                            #print (sbooru_tags)
                     
                 else:
                     msg = 'Safebooru is unavailable at this time'
