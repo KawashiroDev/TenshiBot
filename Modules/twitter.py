@@ -4,7 +4,7 @@
 #number of commands which can be ran in timeframe
 rlimit_cmd = 2
 #timeframe (seconds)
-rlimit_time = 60
+rlimit_time = 120
 #
 
 import discord
@@ -38,6 +38,7 @@ access_token_secret=tw_access_secret)
 extractor = URLExtract()
 
 pf = ProfanityFilter()
+pf_extended = ProfanityFilter(extra_censor_list=["@"])
 
 user_blacklist = open("txt/badactors.txt", "r")
 badactors = user_blacklist.read()
@@ -63,6 +64,8 @@ class twitterCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def sendtweet(self, ctx, *, args):
+        userid = str(ctx.author.id)
+        
         #convert text to ascii
         asciitext = strip_non_ascii(args)
         asciiusername = strip_non_ascii(ctx.author.name)
@@ -75,6 +78,9 @@ class twitterCog(commands.Cog):
         #link check
         if extractor.has_urls(asciitext):
             await ctx.send('Error: URL is unsupported')
+            return
+        if "@" in asciitext:
+            await ctx.send('Error: Invalid tweet')
             return
         if int(ctx.guild.id) == int("162861213309599744"):
             await ctx.send('Error: Please use 1CCBot here')
@@ -108,6 +114,9 @@ class twitterCog(commands.Cog):
                     api.PostUpdate(finaltweet)
                     print('[tweet] "' + finaltweet + '" User ID: :' + str(ctx.author.id))
                     await ctx.send('Tweet Posted')
+                    #DM me about the tweet if i need to go delete it
+                    yuyuko = self.bot.get_user(166189271244472320)
+                    await yuyuko.send("**--A tweet was sent--** \nContents: " + finaltweet + "\nUnfiltered contents: " + asciitext + "\nUser ID: " + userid)
                     return
                 elif ((reaction.emoji) == '\U0000274e'):
                     await ctx.send('Operation canceled')
@@ -116,7 +125,7 @@ class twitterCog(commands.Cog):
 
     @commands.command()
     @is_owner()
-    async def posttweet(ctx, *, args):
+    async def posttweet(self, ctx, *, args):
         em = discord.Embed(title='Are you sure you want to tweet this?', description = args, colour=0x6aeb7b)
         em.set_author(name='KawashiroLink (Admin Mode)' , icon_url=self.bot.user.avatar_url)
         tweetconfirm = await ctx.send(embed=em)
