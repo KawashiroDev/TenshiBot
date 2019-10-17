@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.3.1 R1'
+bot_version = '2.3.1 R2'
 
 #Booting text
 print('Please wait warmly...')
@@ -371,6 +371,12 @@ async def help(ctx):
 #async def ping(ctx):
 #    await ctx.send('pong')
 #    await bot.send_typing(channel)
+
+@bot.command()
+async def dmtest(ctx):
+    yuyuko = bot.get_user(166189271244472320)
+    await yuyuko.send("Yo!")
+    return
 
 @bot.command()
 async def kofi(ctx):
