@@ -13,7 +13,7 @@ boorurating = 'safe'
 #results which have these tags won't be shown in the touhou commands
 #does not affect the safebooru command
 #huge filesize is blacklisted to help fix some images not embedding
-boorublacklist = '-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini+-6%2Bgirls+-comic+-greyscale+-bdsm+-huge_filesize+-lovestruck+-absurdres+-artificial_vagina+-swimsuit+-covering_breasts'
+boorublacklist = '-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini+-6%2Bgirls+-comic+-greyscale+-bdsm+-huge_filesize+-lovestruck+-absurdres+-artificial_vagina+-swimsuit+-covering_breasts+-huge_breasts'
 
 #append text to the start of booru url output
 #change this if the bot is sending malformed booru urls
@@ -22,7 +22,7 @@ booruappend = ''
 
 #ratelimiting options
 #number of commands which can be ran in timeframe
-rlimit_cmd = 4
+rlimit_cmd = 5
 #timeframe (seconds)
 rlimit_time = 10
 #
