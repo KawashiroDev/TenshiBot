@@ -95,6 +95,7 @@ class booruCog(commands.Cog):
                         if str(ctx.guild.id) in safeservers and any(c in sbooru_tags for c in unsafetags):
                                     unsafeimg = await ctx.send("This image may not be safe to view in public, React to view")
                                     await unsafeimg.add_reaction('\U0001f351')
+                                    await asyncio.sleep(0.7)
                                     def check(reaction, user):
                                         return (str(reaction.emoji) == '\U0001f351')
                                    
