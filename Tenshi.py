@@ -109,6 +109,7 @@ mentioned_nomsg = [
 "♪Freedom is... *invisible*♪",
 "♪*I'll never find the sound of silence*♪",
 "♪*Stay where you are~*♪",
+"♪*Take my hand we drift away♪\n♪To a place beyond the stars♪*",
 ]
 
 shuffle_test = [
