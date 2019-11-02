@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.3.1 R3'
+bot_version = '2.3.2'
 
 #Booting text
 print('Please wait warmly...')
@@ -259,6 +259,8 @@ async def on_command_error(ctx, error):
         #print(str(traceback.print_exc()))
         errormsg = await ctx.send("An error has occured, The dev has been notified")
         #todo: actually put code here that notifies me
+        yuyuko = bot.get_user(166189271244472320)
+        await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`")
 
 #check to see if the user reacts with a peach, if they have then show them detailed error info
         def check(reaction, user):
