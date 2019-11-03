@@ -11559,9 +11559,117 @@ class ImageCog(commands.Cog):
 
 
 
+
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def star(self, ctx):
+        char = 'star_sapphire'
+        async with aiohttp.ClientSession() as session:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+                if r.status == 200:
+                    soup = BeautifulSoup(await r.text(), "lxml")
+                    num = int(soup.find('posts')['count'])
+                    maxpage = int(round(num/100))
+                    page = random.randint(0, maxpage)
+                    t = soup.find('posts')
+                    p = t.find_all('post')
+                    source = ((soup.find('post'))['source'])
+                    if num < 100:
+                        pic = p[random.randint(0,num-1)]
+                    elif page == maxpage:
+                        pic = p[random.randint(0,num%100 - 1)]
+                    else:
+                        pic = p[random.randint(0,99)]
+                    msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
+                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                    em.set_author(name='Character Image')
+                    em.set_image(url=booruappend + msg)
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    sbooru_img = await ctx.send(embed=em)
+
+                    def img_reacts(reaction, user):
+                        #https://weechat.org/files/scripts/emoji_aliases.py
+                        #pin emote, tag emote, bird emote
+                        return (user == ctx.author and str(reaction.emoji) == '\U0001F4CC') or (user == ctx.author and str(reaction.emoji) == '\U0001F3F7') or (user == ctx.author and str(reaction.emoji) == '\U0001F426') or (user == ctx.author and str(reaction.emoji) == '\U0000274c')
+                                   
+                    try:
+                        reaction, user = await self.bot.wait_for('reaction_add', timeout=20, check=img_reacts)
+                    except asyncio.TimeoutError:
+                        #await ctx.send('Error: Timed out waiting for user response')
+                        return
+                    else:
+                        #pin
+                        if ((reaction.emoji) == '\U00001F4CC') and reaction.message.id == sbooru_img.id:
+                            em = discord.Embed(title='Are you sure you want to pin this image?', description = '', colour=0x6aeb7b)
+                            #em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
+                            pinconfirm = await ctx.send(embed=em)
+                            await pinconfirm.add_reaction('\U00002705')
+                            await pinconfirm.add_reaction('\U0000274e')
+                            
+                            def sbooru_pin(reaction, user):
+                                return (user == ctx.author and str(reaction.emoji) == '\U00002705') or (user == ctx.author and str(reaction.emoji) == '\U0000274e')
+                                   
+                            try:
+                                reaction, user = await self.bot.wait_for('reaction_add', timeout=30, check=sbooru_pin)
+                            except asyncio.TimeoutError:
+                                await ctx.send('Error: Timed out waiting for user response')
+                                return
+                            else:
+                                if ((reaction.emoji) == '\U00002705') and reaction.message.id == pinconfirm.id:
+                                    await sbooru_img.pin()
+                                    return
+                                elif ((reaction.emoji) == '\U0000274e'):
+                                    await ctx.send('Operation canceled')
+                                    return
+                            return
+                        #label
+                        if ((reaction.emoji) == '\U0001F3F7') and reaction.message.id == sbooru_img.id:
+                            await ctx.send('```Image Tags:' + sbooru_tags + '```')
+                            return
+                        #bird
+                        if ((reaction.emoji) == '\U0001F426') and reaction.message.id == sbooru_img.id:
+                            em = discord.Embed(title='Are you sure you want to tweet this image?', colour=0x6aeb7b)
+                            em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
+                            em.set_footer(text="Follow me @HinanawiBot")
+                            tweetconfirm = await ctx.send(embed=em)
+                            await tweetconfirm.add_reaction('\U00002705')
+                            await tweetconfirm.add_reaction('\U0000274e')
+                            
+                            def sbooru_tweet(reaction, user):
+                                return (user == ctx.author and str(reaction.emoji) == '\U00002705') or (user == ctx.author and str(reaction.emoji) == '\U0000274e')
+                                   
+                            try:
+                                reaction, user = await self.bot.wait_for('reaction_add', timeout=30, check=sbooru_tweet)
+                            except asyncio.TimeoutError:
+                                await ctx.send('Error: Timed out waiting for user response')
+                                return
+                            else:
+                                if ((reaction.emoji) == '\U00002705') and reaction.message.id == tweetconfirm.id:
+                                    #Profanity check tweet and add username before sending
+                                    finaltweet = ('[' + ctx.author.name + '] https://safebooru.org/index.php?page=post&s=view&id=' + sbooru_id)# + args)
+                                    api.PostUpdate(finaltweet, media=msg)
+                                    print('[tweet] "' + finaltweet + '" User ID: :' + str(ctx.author.id))
+                                    await ctx.send('Tweet Posted')
+                                    return
+                                elif ((reaction.emoji) == '\U0000274e'):
+                                    await ctx.send('Operation canceled')
+                                    return
+                        if ((reaction.emoji) == '\U0000274c') and reaction.message.id == sbooru_img.id:
+                            await sbooru_img.delete()
+                            await ctx.send('(Image deleted by user)')
+                        elif ((reaction.emoji) == '\U0000274e'):
+                            await ctx.send('Operation canceled')
+                            return
+
+
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    async def star2(self, ctx):
         char = 'star_sapphire'
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
