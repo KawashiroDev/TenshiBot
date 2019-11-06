@@ -11559,13 +11559,14 @@ class ImageCog(commands.Cog):
 
 
 
-
+#this command seems to be unreliable
+#switching to gelbooru to try and fix the issue
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def star(self, ctx):
         char = 'star_sapphire'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get('http://' + 'gelbooru.com' + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char + '+rating:safe') as r:
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
@@ -11588,7 +11589,8 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    #source links are disabled because gel has NSFW ads
+                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
