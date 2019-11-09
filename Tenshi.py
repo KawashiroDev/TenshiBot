@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.3.3'
+bot_version = '2.3.3 R1'
 
 #Booting text
 print('Please wait warmly...')
@@ -726,22 +726,28 @@ async def emote(ctx, arg):
 async def say(ctx, *, args):
     if "@everyone" in args:
         await ctx.send("`" + args + "`")
+        return
     if "@here" in args:
-        await ctx.send("`" + args + "`")    
+        await ctx.send("`" + args + "`")
+        return
     else:
-        await ctx.send(args)    
+        await ctx.send(args)
+        return
 
 @bot.command()
 async def dsay(ctx, *, args):
     if "@everyone" in args:
         await ctx.send("`" + args + "`")
         await ctx.message.delete()
+        return
     if "@here" in args:
         await ctx.send("`" + args + "`")
-        await ctx.message.delete()    
+        await ctx.message.delete()
+        return
     else:
         await ctx.send(args)    
         await ctx.message.delete()
+        return
 
 @bot.command()
 async def patreon(ctx):
