@@ -35,6 +35,7 @@ import praw
 import lxml
 #import saucenaopy
 import twitter
+import datetime 
 
 from discord.ext import commands
 from random import randint
@@ -42,6 +43,7 @@ from bs4 import BeautifulSoup
 from urlextract import URLExtract
 #from Cleverbotio import 'async' as cleverbot
 #from saucenaopy import SauceNAO
+from datetime import datetime, timedelta
 
 #https://www.microsoft.com/en-us/download/details.aspx?id=48159
 from profanityfilter import ProfanityFilter
@@ -333,7 +335,11 @@ async def on_message(message):
 @bot.event
 async def on_command(ctx):
     print("[command] " + ctx.message.content + " / " + str(ctx.guild))
+    print (ctx.author.display_name)
     return
+
+    if str(ctx.author.display_name) == 'Yukari' or 'Yukari Yakumo':
+        print ('hi')
 
 #owner check
 #19/05 U+1F382
@@ -489,6 +495,20 @@ async def ping3(ctx):
 async def errortest(ctx):
     await()
 
+past = datetime.now() - timedelta(days=9999)
+
+@bot.command()
+async def accdatetest(ctx):
+    yuyuko = bot.get_user(166189271244472320)
+    await ctx.send("Yuyuko created at " + str(yuyuko.created_at))
+    await ctx.send(str(past))
+    #if account creation date is newer than specified date
+    if yuyuko.created_at > past:
+        await ctx.send("fail")
+        return
+    else:
+        await ctx.send("pass")
+        return
 
 #basic admin functionality
 @bot.command()
