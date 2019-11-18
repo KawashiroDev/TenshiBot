@@ -5,7 +5,10 @@
 rlimit_cmd = 2
 #timeframe (seconds)
 rlimit_time = 120
-#
+
+#Account age options
+#How many days old the account needs to be
+dayspassed = 30
 
 import discord
 import aiohttp
@@ -14,10 +17,12 @@ import lxml
 import random
 import asyncio
 import twitter
+import datetime 
 
 from discord.ext import commands
 from urlextract import URLExtract
 from profanityfilter import ProfanityFilter
+from datetime import datetime, timedelta
 
 #twitter stuff
 t_api = open("Tokens/twitter_consumer.txt", "r")
@@ -42,6 +47,8 @@ pf_extended = ProfanityFilter(extra_censor_list=["@"])
 
 user_blacklist = open("txt/badactors.txt", "r")
 badactors = user_blacklist.read()
+
+acc_age = datetime.now() - timedelta(days=dayspassed)
 
 #owner check
 #19/05 U+1F382
