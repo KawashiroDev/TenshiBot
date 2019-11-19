@@ -510,6 +510,18 @@ async def accdatetest(ctx):
         await ctx.send("pass")
         return
 
+@bot.command()
+async def accdatetest2(ctx):
+    await ctx.send("author created at " + str(ctx.author.created_at))
+    await ctx.send(str(past))
+    #if account creation date is newer than specified date
+    if ctx.author.created_at > past:
+        await ctx.send("fail")
+        return
+    else:
+        await ctx.send("pass")
+        return    
+
 #basic admin functionality
 @bot.command()
 @is_owner()    
