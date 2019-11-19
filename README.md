@@ -10,7 +10,7 @@
 
 <h2>How to use</h2>
 <p>Add Tenshi to your server https://discordapp.com/oauth2/authorize?client_id=252442396879486976&scope=bot&permissions=67161152</p>
-<p>Tenshi uses @TenshiBot and = as command prefixes</p>
+<p>Tenshi uses @TenshiBot as the command prefix</p>
 
 <h2>If you enjoy using Tenshi vote for her on DBL</h2>
 
