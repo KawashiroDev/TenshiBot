@@ -7,7 +7,7 @@ rlimit_cmd = 2
 rlimit_time = 120
 
 #Account age options
-#How many days old the account needs to be
+#How many days old the account needs to be 
 dayspassed = 30
 
 import discord
@@ -89,11 +89,15 @@ class twitterCog(commands.Cog):
         if "@" in asciitext:
             await ctx.send('Error: Invalid tweet')
             return
+        #1cc detection 
         if int(ctx.guild.id) == int("162861213309599744"):
             await ctx.send('Error: Please use 1CCBot here')
             return
         if str(ctx.author.id) in badactors:
             await ctx.send('Error: You have been blacklisted')
+            return
+        if ctx.author.created_at > acc_age:
+            await ctx.send('Error: Your Discord account is too new')
             return
 
         else:
