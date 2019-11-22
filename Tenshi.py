@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.3.3 R1'
+bot_version = '2.3.4'
 
 #Booting text
 print('Please wait warmly...')
@@ -335,11 +335,11 @@ async def on_message(message):
 @bot.event
 async def on_command(ctx):
     print("[command] " + ctx.message.content + " / " + str(ctx.guild))
-    print (ctx.author.display_name)
+#    print (ctx.author.display_name)
     return
 
-    if str(ctx.author.display_name) == 'Yukari' or 'Yukari Yakumo':
-        print ('hi')
+#    if str(ctx.author.display_name) == 'Yukari' or 'Yukari Yakumo':
+#        print ('hi')
 
 #owner check
 #19/05 U+1F382
