@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.3.4'
+bot_version = '2.3.4 R1'
 
 #Booting text
 print('Please wait warmly...')
@@ -224,6 +224,11 @@ async def on_command_error(ctx, error):
     #command not found
     if isinstance(error, commands.CommandNotFound):
         return
+
+    #if isinstance(error, commands.BotMissingPermissions):
+    #    self.missing.perms = 'send_messages'
+    #    print('msg_send_fail')
+        
     #user has invalid permissions
     if isinstance(error, commands.MissingPermissions):
         #em = discord.Embed(title='Error', description = error, colour=0xc91616)
@@ -258,6 +263,10 @@ async def on_command_error(ctx, error):
     #none of the above         
     else:
         print(error)
+        if 'dsay' in ctx.message.content:
+            await ctx.message.author.send('Hi, I require `manage messages` permission on this server for dsay to work properly. Ask a server admin to give me this')
+            return
+        
         #print(str(traceback.print_exc()))
         errormsg = await ctx.send("An error has occured, The dev has been notified")
         #todo: actually put code here that notifies me
