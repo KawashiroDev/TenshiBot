@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.3.4 R1'
+bot_version = '2.3.5'
 
 #Booting text
 print('Please wait warmly...')
@@ -84,6 +84,7 @@ mentioned_nomsg = [
 "Chang'e are you watching? \nSome fox lady said hi",
 "Hold on a sec i just saw Sakuya with some coffee",
 "Guys the thermal drill, go get it",
+"Am i a joke to you?",
 "!",
 "!!",
 "?!",
@@ -112,6 +113,16 @@ mentioned_nomsg = [
 "♪*I'll never find the sound of silence*♪",
 "♪*Stay where you are~*♪",
 "♪*Take my hand we drift away♪\n♪To a place beyond the stars♪*",
+]
+
+mentioned_nomsg_christmas = [
+"?",     
+"Hi?",    
+"Merry Christmas!",
+"Ooh, it's that time of year isn't it?",
+"Ah, that reminds me. I should make it snow",
+"♪*Jingle bells\nYukari smells♪",
+"*Is humming I wish it could be christmas everyday~*",
 ]
 
 shuffle_test = [
@@ -301,10 +312,10 @@ async def on_message(message):
 
     #! is needed if Tenshi has a nickname set on the server
     if message.content == '<@252442396879486976>':
-        await message.channel.send(secure_random.choice(mentioned_nomsg))
+        await message.channel.send(secure_random.choice(mentioned_nomsg_christmas))
         print("[command] mention_nomsg")
     if message.content == '<@!252442396879486976>':
-        await message.channel.send(secure_random.choice(mentioned_nomsg))
+        await message.channel.send(secure_random.choice(mentioned_nomsg_christmas))
         print("[command] mention_nomsg")
 
 #'f' command uses on_message instead of async def due to ayana clash
