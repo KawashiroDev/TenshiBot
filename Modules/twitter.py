@@ -195,7 +195,82 @@ class twitterCog(commands.Cog):
         if asciitext == '':
             await ctx.send('invalid char')
         else:
-            await ctx.send(asciitext)					                    
+            await ctx.send(asciitext)
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @is_owner()
+    async def sendtweet_j(self, ctx, *, args):
+        userid = str(ctx.author.id)
+        
+        #convert text to ascii
+#        asciitext = strip_non_ascii(args)
+#        asciiusername = strip_non_ascii(ctx.author.name)
+#        if asciitext == '':
+#            await ctx.send('Error: Tweet contains no alphanumeric characters')
+        #check username for profanity
+        if pf.is_profane(asciiusername) == True:
+            #error: bad username
+            await ctx.send('エラー：ユーザー名が正しくありません')
+            return
+        #link check
+        if extractor.has_urls(args):
+            #error: unsupported url
+            await ctx.send('JP_badURL')
+            return
+        if "@" in args:
+            #error: `@` is unsupported
+            await ctx.send('JP_notag')
+            return
+        #1cc detection 
+#        if int(ctx.guild.id) == int("162861213309599744"):
+#            await ctx.send('Error: Please use 1CCBot here')
+#            return
+        if str(ctx.author.id) in badactors:
+            #error: account blacklisted
+            await ctx.send('JP_blacklist')
+            return
+        if ctx.author.created_at > acc_age:
+            #error: account too new
+            await ctx.send('JP_newaccount')
+            return
+
+        else:
+            #ays send this?
+            em = discord.Embed(title='これを送信してもよろしいですか？', description = asciitext, colour=0x6aeb7b)
+            em.set_author(name='KawashiroLink Subsystem (JP)' , icon_url=self.bot.user.avatar_url)
+            #follow @hinanawibot
+            em.set_footer(text="@HinanawiBotをフォローしてください")
+            tweetconfirm = await ctx.send(embed=em)
+            #tweetconfirm = await ctx.send('Are you sure you want to tweet this?')
+            #add tick and X reactions for user to react to
+            await tweetconfirm.add_reaction('\U00002705')
+            await tweetconfirm.add_reaction('\U0000274e')
+
+            def ays_tweet(reaction, user):
+                return (user == ctx.author and str(reaction.emoji) == '\U00002705') or (user == ctx.author and str(reaction.emoji) == '\U0000274e')
+                                   
+            try:
+                reaction, user = await self.bot.wait_for('reaction_add', timeout=30, check=ays_tweet)
+            except asyncio.TimeoutError:
+                #error: timeout
+                await ctx.send('JP_timeout')
+                return
+            else:
+                if ((reaction.emoji) == '\U00002705') and reaction.message.id == tweetconfirm.id:
+                    #Profanity check tweet and add username before sending
+                    finaltweet = ('(JP)[' + ctx.author.name + '] ' + pf.censor(args))
+                    api.PostUpdate(finaltweet)
+                    print('[tweet] "' + finaltweet + '" User ID: :' + str(ctx.author.id))
+                    #success
+                    await ctx.send('JP_sent')
+                    #DM me about the tweet if i need to go delete it
+                    yuyuko = self.bot.get_user(166189271244472320)
+                    await yuyuko.send("**--A tweet was sent--** \nContents: " + finaltweet + "\nUnfiltered contents: " + args + "\nUser ID: " + userid)
+                    return
+                elif ((reaction.emoji) == '\U0000274e'):
+                    await ctx.send('JP_cancel')
+                    return
 
 def setup(bot):
     bot.add_cog(twitterCog(bot))
