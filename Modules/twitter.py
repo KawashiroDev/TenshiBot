@@ -209,7 +209,7 @@ class twitterCog(commands.Cog):
 #        if asciitext == '':
 #            await ctx.send('Error: Tweet contains no alphanumeric characters')
         #check username for profanity
-        if pf.is_profane(asciiusername) == True:
+        if pf.is_profane(ctx.author.name) == True:
             #error: bad username
             await ctx.send('エラー：ユーザー名が正しくありません')
             return
@@ -237,7 +237,7 @@ class twitterCog(commands.Cog):
 
         else:
             #ays send this?
-            em = discord.Embed(title='これを送信してもよろしいですか？', description = asciitext, colour=0x6aeb7b)
+            em = discord.Embed(title='これを送信してもよろしいですか？', description = args, colour=0x6aeb7b)
             em.set_author(name='KawashiroLink Subsystem (JP)' , icon_url=self.bot.user.avatar_url)
             #follow @hinanawibot
             em.set_footer(text="@HinanawiBotをフォローしてください")
