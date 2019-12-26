@@ -312,10 +312,10 @@ async def on_message(message):
 
     #! is needed if Tenshi has a nickname set on the server
     if message.content == '<@252442396879486976>':
-        await message.channel.send(secure_random.choice(mentioned_nomsg_christmas))
+        await message.channel.send(secure_random.choice(mentioned_nomsg))
         print("[command] mention_nomsg")
     if message.content == '<@!252442396879486976>':
-        await message.channel.send(secure_random.choice(mentioned_nomsg_christmas))
+        await message.channel.send(secure_random.choice(mentioned_nomsg))
         print("[command] mention_nomsg")
 
 #'f' command uses on_message instead of async def due to ayana clash
