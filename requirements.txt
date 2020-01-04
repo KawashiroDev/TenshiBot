@@ -9,3 +9,4 @@ saucenaopy
 python-twitter
 profanityfilter
 urlextract
+playsound
