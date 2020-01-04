@@ -44,6 +44,7 @@ from urlextract import URLExtract
 #from Cleverbotio import 'async' as cleverbot
 #from saucenaopy import SauceNAO
 from datetime import datetime, timedelta
+from playsound import playsound
 
 #https://www.microsoft.com/en-us/download/details.aspx?id=48159
 from profanityfilter import ProfanityFilter
@@ -410,6 +411,12 @@ async def dmtest(ctx):
 @bot.command()
 async def kofi(ctx):
     await ctx.send('https://ko-fi.com/h99710')
+
+@bot.command()
+@is_owner()
+async def playsound(ctx):
+    await playsound('Entry_3DX+.mp3')
+    print ("[Debug] Playing sound file")
 
 @bot.command()
 @commands.cooldown(1, 90, commands.BucketType.default)
