@@ -69,6 +69,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -175,6 +176,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -281,6 +283,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -393,6 +396,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -507,6 +511,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -543,6 +548,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -648,6 +654,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -754,6 +761,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -860,6 +868,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -966,6 +975,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -1073,6 +1083,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -1181,6 +1192,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -1289,6 +1301,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -1397,6 +1410,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -1505,6 +1519,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -1612,6 +1627,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -1720,6 +1736,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -1827,6 +1844,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -1934,6 +1952,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -2041,6 +2060,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -2148,6 +2168,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -2255,6 +2276,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -2362,6 +2384,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -2470,6 +2493,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -2578,6 +2602,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -2686,6 +2711,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -2793,6 +2819,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -2900,6 +2927,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -3007,6 +3035,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -3114,6 +3143,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -3221,6 +3251,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -3328,6 +3359,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -3435,6 +3467,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -3542,6 +3575,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -3649,6 +3683,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -3756,6 +3791,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -3863,6 +3899,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -3970,6 +4007,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -4075,6 +4113,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -4181,6 +4220,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -4288,6 +4328,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -4395,6 +4436,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -4502,6 +4544,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -4609,6 +4652,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -4716,6 +4760,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -4823,6 +4868,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -4930,6 +4976,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -5037,6 +5084,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -5144,6 +5192,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -5251,6 +5300,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -5358,6 +5408,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -5465,6 +5516,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -5572,6 +5624,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -5679,6 +5732,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -5786,6 +5840,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -5893,6 +5948,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -6000,6 +6056,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -6107,6 +6164,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -6214,6 +6272,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -6321,6 +6380,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -6428,6 +6488,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -6535,6 +6596,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -6642,6 +6704,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -6749,6 +6812,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -6857,6 +6921,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -6965,6 +7030,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -7073,6 +7139,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -7180,6 +7247,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -7286,6 +7354,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -7393,6 +7462,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -7500,6 +7570,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -7607,6 +7678,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -7714,6 +7786,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -7821,6 +7894,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -7928,6 +8002,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -8035,6 +8110,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -8142,6 +8218,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -8249,6 +8326,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -8356,6 +8434,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -8463,6 +8542,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -8570,6 +8650,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -8677,6 +8758,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -8784,6 +8866,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -8891,6 +8974,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -8998,6 +9082,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -9105,6 +9190,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -9212,6 +9298,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -9319,6 +9406,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -9426,6 +9514,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -9533,6 +9622,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -9640,6 +9730,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -9747,6 +9838,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -9854,6 +9946,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -9961,6 +10054,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -10068,6 +10162,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -10175,6 +10270,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -10282,6 +10378,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -10389,6 +10486,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -10496,6 +10594,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -10603,6 +10702,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -10710,6 +10810,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -10817,6 +10918,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -10924,6 +11026,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -11031,6 +11134,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -11138,6 +11242,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -11245,6 +11350,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -11352,6 +11458,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -11459,6 +11566,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -11676,6 +11784,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -11783,6 +11892,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -11890,6 +12000,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -11997,6 +12108,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -12104,6 +12216,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -12211,6 +12324,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -12318,6 +12432,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -12425,6 +12540,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -12532,6 +12648,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -13067,6 +13184,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -13175,6 +13293,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -13283,6 +13402,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -13391,6 +13511,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -13499,6 +13620,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -13607,6 +13729,7 @@ class ImageCog(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
