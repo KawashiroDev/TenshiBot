@@ -62,6 +62,7 @@ if (os.path.isdir(win_dir_check)) == True:
     print('')
     print('Welcome to CelestialOS 98...')
     playsound('Startup_98.wav', False)
+    print('Loading program: TenshiBot.exe')
 else:
     print('[Startup] Running in production mode')
     bot_mode = 'Production'
@@ -212,27 +213,36 @@ headers = {"Authorization" : dbltoken}
 
 @bot.event
 async def on_ready():
-    print(' ')
-    print('TenshiBot startup complete ')
-    print(' ')
-    print('User ID - ' + str(bot.user.id))
-    print('Username - ' + bot.user.name)
-    print('Shard Count - ' + str(bot.shard_count))
-    print('TenshiBot Ver - ' + bot_version)
-    print('System Variant - ' + bot_variant)
-    print('System Mode - ' + bot_mode)
-    print(' ')
-    print('servercount - ' + str(len(bot.guilds)))
-    print(discord.version_info)
-    payload = {"server_count"  : str(len(bot.guilds))}
-    async with aiohttp.ClientSession() as aioclient:
-        await aioclient.post(url, data=payload, headers=headers)
-    await bot.change_presence(activity=discord.Game(name="TB [" + bot_version + "]"))
-    await asyncio.sleep(15)
-    await bot.change_presence(activity=discord.Game(name="Startup complete"))
-    await asyncio.sleep(5)
-    #await bot.change_presence(activity=discord.Streaming(name="TenshiBot", url='https://twitch.tv/99710'))
-    await bot.change_presence(activity=discord.Game(name=random.choice(playingstatus)))
+
+    if debugmode == True:
+        print(' ')
+        print('TenshiBot ' + bot_version + ' (Debug mode) initialized')
+        print('User ID:  ' + str(bot.user.id))
+        await bot.change_presence(activity=discord.Game(name="TB [" + bot_version + "] (D)"))
+
+    else:
+        
+        print(' ')
+        print('TenshiBot startup complete ')
+        print(' ')
+        print('User ID - ' + str(bot.user.id))
+        print('Username - ' + bot.user.name)
+        print('Shard Count - ' + str(bot.shard_count))
+        print('TenshiBot Ver - ' + bot_version)
+        print('System Variant - ' + bot_variant)
+        print('System Mode - ' + bot_mode)
+        print(' ')
+        print('servercount - ' + str(len(bot.guilds)))
+        print(discord.version_info)
+        payload = {"server_count"  : str(len(bot.guilds))}
+        async with aiohttp.ClientSession() as aioclient:
+            await aioclient.post(url, data=payload, headers=headers)
+        await bot.change_presence(activity=discord.Game(name="TB [" + bot_version + "]"))
+        await asyncio.sleep(15)
+        await bot.change_presence(activity=discord.Game(name="Startup complete"))
+        await asyncio.sleep(5)
+        #await bot.change_presence(activity=discord.Streaming(name="TenshiBot", url='https://twitch.tv/99710'))
+        await bot.change_presence(activity=discord.Game(name=random.choice(playingstatus)))
 
     
 #error event code
