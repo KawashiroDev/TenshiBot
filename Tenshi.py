@@ -35,7 +35,8 @@ import praw
 import lxml
 #import saucenaopy
 import twitter
-import datetime 
+import datetime
+import playsound
 
 from discord.ext import commands
 from random import randint
@@ -55,11 +56,13 @@ from profanityfilter import ProfanityFilter
 if (os.path.isdir(win_dir_check)) == True:
     print('[Startup] Detected a windows PC, running in debug mode')
     bot_mode = 'Debug'
+    debugmode = True
     initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.debug']
     print('[Debug] /Modules/debug.py loaded')
 else:
     print('[Startup] Running in production mode')
     bot_mode = 'Production'
+    debugmode = False
     initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter']
 
 test = "test"
@@ -142,7 +145,7 @@ playingstatus = [
 
 #Disable sharding and = prefix if in debug mode
 #if you want to have the bot run as normal on a windows machine then change the windows folder check to a non existent folder
-if (os.path.isdir(win_dir_check)) == True:
+if debugmode == True:
     bot = commands.Bot(command_prefix=commands.when_mentioned, case_insensitive=True)
 else:
     bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or('='), case_insensitive=True, shard_count=4)
@@ -415,7 +418,7 @@ async def kofi(ctx):
 @bot.command()
 @is_owner()
 async def playsound(ctx):
-    await playsound('Entry_3DX+.mp3')
+    playsound('Entry_3DX+.mp3', False)
     print ("[Debug] Playing sound file")
 
 @bot.command()
@@ -897,7 +900,7 @@ async def tenko_ai2(ctx, *, args):
 
 #this has to be at the end of the code
 #client.run(token)
-if (os.path.isdir(win_dir_check)) == True:
+if debugmode == True:
     tkn = open("Tokens/tenshi_debug.txt", "r")
 else:
     tkn = open("Tokens/tenshi_production.txt", "r")
