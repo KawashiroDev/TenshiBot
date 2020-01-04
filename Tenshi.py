@@ -219,6 +219,7 @@ async def on_ready():
         print('TenshiBot ' + bot_version + ' (Debug mode) initialized')
         print('User ID:  ' + str(bot.user.id))
         await bot.change_presence(activity=discord.Game(name="TB [" + bot_version + "] (D)"))
+        print(' ')
 
     else:
         
