@@ -59,6 +59,9 @@ if (os.path.isdir(win_dir_check)) == True:
     debugmode = True
     initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.debug']
     print('[Debug] /Modules/debug.py loaded')
+    print('')
+    print('Welcome to CelestialOS 98...')
+    playsound('Startup_98.wav', False)
 else:
     print('[Startup] Running in production mode')
     bot_mode = 'Production'
