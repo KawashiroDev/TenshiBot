@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.3.5'
+bot_version = '2.3.6'
 
 #Booting text
 print('Please wait warmly...')
@@ -200,7 +200,7 @@ if __name__ == '__main__':
 #Discordbots.org API stuff
 #if in debug mode then open a blank token file which will cause the server count
 #to not be posted because i don't want the debug acc posting it's server count
-if (os.path.isdir(win_dir_check)) == True:        
+if debugmode == True:        
     tkn_dbo = open("Tokens/dbl_api_blank.txt", "r")
 else:
     tkn_dbo = open("Tokens/dbl_api.txt", "r")
@@ -222,6 +222,9 @@ async def on_ready():
         print(' ')
 
     else:
+
+        yuyuko = bot.get_user(166189271244472320)
+        await yuyuko.send("System ready!")
         
         print(' ')
         print('TenshiBot startup complete ')
