@@ -13398,7 +13398,7 @@ class ImageCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def mayumi(self, ctx):
-        char = 'joutougu_mayumi'
+        char = 'joutouguu_mayumi'
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
@@ -13507,7 +13507,7 @@ class ImageCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def yachie(self, ctx):
-        char = 'kitcho_yachie'
+        char = 'kicchou_yachie'
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
