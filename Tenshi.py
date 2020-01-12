@@ -235,7 +235,7 @@ async def on_ready():
 
     else:
 
-        yuyuko = bot.get_user(166189271244472320)
+        yuyuko = bot.get_user(ownerid)
         await yuyuko.send("System ready!")
         
         print(' ')
