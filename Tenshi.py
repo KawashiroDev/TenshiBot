@@ -8,17 +8,24 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.3.6'
+bot_version = '2.3.6 R1'
 
-#Booting text
-print('Please wait warmly...')
+#Owner ID
+ownerid = 166189271244472320
+
+#DM on boot (production only)
+bootdm = True
+
+#DM on error
+errordm = True
+
+#Sound on boot (debug only)
+bootsound = True
 
 #windows check
 #if this directory exists then run in debug mode
 #if not then run in production mode
 win_dir_check = '/windows'
-
-#owner id
 
 import discord
 import requests
@@ -50,6 +57,8 @@ from playsound import playsound
 #https://www.microsoft.com/en-us/download/details.aspx?id=48159
 from profanityfilter import ProfanityFilter
 
+print('Please wait warmly...')
+
 #Windows or linux check
 #used to autoswitch the bot between debug/production modes
 
@@ -61,8 +70,11 @@ if (os.path.isdir(win_dir_check)) == True:
     print('[Debug] /Modules/debug.py loaded')
     print('')
     print('Welcome to CelestialOS 98...')
-    playsound('Startup_98.wav', False)
-    print('Loading program: TenshiBot.exe')
+    if bootsound == False:
+        print('Loading program: TenshiBot.exe')
+    if bootsound == True:
+        playsound('Startup_98.wav', False)
+        print('Loading program: TenshiBot.exe')
 else:
     print('[Startup] Running in production mode')
     bot_mode = 'Production'
@@ -300,10 +312,13 @@ async def on_command_error(ctx, error):
             return
         
         #print(str(traceback.print_exc()))
-        errormsg = await ctx.send("An error has occured, The dev has been notified")
-        #todo: actually put code here that notifies me
-        yuyuko = bot.get_user(166189271244472320)
-        await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`")
+        if errordm == True:
+            errormsg = await ctx.send("An error has occured, The dev has been notified")
+            #todo: actually put code here that notifies me
+            yuyuko = bot.get_user(ownerid)
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`")
+        if errordm == False:
+            errormsg = await ctx.send("An error has occured")
 
 #check to see if the user reacts with a peach, if they have then show them detailed error info
         def check(reaction, user):
@@ -386,7 +401,7 @@ async def on_command(ctx):
 #19/05 U+1F382
 def is_owner():
     async def predicate(ctx):
-        return ctx.author.id == 166189271244472320
+        return ctx.author.id == ownerid
     return commands.check(predicate)
 
 #TenshiBot Hangout check (the name of the Tenshi's server)
