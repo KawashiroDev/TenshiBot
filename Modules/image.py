@@ -13615,6 +13615,76 @@ class ImageCog(commands.Cog):
 
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    async def ichirin(self, ctx):
+        char = 'kumoi_ichirin'
+        async with aiohttp.ClientSession() as session:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+                if r.status == 200:
+                    await asyncio.sleep(0.3)
+                    soup = BeautifulSoup(await r.text(), "lxml")
+                    num = int(soup.find('posts')['count'])
+                    maxpage = int(round(num/100))
+                    page = random.randint(0, maxpage)
+                    t = soup.find('posts')
+                    p = t.find_all('post')
+                    source = ((soup.find('post'))['source'])
+                    if num < 100:
+                        pic = p[random.randint(0,num-1)]
+                    elif page == maxpage:
+                        pic = p[random.randint(0,num%100 - 1)]
+                    else:
+                        pic = p[random.randint(0,99)]
+                    msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
+                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                    em.set_author(name='Character Image')
+                    em.set_image(url=booruappend + msg)
+                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    sbooru_img = await ctx.send(embed=em)
+
+
+
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    async def miyoi(self, ctx):
+        char = 'okunoda_miyoi'
+        async with aiohttp.ClientSession() as session:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+                if r.status == 200:
+                    await asyncio.sleep(0.3)
+                    soup = BeautifulSoup(await r.text(), "lxml")
+                    num = int(soup.find('posts')['count'])
+                    maxpage = int(round(num/100))
+                    page = random.randint(0, maxpage)
+                    t = soup.find('posts')
+                    p = t.find_all('post')
+                    source = ((soup.find('post'))['source'])
+                    if num < 100:
+                        pic = p[random.randint(0,num-1)]
+                    elif page == maxpage:
+                        pic = p[random.randint(0,num%100 - 1)]
+                    else:
+                        pic = p[random.randint(0,99)]
+                    msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
+                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                    em.set_author(name='Character Image')
+                    em.set_image(url=booruappend + msg)
+                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    sbooru_img = await ctx.send(embed=em)
+
+
+
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def chiyuri(self, ctx):
         char = 'kitashirakawa_chiyuri'
         async with aiohttp.ClientSession() as session:
