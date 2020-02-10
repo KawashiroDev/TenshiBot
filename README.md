@@ -18,6 +18,9 @@
   <img src="https://discordbots.org/api/widget/252442396879486976.svg" alt="TenshiBot" />
 </a>
 
+<h2>Known issues</h2>
+See the wiki
+
 <h2>Have issues? want to help add features or chat with other users?</h2>
 <p>Join TenshiBot Hangout using the `@TenshiBot support` command</p>
 
