@@ -70,8 +70,11 @@ class booruCog(commands.Cog):
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
+                    print ('[Debug] num = ' + str(num))
                     maxpage = int(round(num/100))
+                    print ('[Debug] maxpage = ' + str(maxpage))
                     page = random.randint(0, maxpage)
+                    print ('[Debug] page = ' + str(page))
                     t = soup.find('posts')
                     p = t.find_all('post')
                     if num == 0: 
@@ -84,7 +87,7 @@ class booruCog(commands.Cog):
                         if num < 100:
                             pic = p[random.randint(0,num-1)]
                         elif page == maxpage:
-                            pic = p[random.randint(0,num%100 - 1)]
+                            pic = p[random.randint(0,99)]
                         else:
                             pic = p[random.randint(0,99)]
                         msg = pic['file_url']
