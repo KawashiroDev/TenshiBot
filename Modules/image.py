@@ -13,7 +13,9 @@ boorurating = 'safe'
 #results which have these tags won't be shown in the touhou commands
 #does not affect the safebooru command
 #huge filesize is blacklisted to help fix some images not embedding
-boorublacklist = '-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini+-6%2Bgirls+-comic+-greyscale+-bdsm+-huge_filesize+-lovestruck+-absurdres+-artificial_vagina+-swimsuit+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+rating:safe'
+boorublacklist = '-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini+-6%2Bgirls+-comic+-greyscale+-bdsm+-huge_filesize+-lovestruck+-absurdres+-artificial_vagina+-swimsuit+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-animated+-audio+-webm+rating:safe'
+
+boorublacklistgif = '-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini+-6%2Bgirls+-comic+-greyscale+-bdsm+-huge_filesize+-lovestruck+-absurdres+-artificial_vagina+-swimsuit+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-audio+-webm+rating:safe'
 
 #append text to the start of booru url output
 #change this if the bot is sending malformed booru urls
@@ -12968,7 +12970,7 @@ class ImageCog(commands.Cog):
     async def gif(self, ctx):
         char = 'touhou+animated_gif'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorublacklist + '+' + char) as r:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorublacklistgif + '+' + char) as r:
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
