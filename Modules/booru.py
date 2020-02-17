@@ -147,7 +147,7 @@ class booruCog(commands.Cog):
                             if num < 100:
                                 pic = p[random.randint(0,num-1)]
                             elif page == maxpage:
-                                pic = p[random.randint(0,num%100 - 1)]
+                                pic = p[random.randint(0,99)]
                             else:
                                 pic = p[random.randint(0,99)]
                             msg = pic['file_url']
