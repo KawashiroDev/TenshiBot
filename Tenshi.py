@@ -702,7 +702,7 @@ async def makerole(ctx, colour):
     await ctx.guild.create_role(name=userid, permissions=perms, colour=col, reason='role creation test')
     user=ctx.message.author
     role=discord.utils.get(ctx.guild.roles, name=str(userid))
-    await user.add_roles(user, role)
+    await user.add_roles(role)
    
 @bot.command()
 @is_owner()
