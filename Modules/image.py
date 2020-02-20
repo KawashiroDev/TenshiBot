@@ -2,7 +2,7 @@
 
 #these have to be defined in here too
 #booru URL, used for touhou images and safebooru command
-booru = 'gelbooru.com'
+booru = 'safebooru.org'
 
 #booru rating
 #options are: safe, questionable, explicit
@@ -93,7 +93,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -200,7 +200,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -311,7 +311,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -424,7 +424,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -572,7 +572,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -678,7 +678,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -785,7 +785,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -892,7 +892,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -999,7 +999,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -1107,7 +1107,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -1216,7 +1216,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -1325,7 +1325,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -1434,7 +1434,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -1543,7 +1543,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -1651,7 +1651,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -1760,7 +1760,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -1868,7 +1868,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -1976,7 +1976,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -2084,7 +2084,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -2192,7 +2192,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -2300,7 +2300,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -2408,7 +2408,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -2517,7 +2517,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -2626,7 +2626,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -2735,7 +2735,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -2843,7 +2843,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -2951,7 +2951,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -3059,7 +3059,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -3167,7 +3167,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -3275,7 +3275,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -3383,7 +3383,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -3491,7 +3491,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -3599,7 +3599,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -3707,7 +3707,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -3815,7 +3815,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -3923,7 +3923,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -4031,7 +4031,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -4244,7 +4244,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -4352,7 +4352,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -4460,7 +4460,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -4568,7 +4568,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -4676,7 +4676,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -4784,7 +4784,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -4892,7 +4892,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -5000,7 +5000,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -5108,7 +5108,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -5216,7 +5216,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -5324,7 +5324,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -5432,7 +5432,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -5540,7 +5540,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -5648,7 +5648,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -5756,7 +5756,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -5864,7 +5864,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -5972,7 +5972,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -6080,7 +6080,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -6188,7 +6188,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -6296,7 +6296,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -6404,7 +6404,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -6512,7 +6512,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -6620,7 +6620,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -6728,7 +6728,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -6836,7 +6836,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -6945,7 +6945,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -7054,7 +7054,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -7163,7 +7163,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -7271,7 +7271,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -7378,7 +7378,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -7486,7 +7486,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -7594,7 +7594,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -7702,7 +7702,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -7810,7 +7810,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -7918,7 +7918,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -8026,7 +8026,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -8134,7 +8134,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -8242,7 +8242,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -8350,7 +8350,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -8458,7 +8458,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -8566,7 +8566,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -8674,7 +8674,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -8782,7 +8782,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -8890,7 +8890,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -8998,7 +8998,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -9106,7 +9106,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -9214,7 +9214,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -9322,7 +9322,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -9430,7 +9430,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -9538,7 +9538,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -9646,7 +9646,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -9754,7 +9754,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -9862,7 +9862,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -9970,7 +9970,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -10078,7 +10078,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -10186,7 +10186,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -10294,7 +10294,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -10402,7 +10402,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -10510,7 +10510,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -10618,7 +10618,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -10726,7 +10726,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -10834,7 +10834,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -10942,7 +10942,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -11050,7 +11050,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -11158,7 +11158,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -11266,7 +11266,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -11374,7 +11374,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -11482,7 +11482,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -11590,7 +11590,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -11700,7 +11700,7 @@ class ImageCog(commands.Cog):
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
                     #source links are disabled because gel has NSFW ads
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -11808,7 +11808,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -11916,7 +11916,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -12024,7 +12024,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -12132,7 +12132,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -12240,7 +12240,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -12348,7 +12348,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -12456,7 +12456,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -12564,7 +12564,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -12672,7 +12672,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -12779,7 +12779,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -13208,7 +13208,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -13317,7 +13317,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -13426,7 +13426,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -13535,7 +13535,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -13644,7 +13644,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
 
@@ -13679,7 +13679,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
 
@@ -13714,7 +13714,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -13823,7 +13823,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -13934,7 +13934,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -14041,7 +14041,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -14148,7 +14148,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -14255,7 +14255,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -14362,7 +14362,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -14469,7 +14469,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -14576,7 +14576,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
@@ -14683,7 +14683,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character Image')
                     em.set_image(url=booruappend + msg)
-                    #em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
+                    em.set_footer(text="Image Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)    
                     sbooru_img = await ctx.send(embed=em)
 
                     def img_reacts(reaction, user):
