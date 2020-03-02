@@ -354,6 +354,12 @@ async def on_message(message):
         await message.channel.send(secure_random.choice(mentioned_nomsg))
         print("[command] mention_nomsg")
 
+    #= prefix ignoring code
+    role = discord.utils.get(message.guild.roles, name="mention_only")
+    if (role in message.guild.me.roles) and message.content.startswith == str('='):
+        print ('[Debug] = prefix disabled via role')
+        return
+
 #'f' command uses on_message instead of async def due to ayana clash
     if message.content == '<@252442396879486976> f':
         if '@everyone' in message.author.display_name:
