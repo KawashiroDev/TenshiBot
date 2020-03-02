@@ -357,7 +357,7 @@ async def on_message(message):
     #= prefix ignoring code
     role = discord.utils.get(message.guild.roles, name="mention_only")
     if role in message.guild.me.roles and message.content.startswith('='):
-        print ('[Debug] = prefix disabled via role')
+        #print ('[Debug] = prefix disabled via role')
         return
 
 #'f' command uses on_message instead of async def due to ayana clash
