@@ -356,7 +356,7 @@ async def on_message(message):
 
     #= prefix ignoring code
     role = discord.utils.get(message.guild.roles, name="mention_only")
-    if (role in message.guild.me.roles) and message.content.startswith == str('='):
+    if role in message.guild.me.roles and message.content.startswith('='):
         print ('[Debug] = prefix disabled via role')
         return
 
