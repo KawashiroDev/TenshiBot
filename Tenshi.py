@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.3.7 R1'
+bot_version = '2.3.8'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -350,11 +350,22 @@ async def on_message(message):
     if message.content == '<@252442396879486976>':
         await message.channel.send(secure_random.choice(mentioned_nomsg))
         print("[command] mention_nomsg")
+        return
     if message.content == '<@!252442396879486976>':
         await message.channel.send(secure_random.choice(mentioned_nomsg))
         print("[command] mention_nomsg")
+        return
+    
+    #= prefix ignoring code (bot list servers)
 
-    #= prefix ignoring code
+    #Discord bots
+    if message.guild.id == int('110373943822540800') and message.content.startswith('='):
+        return
+    #Discord bot list
+    if message.guild.id == int('264445053596991498') and message.content.startswith('='):
+        return
+
+    #= prefix ignoring code (role)
     role = discord.utils.get(message.guild.roles, name="mention_only")
     if role in message.guild.me.roles and message.content.startswith('='):
         #print ('[Debug] = prefix disabled via role')
@@ -796,12 +807,14 @@ async def about(ctx):
 
     uptime='%dw,' % (week) + ' %dd,' % (day) + ' %dh,' % (hour) + ' %dm,' % (minute) + ' and %ds.' % (second)
     servercount=str(len(bot.guilds))
+    buildinfo="%s" % time.ctime(os.path.getmtime("Tenshi.py"))
 
     em=discord.Embed(colour=0x00ffff)
-    em.set_author(name= bot.user.name, icon_url=bot.user.avatar_url)
+    em.set_author(name= bot.user.name + ' info', icon_url=bot.user.avatar_url)
     em.add_field(name="Version", value=bot_version, inline=True)
     em.add_field(name="Servercount", value=servercount, inline=True)
     em.add_field(name="Uptime", value=uptime, inline=False)
+    em.add_field(name="Tenshi.py timestamp", value=buildinfo, inline=False)
     em.set_footer(text="Created by 99710")
     await ctx.send(embed=em)
 
