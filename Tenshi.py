@@ -794,8 +794,15 @@ async def about(ctx):
     day, hour = divmod(hour, 24)
     week, day = divmod(day, 7)
 
-    em = discord.Embed(title='Currently on ' + str(len(bot.guilds)) + ' servers', description='Uptime= %d weeks,' % (week) + ' %d days,' % (day) + ' %d hours,' % (hour) + ' %d minutes,' % (minute) + ' and %d seconds.' % (second) + '\n Created by 99710', colour=0x00ffff)
-    em.set_author(name= bot.user.name + ' ' + bot_version , icon_url=bot.user.avatar_url)
+    uptime='%dw,' % (week) + ' %dd,' % (day) + ' %dh,' % (hour) + ' %dm,' % (minute) + ' and %ds.' % (second)
+    servercount=str(len(bot.guilds))
+
+    em=discord.Embed(colour=0x00ffff)
+    em.set_author(name= bot.user.name, icon_url=bot.user.avatar_url)
+    em.add_field(name="Version", value=bot_version, inline=True)
+    em.add_field(name="Servercount", value=servercount, inline=True)
+    em.add_field(name="Uptime", value=uptime, inline=False)
+    em.set_footer(text="Created by 99710")
     await ctx.send(embed=em)
 
 @bot.command()
