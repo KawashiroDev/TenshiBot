@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.3.8'
+bot_version = '2.3.8 R1'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -265,6 +265,7 @@ async def on_ready():
 #print the error to the console and inform the user   
 @bot.event
 async def on_command_error(ctx, error):
+    yuyuko = bot.get_user(ownerid)
     #command not found
     if isinstance(error, commands.CommandNotFound):
         return
@@ -304,6 +305,13 @@ async def on_command_error(ctx, error):
         #await ctx.send(embed=em)
         return
 
+    #Discord API having issues (it always returns a content-type message when it is)
+    if str(error) == "Command raised an exception: KeyError: 'content-type'":
+        await ctx.send("The Discord API may be having issues at the moment")
+        if errordm == True:
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Discord API issue)")
+            return
+
     #none of the above         
     else:
         print(error)
@@ -315,7 +323,6 @@ async def on_command_error(ctx, error):
         if errordm == True:
             errormsg = await ctx.send("An error has occured, The dev has been notified")
             #todo: actually put code here that notifies me
-            yuyuko = bot.get_user(ownerid)
             await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`")
         if errordm == False:
             errormsg = await ctx.send("An error has occured")
