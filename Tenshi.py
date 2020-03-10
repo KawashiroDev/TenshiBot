@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.3.8 R1'
+bot_version = '2.3.8 R2'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -310,6 +310,14 @@ async def on_command_error(ctx, error):
         await ctx.send("The Discord API may be having issues at the moment")
         if errordm == True:
             await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Discord API issue)")
+            return
+
+    #? Another API related issue?
+    #todo: look into this one at some point
+    if str(error) == "Command raised an exception: TypeError: 'NoneType' object is not subscriptable":
+        #await ctx.send("The Discord API may be having issues at the moment")
+        if errordm == True:
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Discord API issue(?))")
             return
 
     #none of the above         
