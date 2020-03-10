@@ -2,7 +2,7 @@
 
 #these have to be defined in here too
 #booru URL, used for touhou images and safebooru command
-booru = 'safebooru.org'
+booru = 'gelbooru.com'
 
 #booru rating
 #options are: safe, questionable, explicit
