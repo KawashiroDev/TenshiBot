@@ -156,6 +156,8 @@ playingstatus = [
 "TenshiBot",
 "with Iku",
 "with the weather",
+"Touhou Hisoutensoku",
+"Touhou SWR",
 ]
 
 
