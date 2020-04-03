@@ -70,11 +70,11 @@ class booruCog(commands.Cog):
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
-                    print ('[Debug] num = ' + str(num))
+                    #print ('[Debug] num = ' + str(num))
                     maxpage = int(round(num/100))
-                    print ('[Debug] maxpage = ' + str(maxpage))
+                    #print ('[Debug] maxpage = ' + str(maxpage))
                     page = random.randint(0, maxpage)
-                    print ('[Debug] page = ' + str(page))
+                    #print ('[Debug] page = ' + str(page))
                     t = soup.find('posts')
                     p = t.find_all('post')
                     if num == 0: 
