@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.3.8 R2'
+bot_version = '2.3.9'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -322,9 +322,20 @@ async def on_command_error(ctx, error):
             await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Discord API issue(?))")
             return
 
+    #Permissions error
+    if str(error) == "Command raised an exception: Forbidden: 403 Forbidden (error code: 50013): Missing Permissions":
+        #try to determine if the user owns/moderates the server or not
+        if ctx.message.author.guild_permissions.administrator or ctx.message.author.guild_permissions.manage_channels:
+            await ctx.author.send("My permissions aren't configured correctly for <#" + str(ctx.message.channel.id) + ">" + "\nPlease check that i have `send messages`, `embed links` and `attach files` permissions for that channel")
+            return
+        else:        
+            await ctx.author.send("It looks like i don't have permission to do that in this channel. \nYour server may have a dedicated bot channel or ask a moderator to fix my permissions for <#" + str(ctx.message.channel.id) + ">")
+            return
+    
+
     #none of the above         
     else:
-        print(error)
+        #print(error)
         if 'dsay' in ctx.message.content:
             await ctx.message.author.send('Hi, I require `manage messages` permission on this server for dsay to work properly. Ask a server admin to give me this')
             return
@@ -348,6 +359,7 @@ async def on_command_error(ctx, error):
         else:
             if ((reaction.emoji) == '\U0001f351') and reaction.message.id == errormsg.id:
                 await ctx.send("Error info: `" + str(error) + "`")
+                return
 
 
 secure_random = random.SystemRandom()
