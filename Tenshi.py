@@ -8,13 +8,19 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.3.9'
+bot_version = '2.4.0'
 
 #Owner ID
 ownerid = 166189271244472320
 
 #DM on boot (production only)
 bootdm = True
+
+#Smart DM on boot
+#workaround for on_ready being called several times due to discords new gateway reconnection update
+#https://discordapp.com/developers/docs/topics/gateway#reconnect
+#should be needed until discord.py is updated to fix this
+smartboot = True
 
 #DM on error
 errordm = True
@@ -227,6 +233,7 @@ headers = {"Authorization" : dbltoken}
 
 @bot.event
 async def on_ready():
+    yuyuko = bot.get_user(ownerid)
 
     if debugmode == True:
         print(' ')
@@ -234,10 +241,21 @@ async def on_ready():
         print('User ID:  ' + str(bot.user.id))
         await bot.change_presence(activity=discord.Game(name="TB [" + bot_version + "] (D)"))
         print(' ')
+        return
+
+    if smartboot == True:
+        print("[debug] smart boot enabled")
+        if os.path.isfile('reboot.tenko'):
+            os.remove("reboot.tenko")
+            print('TenshiBot ' + bot_version + ' initialized')
+            await yuyuko.send("System ready!")
+            await bot.change_presence(activity=discord.Game(name=random.choice(playingstatus)))
+            return
+        else:
+            print("[debug] on_ready was called but the server/bot didn't reboot, ignoring")
+            return
 
     else:
-
-        yuyuko = bot.get_user(ownerid)
         await yuyuko.send("System ready!")
         
         print(' ')
@@ -635,8 +653,14 @@ async def accdatetest2(ctx):
 @is_owner()    
 async def vpsreboot(ctx):
     await bot.change_presence(activity=discord.Game(name="Rebooting..."))
-    await ctx.send('Rebooting the VPS')
-    os.system("sudo reboot")
+    if smartboot == True:
+        await ctx.send('Creating reboot file')
+        reboot = open("reboot.tenko", "w")
+        reboot.close()
+        await ctx.send('Rebooting the VPS')
+    else:
+        await ctx.send('Rebooting the VPS')
+        os.system("sudo reboot")
     #os.system("shutdown -r -t 30")
 
 @bot.command()
