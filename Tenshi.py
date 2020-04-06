@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.4.0'
+bot_version = '2.4.0 R1'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -253,6 +253,8 @@ async def on_ready():
             return
         else:
             print("[debug] on_ready was called but the server/bot didn't reboot, ignoring")
+            #blank status fix
+            await bot.change_presence(activity=discord.Game(name=random.choice(playingstatus)))
             return
 
     else:
