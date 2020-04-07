@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.4.0 R1'
+bot_version = '2.4.0 R2'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -20,7 +20,7 @@ bootdm = True
 #workaround for on_ready being called several times due to discords new gateway reconnection update
 #https://discordapp.com/developers/docs/topics/gateway#reconnect
 #should be needed until discord.py is updated to fix this
-smartboot = True
+smartboot = False
 
 #DM on error
 errordm = True
