@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.4.0 R2'
+bot_version = '2.4.1'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -72,7 +72,7 @@ if (os.path.isdir(win_dir_check)) == True:
     print('[Startup] Detected a windows PC, running in debug mode')
     bot_mode = 'Debug'
     debugmode = True
-    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.debug']
+    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.debug', 'Modules.messaging']
     print('[Debug] /Modules/debug.py loaded')
     print('')
     print('Welcome to CelestialOS 98...')
@@ -85,7 +85,7 @@ else:
     print('[Startup] Running in production mode')
     bot_mode = 'Production'
     debugmode = False
-    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter']
+    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.messaging']
 
 test = "test"
 
