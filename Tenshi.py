@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.4.1 R1'
+bot_version = '2.4.1 R2'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -334,12 +334,12 @@ async def on_command_error(ctx, error):
             await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Discord API issue)")
             return
 
-    #? Another API related issue?
-    #todo: look into this one at some point
+    #booru related issue
+    #can be intentionally triggered with gif2
     if str(error) == "Command raised an exception: TypeError: 'NoneType' object is not subscriptable":
-        #await ctx.send("The Discord API may be having issues at the moment")
+        await ctx.send("\U00002139 There seems to be an issue retrieving an image for this command, try again later")
         if errordm == True:
-            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Discord API issue(?))")
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Current booru may be down)")
             return
 
     #Permissions error
