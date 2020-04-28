@@ -42,6 +42,12 @@ from discord.ext import commands
 from bs4 import BeautifulSoup
 
 
+keiki_title = [
+"Character image!",
+"Create!",     
+"oh!",
+]
+
 #twitter stuff
 t_api = open("Tokens/twitter_consumer.txt", "r")
 tw_api = t_api.read()
