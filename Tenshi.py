@@ -17,9 +17,7 @@ ownerid = 166189271244472320
 bootdm = True
 
 #Smart DM on boot
-#workaround for on_ready being called several times due to discords new gateway reconnection update
-#https://discordapp.com/developers/docs/topics/gateway#reconnect
-#should be needed until discord.py is updated to fix this
+#enable to not send a DM if on_ready() was called without a reboot command being used
 smartboot = False
 
 #DM on error
