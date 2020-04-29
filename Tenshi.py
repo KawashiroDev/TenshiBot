@@ -13,6 +13,9 @@ bot_version = '2.4.1 R2'
 #Owner ID
 ownerid = 166189271244472320
 
+#hangout ID
+hangoutid = 273086604866748426
+
 #DM on boot (production only)
 bootdm = True
 
@@ -746,7 +749,14 @@ async def bantest(ctx):
 @bot.command()
 @is_owner()
 async def kickme(ctx):
-    await ctx.author.kick(reason='.')   
+    await ctx.author.kick(reason='.')
+
+#server leaving command
+@bot.command()
+@is_owner()
+async def yeetserver(ctx, serverid):
+    youmu = bot.get_guild(serverid)
+    await youmu.leave()
 
 #console command
 @bot.command()
