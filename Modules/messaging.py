@@ -60,9 +60,9 @@ class messagingCog(commands.Cog):
         yuyuko = self.bot.get_user(166189271244472320)
         devmsg = ('[' + ctx.author.name + '] ' + args)
         
-        if str(ctx.author.id) in badactors:
-            await ctx.send('Error: You have been blacklisted')
-            return
+#        if str(ctx.author.id) in badactors:
+#            await ctx.send('Error: You have been blacklisted')
+#            return
         if ctx.author.created_at > acc_age:
             await ctx.send('Error: Your Discord account is too new')
             return
