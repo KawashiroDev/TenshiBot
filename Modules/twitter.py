@@ -4,7 +4,7 @@
 #number of commands which can be ran in timeframe
 rlimit_cmd = 2
 #timeframe (seconds)
-rlimit_time = 120
+rlimit_time = 240
 
 #Account age options
 #How many days old the account needs to be 
@@ -69,9 +69,14 @@ class twitterCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.guild)
     async def sendtweet(self, ctx, *, args):
         userid = str(ctx.author.id)
+        serverid = str(ctx.guild.id)
+        servername = str(ctx.guild.name)
+        #print (serverid)
+        #print (servername)
+        #print (ctx.guild.member_count)
         
         #convert text to ascii
         asciitext = strip_non_ascii(args)
@@ -88,6 +93,13 @@ class twitterCog(commands.Cog):
             return
         if "@" in asciitext:
             await ctx.send('Error: Invalid tweet')
+            return
+        if "#" in asciitext:
+            await ctx.send('Error: Hashtags are not supported at this time')
+            return
+        #prevent people from bypassing cooldown
+        if int(ctx.guild.member_count) < int("4"):
+            await ctx.send('Twitter command cannot be used in this server')
             return
         #1cc detection 
         if int(ctx.guild.id) == int("162861213309599744"):
@@ -127,7 +139,7 @@ class twitterCog(commands.Cog):
                     await ctx.send('Tweet Posted')
                     #DM me about the tweet if i need to go delete it
                     yuyuko = self.bot.get_user(166189271244472320)
-                    await yuyuko.send("**--A tweet was sent--** \nContents: " + finaltweet + "\nUnfiltered contents: " + asciitext + "\nUser ID: " + userid)
+                    await yuyuko.send("**--A tweet was sent--** \nContents: " + finaltweet + "\nUnfiltered contents: " + asciitext + "\nUser ID: " + userid + "\nServer ID: " + serverid + "\nServer name: " + servername)
                     return
                 elif ((reaction.emoji) == '\U0000274e'):
                     await ctx.send('Operation canceled')
