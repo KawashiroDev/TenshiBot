@@ -10,3 +10,4 @@ python-twitter
 profanityfilter
 urlextract
 playsound
+async_cleverbot
