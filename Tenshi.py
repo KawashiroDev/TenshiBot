@@ -51,6 +51,7 @@ import lxml
 import twitter
 import datetime
 import playsound
+import async_cleverbot as ac
 
 from discord.ext import commands
 from random import randint
@@ -73,7 +74,7 @@ if (os.path.isdir(win_dir_check)) == True:
     print('[Startup] Detected a windows PC, running in debug mode')
     bot_mode = 'Debug'
     debugmode = True
-    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.debug', 'Modules.messaging']
+    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.debug', 'Modules.messaging', 'Modules.cleverbot']
     print('[Debug] /Modules/debug.py loaded')
     print('')
     print('Welcome to CelestialOS 98...')
