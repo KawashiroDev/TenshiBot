@@ -15,7 +15,7 @@ import async_cleverbot as ac
 travitia_key = open("Tokens/cleverbot.txt", "r")
 tr_key = travitia_key.read()
 
-class Cleverbot(commands.Cog):
+class cleverbotCog(commands.Cog):
     """Commands for interacting with the Travitia Cleverbot API"""
 
     def __init__(self, bot):
@@ -44,4 +44,4 @@ class Cleverbot(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(Cleverbot(bot))
+    bot.add_cog(cleverbotCog(bot))
