@@ -87,7 +87,7 @@ else:
     print('[Startup] Running in production mode')
     bot_mode = 'Production'
     debugmode = False
-    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.messaging']
+    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.messaging', 'Modules.cleverbot']
 
 test = "test"
 
