@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.4.1 R3'
+bot_version = '2.4.2'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -310,7 +310,8 @@ async def on_command_error(ctx, error):
         #em = discord.Embed(title='Error', description = error, colour=0xc91616)
         #em.set_author(icon_url=bot.user.avatar_url)
         #await ctx.send(embed=em)
-        await ctx.send(error)
+        #await ctx.send(error)
+        await ctx.send("Take it easy! (command on cooldown) Wait %.2fs" % error.retry_after, delete_after=8)
         return
     #user failed check
     if isinstance(error, commands.CheckFailure):
