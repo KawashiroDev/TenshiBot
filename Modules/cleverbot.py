@@ -38,6 +38,12 @@ class cleverbotCog(commands.Cog):
             return await ctx.send("Celestials have to sleep sometimes. Please ask me later!")
         else:            
             await ctx.send("{}, {}".format(ctx.author.mention, r.text))
+            
+    #@commands.Cog.listener()
+    #async def on_message(self, message):
+        #print(message.content)
+        #return
+    
 
     def cog_unload(self):
         self.bot.loop.create_task(self.cleverbot.close())
