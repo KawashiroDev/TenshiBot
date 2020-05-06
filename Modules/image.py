@@ -24,9 +24,9 @@ booruappend = ''
 
 #ratelimiting options
 #number of commands which can be ran in timeframe
-rlimit_cmd = 5
+rlimit_cmd = 4
 #timeframe (seconds)
-rlimit_time = 10
+rlimit_time = 11
 #
 
 import discord
