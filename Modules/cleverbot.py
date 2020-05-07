@@ -38,11 +38,14 @@ class cleverbotCog(commands.Cog):
             return await ctx.send("Celestials have to sleep sometimes. Please ask me later!")
         else:            
             await ctx.send("{}, {}".format(ctx.author.mention, r.text))
-            
-    #@commands.Cog.listener()
-    #async def on_message(self, message):
-        #print(message.content)
-        #return
+
+          
+    @commands.Cog.listener()
+    async def on_message(self, message):
+        role = discord.utils.get(message.guild.roles, name="tenko_immersiveai")
+        if role in message.guild.me.roles and message.content.startswith("<@" + str(self.bot.user.id) + ">"):
+            print("check")
+            return
     
 
     def cog_unload(self):
