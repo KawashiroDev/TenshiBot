@@ -417,6 +417,11 @@ async def on_message(message):
     if message.guild.id == int('264445053596991498') and message.content.startswith('='):
         return
 
+    #CB immersive flag check
+    immersiveflag = discord.utils.get(message.guild.roles, name="tenko_immersiveai")
+    if immersiveflag in message.guild.me.roles:
+        return
+
     #= prefix ignoring code (role)
     role = discord.utils.get(message.guild.roles, name="mention_only")
     if role in message.guild.me.roles and message.content.startswith('='):
