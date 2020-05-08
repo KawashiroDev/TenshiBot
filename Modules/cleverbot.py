@@ -9,8 +9,10 @@ rlimit_time = 10
 #
 
 import discord
+import asyncio
 from discord.ext import commands
 import async_cleverbot as ac
+
 
 travitia_key = open("Tokens/cleverbot.txt", "r")
 tr_key = travitia_key.read()
@@ -31,21 +33,28 @@ class cleverbotCog(commands.Cog):
         try:
             r = await self.cleverbot.ask(query, ctx.author.id)
         except ac.InvalidKey:
-            return await ctx.send(
-                "An error has occurred. The API key provided was not valid."
-            )
+            return await ctx.send("An error has occurred. The API key provided was not valid.")
         except ac.APIDown:
             return await ctx.send("Celestials have to sleep sometimes. Please ask me later!")
         else:            
             await ctx.send("{}, {}".format(ctx.author.mention, r.text))
-
-          
+         
     @commands.Cog.listener()
     async def on_message(self, message):
-        role = discord.utils.get(message.guild.roles, name="tenko_immersiveai")
-        if role in message.guild.me.roles and message.content.startswith("<@" + str(self.bot.user.id) + ">"):
-            print("check")
-            return
+
+        immersiveflag = discord.utils.get(message.guild.roles, name="tenko_immersiveai")
+        query = message.content[len("<@!" + str(self.bot.user.id) + ">"):].strip()
+        #print(query)
+        if immersiveflag in message.guild.me.roles and message.content.startswith("<@!" + str(self.bot.user.id) + ">"):
+            try:
+                r = await self.cleverbot.ask(query, message.author.id)
+            except ac.InvalidKey:
+                return await message.channel.send("An error has occurred. The API key provided was not valid.")
+            except ac.APIDown:
+                return await message.channel.send("Celestials have to sleep sometimes. Please ask me later!")
+            else:            
+                await message.channel.send("{}, {}".format(message.author.mention, r.text))
+                return
     
 
     def cog_unload(self):
