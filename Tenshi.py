@@ -696,6 +696,7 @@ async def setstatus(ctx, *, args):
     await bot.change_presence(activity=discord.Game(name= args))
     await ctx.send("status set to " + "`" + args + "`")
 
+#command doesn't work on a verified bot
 @bot.command()
 @is_owner()  
 async def setname(ctx, *, args):
@@ -726,7 +727,7 @@ async def shuffleavatar(ctx):
     await bot.user.edit(avatar = newavatar.read())
     await ctx.send("Avatar shuffled!")
 
-        
+#command doesn't work on a verified bot       
 @bot.command()
 @is_owner()
 async def cirnomode(ctx):   
@@ -736,6 +737,7 @@ async def cirnomode(ctx):
     await bot.change_presence(activity=discord.Game(name="with Daiyousei"))
     await ctx.send("Enabled Cirnomode, Reset to Tenshi with `tenkomode`")
 
+#command doesn't work on a verified bot  
 @bot.command()
 @is_owner()
 async def tenkomode(ctx):   
