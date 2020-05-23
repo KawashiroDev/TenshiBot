@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.4.2'
+bot_version = '2.4.2 R1'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -727,23 +727,24 @@ async def shuffleavatar(ctx):
     await bot.user.edit(avatar = newavatar.read())
     await ctx.send("Avatar shuffled!")
 
-#command doesn't work on a verified bot       
+     
 @bot.command()
 @is_owner()
 async def cirnomode(ctx):   
     image = "avatars/alt_char/cirno/" + random.choice(os.listdir("avatars/alt_char/cirno"))
     newavatar = open(image, 'rb')
-    await bot.user.edit(username="CirnoBot", avatar = newavatar.read())
-    await bot.change_presence(activity=discord.Game(name="with Daiyousei"))
+    #await bot.user.edit(username="CirnoBot", avatar = newavatar.read())
+    await bot.user.edit(avatar = newavatar.read())
+    await bot.change_presence(activity=discord.Game(name="Happy Cirno Day!"))
     await ctx.send("Enabled Cirnomode, Reset to Tenshi with `tenkomode`")
-
-#command doesn't work on a verified bot  
+  
 @bot.command()
 @is_owner()
 async def tenkomode(ctx):   
     image =  "avatars/normal/" + random.choice(os.listdir("avatars/normal"))
     newavatar = open(image, 'rb')
-    await bot.user.edit(username="TenshiBot", avatar = newavatar.read())
+    #await bot.user.edit(username="TenshiBot", avatar = newavatar.read())
+    await bot.user.edit(avatar = newavatar.read())
     await bot.change_presence(activity=discord.Game(name="with Iku"))
     await ctx.send("Enabled Tenshimode")    
 
