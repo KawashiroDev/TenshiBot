@@ -91,6 +91,16 @@ class messagingCog(commands.Cog):
         await yuyuko.send(embed=em)
         await ctx.send('\U0001F4E4 Message sent')
         return
+
+    @commands.command()
+    @is_owner()
+    async def rsay(self, ctx, channelid, *, args):
+        print(channelid)
+        print(args)
+        
+        yuyuko = self.bot.get_channel(int(channelid))
+        await yuyuko.send(args)
+        return
     
 
 def setup(bot):
