@@ -22,7 +22,7 @@ class cleverbotCog(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-        self.cleverbot = ac.Cleverbot(tr_key)
+        self.cleverbot = ac.Cleverbot(tr_key, context=ac.DictContext())
         self.cleverbot.set_context(ac.DictContext(self.cleverbot))
 
     @commands.command()
@@ -30,6 +30,7 @@ class cleverbotCog(commands.Cog):
     async def ai(self, ctx, *, query: str):
         """Ask Cleverbot a question!"""
         await ctx.trigger_typing()
+        #print (ac.DictContext())
         try:
             r = await self.cleverbot.ask(query, ctx.author.id)
         except ac.InvalidKey:
