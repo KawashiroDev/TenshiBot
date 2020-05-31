@@ -768,6 +768,13 @@ async def yeetserver(ctx, serverid):
     youmu = bot.get_guild(serverid)
     await youmu.leave()
 
+@bot.command()
+@is_owner()
+async def delmsg(ctx, arg):
+    msg = bot.get_message(int(arg))
+    await msg.delete()
+    await ctx.send("message deleted")
+
 #console command
 @bot.command()
 @is_owner()
