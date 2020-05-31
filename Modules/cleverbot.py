@@ -29,6 +29,11 @@ class cleverbotCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def ai(self, ctx, *, query: str):
         """Ask Cleverbot a question!"""
+        #disable AI command in TPL
+        if int(ctx.guild.id) == int("486699197131915264"):
+            await ctx.send('Error: AI command cannot be used in TPL')
+            return
+        
         await ctx.trigger_typing()
         #print (ac.DictContext())
         try:
