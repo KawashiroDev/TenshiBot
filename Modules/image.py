@@ -17,6 +17,19 @@ boorublacklist = 'rating:safe+-underwear+-sideboob+-pov_feet+-underboob+-upskirt
 
 boorublacklistgif = 'rating:safe+-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini+-6%2Bgirls+-comic+-greyscale+-bdsm+-huge_filesize+-lovestruck+-absurdres+-artificial_vagina+-swimsuit+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-audio+-webm+rating:safe+-seductive_smile+-no_bra+-off_shoulder+-breast_hold+-cleavage+-nori_tamago+-nude+-butt_crack+-naked_apron'
 
+#tag blacklist v2
+#base tags to apply to all levels (except gifs)
+badtags_base = 'rating:safe+-6%2Bgirls+-comic+-greyscale+-huge_filesize+-animated+-audio+-webm+-absurdres'
+#artists whose works slip by the tag filters
+badartists = '+-nori_tamago'
+#base tags for gif command
+badtags_gifbase = 'rating:safe+-6%2Bgirls+-comic+-greyscale+-huge_filesize+-audio+-webm+-absurdres'
+#default blacklisted tags (full SFW mode)
+badtags_strict = '-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini+-bdsm+-lovestruck+-artificial_vagina+-swimsuit+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-off_shoulder+-breast_hold+-cleavage+-nude+-butt_crack+-naked_apron'
+#tags to blacklist in moderate mode
+badtags_moderate = '+-pov_feet+-bdsm+-lovestruck+-nude+-blood+-artificial_vagina+-sexually_suggestive+-upskirt+-penetration_gesture'
+badtags_nsfwmode = ''
+
 #append text to the start of booru url output
 #change this if the bot is sending malformed booru urls
 #safebooru URL's used to need http added to the start but now they dont anymore
