@@ -18,6 +18,7 @@ boorublacklist = 'rating:safe+-underwear+-sideboob+-pov_feet+-underboob+-upskirt
 boorublacklistgif = 'rating:safe+-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini+-6%2Bgirls+-comic+-greyscale+-bdsm+-huge_filesize+-lovestruck+-absurdres+-artificial_vagina+-swimsuit+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-audio+-webm+rating:safe+-seductive_smile+-no_bra+-off_shoulder+-breast_hold+-cleavage+-nori_tamago+-nude+-butt_crack+-naked_apron'
 
 #tag blacklist v2
+
 #base tags to apply to all levels (except gifs)
 badtags_base = 'rating:safe+-6%2Bgirls+-comic+-greyscale+-huge_filesize+-animated+-audio+-webm+-absurdres'
 #artists whose works slip by the tag filters
@@ -28,6 +29,7 @@ badtags_gifbase = 'rating:safe+-6%2Bgirls+-comic+-greyscale+-huge_filesize+-audi
 badtags_strict = '-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini+-bdsm+-lovestruck+-artificial_vagina+-swimsuit+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-off_shoulder+-breast_hold+-cleavage+-nude+-butt_crack+-naked_apron'
 #tags to blacklist in moderate mode
 badtags_moderate = '+-pov_feet+-bdsm+-lovestruck+-nude+-blood+-artificial_vagina+-sexually_suggestive+-upskirt+-penetration_gesture'
+#tags to blacklist in an NSFW channel
 badtags_nsfwmode = ''
 
 #append text to the start of booru url output
@@ -267,6 +269,45 @@ class ImageCog(commands.Cog):
                     await ctx.send(str(pic))
                     print(pic)
                     print(msg2)
+
+
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    async def tenshi3(self, ctx):
+        char = 'hinanawi_tenshi'
+        booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + badtags_base + badtags_strict + '+' + char
+        async with aiohttp.ClientSession() as session:
+            async with session.get(booruurl) as r:
+                if r.status == 200:
+                    await asyncio.sleep(0.3)
+                    soup = BeautifulSoup(await r.text(), "lxml")
+                    num = int(soup.find('posts')['count'])
+                    maxpage = int(round(num/100))
+                    page = random.randint(0, maxpage)
+                    t = soup.find('posts')
+                    p = t.find_all('post')
+                    source = ((soup.find('post'))['source'])
+                    if num < 100:
+                        pic = p[random.randint(0,num-1)]
+                    elif page == maxpage:
+                        pic = p[random.randint(0,99)]
+                    else:
+                        pic = p[random.randint(0,99)]
+                    msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
+                    
+                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                    em.set_author(name='Character Image')
+                    em.set_image(url=booruappend + msg)
+                    em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    sbooru_img = await ctx.send(embed=em)
 
 
     @commands.command()
