@@ -20,7 +20,7 @@ boorublacklistgif = 'rating:safe+-underwear+-sideboob+-pov_feet+-underboob+-upsk
 #tag blacklist v2
 
 #base tags to apply to all levels (except gifs)
-badtags_base = 'rating:safe+-6%2Bgirls+-comic+-greyscale+-huge_filesize+-animated+-audio+-webm+-absurdres'
+badtags_base = 'solo+rating:safe+-6%2Bgirls+-comic+-greyscale+-huge_filesize+-animated+-audio+-webm+-absurdres'
 #artists whose works slip by the tag filters
 badartists = '+-nori_tamago'
 #base tags for gif command
@@ -276,7 +276,7 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def tenshi3(self, ctx):
         char = 'hinanawi_tenshi'
-        booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + badtags_base + badtags_strict + '+' + char
+        booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + badtags_base + badtags_strict + '+' + char
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
                 if r.status == 200:
