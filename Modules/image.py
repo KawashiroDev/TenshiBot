@@ -20,11 +20,11 @@ boorublacklistgif = 'rating:safe+-underwear+-sideboob+-pov_feet+-underboob+-upsk
 #tag blacklist v2
 
 #base tags to apply to all levels (except gifs)
-badtags_base = 'solo+rating:safe+-6%2Bgirls+-comic+-greyscale+-huge_filesize+-animated+-audio+-webm+-absurdres'
+boorutags_base = 'solo+rating:safe+-6%2Bgirls+-comic+-greyscale+-huge_filesize+-animated+-audio+-webm+-absurdres'
 #artists whose works slip by the tag filters
 badartists = '+-nori_tamago'
 #base tags for gif command
-badtags_gifbase = 'rating:safe+-6%2Bgirls+-comic+-greyscale+-huge_filesize+-audio+-webm+-absurdres'
+boorutags_gif = 'rating:safe+-6%2Bgirls+-comic+-greyscale+-huge_filesize+-audio+-webm+-absurdres'
 #default blacklisted tags (full SFW mode)
 badtags_strict = '-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini+-bdsm+-lovestruck+-artificial_vagina+-swimsuit+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-off_shoulder+-breast_hold+-cleavage+-nude+-butt_crack+-naked_apron'
 #tags to blacklist in moderate mode
@@ -84,6 +84,7 @@ class ImageCog(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
+    
 
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
@@ -275,8 +276,17 @@ class ImageCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def tenshi3(self, ctx):
+        #define the character tag
         char = 'hinanawi_tenshi'
-        booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + badtags_base + badtags_strict + '+' + char
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate mode'
+            print("moderate role")
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
                 if r.status == 200:
@@ -304,7 +314,7 @@ class ImageCog(commands.Cog):
                     
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
