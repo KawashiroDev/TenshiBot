@@ -1,5 +1,5 @@
 TenshiBot server config file
 File should be named <serverid>.txt
 //
-char_img_rating=moderate
+char_img_rating=default
 cb_enable=true
