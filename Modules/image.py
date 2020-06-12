@@ -90,8 +90,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def reimu(self, ctx):
         char = 'Hakurei_Reimu'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -113,7 +121,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xb50404)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)  
@@ -123,8 +131,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def marisa(self, ctx):
         char = 'kirisame_marisa'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -146,7 +162,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xf5e942)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -157,133 +173,11 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def tenshi(self, ctx):
         char = 'hinanawi_tenshi'
-        async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
-                if r.status == 200:
-                    await asyncio.sleep(0.3)
-                    soup = BeautifulSoup(await r.text(), "lxml")
-                    num = int(soup.find('posts')['count'])
-                    maxpage = int(round(num/100))
-                    page = random.randint(0, maxpage)
-                    t = soup.find('posts')
-                    p = t.find_all('post')
-                    source = ((soup.find('post'))['source'])
-                    if num < 100:
-                        pic = p[random.randint(0,num-1)]
-                    elif page == maxpage:
-                        pic = p[random.randint(0,99)]
-                    else:
-                        pic = p[random.randint(0,99)]
-                    msg = pic['file_url']
-                    sbooru_id = pic['id']
-                    sbooru_tags = pic['tags']
-                    sbooru_sauce = pic['source']
-                    sbooru_id = pic['id']
-                    sbooru_tags = pic['tags']
-                    sbooru_sauce = pic['source']
-                    
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
-                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
-                    em.set_image(url=booruappend + msg)
-                    em.set_footer(text="Image Source: " + sbooru_sauce)    
-                    sbooru_img = await ctx.send(embed=em)
-
-
-
-
-
-    @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
-    async def tenshi_react(self, ctx):
-        char = 'hinanawi_tenshi'
-        async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
-                if r.status == 200:
-                    await asyncio.sleep(0.3)
-                    soup = BeautifulSoup(await r.text(), "lxml")
-                    num = int(soup.find('posts')['count'])
-                    maxpage = int(round(num/100))
-                    page = random.randint(0, maxpage)
-                    t = soup.find('posts')
-                    p = t.find_all('post')
-                    source = ((soup.find('post'))['source'])
-                    if num < 100:
-                        pic = p[random.randint(0,num-1)]
-                    elif page == maxpage:
-                        pic = p[random.randint(0,99)]
-                    else:
-                        pic = p[random.randint(0,99)]
-                    msg = pic['file_url']
-                    sbooru_id = pic['id']
-                    sbooru_tags = pic['tags']
-                    sbooru_sauce = pic['source']
-                    sbooru_id = pic['id']
-                    sbooru_tags = pic['tags']
-                    sbooru_sauce = pic['source']
-                    
-                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
-                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
-                    em.set_image(url=booruappend + msg)
-                    em.set_footer(text="Image Source: " + sbooru_sauce)    
-                    sbooru_img = await ctx.send(embed=em)
-
-
-
-                        
-
-
-
-    @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
-    async def tenshi2(self, ctx):
-        char = 'hinanawi_tenshi'
-        async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
-                if r.status == 200:
-                    await asyncio.sleep(0.3)
-                    soup = BeautifulSoup(await r.text(), "lxml")
-                    num = int(soup.find('posts')['count'])
-                    maxpage = int(round(num/100))
-                    page = random.randint(0, maxpage)
-                    t = soup.find('posts')
-                    p = t.find_all('post')
-                    source = ((soup.find('post'))['source'])
-                    if num < 100:
-                        pic = p[random.randint(0,num-1)]
-                    elif page == maxpage:
-                        pic = p[random.randint(0,99)]
-                    else:
-                        pic = p[random.randint(0,99)]
-                    msg = pic['file_url']
-                    sbooru_id = pic['id']
-                    sbooru_tags = pic['tags']
-                    sbooru_sauce = pic['source']
-                    msg2 = pic['change']
-                    em = discord.Embed(title='', description='' + source, colour=0x42D4F4)
-                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
-                    em.set_image(url=booruappend + msg)
-                    await ctx.send(msg)
-                    await ctx.send('img_source:' + source)
-                    await ctx.send(str(pic))
-                    print(pic)
-                    print(msg2)
-
-
-
-    @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
-    async def tenshi3(self, ctx):
-        #define the character tag
-        char = 'hinanawi_tenshi'
         #check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
-            embed_name = 'Character image | Moderate mode'
-            print("moderate role")
+            embed_name = 'Character image | Moderate'
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -320,12 +214,168 @@ class ImageCog(commands.Cog):
                     sbooru_img = await ctx.send(embed=em)
 
 
+
+
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    async def tenshi_react(self, ctx):
+        char = 'hinanawi_tenshi'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
+        async with aiohttp.ClientSession() as session:
+            async with session.get(booruurl) as r:
+                if r.status == 200:
+                    await asyncio.sleep(0.3)
+                    soup = BeautifulSoup(await r.text(), "lxml")
+                    num = int(soup.find('posts')['count'])
+                    maxpage = int(round(num/100))
+                    page = random.randint(0, maxpage)
+                    t = soup.find('posts')
+                    p = t.find_all('post')
+                    source = ((soup.find('post'))['source'])
+                    if num < 100:
+                        pic = p[random.randint(0,num-1)]
+                    elif page == maxpage:
+                        pic = p[random.randint(0,99)]
+                    else:
+                        pic = p[random.randint(0,99)]
+                    msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
+                    
+                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                    em.set_author(name=embed_name)
+                    em.set_image(url=booruappend + msg)
+                    em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    sbooru_img = await ctx.send(embed=em)
+
+
+
+                        
+
+
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    async def tenshi2(self, ctx):
+        char = 'hinanawi_tenshi'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
+        async with aiohttp.ClientSession() as session:
+            async with session.get(booruurl) as r:
+                if r.status == 200:
+                    await asyncio.sleep(0.3)
+                    soup = BeautifulSoup(await r.text(), "lxml")
+                    num = int(soup.find('posts')['count'])
+                    maxpage = int(round(num/100))
+                    page = random.randint(0, maxpage)
+                    t = soup.find('posts')
+                    p = t.find_all('post')
+                    source = ((soup.find('post'))['source'])
+                    if num < 100:
+                        pic = p[random.randint(0,num-1)]
+                    elif page == maxpage:
+                        pic = p[random.randint(0,99)]
+                    else:
+                        pic = p[random.randint(0,99)]
+                    msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
+                    msg2 = pic['change']
+                    em = discord.Embed(title='', description='' + source, colour=0x42D4F4)
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                    em.set_author(name=embed_name)
+                    em.set_image(url=booruappend + msg)
+                    await ctx.send(msg)
+                    await ctx.send('img_source:' + source)
+                    await ctx.send(str(pic))
+                    print(pic)
+                    print(msg2)
+
+
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    async def tenshi3(self, ctx):
+        em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+        #define the character tag
+        char = 'hinanawi_tenshi'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+            em.set_footer(text="Moderate mode is enabled")
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
+        async with aiohttp.ClientSession() as session:
+            async with session.get(booruurl) as r:
+                if r.status == 200:
+                    await asyncio.sleep(0.3)
+                    soup = BeautifulSoup(await r.text(), "lxml")
+                    num = int(soup.find('posts')['count'])
+                    maxpage = int(round(num/100))
+                    page = random.randint(0, maxpage)
+                    t = soup.find('posts')
+                    p = t.find_all('post')
+                    source = ((soup.find('post'))['source'])
+                    if num < 100:
+                        pic = p[random.randint(0,num-1)]
+                    elif page == maxpage:
+                        pic = p[random.randint(0,99)]
+                    else:
+                        pic = p[random.randint(0,99)]
+                    msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
+                    img_width = pic['width']
+                    img_height = pic['height']
+                    creator = pic['creator_id']
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                    em.set_author(name=embed_name)
+                    em.set_image(url=booruappend + msg)
+                    em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
+                    em.add_field(name="Gelbooru ID", value=sbooru_id, inline=True)
+                    em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
+                    #em.add_field(name="Creator ID", value=creator, inline=True)
+                    sbooru_img = await ctx.send(embed=em)
+
+
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def sakuya(self, ctx):
         char = 'izayoi_sakuya'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -347,7 +397,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xc7c7c7)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -357,8 +407,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def cirno(self, ctx):
         char = 'cirno'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -380,7 +438,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x00e5ff)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -391,8 +449,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def meiling(self, ctx):
         char = 'hong_meiling'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -414,7 +480,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x04b548)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -425,8 +491,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def flandre(self, ctx):
         char = 'flandre_scarlet'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -448,7 +522,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xb50404)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -459,8 +533,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def rumia(self, ctx):
         char = 'rumia'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -482,7 +564,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xf5da42)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -494,8 +576,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def rinnosuke(self, ctx):
         char = 'morichika_rinnosuke'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -517,7 +607,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -530,8 +620,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def murasa(self, ctx):
         char = 'murasa_minamitsu'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -553,7 +651,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -566,8 +664,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def mamizou(self, ctx):
         char = 'futatsuiwa_mamizou'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -589,7 +695,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -602,8 +708,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def shou(self, ctx):
         char = 'toramaru_shou'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -625,7 +739,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -638,8 +752,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def nemuno(self, ctx):
         char = 'sakata_nemuno'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -661,7 +783,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -673,8 +795,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def eternity(self, ctx):
         char = 'eternity_larva'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -696,7 +826,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -709,8 +839,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def narumi(self, ctx):
         char = 'yatadera_narumi'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -732,7 +870,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -744,8 +882,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def daiyousei(self, ctx):
         char = 'daiyousei'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -767,7 +913,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x04b548)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -779,8 +925,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def ringo(self, ctx):
         char = 'ringo_(touhou)'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -802,7 +956,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xe2a81e)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -814,8 +968,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def kosuzu(self, ctx):
         char = 'motoori_kosuzu'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -837,7 +999,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -849,8 +1011,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def akyuu(self, ctx):
         char = 'hieda_no_akyuu'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -872,7 +1042,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -884,8 +1054,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def hatate(self, ctx):
         char = 'himekaidou_hatate'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -907,7 +1085,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xb50480)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -919,8 +1097,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def mima(self, ctx):
         char = 'mima'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -942,7 +1128,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -955,8 +1141,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def sariel(self, ctx):
         char = 'sariel'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -978,7 +1172,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -991,8 +1185,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def yumemi(self, ctx):
         char = 'okazaki_yumemi'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1014,7 +1216,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1027,8 +1229,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def shinki(self, ctx):
         char = 'shinki'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1050,7 +1260,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1062,8 +1272,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def lily(self, ctx):
         char = 'lily_white'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1085,7 +1303,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1097,8 +1315,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def shion(self, ctx):
         char = 'yorigami_shion'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1120,7 +1346,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x048cb5)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1132,8 +1358,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def joon(self, ctx):
         char = "yorigami_jo'on"
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1155,7 +1389,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xaa4fa0)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1167,8 +1401,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def seiran(self, ctx):
         char = 'seiran_(touhou)'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1190,7 +1432,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x6b87bd)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1202,8 +1444,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def koakuma(self, ctx):
         char = 'koakuma'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1225,7 +1475,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x990000)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1237,8 +1487,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def raiko(self, ctx):
         char = 'horikawa_raiko'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1260,7 +1518,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xd25859)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1272,8 +1530,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def okina(self, ctx):
         char = 'matara_okina'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1295,7 +1561,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xe69454)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1307,8 +1573,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def mai(self, ctx):
         char = 'teireida_mai'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1330,7 +1604,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x4e7764)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1342,8 +1616,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def satono(self, ctx):
         char = 'nishida_satono'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1365,7 +1647,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xe262b0)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1377,8 +1659,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def aunn(self, ctx):
         char = 'komano_aun'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1400,7 +1690,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1412,8 +1702,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def komachi(self, ctx):
         char = 'onozuka_komachi'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1435,7 +1733,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xd25859)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1447,8 +1745,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def wakasagihime(self, ctx):
         char = 'wakasagihime'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1470,7 +1776,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1480,8 +1786,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def seija(self, ctx):
         char = 'kijin_seija'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1514,8 +1828,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def toyohime(self, ctx):
         char = 'watatsuki_no_toyohime'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1537,7 +1859,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x583b80)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1549,8 +1871,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def yorihime(self, ctx):
         char = 'watatsuki_no_yorihime'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1572,7 +1902,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xa84384)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1584,8 +1914,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def renko(self, ctx):
         char = 'usami_renko'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1607,7 +1945,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1619,8 +1957,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def maribel(self, ctx):
         char = 'maribel_hearn'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1642,7 +1988,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1654,8 +2000,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def nue(self, ctx):
         char = 'houjuu_nue'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1677,7 +2031,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x000000)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1689,8 +2043,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def iku(self, ctx):
         char = 'nagae_iku'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1712,7 +2074,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1724,8 +2086,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def elly(self, ctx):
         char = 'elly'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1747,7 +2117,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1759,8 +2129,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def kasen(self, ctx):
         char = 'ibaraki_kasen'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1782,7 +2160,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xfb959e)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1794,8 +2172,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def keine(self, ctx):
         char = 'kamishirasawa_keine'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1817,7 +2203,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x574b8c)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1829,8 +2215,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def konngara(self, ctx):
         char = 'konngara'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1852,7 +2246,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1864,8 +2258,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def yuyuko(self, ctx):
         char = 'saigyouji_yuyuko'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1887,7 +2289,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xff40d9)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1899,8 +2301,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def aya(self, ctx):
         char = 'shameimaru_aya'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1922,7 +2332,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xe58a53)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1934,8 +2344,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def nitori(self, ctx):
         char = 'kawashiro_nitori'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1957,7 +2375,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xb2daef)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -1969,8 +2387,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def sumireko(self, ctx):
         char = 'usami_sumireko'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -1992,7 +2418,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xaa6ad3)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2004,8 +2430,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def okuu(self, ctx):
         char = 'reiuji_utsuho'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2027,7 +2461,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x009917)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2039,8 +2473,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def patchouli(self, ctx):
         char = 'patchouli_knowledge'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2062,7 +2504,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xc646e0)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2074,8 +2516,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def youmu(self, ctx):
         char = 'konpaku_youmu'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2097,7 +2547,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x79eb50)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2109,8 +2559,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def koishi(self, ctx):
         char = 'komeiji_koishi'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2132,7 +2590,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x62f500)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2144,8 +2602,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def mokou(self, ctx):
         char = 'fujiwara_no_mokou'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2167,7 +2633,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xf50000)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2179,8 +2645,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def satori(self, ctx):
         char = 'komeiji_satori'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2202,7 +2676,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xa700f5)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2214,8 +2688,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def wan(self, ctx):
         char = 'inubashiri_momiji'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2237,7 +2719,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2249,8 +2731,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def momiji(self, ctx):
         char = 'inubashiri_momiji'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2272,7 +2762,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2284,8 +2774,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def ran(self, ctx):
         char = 'yakumo_ran'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2307,7 +2805,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2319,8 +2817,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def kagerou(self, ctx):
         char = 'imaizumi_kagerou'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2342,7 +2848,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2354,8 +2860,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def reisen(self, ctx):
         char = 'reisen_udongein_inaba'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2377,7 +2891,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xf94aff)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2390,8 +2904,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def reisen2(self, ctx):
         char = 'reisen'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2413,7 +2935,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x2291ba)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2426,8 +2948,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def rei(self, ctx):
         char = 'reisen'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2449,7 +2979,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x2291ba)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2462,8 +2992,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def letty(self, ctx):
         char = 'letty_whiterock'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2485,7 +3023,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2497,8 +3035,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def remilia(self, ctx):
         char = 'remilia_scarlet'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2520,7 +3066,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xfd8cff)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2531,8 +3077,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def suwako(self, ctx):
         char = 'moriya_suwako'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2554,7 +3108,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2566,8 +3120,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def shizuha(self, ctx):
         char = 'aki_shizuha'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2589,7 +3151,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2601,8 +3163,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def sanae(self, ctx):
         char = 'kochiya_sanae'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2624,7 +3194,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x24b343)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2636,8 +3206,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def clownpiece(self, ctx):
         char = 'clownpiece'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2659,7 +3237,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2671,8 +3249,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def yukari(self, ctx):
         char = 'yakumo_yukari'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2694,7 +3280,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2706,8 +3292,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def yuuka(self, ctx):
         char = 'kazami_yuuka'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2729,7 +3323,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x24b343)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2741,8 +3335,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def suika(self, ctx):
         char = 'ibuki_suika'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2764,7 +3366,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2776,8 +3378,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def sekibanki(self, ctx):
         char = 'sekibanki'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2799,7 +3409,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2811,8 +3421,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def wriggle(self, ctx):
         char = 'wriggle_nightbug'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2834,7 +3452,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2846,8 +3464,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def hina(self, ctx):
         char = 'kagiyama_hina'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2869,7 +3495,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2881,8 +3507,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def alice(self, ctx):
         char = 'alice_margatroid'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2904,7 +3538,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2916,8 +3550,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def kyouko(self, ctx):
         char = 'kasodani_kyouko'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2939,7 +3581,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2951,8 +3593,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def kisume(self, ctx):
         char = 'kisume'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -2974,7 +3624,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -2986,8 +3636,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def nazrin(self, ctx):
         char = 'nazrin'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3009,7 +3667,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3021,8 +3679,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def sukuna(self, ctx):
         char = 'sukuna_shinmyoumaru'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3056,8 +3722,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def kokoro(self, ctx):
         char = 'hata_no_kokoro'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3079,7 +3753,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3091,8 +3765,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def yoshika(self, ctx):
         char = 'miyako_yoshika'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3114,7 +3796,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3126,8 +3808,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def seiga(self, ctx):
         char = 'kaku_seiga'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3149,7 +3839,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3161,8 +3851,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def kogasa(self, ctx):
         char = 'tatara_kogasa'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3184,7 +3882,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3196,8 +3894,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def futo(self, ctx):
         char = 'mononobe_no_futo'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3219,7 +3925,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3231,8 +3937,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def miko(self, ctx):
         char = 'toyosatomimi_no_miko'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3254,7 +3968,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3266,8 +3980,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def mystia(self, ctx):
         char = 'mystia_lorelei'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3289,7 +4011,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xff8ade)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3301,8 +4023,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def genjii(self, ctx):
         char = 'genjii'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3324,7 +4054,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3336,8 +4066,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def byakuren(self, ctx):
         char = 'hijiri_byakuren'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3359,7 +4097,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x5b0082)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3371,8 +4109,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def hecatia(self, ctx):
         char = 'hecatia_lapislazuli'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3394,7 +4140,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x940f0f)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3406,8 +4152,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def junko(self, ctx):
         char = 'junko_(touhou)'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3441,8 +4195,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def sagume(self, ctx):
         char = 'kishin_sagume'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3464,7 +4226,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xb4449c)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3476,8 +4238,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def doremy(self, ctx):
         char = 'doremy_sweet'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3499,7 +4269,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3511,8 +4281,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def minoriko(self, ctx):
         char = 'aki_minoriko'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3534,7 +4312,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3546,8 +4324,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def yamame(self, ctx):
         char = 'kurodani_yamame'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3569,7 +4355,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3581,8 +4367,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def yuugi(self, ctx):
         char = 'hoshiguma_yuugi'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3604,7 +4398,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3616,8 +4410,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def parsee(self, ctx):
         char = 'mizuhashi_parsee'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3639,7 +4441,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3651,8 +4453,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def tewi(self, ctx):
         char = 'inaba_tewi'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3674,7 +4484,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xcc7c9c)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3686,8 +4496,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def medicine(self, ctx):
         char = 'medicine_melancholy'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3709,7 +4527,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3721,8 +4539,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def eiki(self, ctx):
         char = 'shiki_eiki'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3744,7 +4570,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x5b9c66)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3756,8 +4582,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def orin(self, ctx):
         char = 'kaenbyou_rin'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3779,7 +4613,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3791,8 +4625,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def kaguya(self, ctx):
         char = 'houraisan_kaguya'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3814,7 +4656,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xef61ff)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3826,8 +4668,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def eirin(self, ctx):
         char = 'yagokoro_eirin'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3849,7 +4699,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3861,8 +4711,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def kanako(self, ctx):
         char = 'yasaka_kanako'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3884,7 +4742,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x977cac)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3896,8 +4754,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def chen(self, ctx):
         char = 'chen'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3919,7 +4785,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -3955,7 +4821,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     #source links are disabled because gel has NSFW ads
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
@@ -3968,8 +4834,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def star2(self, ctx):
         char = 'star_sapphire'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -3991,7 +4865,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4003,8 +4877,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def luna(self, ctx):
         char = 'luna_child'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -4026,7 +4908,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4038,8 +4920,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def sunny(self, ctx):
         char = 'sunny_milk'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -4061,7 +4951,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4073,8 +4963,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def eika(self, ctx):
         char = 'ebisu_eika'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -4096,7 +4994,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4108,8 +5006,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def urumi(self, ctx):
         char = 'ushizaki_urumi'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -4131,7 +5037,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4143,8 +5049,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def kutaka(self, ctx):
         char = 'niwatari_kutaka'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -4166,7 +5080,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xdf9041)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4178,8 +5092,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def lunasa(self, ctx):
         char = 'lunasa_prismriver'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -4201,7 +5123,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4213,8 +5135,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def lyrica(self, ctx):
         char = 'lyrica_prismriver'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -4236,7 +5166,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4248,8 +5178,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def merlin(self, ctx):
         char = 'merlin_prismriver'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -4271,7 +5209,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4305,7 +5243,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4419,8 +5357,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def keiki(self, ctx):
         char = 'haniyasushin_keiki'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -4442,7 +5388,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4455,8 +5401,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def saki(self, ctx):
         char = 'kurokoma_saki'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -4478,7 +5432,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4491,8 +5445,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def mayumi(self, ctx):
         char = 'joutouguu_mayumi'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -4514,7 +5476,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4527,8 +5489,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def yachie(self, ctx):
         char = 'kicchou_yachie'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -4550,7 +5520,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4563,8 +5533,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def ichirin(self, ctx):
         char = 'kumoi_ichirin'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -4586,7 +5564,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4598,8 +5576,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def miyoi(self, ctx):
         char = 'okunoda_miyoi'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -4621,7 +5607,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4633,8 +5619,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def chiyuri(self, ctx):
         char = 'kitashirakawa_chiyuri'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -4656,7 +5650,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4669,8 +5663,16 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def pc98(self, ctx):
         char = 'touhou_(pc-98)'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image | Moderate'
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char) as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
                     await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
@@ -4692,7 +5694,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4730,7 +5732,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4764,7 +5766,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x14a625)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4798,7 +5800,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0xf5da42)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4832,7 +5834,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x88008c)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4866,7 +5868,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x8c0000)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4900,7 +5902,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4934,7 +5936,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
@@ -4968,7 +5970,7 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name='Character Image')
+                    em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
                     em.set_footer(text="Image Source: " + sbooru_sauce)    
                     sbooru_img = await ctx.send(embed=em)
