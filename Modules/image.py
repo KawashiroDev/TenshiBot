@@ -27,8 +27,10 @@ badartists = '+-nori_tamago'
 boorutags_gif = 'rating:safe+-6%2Bgirls+-comic+-greyscale+-huge_filesize+-audio+-webm+-absurdres'
 #default blacklisted tags (full SFW mode)
 badtags_strict = '-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini+-bdsm+-lovestruck+-artificial_vagina+-swimsuit+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-off_shoulder+-breast_hold+-cleavage+-nude+-butt_crack+-naked_apron'
+#tags to blacklist in TenshiBot Hangout
+badtags_hangout = '-sideboob+-pov_feet+-upskirt+-sexually_suggestive+-bdsm+-lovestruck+-artificial_vagina+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-breast_hold+-nude+-butt_crack+-naked_apron'
 #tags to blacklist in moderate mode
-badtags_moderate = '+-pov_feet+-bdsm+-lovestruck+-nude+-blood+-artificial_vagina+-sexually_suggestive+-upskirt+-penetration_gesture'
+badtags_moderate = '-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-bdsm+-lovestruck+-artificial_vagina+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-breast_hold+-nude+-butt_crack+-naked_apron'
 #tags to blacklist in an NSFW channel
 badtags_nsfwmode = ''
 
@@ -98,7 +100,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -148,7 +150,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -199,7 +201,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -253,7 +255,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -309,7 +311,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -360,7 +362,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -413,7 +415,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -463,7 +465,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -514,7 +516,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -565,7 +567,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -616,7 +618,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -668,7 +670,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -721,7 +723,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -774,7 +776,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -827,7 +829,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -880,7 +882,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -932,7 +934,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -985,7 +987,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1037,7 +1039,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1089,7 +1091,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1141,7 +1143,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1193,7 +1195,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1245,7 +1247,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1297,7 +1299,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1350,7 +1352,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1403,7 +1405,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1456,7 +1458,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1508,7 +1510,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1560,7 +1562,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1612,7 +1614,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1664,7 +1666,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1716,7 +1718,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1768,7 +1770,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1820,7 +1822,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1872,7 +1874,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1924,7 +1926,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -1976,7 +1978,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -2028,7 +2030,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -2080,7 +2082,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -2130,7 +2132,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'ǝƃɐɯI ɹǝʇɔɐɹɐɥƆ'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'ǝƃɐɯI ɹǝʇɔɐɹɐɥƆ'
@@ -2179,7 +2181,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -2231,7 +2233,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -2283,7 +2285,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -2335,7 +2337,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -2387,7 +2389,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -2439,7 +2441,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -2491,7 +2493,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -2543,7 +2545,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -2595,7 +2597,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -2647,7 +2649,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -2699,7 +2701,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -2751,7 +2753,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -2803,7 +2805,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -2855,7 +2857,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -2907,7 +2909,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -2959,7 +2961,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3011,7 +3013,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3063,7 +3065,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3115,7 +3117,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3167,7 +3169,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3219,7 +3221,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3271,7 +3273,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3323,7 +3325,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3375,7 +3377,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3427,7 +3429,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3480,7 +3482,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3533,7 +3535,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3586,7 +3588,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3638,7 +3640,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3689,7 +3691,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3741,7 +3743,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3793,7 +3795,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3845,7 +3847,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3897,7 +3899,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -3949,7 +3951,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4001,7 +4003,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4053,7 +4055,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4105,7 +4107,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4157,7 +4159,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4209,7 +4211,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4261,7 +4263,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4313,7 +4315,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4365,7 +4367,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4417,7 +4419,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'ᶜʰᵃʳᵃᶜᵗᵉʳ ᶦᵐᵃᵍᵉ'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'ᶜʰᵃʳᵃᶜᵗᵉʳ ᶦᵐᵃᵍᵉ'
@@ -4466,7 +4468,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4518,7 +4520,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4570,7 +4572,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4622,7 +4624,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4674,7 +4676,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4726,7 +4728,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4778,7 +4780,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4830,7 +4832,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4882,7 +4884,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4934,7 +4936,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -4986,7 +4988,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5038,7 +5040,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5090,7 +5092,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5142,7 +5144,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5194,7 +5196,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5246,7 +5248,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5298,7 +5300,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5350,7 +5352,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5402,7 +5404,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5454,7 +5456,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5506,7 +5508,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5558,7 +5560,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5610,7 +5612,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5662,7 +5664,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5714,7 +5716,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5757,7 +5759,7 @@ class ImageCog(commands.Cog):
 
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
-    async def chen(self, ctx):
+    async def star(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'star_sapphire'
         #check if Tenshi has a flag enabled or not
@@ -5765,7 +5767,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5816,7 +5818,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5867,7 +5869,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5919,7 +5921,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -5971,7 +5973,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -6023,7 +6025,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -6075,7 +6077,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -6127,7 +6129,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -6179,7 +6181,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -6231,7 +6233,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -6438,7 +6440,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -6491,7 +6493,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -6544,7 +6546,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -6597,7 +6599,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -6650,7 +6652,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -6702,7 +6704,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -6754,7 +6756,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -6807,7 +6809,7 @@ class ImageCog(commands.Cog):
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
-            em.set_footer(text="Moderate mode is enabled via role")
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
             embed_name = 'Character image'
@@ -6968,7 +6970,7 @@ class ImageCog(commands.Cog):
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name=embed_name)
+                    em.set_author(name="Character image")
                     em.set_image(url=booruappend + msg)
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
                     em.add_field(name="Safebooru ID", value=sbooru_id, inline=True)
@@ -7010,7 +7012,7 @@ class ImageCog(commands.Cog):
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name=embed_name)
+                    em.set_author(name="Character image")
                     em.set_image(url=booruappend + msg)
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
                     em.add_field(name="Safebooru ID", value=sbooru_id, inline=True)
@@ -7052,7 +7054,7 @@ class ImageCog(commands.Cog):
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name=embed_name)
+                    em.set_author(name="Character image")
                     em.set_image(url=booruappend + msg)
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
                     em.add_field(name="Safebooru ID", value=sbooru_id, inline=True)
@@ -7092,7 +7094,7 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name=embed_name)
+                    em.set_author(name="Character image")
                     em.set_image(url=booruappend + msg)
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
                     em.add_field(name="Safebooru ID", value=sbooru_id, inline=True)
@@ -7132,7 +7134,7 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name=embed_name)
+                    em.set_author(name="Character image")
                     em.set_image(url=booruappend + msg)
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
                     em.add_field(name="Safebooru ID", value=sbooru_id, inline=True)
@@ -7172,7 +7174,7 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name=embed_name)
+                    em.set_author(name="Character image")
                     em.set_image(url=booruappend + msg)
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
                     em.add_field(name="Safebooru ID", value=sbooru_id, inline=True)
