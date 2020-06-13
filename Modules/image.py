@@ -126,6 +126,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -174,6 +176,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -387,6 +391,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -435,6 +441,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -483,6 +491,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -532,6 +542,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -581,6 +593,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -630,6 +644,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -680,6 +696,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -731,6 +749,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -782,6 +802,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -833,6 +855,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -884,6 +908,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -934,6 +960,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -985,6 +1013,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1035,6 +1065,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1085,6 +1117,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1135,6 +1169,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1185,6 +1221,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1235,6 +1273,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1285,6 +1325,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1336,6 +1378,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1387,6 +1431,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1438,6 +1484,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1488,6 +1536,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1538,6 +1588,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1588,6 +1640,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1638,6 +1692,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1688,6 +1744,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1738,6 +1796,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1788,6 +1848,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1838,6 +1900,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1888,6 +1952,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1938,6 +2004,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1988,6 +2056,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2038,6 +2108,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2086,6 +2158,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='ǝƃɐɯI ɹǝʇɔɐɹɐɥƆ')
                     em.set_image(url=booruappend + msg)
@@ -2133,6 +2207,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2183,6 +2259,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2233,6 +2311,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2283,6 +2363,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2333,6 +2415,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2383,6 +2467,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2433,6 +2519,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2483,6 +2571,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2533,6 +2623,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2583,6 +2675,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2633,6 +2727,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2683,6 +2779,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2733,6 +2831,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2783,6 +2883,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2833,6 +2935,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2883,6 +2987,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2933,6 +3039,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2983,6 +3091,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3033,6 +3143,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3083,6 +3195,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3133,6 +3247,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3183,6 +3299,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3233,6 +3351,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3283,6 +3403,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3333,6 +3455,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3384,6 +3508,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3435,6 +3561,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3486,6 +3614,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3536,6 +3666,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3585,6 +3717,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3635,6 +3769,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3685,6 +3821,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3735,6 +3873,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3785,6 +3925,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3835,6 +3977,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3885,6 +4029,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3935,6 +4081,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3985,6 +4133,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4035,6 +4185,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4085,6 +4237,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4135,6 +4289,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4185,6 +4341,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4235,6 +4393,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4285,6 +4445,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='ᶜʰᵃʳᵃᶜᵗᵉʳ ᶦᵐᵃᵍᵉ')
                     em.set_image(url=booruappend + msg)
@@ -4332,6 +4494,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4382,6 +4546,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4432,6 +4598,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4482,6 +4650,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4532,6 +4702,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4582,6 +4754,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4632,6 +4806,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4682,6 +4858,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4732,6 +4910,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4782,6 +4962,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4832,6 +5014,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name="Chang'e are you watching?")
                     em.set_image(url=booruappend + msg)
@@ -4882,6 +5066,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4932,6 +5118,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4982,6 +5170,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5032,6 +5222,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5082,6 +5274,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5132,6 +5326,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5182,6 +5378,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5232,6 +5430,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5282,6 +5482,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5332,6 +5534,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5382,6 +5586,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5432,6 +5638,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5482,6 +5690,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5532,6 +5742,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5543,17 +5755,24 @@ class ImageCog(commands.Cog):
 
 
 
-
-#this command seems to be unreliable
-#switching to gelbooru to try and fix the issue
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
-    async def star(self, ctx):
+    async def chen(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'star_sapphire'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image'
+            em.set_footer(text="Moderate mode is enabled via role")
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + 'gelbooru.com' + '/index.php?page=dapi&s=post&q=index&tags=solo+' + boorublacklist + '+' + char + '+rating:safe') as r:
+            async with session.get(booruurl) as r:
                 if r.status == 200:
+                    await asyncio.sleep(0.3)
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
                     maxpage = int(round(num/100))
@@ -5574,11 +5793,15 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
-                    #source links are disabled because gel has NSFW ads
-                    em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
+                    em.add_field(name="Safebooru ID", value=sbooru_id, inline=True)
+                    em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
+                    #em.add_field(name="Creator ID", value=creator, inline=True)
                     sbooru_img = await ctx.send(embed=em)
 
 
@@ -5672,6 +5895,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5722,6 +5947,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5772,6 +5999,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5822,6 +6051,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5872,6 +6103,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5922,6 +6155,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5972,6 +6207,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6022,6 +6259,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6062,6 +6301,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6102,6 +6343,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Moko Image')
                     em.set_image(url=booruappend + msg)
@@ -6223,6 +6466,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6274,6 +6519,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6325,6 +6572,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6376,6 +6625,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6427,6 +6678,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6477,6 +6730,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6527,6 +6782,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6578,6 +6835,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6622,6 +6881,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6662,6 +6923,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6702,6 +6965,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6742,6 +7007,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6782,6 +7049,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
