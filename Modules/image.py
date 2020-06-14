@@ -6886,7 +6886,7 @@ class ImageCog(commands.Cog):
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name=embed_name)
+                    em.set_author(name='Character image')
                     em.set_image(url=booruappend + msg)
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
                     em.add_field(name="Safebooru ID", value=sbooru_id, inline=True)
@@ -6928,7 +6928,7 @@ class ImageCog(commands.Cog):
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
-                    em.set_author(name=embed_name)
+                    em.set_author(name='Character image')
                     em.set_image(url=booruappend + msg)
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
                     em.add_field(name="Safebooru ID", value=sbooru_id, inline=True)
