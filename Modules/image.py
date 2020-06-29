@@ -6280,6 +6280,7 @@ class ImageCog(commands.Cog):
     async def prismriver(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'lunasa_prismriver+lyrica_prismriver+merlin_prismriver'
+        embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
@@ -7182,7 +7183,7 @@ class ImageCog(commands.Cog):
                     #em.add_field(name="Creator ID", value=creator, inline=True)
                     sbooru_img = await ctx.send(embed=em)
 					
-
+#kantai_img
 					
 
 
