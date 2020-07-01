@@ -66,7 +66,7 @@ class booruCog(commands.Cog):
     async def safebooru(self, ctx, *, tags):
         async with aiohttp.ClientSession() as session:
             #async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=+' + tags) as r:
-            async with session.get('http://' + 'gelbooru.com' + '/index.php?page=dapi&s=post&q=index&tags=rating:safe+-animated+-audio+-webm+' + tags) as r:
+            async with session.get('http://' + 'safebooru.org' + '/index.php?page=dapi&s=post&q=index&tags=rating:safe+-animated+-audio+-webm+' + tags) as r:
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
