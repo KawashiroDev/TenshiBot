@@ -2,7 +2,7 @@
 
 #these have to be defined in here too
 #booru URL, used for touhou images and safebooru command
-booru = 'safebooru.org'
+booru = 'gelbooru.com'
 
 #booru rating
 #options are: safe, questionable, explicit
@@ -102,7 +102,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -152,7 +152,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -203,7 +203,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -257,7 +257,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -313,7 +313,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -364,7 +364,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -417,7 +417,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -467,7 +467,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -518,7 +518,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -569,7 +569,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -620,7 +620,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -672,7 +672,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -725,7 +725,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -778,7 +778,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -831,7 +831,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -884,7 +884,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -936,7 +936,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -989,7 +989,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1041,7 +1041,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1093,7 +1093,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1145,7 +1145,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1197,7 +1197,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1249,7 +1249,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1301,7 +1301,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1354,7 +1354,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1407,7 +1407,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1460,7 +1460,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1512,7 +1512,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1564,7 +1564,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1616,7 +1616,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1668,7 +1668,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1720,7 +1720,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1772,7 +1772,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1824,7 +1824,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1876,7 +1876,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1928,7 +1928,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -1980,7 +1980,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2032,7 +2032,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2084,7 +2084,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2134,7 +2134,7 @@ class ImageCog(commands.Cog):
             embed_name = 'ǝƃɐɯI ɹǝʇɔɐɹɐɥƆ'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'ǝƃɐɯI ɹǝʇɔɐɹɐɥƆ'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2183,7 +2183,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2235,7 +2235,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2287,7 +2287,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2339,7 +2339,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2391,7 +2391,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2443,7 +2443,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2495,7 +2495,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2547,7 +2547,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2599,7 +2599,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2651,7 +2651,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2703,7 +2703,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2755,7 +2755,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2807,7 +2807,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2859,7 +2859,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2911,7 +2911,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -2963,7 +2963,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3015,7 +3015,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3067,7 +3067,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3119,7 +3119,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3171,7 +3171,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3223,7 +3223,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3275,7 +3275,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3327,7 +3327,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3379,7 +3379,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3431,7 +3431,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3484,7 +3484,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3537,7 +3537,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3590,7 +3590,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3642,7 +3642,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3693,7 +3693,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3745,7 +3745,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3797,7 +3797,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3849,7 +3849,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3901,7 +3901,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -3953,7 +3953,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4005,7 +4005,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4057,7 +4057,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4109,7 +4109,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4161,7 +4161,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4213,7 +4213,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4265,7 +4265,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4317,7 +4317,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4369,7 +4369,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4421,7 +4421,7 @@ class ImageCog(commands.Cog):
             embed_name = 'ᶜʰᵃʳᵃᶜᵗᵉʳ ᶦᵐᵃᵍᵉ'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'ᶜʰᵃʳᵃᶜᵗᵉʳ ᶦᵐᵃᵍᵉ'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4470,7 +4470,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4522,7 +4522,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4574,7 +4574,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4626,7 +4626,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4678,7 +4678,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4730,7 +4730,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4782,7 +4782,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4834,7 +4834,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4886,7 +4886,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4938,7 +4938,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -4990,7 +4990,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5042,7 +5042,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5094,7 +5094,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5146,7 +5146,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5198,7 +5198,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5250,7 +5250,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5302,7 +5302,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5354,7 +5354,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5406,7 +5406,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5458,7 +5458,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5510,7 +5510,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5562,7 +5562,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5614,7 +5614,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5666,7 +5666,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5718,7 +5718,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5769,7 +5769,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5820,7 +5820,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5871,7 +5871,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5923,7 +5923,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -5975,7 +5975,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -6027,7 +6027,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -6079,7 +6079,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -6131,7 +6131,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -6183,7 +6183,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -6235,7 +6235,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -6443,7 +6443,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -6496,7 +6496,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -6549,7 +6549,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -6602,7 +6602,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -6655,7 +6655,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -6707,7 +6707,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -6759,7 +6759,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
@@ -6812,7 +6812,7 @@ class ImageCog(commands.Cog):
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
