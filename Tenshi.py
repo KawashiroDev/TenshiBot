@@ -61,6 +61,9 @@ from urlextract import URLExtract
 #from saucenaopy import SauceNAO
 from datetime import datetime, timedelta
 from playsound import playsound
+from langdetect import detect
+from langdetect import detect_langs
+from langdetect import DetectorFactory
 
 #https://www.microsoft.com/en-us/download/details.aspx?id=48159
 from profanityfilter import ProfanityFilter
@@ -510,6 +513,13 @@ async def help(ctx):
 #async def ping(ctx):
 #    await ctx.send('pong')
 #    await bot.send_typing(channel)
+
+@bot.command()
+@is_owner()
+async def ld(ctx, *, args):
+    DetectorFactory.seed = 0
+    await ctx.send(detect_langs(args))
+    print (detect_langs(args))
 
 @bot.command()
 async def dmtest(ctx):
