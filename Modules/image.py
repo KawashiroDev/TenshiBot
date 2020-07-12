@@ -34,8 +34,6 @@ badtags_moderate = '-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive
 #tags to blacklist in an NSFW channel
 badtags_nsfwmode = ''
 
-#star
-
 #append text to the start of booru url output
 #change this if the bot is sending malformed booru urls
 #safebooru URL's used to need http added to the start but now they dont anymore
@@ -47,6 +45,20 @@ rlimit_cmd = 4
 #timeframe (seconds)
 rlimit_time = 11
 #
+
+#patreon nag text
+patreonnag = "patreonnag text"
+
+#general footer
+normalfooter = "todo:put something here"
+
+footer = [
+normalfooter,
+normalfooter,     
+normalfooter,
+normalfooter,
+patreonnag,
+]
 
 import discord
 import requests
@@ -403,6 +415,61 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
                     #em.add_field(name="Creator ID", value=creator, inline=True)
                     sbooru_img = await ctx.send(embed=em)
+
+
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    async def tenshi4(self, ctx):
+        em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+        char = 'hinanawi_tenshi'
+        #check if Tenshi has a flag enabled or not
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'Character image'
+            #em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
+            embed_name = 'Character image'
+        async with aiohttp.ClientSession() as session:
+            async with session.get(booruurl) as r:
+                if r.status == 200:
+                    await asyncio.sleep(0.3)
+                    soup = BeautifulSoup(await r.text(), "lxml")
+                    num = int(soup.find('posts')['count'])
+                    maxpage = int(round(num/100))
+                    page = random.randint(0, maxpage)
+                    t = soup.find('posts')
+                    p = t.find_all('post')
+                    source = ((soup.find('post'))['source'])
+                    if num < 100:
+                        pic = p[random.randint(0,num-1)]
+                    elif page == maxpage:
+                        pic = p[random.randint(0,99)]
+                    else:
+                        pic = p[random.randint(0,99)]
+                    msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
+                    img_width = pic['width']
+                    img_height = pic['height']
+                    creator = pic['creator_id']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                    em.set_footer(text=random.choice(footer))
+                    em.set_author(name=embed_name)
+                    em.set_image(url=booruappend + msg)
+                    em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
+                    em.add_field(name="Gbooru ID", value=sbooru_id, inline=True)
+                    em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
+                    #em.add_field(name="Creator ID", value=creator, inline=True)
+                    sbooru_img = await ctx.send(embed=em)
+
+
 
 
     @commands.command()
