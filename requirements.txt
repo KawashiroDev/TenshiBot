@@ -11,3 +11,4 @@ profanityfilter
 urlextract
 playsound
 async_cleverbot
+langdetect
