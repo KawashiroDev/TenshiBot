@@ -516,7 +516,7 @@ async def help(ctx):
 
 @bot.command()
 @is_owner()
-async def ld(ctx, *, args):
+async def ldtest(ctx, *, args):
     DetectorFactory.seed = 0
     await ctx.send(detect_langs(args))
     print (detect_langs(args))
