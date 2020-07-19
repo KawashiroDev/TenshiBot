@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.4.4'
+bot_version = '2.4.4 R1'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -516,7 +516,7 @@ async def help(ctx):
 
 @bot.command()
 @is_owner()
-async def ld(ctx, *, args):
+async def ldtest(ctx, *, args):
     DetectorFactory.seed = 0
     await ctx.send(detect_langs(args))
     print (detect_langs(args))
