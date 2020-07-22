@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.4.4 R2'
+bot_version = '2.4.3 R3'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -914,7 +914,11 @@ async def about_adv(ctx):
 
 @bot.command()
 async def invite(ctx):
-    await ctx.send('Use this link to add me to your server: <https://discordapp.com/oauth2/authorize?client_id=252442396879486976&scope=bot&permissions=67161152>')    
+    await ctx.send('Use this link to add me to your server: <https://discordapp.com/oauth2/authorize?client_id=252442396879486976&scope=bot&permissions=67161152>')
+#    if botid == none:
+#        await ctx.send('Use this link to add me to your server: <https://discordapp.com/oauth2/authorize?client_id=252442396879486976&scope=bot&permissions=67161152>')
+#    else:
+#        await ctx.send('Use this link to add <@' + botid +  '> to your server: <https://discordapp.com/oauth2/authorize?client_id=' + botid + '&scope=bot&permissions=67161152>')
 
 @bot.command()
 async def support(ctx):
