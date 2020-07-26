@@ -1,6 +1,4 @@
 **TenshiBot Help**
-
-**Common commands**
 ```
 about - Bot info
 support - Join TenshiBot's server
@@ -8,11 +6,8 @@ invite - Bot invite link
 safebooru <tag(s)> - Search safebooru
 gif - Random Touhou GIF
 ```
-To view all commands visit https://github.com/99710/TenshiBot/wiki/Commands
-
+To view all commands visit <https://github.com/99710/TenshiBot/wiki/Commands>
 **Patreon supporters**
 ```
 Sousy
 ```
-
-Created by 99710
