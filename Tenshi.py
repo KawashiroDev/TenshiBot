@@ -775,7 +775,8 @@ async def kickme(ctx):
 @bot.command()
 @is_owner()
 async def yeetserver(ctx, serverid):
-    youmu = bot.get_guild(serverid)
+    youmu = bot.get_guild(int(serverid))
+    print (youmu)
     await youmu.leave()
 
 @bot.command()
