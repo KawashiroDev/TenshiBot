@@ -45,7 +45,7 @@ import subprocess
 import time
 #import Cleverbotio
 import traceback
-import praw
+#import praw
 import lxml
 #import saucenaopy
 import twitter

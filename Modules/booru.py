@@ -43,7 +43,7 @@ rlimit_time = 10
 
 import discord
 import aiohttp
-import praw
+#import praw
 import lxml
 import random
 import asyncio

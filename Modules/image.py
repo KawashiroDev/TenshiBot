@@ -63,7 +63,7 @@ patreonnag,
 import discord
 import requests
 import aiohttp
-import praw
+#import praw
 import lxml
 import random
 import asyncio
