@@ -64,63 +64,68 @@ class booruCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def safebooru(self, ctx, *, tags):
-        async with aiohttp.ClientSession() as session:
-            #async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=+' + tags) as r:
-            async with session.get('http://' + 'safebooru.org' + '/index.php?page=dapi&s=post&q=index&tags=rating:safe+-animated+-audio+-webm+' + tags) as r:
-                if r.status == 200:
-                    soup = BeautifulSoup(await r.text(), "lxml")
-                    num = int(soup.find('posts')['count'])
-                    #print ('[Debug] num = ' + str(num))
-                    maxpage = int(round(num/100))
-                    #print ('[Debug] maxpage = ' + str(maxpage))
-                    page = random.randint(0, maxpage)
-                    #print ('[Debug] page = ' + str(page))
-                    t = soup.find('posts')
-                    p = t.find_all('post')
-                    if num == 0: 
-                        msg = 'No posts found, are the tags spelt correctly?'
+        if int(ctx.guild.id) == int("486699197131915264"):
+            await ctx.send('Error: command cannot be used in TPL')
+            return
+        else:
+        
+            async with aiohttp.ClientSession() as session:
+                #async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=+' + tags) as r:
+                async with session.get('http://' + 'safebooru.org' + '/index.php?page=dapi&s=post&q=index&tags=rating:safe+-animated+-audio+-webm+' + tags) as r:
+                    if r.status == 200:
+                        soup = BeautifulSoup(await r.text(), "lxml")
+                        num = int(soup.find('posts')['count'])
+                        #print ('[Debug] num = ' + str(num))
+                        maxpage = int(round(num/100))
+                        #print ('[Debug] maxpage = ' + str(maxpage))
+                        page = random.randint(0, maxpage)
+                        #print ('[Debug] page = ' + str(page))
+                        t = soup.find('posts')
+                        p = t.find_all('post')
+                        if num == 0: 
+                            msg = 'No posts found, are the tags spelt correctly?'
+                            await ctx.send(msg)
+                            return
+
+                        else:
+                            source = ((soup.find('post'))['source'])
+                            if num < 100:
+                                pic = p[random.randint(0,num-1)]
+                            elif page == maxpage:
+                                pic = p[random.randint(0,99)]
+                            else:
+                                pic = p[random.randint(0,99)]
+                            msg = pic['file_url']
+                            sbooru_tags = pic['tags']
+                            em = discord.Embed(title='', description='', colour=0x42D4F4)
+                            em.set_author(name='Booru image')
+                            em.set_image(url=booruappend + msg)
+                            
+                            if str(ctx.guild.id) in safeservers and any(c in sbooru_tags for c in unsafetags):
+                                        unsafeimg = await ctx.send("This image may not be safe to view in public, React to view")
+                                        await unsafeimg.add_reaction('\U0001f351')
+                                        await asyncio.sleep(0.7)
+                                        def check(reaction, user):
+                                            return (str(reaction.emoji) == '\U0001f351')
+                                       
+                                        try:
+                                            reaction, user = await self.bot.wait_for('reaction_add', timeout=30, check=check)
+                                        except asyncio.TimeoutError:
+                                            return
+                                        else:
+                                            if ((reaction.emoji) == '\U0001f351') and reaction.message.id == unsafeimg.id:
+                                                em.set_footer(text="test")
+                                                await ctx.send(embed=em)
+                                                return
+                            else:
+                                await ctx.send(embed=em)
+                                #print (str(unsafetags))
+                                #print (sbooru_tags)
+                    
+                    else:
+                        msg = 'Safebooru is unavailable at this time'
                         await ctx.send(msg)
                         return
-
-                    else:
-                        source = ((soup.find('post'))['source'])
-                        if num < 100:
-                            pic = p[random.randint(0,num-1)]
-                        elif page == maxpage:
-                            pic = p[random.randint(0,99)]
-                        else:
-                            pic = p[random.randint(0,99)]
-                        msg = pic['file_url']
-                        sbooru_tags = pic['tags']
-                        em = discord.Embed(title='', description='', colour=0x42D4F4)
-                        em.set_author(name='Booru image')
-                        em.set_image(url=booruappend + msg)
-                        
-                        if str(ctx.guild.id) in safeservers and any(c in sbooru_tags for c in unsafetags):
-                                    unsafeimg = await ctx.send("This image may not be safe to view in public, React to view")
-                                    await unsafeimg.add_reaction('\U0001f351')
-                                    await asyncio.sleep(0.7)
-                                    def check(reaction, user):
-                                        return (str(reaction.emoji) == '\U0001f351')
-                                   
-                                    try:
-                                        reaction, user = await self.bot.wait_for('reaction_add', timeout=30, check=check)
-                                    except asyncio.TimeoutError:
-                                        return
-                                    else:
-                                        if ((reaction.emoji) == '\U0001f351') and reaction.message.id == unsafeimg.id:
-                                            em.set_footer(text="test")
-                                            await ctx.send(embed=em)
-                                            return
-                        else:
-                            await ctx.send(embed=em)
-                            #print (str(unsafetags))
-                            #print (sbooru_tags)
-                    
-                else:
-                    msg = 'Safebooru is unavailable at this time'
-                    await ctx.send(msg)
-                    return
 
 				
 #This command requires the channel to be marked as a NSFW channel to work, this should prevent people abusing it
