@@ -2,7 +2,7 @@
 
 #these have to be defined in here too
 #booru URL, used for touhou images and safebooru command
-booru = 'gelbooru.com'
+booru = 'safebooru.org'
 
 #booru rating
 #options are: safe, questionable, explicit
@@ -134,6 +134,11 @@ class ImageCog(commands.Cog):
     @commands.command()
     async def genquery(self, ctx, char):
         booruurl = 'http://' + booru + '/index.php?page=post&s=list&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
+        await ctx.send(booruurl)
+
+    @commands.command()
+    async def genquery2(self, ctx, char):
+        booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
         await ctx.send(booruurl)
 
     @commands.command()

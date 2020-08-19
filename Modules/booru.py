@@ -6,7 +6,7 @@
 booru = 'safebooru.org'
 
 #NSFW booru URL, used for gelbooru command
-booru_nsfw = 'gelbooru.com'
+booru_nsfw = 'safebooru.org'
 
 #safebooru rating
 #options are: safe, questionable, explicit
@@ -159,6 +159,7 @@ class booruCog(commands.Cog):
                             em = discord.Embed(title='', description='', colour=0x42D4F4)
                             em.set_author(name='Booru image')
                             em.set_image(url=msg)
+                            #em.set_footer(text="you may need to add rating:explict to your query if you were looking for nsfw images")
                             await ctx.send(embed=em)
                             return
 
