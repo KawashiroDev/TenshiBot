@@ -6,7 +6,7 @@
 booru = 'safebooru.org'
 
 #NSFW booru URL, used for gelbooru command
-booru_nsfw = 'safebooru.org'
+booru_nsfw = 'gelbooru.com'
 
 #safebooru rating
 #options are: safe, questionable, explicit
