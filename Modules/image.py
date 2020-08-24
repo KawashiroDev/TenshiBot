@@ -7764,6 +7764,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name="Character image")
@@ -7804,6 +7806,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name="Character image")
@@ -7844,6 +7848,8 @@ class ImageCog(commands.Cog):
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name="Character image")
