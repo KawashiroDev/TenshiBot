@@ -103,26 +103,55 @@ class ImageCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+#landscape
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def testimage(self, ctx):
         
         sbooru_sauce = "http://example.com"
         sbooru_id = "123456"
-        img_width = "800"
-        img_height = "600"
-        file = discord.File("pics/dev_fumo.jpg", filename="dev_fumo.jpg")
+        img_width = "1920"
+        img_height = "1080"
+        file = discord.File("pics/test/dev_fumo.jpg", filename="dev_fumo.jpg")
         
         em = discord.Embed(title='', description=' ', colour=0xb50404)
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
-            embed_name = 'Test image'
+            embed_name = 'Test image (l)'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            embed_name = 'Test image'
+            embed_name = 'Test image (l)'
             
         em.set_author(name=embed_name)
         em.set_image(url="attachment://dev_fumo.jpg")
+        em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
+        em.add_field(name="Gbooru ID", value=sbooru_id, inline=True)
+        em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
+        #em.add_field(name="Creator ID", value=creator, inline=True)
+        sbooru_img = await ctx.send(file=file, embed=em)
+
+
+#portrait
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    async def testimage2(self, ctx):
+        
+        sbooru_sauce = "http://example.com"
+        sbooru_id = "123456"
+        img_width = "1920"
+        img_height = "1080"
+        file = discord.File("pics/test/kaga.jpg", filename="kaga.jpg")
+        
+        em = discord.Embed(title='', description=' ', colour=0xb50404)
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            embed_name = 'Test image (p)'
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
+        else:
+            embed_name = 'Test image (p)'
+            
+        em.set_author(name=embed_name)
+        em.set_image(url="attachment://kaga.jpg")
         em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
         em.add_field(name="Gbooru ID", value=sbooru_id, inline=True)
         em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
