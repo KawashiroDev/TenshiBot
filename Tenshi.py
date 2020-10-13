@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.4.3 R3'
+bot_version = '2.4.4'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -116,6 +116,7 @@ mentioned_nomsg = [
 "Hold on a sec i just saw Sakuya with some coffee",
 "Guys the thermal drill, go get it",
 "Am i a joke to you?",
+"You do not spark joy",
 "!",
 "!!",
 "?!",
@@ -154,6 +155,16 @@ mentioned_nomsg_christmas = [
 "Ah, that reminds me. I should make it snow",
 "♪*Jingle bells\nYukari smells♪",
 "*Is humming I wish it could be christmas everyday~*",
+]
+
+mentioned_nomsg_halloween = [
+"Trick or treat!",     
+"!!",    
+"Spooky scary skeletons",
+"*Is carving a pumpkin~*",
+"♪*He did the mash, he did the monster mash*♪",
+"Aaah a spider!",
+"♪*Ooo eee ooo ah ah ting tang walla walla bing bang*♪",
 ]
 
 shuffle_test = [
@@ -403,11 +414,11 @@ async def on_message(message):
 
     #! is needed if Tenshi has a nickname set on the server
     if message.content == '<@252442396879486976>':
-        await message.channel.send(secure_random.choice(mentioned_nomsg))
+        await message.channel.send(secure_random.choice(mentioned_nomsg_halloween))
         print("[command] mention_nomsg")
         return
     if message.content == '<@!252442396879486976>':
-        await message.channel.send(secure_random.choice(mentioned_nomsg))
+        await message.channel.send(secure_random.choice(mentioned_nomsg_halloween))
         print("[command] mention_nomsg")
         return
     
