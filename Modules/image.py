@@ -2623,7 +2623,7 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def elly(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
-        char = 'elly'
+        char = 'elly_(touhou)'
         #check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
