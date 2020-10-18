@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.4.4'
+bot_version = '2.4.5'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -52,6 +52,7 @@ import twitter
 import datetime
 import playsound
 import async_cleverbot as ac
+import sys
 
 from discord.ext import commands
 from random import randint
@@ -64,11 +65,16 @@ from playsound import playsound
 from langdetect import detect
 from langdetect import detect_langs
 from langdetect import DetectorFactory
+from github import Github
 
 #https://www.microsoft.com/en-us/download/details.aspx?id=48159
 from profanityfilter import ProfanityFilter
 
 print('Please wait warmly...')
+
+#start logging console
+#sys.stdout = open("test.txt", "w")
+#print('test')
 
 #Windows or linux check
 #used to autoswitch the bot between debug/production modes
@@ -211,6 +217,9 @@ tw_access = t_access.read()
 t_access_secret = open("Tokens/twitter_access_secret.txt", "r")
 tw_access_secret = t_access_secret.read()
 
+git = open("Tokens/github.txt", "r")
+git_token = git.read()
+g = Github(git_token)
 
 #twitter stuff
 api = twitter.Api(consumer_key=tw_api,
@@ -527,6 +536,21 @@ async def help(ctx):
 
 @bot.command()
 @is_owner()
+async def githubtest(ctx):
+    repo = g.get_repo("99710/TenshiBot")
+    branch = repo.get_branch("master")
+    #get the sha of latest commit
+    print(branch.commit.sha)
+    latestsha = branch.commit.sha
+    commit = repo.get_commit(sha=latestsha)
+    print(commit.commit.author.date)
+    #repo = g.get_repo("99710/TenshiBot")
+    #print(commit.commit.author.date)
+    #print(repo.name)
+    #print(dir(branch.commit))
+
+@bot.command()
+@is_owner()
 async def ldtest(ctx, *, args):
     DetectorFactory.seed = 0
     await ctx.send(detect_langs(args))
@@ -688,9 +712,12 @@ async def vpsreboot(ctx):
         await ctx.send('Creating reboot file')
         reboot = open("reboot.tenko", "w")
         reboot.close()
+        #sys.stdout.close()
         await ctx.send('Rebooting the VPS')
+        os.system("sudo reboot")
     else:
         await ctx.send('Rebooting the VPS')
+        #sys.stdout.close()
         os.system("sudo reboot")
     #os.system("shutdown -r -t 30")
 
