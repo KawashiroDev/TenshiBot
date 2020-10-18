@@ -8,7 +8,7 @@
 <p>Jojo and Bananae your friends!</p>
 <p>Various other features</p>
 
-<sup>*Only applies to character commands, everyones definition of what is "safe" is different. No filter is 100% accurate<sup>
+<sup>*Only applies to character commands, everyones definition of what is "safe" is different. No filter is 100% accurate. Is this fine print really necessary?<sup>
 
 <h2>How to use</h2>
 <p>Add Tenshi to your server https://discordapp.com/oauth2/authorize?client_id=252442396879486976&scope=bot&permissions=67161152</p>
