@@ -70,7 +70,7 @@ from github import Github
 #https://www.microsoft.com/en-us/download/details.aspx?id=48159
 from profanityfilter import ProfanityFilter
 
-print('Please wait warmly...')
+print('[Startup] Please wait warmly...')
 
 #start logging console
 #sys.stdout = open("test.txt", "w")
@@ -544,6 +544,24 @@ async def githubtest(ctx):
     latestsha = branch.commit.sha
     commit = repo.get_commit(sha=latestsha)
     print(commit.commit.author.date)
+    #repo = g.get_repo("99710/TenshiBot")
+    #print(commit.commit.author.date)
+    #print(repo.name)
+    #print(dir(branch.commit))
+
+@bot.command()
+@is_owner()
+async def update(ctx):
+    print('[Updater] Getting info from github')
+    repo = g.get_repo("99710/TenshiBot")
+    branch = repo.get_branch("master")
+    #get the sha of latest commit
+    print(branch.commit.sha)
+    latestsha = branch.commit.sha
+    commit = repo.get_commit(sha=latestsha)
+    latestcommitdate = commit.commit.author.date
+    print(latestcommitdate)
+    print(os.path.abspath.getmtime("Tenshi.py"))
     #repo = g.get_repo("99710/TenshiBot")
     #print(commit.commit.author.date)
     #print(repo.name)
