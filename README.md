@@ -25,7 +25,7 @@
 </a>
 
 <h2>Known issues</h2>
-See the wiki
+See the wiki 
 
 <h2>Copyrights</h2>
 <p>Touhou Project and Tenshi Hinanawi © Team Shanghai Alice</p>
