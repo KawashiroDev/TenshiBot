@@ -53,6 +53,7 @@ import datetime
 import playsound
 import async_cleverbot as ac
 import sys
+import glob
 
 from discord.ext import commands
 from random import randint
@@ -60,7 +61,7 @@ from bs4 import BeautifulSoup
 from urlextract import URLExtract
 #from Cleverbotio import 'async' as cleverbot
 #from saucenaopy import SauceNAO
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from playsound import playsound
 from langdetect import detect
 from langdetect import detect_langs
@@ -558,10 +559,34 @@ async def update(ctx):
     #get the sha of latest commit
     print(branch.commit.sha)
     latestsha = branch.commit.sha
+    #get UTC commit time from sha
     commit = repo.get_commit(sha=latestsha)
-    latestcommitdate = commit.commit.author.date
-    print(latestcommitdate)
-    print(os.path.abspath.getmtime("Tenshi.py"))
+    latest_commit = commit.commit.author.date
+    #dump to console for testing
+    print("githubtime")
+    print(latest_commit)
+    print("dirtime")
+    #get latest file
+    list_of_files = glob.glob('/Users/99710/Documents/GitHub/TenshiBot/*')
+    latest_file = max(list_of_files, key=os.path.getctime)
+    #dump latest file name to console
+    print (latest_file)
+    #get time of latest file and dump to console
+    newest_file = os.path.getmtime(latest_file)
+    print(newest_file)
+    #convert unix time to utc and remove miliseconds
+    utc_folder = datetime.fromtimestamp(newest_file, tz=timezone.utc).replace(microsecond=0, tzinfo=None)
+    #dump to console
+    print (utc_folder)
+    if latest_commit > utc_folder:
+        print ('[Updater] Github is newer than current build, starting update process')
+        await ctx.send('Github is newer than local, preparing to update')
+    else:
+        print ('[Updater] Current version newer than Github, aborting update')
+        await ctx.send('Local is newer than Github, aborting')
+        return
+    
+    #print (time.ctime(max(os.path.getmtime(root) for root,_,_ in os.walk('/TenshiBot'))))
     #repo = g.get_repo("99710/TenshiBot")
     #print(commit.commit.author.date)
     #print(repo.name)
