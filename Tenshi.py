@@ -578,9 +578,18 @@ async def update(ctx):
     utc_folder = datetime.fromtimestamp(newest_file, tz=timezone.utc).replace(microsecond=0, tzinfo=None)
     #dump to console
     print (utc_folder)
-    if latest_commit > utc_folder:
+    if latest_commit < utc_folder:
         print ('[Updater] Github is newer than current build, starting update process')
         await ctx.send('Github is newer than local, preparing to update')
+        async with aiohttp.ClientSession() as session:
+            async with session.get('https://github.com/99710/TenshiBot/archive/master.zip') as resp:
+                await resp.read()
+            with open('update.zip', 'wb') as fd:
+                while True:
+                    chunk = await resp.read()
+            if not chunk:
+                return
+            fd.write(chunk)
     else:
         print ('[Updater] Current version newer than Github, aborting update')
         await ctx.send('Local is newer than Github, aborting')
