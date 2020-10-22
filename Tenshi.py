@@ -54,6 +54,9 @@ import playsound
 import async_cleverbot as ac
 import sys
 import glob
+import zipfile
+import shutil
+import hashlib
 
 from discord.ext import commands
 from random import randint
@@ -67,6 +70,7 @@ from langdetect import detect
 from langdetect import detect_langs
 from langdetect import DetectorFactory
 from github import Github
+from zipfile import ZipFile
 
 #https://www.microsoft.com/en-us/download/details.aspx?id=48159
 from profanityfilter import ProfanityFilter
@@ -578,18 +582,36 @@ async def update(ctx):
     utc_folder = datetime.fromtimestamp(newest_file, tz=timezone.utc).replace(microsecond=0, tzinfo=None)
     #dump to console
     print (utc_folder)
-    if latest_commit < utc_folder:
+    if latest_commit > utc_folder:
         print ('[Updater] Github is newer than current build, starting update process')
         await ctx.send('Github is newer than local, preparing to update')
-        async with aiohttp.ClientSession() as session:
-            async with session.get('https://github.com/99710/TenshiBot/archive/master.zip') as resp:
-                await resp.read()
-            with open('update.zip', 'wb') as fd:
-                while True:
-                    chunk = await resp.read()
-            if not chunk:
-                return
-            fd.write(chunk)
+        #async with aiohttp.ClientSession() as session:
+        #    async with session.get('https://github.com/99710/TenshiBot/archive/master.zip') as resp:
+        #        await resp.read()
+        #    with open('update.zip', 'wb') as fd:
+        #        while True:
+        #            chunk = await resp.read()
+        #    if not chunk:
+        #        return
+        #    fd.write(chunk)
+        
+        #above doesn't work, adapting spicetools extraction code from 1ccbot instead
+        #yes requests is bad but eh
+        
+        spiceURL = 'https://github.com/99710/TenshiBot/archive/master.zip'
+        r = requests.get(spiceURL)
+        with open('spicetools_ooc.zip', 'wb') as f:
+            f.write(r.content)
+
+            zf = ZipFile('spicetools_ooc.zip', 'r')
+            #extract spicetools archive
+            zf.extractall('spice_extracted')
+            zf.close()
+
+            #delete files
+            #shutil.rmtree("spice_extracted")
+            #os.remove("Spicetools_src.zip")
+        
     else:
         print ('[Updater] Current version newer than Github, aborting update')
         await ctx.send('Local is newer than Github, aborting')
