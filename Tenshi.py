@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.4.5'
+bot_version = '2.4.6'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -263,13 +263,15 @@ headers = {"Authorization" : dbltoken}
 
 @bot.event
 async def on_ready():
-    yuyuko = bot.get_user(ownerid)
+    yuyuko = await bot.fetch_user(ownerid)
+    #print(yuyuko)
 
     if debugmode == True:
         print(' ')
         print('TenshiBot ' + bot_version + ' (Debug mode) initialized')
         print('User ID:  ' + str(bot.user.id))
         await bot.change_presence(activity=discord.Game(name="TB [" + bot_version + "] (D)"))
+        await yuyuko.send("System ready!")
         print(' ')
         return
 
@@ -317,7 +319,7 @@ async def on_ready():
 #print the error to the console and inform the user   
 @bot.event
 async def on_command_error(ctx, error):
-    yuyuko = bot.get_user(ownerid)
+    yuyuko = await bot.fetch_user(ownerid)
     #command not found
     if isinstance(error, commands.CommandNotFound):
         return
