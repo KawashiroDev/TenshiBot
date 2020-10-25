@@ -138,7 +138,7 @@ class twitterCog(commands.Cog):
                     print('[tweet] "' + finaltweet + '" User ID: :' + str(ctx.author.id))
                     await ctx.send('Tweet Posted')
                     #DM me about the tweet if i need to go delete it
-                    yuyuko = self.bot.get_user(166189271244472320)
+                    yuyuko = self.bot.fetch_user(166189271244472320)
                     await yuyuko.send("**--A tweet was sent--** \nContents: " + finaltweet + "\nUnfiltered contents: " + asciitext + "\nUser ID: " + userid + "\nServer ID: " + serverid + "\nServer name: " + servername)
                     return
                 elif ((reaction.emoji) == '\U0000274e'):
