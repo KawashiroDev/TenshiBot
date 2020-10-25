@@ -57,6 +57,8 @@ import glob
 import zipfile
 import shutil
 import hashlib
+import contextlib
+import io
 
 from discord.ext import commands
 from random import randint
@@ -271,7 +273,7 @@ async def on_ready():
         print('TenshiBot ' + bot_version + ' (Debug mode) initialized')
         print('User ID:  ' + str(bot.user.id))
         await bot.change_presence(activity=discord.Game(name="TB [" + bot_version + "] (D)"))
-        await yuyuko.send("System ready!")
+        #await yuyuko.send("System ready!")
         print(' ')
         return
 
@@ -624,6 +626,17 @@ async def update(ctx):
     #print(commit.commit.author.date)
     #print(repo.name)
     #print(dir(branch.commit))
+
+@bot.command()
+@is_owner()
+async def eval(ctx, *, code):
+    str_obj = io.StringIO() #Retrieves a stream of data
+    try:
+        with contextlib.redirect_stdout(str_obj):
+            exec(code)
+    except Exception as e:
+        return await ctx.send(f"```{e.__class__.__name__}: {e}```")
+    await ctx.send(f'```{str_obj.getvalue()}```')
 
 @bot.command()
 @is_owner()
