@@ -586,7 +586,7 @@ async def update(ctx):
     utc_folder = datetime.fromtimestamp(newest_file, tz=timezone.utc).replace(microsecond=0, tzinfo=None)
     #dump to console
     print (utc_folder)
-    if latest_commit < utc_folder:
+    if latest_commit > utc_folder:
         print ('[Updater] Github is newer than current build, starting update process')
         await ctx.send('Github is newer than local, preparing to update')
         #async with aiohttp.ClientSession() as session:
@@ -618,7 +618,7 @@ async def update(ctx):
             files_list = os.listdir(update_dir)
             print(files_list)
             for files in files_list:
-                shutil.copytree(files, target_dir)
+                shutil.copytree(update_dir, target_dir)
 
             #delete files
             #shutil.rmtree("spice_extracted")
