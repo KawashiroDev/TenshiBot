@@ -635,16 +635,16 @@ async def update(ctx):
     #print(repo.name)
     #print(dir(branch.commit))
 
-@bot.command()
-@is_owner()
-async def eval(ctx, *, code):
-    str_obj = io.StringIO() #Retrieves a stream of data
-    try:
-        with contextlib.redirect_stdout(str_obj):
-            exec(code)
-    except Exception as e:
-        return await ctx.send(f"```{e.__class__.__name__}: {e}```")
-    await ctx.send(f'```{str_obj.getvalue()}```')
+#@bot.command()
+#@is_owner()
+#async def eval(ctx, *, code):
+#    str_obj = io.StringIO() #Retrieves a stream of data
+#    try:
+#        with contextlib.redirect_stdout(str_obj):
+#            exec(code)
+#    except Exception as e:
+#        return await ctx.send(f"```{e.__class__.__name__}: {e}```")
+#    await ctx.send(f'```{str_obj.getvalue()}```')
 
 @bot.command()
 @is_owner()
