@@ -536,7 +536,14 @@ async def on_guild_remove(guild):
 async def help(ctx):
     hlp = open("txt/help.txt", "r")
     help_cmd = hlp.read()
-    await ctx.send(help_cmd)        
+    await ctx.send(help_cmd)
+
+@bot.command()
+async def help2(ctx):
+    em = discord.Embed(title='Title', description='Desc', colour=0x42D4F4)
+    em.set_author(name='Author')
+    #em.set_image(url=booruappend + msg)
+    await ctx.send(embed=em)
 
 #@bot.command()
 #async def ping(ctx):
