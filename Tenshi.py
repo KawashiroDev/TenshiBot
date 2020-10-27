@@ -26,6 +26,22 @@ smartboot = False
 #DM on error
 errordm = True
 
+#commands to show in the help sections
+#general
+gen_command = "About, Support, Help, KoFi, Patreon, Messagedev <message>"
+#fun
+fun_command = "Hooray, F, Confused"
+#image
+img_command = "Safebooru <query>, Gif, Honk"
+#debug
+dbug_command = "debug"
+#touhou characters
+char_toho = "Reimu"
+#oj characters
+char_oj = "Suguri"
+#kantai characters
+char_kantai = "Haruna"
+
 #Sound on boot (debug only)
 bootsound = True
 
@@ -540,9 +556,13 @@ async def help(ctx):
 
 @bot.command()
 async def help2(ctx):
-    em = discord.Embed(title='Title', description='Desc', colour=0x42D4F4)
+    em = discord.Embed(title='TenshiBot Help', description='Desc', colour=0x42D4F4)
     em.set_author(name='Author')
     #em.set_image(url=booruappend + msg)
+    em.add_field(name="General Commands", value=gen_command, inline=False)
+    em.add_field(name="Fun Commands", value=fun_command, inline=False)
+    em.add_field(name="Image Commands", value=img_command, inline=False)
+    em.set_footer(text="Version " + bot_version + " ,Created by 99710")
     await ctx.send(embed=em)
 
 #@bot.command()
