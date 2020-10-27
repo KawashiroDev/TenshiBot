@@ -15,8 +15,8 @@
 <p>Tenshi uses = and @TenshiBot as the command prefix</p>
 <p>(= prefix can be disabled via role if needed, see the wiki)</p>
 
-<h2>Have issues? want to help add features or chat with other users?</h2>
-<p>https://discord.gg/vAbzRG9</p>
+<h2>Links</h2>
+<p>https://discord.gg/vAbzRG9 - Tenshi's server</p>
 
 <h2>You can also find Tenshi on Top.gg</h2>
 
