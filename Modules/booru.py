@@ -96,10 +96,22 @@ class booruCog(commands.Cog):
                             else:
                                 pic = p[random.randint(0,99)]
                             msg = pic['file_url']
+                            sbooru_id = pic['id']
                             sbooru_tags = pic['tags']
+                            sbooru_sauce = pic['source']
+                            img_width = pic['width']
+                            img_height = pic['height']
+                            creator = pic['creator_id']
+                            if sbooru_sauce == '':
+                                sbooru_sauce = 'No source listed'
                             em = discord.Embed(title='', description='', colour=0x42D4F4)
                             em.set_author(name='Booru image')
                             em.set_image(url=booruappend + msg)
+                            em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
+                            em.add_field(name="Sbooru ID", value=sbooru_id, inline=True)
+                            em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
+                            em.add_field(name="Query", value="`" + tags + "`", inline=False)
+                            #em.set_image(url=booruappend + msg)
                             
                             if str(ctx.guild.id) in safeservers and any(c in sbooru_tags for c in unsafetags):
                                         unsafeimg = await ctx.send("This image may not be safe to view in public, React to view")
@@ -119,6 +131,7 @@ class booruCog(commands.Cog):
                                                 return
                             else:
                                 await ctx.send(embed=em)
+                                #print(tags)
                                 #print (str(unsafetags))
                                 #print (sbooru_tags)
                     
@@ -156,9 +169,21 @@ class booruCog(commands.Cog):
                             else:
                                 pic = p[random.randint(0,99)]
                             msg = pic['file_url']
+                            sbooru_id = pic['id']
+                            sbooru_tags = pic['tags']
+                            sbooru_sauce = pic['source']
+                            img_width = pic['width']
+                            img_height = pic['height']
+                            creator = pic['creator_id']
+                            if sbooru_sauce == '':
+                                sbooru_sauce = 'No source listed'
                             em = discord.Embed(title='', description='', colour=0x42D4F4)
                             em.set_author(name='Booru image')
-                            em.set_image(url=msg)
+                            em.set_image(url=booruappend + msg)
+                            em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
+                            em.add_field(name="Gbooru ID", value=sbooru_id, inline=True)
+                            em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
+                            em.add_field(name="Query", value="`" + tags + "`", inline=False)
                             #em.set_footer(text="you may need to add rating:explict to your query if you were looking for nsfw images")
                             await ctx.send(embed=em)
                             return
