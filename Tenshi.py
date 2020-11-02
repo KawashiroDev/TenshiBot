@@ -269,14 +269,24 @@ if __name__ == '__main__':
 #if in debug mode then open a blank token file which will cause the server count
 #to not be posted because i don't want the debug acc posting it's server count
 if debugmode == True:        
-    tkn_dbo = open("Tokens/dbl_api_blank.txt", "r")
+    tkn_dbl = open("Tokens/dbl_api_blank.txt", "r")
 else:
-    tkn_dbo = open("Tokens/dbl_api.txt", "r")
-token_dbo = tkn_dbo.read()
-tkn_dbo.close() 
-dbltoken = token_dbo
-url = ("https://discordbots.org/api/bots/252442396879486976/stats")
-headers = {"Authorization" : dbltoken}        
+    tkn_dbl = open("Tokens/dbl_api.txt", "r")
+token_dbl = tkn_dbl.read()
+tkn_dbl.close() 
+dbltoken = token_dbl
+url_dbl = ("https://discordbots.org/api/bots/252442396879486976/stats")
+headers_dbl = {"Authorization" : dbltoken}
+
+#if debugmode == True:        
+#    tkn_dbo = open("Tokens/dbo_api.txt", "r")
+#else:
+#    tkn_dbo = open("Tokens/dbo_api.txt", "r")
+#token_dbo = tkn_dbo.read()
+#tkn_dbo.close() 
+#dbotoken = token_dbo
+#url_dbo = ("https://discord.bots.gg/api/v1/bots/252442396879486976/stats")
+#headers_dbo = {"Authorization" : dbotoken}
 
 
 @bot.event
@@ -291,6 +301,10 @@ async def on_ready():
         await bot.change_presence(activity=discord.Game(name="TB [" + bot_version + "] (D)"))
         #await yuyuko.send("System ready!")
         print(' ')
+        #payload = {"guildCount"  : str(len(bot.guilds))}
+        #payload_dbo = {"guildCount"  : int(1800)}
+        #async with aiohttp.ClientSession() as aioclient:
+        #    await aioclient.post(url_dbo, data=payload_dbo, headers=headers_dbo)
         return
 
     if smartboot == True:
@@ -322,9 +336,9 @@ async def on_ready():
         print(' ')
         print('servercount - ' + str(len(bot.guilds)))
         print(discord.version_info)
-        payload = {"server_count"  : str(len(bot.guilds))}
+        payload_dbl = {"server_count"  : str(len(bot.guilds))}
         async with aiohttp.ClientSession() as aioclient:
-            await aioclient.post(url, data=payload, headers=headers)
+            await aioclient.post(url_dbl, data=payload_dbl, headers=headers)
         await bot.change_presence(activity=discord.Game(name="TB [" + bot_version + "]"))
         await asyncio.sleep(15)
         await bot.change_presence(activity=discord.Game(name="Startup complete"))
