@@ -4,11 +4,17 @@
 #number of commands which can be ran in timeframe
 rlimit_cmd = 2
 #timeframe (seconds)
-rlimit_time = 240
+rlimit_time = 480
 
 #Account age options
 #How many days old the account needs to be 
 dayspassed = 30
+
+#How many days since Tenshi was added to the server
+tenkojoin = 2
+
+#How many days since user joined the server
+userjoin = 2
 
 import discord
 import aiohttp
@@ -49,6 +55,8 @@ user_blacklist = open("txt/badactors.txt", "r")
 badactors = user_blacklist.read()
 
 acc_age = datetime.now() - timedelta(days=dayspassed)
+tenko_join = datetime.now() - timedelta(days=tenkojoin)
+user_join = datetime.now() - timedelta(days=userjoin)
 
 #owner check
 #19/05 U+1F382
@@ -74,6 +82,7 @@ class twitterCog(commands.Cog):
         userid = str(ctx.author.id)
         serverid = str(ctx.guild.id)
         servername = str(ctx.guild.name)
+        #print (ctx.me.joined_at)
         #print (serverid)
         #print (servername)
         #print (ctx.guild.member_count)
@@ -99,17 +108,27 @@ class twitterCog(commands.Cog):
             return
         #prevent people from bypassing cooldown
         if int(ctx.guild.member_count) < int("4"):
-            await ctx.send('Twitter command cannot be used in this server')
+            await ctx.send('The Twitter command cannot be used in this server')
             return
         #1cc detection 
         if int(ctx.guild.id) == int("162861213309599744"):
             await ctx.send('Error: Please use 1CCBot here')
             return
+        #blacklist check
         if str(ctx.author.id) in badactors:
             await ctx.send('Error: You have been blacklisted')
             return
+        #account age check
         if ctx.author.created_at > acc_age:
             await ctx.send('Error: Your Discord account is too new')
+            return
+        #Tenshi join check
+        if ctx.me.joined_at > tenko_join:
+            await ctx.send("The twitter command can't be used because i haven't been in this server long enough\nWait at least " + str(tenkojoin) + " days")
+            return
+        #user join check
+        if ctx.author.joined_at > user_join:
+            await ctx.send("You have not been in this server long enough to use this command\nWait at least " + str(userjoin) + " days")
             return
 
         else:
@@ -138,7 +157,7 @@ class twitterCog(commands.Cog):
                     print('[tweet] "' + finaltweet + '" User ID: :' + str(ctx.author.id))
                     await ctx.send('Tweet Posted')
                     #DM me about the tweet if i need to go delete it
-                    yuyuko = self.bot.fetch_user(166189271244472320)
+                    yuyuko = await self.bot.fetch_user(166189271244472320)
                     await yuyuko.send("**--A tweet was sent--** \nContents: " + finaltweet + "\nUnfiltered contents: " + asciitext + "\nUser ID: " + userid + "\nServer ID: " + serverid + "\nServer name: " + servername)
                     return
                 elif ((reaction.emoji) == '\U0000274e'):
