@@ -874,7 +874,7 @@ async def vpsreboot_u(ctx):
 @bot.command()
 @is_owner()  
 async def setstatus_stream(ctx, *, args):
-    await bot.change_presence(activity=discord.Streaming(name= args, url='https://twitch.tv/99710'))
+    await bot.change_presence(activity=discord.Streaming(name= args, url='https://twitch.tv/saigyouji8'))
 
 @bot.command()
 @is_owner()  
