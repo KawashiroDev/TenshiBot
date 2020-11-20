@@ -1,5 +1,5 @@
 #TenshiBot Slipstream version
-#Created by 99710
+#Created by 99710/KawashiroDev
 
 
 ##Parameters##
@@ -576,7 +576,7 @@ async def help2(ctx):
     em.add_field(name="General Commands", value=gen_command, inline=False)
     em.add_field(name="Fun Commands", value=fun_command, inline=False)
     em.add_field(name="Image Commands", value=img_command, inline=False)
-    em.set_footer(text="Version " + bot_version + " ,Created by 99710")
+    em.set_footer(text="Version " + bot_version + " ,Created by 99710/KawashiroDev")
     await ctx.send(embed=em)
 
 #@bot.command()
@@ -587,7 +587,7 @@ async def help2(ctx):
 @bot.command()
 @is_owner()
 async def githubtest(ctx):
-    repo = g.get_repo("99710/TenshiBot")
+    repo = g.get_repo("KawashiroDev/TenshiBot")
     branch = repo.get_branch("master")
     #get the sha of latest commit
     print(branch.commit.sha)
@@ -603,7 +603,7 @@ async def githubtest(ctx):
 @is_owner()
 async def update(ctx):
     print('[Updater] Getting info from github')
-    repo = g.get_repo("99710/TenshiBot")
+    repo = g.get_repo("KawashiroDev/TenshiBot")
     branch = repo.get_branch("master")
     #get the sha of latest commit
     print(branch.commit.sha)
@@ -1083,7 +1083,7 @@ async def about(ctx):
     em.add_field(name="Servercount", value=servercount, inline=True)
     em.add_field(name="Uptime", value=uptime, inline=False)
     em.add_field(name="Tenshi.py timestamp", value=buildinfo, inline=False)
-    em.set_footer(text="Created by 99710")
+    em.set_footer(text="Created by 99710/KawashiroDev")
     await ctx.send(embed=em)
 
 @bot.command()
