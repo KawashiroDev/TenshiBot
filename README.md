@@ -19,7 +19,7 @@
 <ul>
 <li><a href="https://discordapp.com/oauth2/authorize?client_id=252442396879486976&scope=bot&permissions=67161152">Tenshi's invite link</a></li>
 <li><a href="https://discord.gg/vAbzRG9">Tenshi's server</a></li>
-<li><a href="https://github.com/99710/TenshiBot/wiki/Commands">Commands page on the wiki</a></li>
+<li><a href="https://github.com/kawashirodev/TenshiBot/wiki/Commands">Commands page on the wiki</a></li>
 <li><a href="https://top.gg/bot/252442396879486976">Tenshi on Top.gg</a></li>
 </ul>
 
