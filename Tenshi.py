@@ -1,5 +1,5 @@
 #TenshiBot Slipstream version
-#Created by 99710/KawashiroDev
+#Created by KawashiroDev
 
 
 ##Parameters##
@@ -576,7 +576,7 @@ async def help2(ctx):
     em.add_field(name="General Commands", value=gen_command, inline=False)
     em.add_field(name="Fun Commands", value=fun_command, inline=False)
     em.add_field(name="Image Commands", value=img_command, inline=False)
-    em.set_footer(text="Version " + bot_version + " ,Created by 99710/KawashiroDev")
+    em.set_footer(text="Version " + bot_version + " ,Created by KawashiroDev")
     await ctx.send(embed=em)
 
 #@bot.command()
@@ -631,7 +631,7 @@ async def update(ctx):
         print ('[Updater] Github is newer than current build, starting update process')
         await ctx.send('Github is newer than local, preparing to update')
         #async with aiohttp.ClientSession() as session:
-        #    async with session.get('https://github.com/99710/TenshiBot/archive/master.zip') as resp:
+        #    async with session.get('https://github.com/kawashirodev/TenshiBot/archive/master.zip') as resp:
         #        await resp.read()
         #    with open('update.zip', 'wb') as fd:
         #        while True:
@@ -643,7 +643,7 @@ async def update(ctx):
         #above doesn't work, adapting spicetools extraction code from 1ccbot instead
         #yes requests is bad but eh
         
-        spiceURL = 'https://github.com/99710/TenshiBot/archive/master.zip'
+        spiceURL = 'https://github.com/kawashirodev/TenshiBot/archive/master.zip'
         r = requests.get(spiceURL)
         with open('Tenshiupdate.zip', 'wb') as f:
             f.write(r.content)
@@ -671,7 +671,7 @@ async def update(ctx):
         return
     
     #print (time.ctime(max(os.path.getmtime(root) for root,_,_ in os.walk('/TenshiBot'))))
-    #repo = g.get_repo("99710/TenshiBot")
+    #repo = g.get_repo("kawashirodev/TenshiBot")
     #print(commit.commit.author.date)
     #print(repo.name)
     #print(dir(branch.commit))
@@ -1083,7 +1083,7 @@ async def about(ctx):
     em.add_field(name="Servercount", value=servercount, inline=True)
     em.add_field(name="Uptime", value=uptime, inline=False)
     em.add_field(name="Tenshi.py timestamp", value=buildinfo, inline=False)
-    em.set_footer(text="Created by 99710/KawashiroDev")
+    em.set_footer(text="Created by KawashiroDev")
     await ctx.send(embed=em)
 
 @bot.command()
