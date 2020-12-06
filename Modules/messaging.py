@@ -57,7 +57,7 @@ class messagingCog(commands.Cog):
     async def messagedev(self, ctx, *, args):
         userid = str(ctx.author.id)
         username = str(ctx.author.name)
-        yuyuko = await self.bot.get_user(166189271244472320)
+        yuyuko = await self.bot.fetch_user(166189271244472320)
         devmsg = ('[' + ctx.author.name + '] ' + args)
         
 #        if str(ctx.author.id) in badactors:
@@ -84,7 +84,7 @@ class messagingCog(commands.Cog):
         print(userid)
         print(args)
         
-        yuyuko = await self.bot.get_user(int(userid))
+        yuyuko = await self.bot.fetch_user(int(userid))
         em = discord.Embed(description = args, colour=0x3ef1fa)
         em.set_author(name='\U0001F4E8 Message from bot dev')
         em.set_footer(text="You can reply using `messagedev`")
