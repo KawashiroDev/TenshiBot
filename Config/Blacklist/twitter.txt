@@ -1,0 +1,2 @@
+Twitter blacklist file
+user id's in this file cannot use the twitter command

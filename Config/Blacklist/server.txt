@@ -1,0 +1,2 @@
+server blacklist file
+server id's in here cannot use Tenshi
