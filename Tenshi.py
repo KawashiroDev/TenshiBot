@@ -338,7 +338,7 @@ async def on_ready():
         print(discord.version_info)
         payload_dbl = {"server_count"  : str(len(bot.guilds))}
         async with aiohttp.ClientSession() as aioclient:
-            await aioclient.post(url_dbl, data=payload_dbl, headers=headers)
+            await aioclient.post(url_dbl, data=payload_dbl, headers=headers_dbl)
         await bot.change_presence(activity=discord.Game(name="TB [" + bot_version + "]"))
         await asyncio.sleep(15)
         await bot.change_presence(activity=discord.Game(name="Startup complete"))
