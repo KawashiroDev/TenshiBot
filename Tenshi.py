@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.4.6'
+bot_version = '2.4.7'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -402,9 +402,30 @@ async def on_command_error(ctx, error):
     #booru related issue
     #can be intentionally triggered with gif2
     if str(error) == "Command raised an exception: TypeError: 'NoneType' object is not subscriptable":
-        await ctx.send("\U00002139 There seems to be an issue retrieving an image for this command, try again later")
+        await ctx.send("There seems to be an issue retrieving an image for this command, try again later\n(Got an unusual response from the booru)")
         if errordm == True:
             await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Current booru may be down)")
+            return
+
+    #booru connection timed out (Gbooru, Port 80)
+    if str(error) == "Command raised an exception: ClientConnectorError: Cannot connect to host gelbooru.com:80 ssl:default [Name or service not known]":
+        await ctx.send("There seems to be an issue retrieving an image for this command, try again later\n(Timed out trying to connect to Gbooru)")
+        if errordm == True:
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Current booru may be slow down)")
+            return
+
+    #booru connection timed out (Gbooru, Port 443)
+    if str(error) == "Command raised an exception: ClientConnectorError: Cannot connect to host gelbooru.com:443 ssl:default [Name or service not known]":
+        await ctx.send("There seems to be an issue retrieving an image for this command, try again later\n(Timed out trying to connect to Gbooru)")
+        if errordm == True:
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Current booru may be slow down)")
+            return
+
+    #Travitia connection failure
+    if str(error) == "Command raised an exception: ClientConnectorError: Cannot connect to host public-api.travitia.xyz:443 ssl:default [Name or service not known]":
+        await ctx.send("Could you try asking me that some other time?")
+        if errordm == True:
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Cleverbot module may need updating, run =vpsreboot_u)")
             return
 
     #Permissions error
