@@ -76,9 +76,9 @@ from bs4 import BeautifulSoup
 
 
 keiki_title = [
-"Character image!",
+"Character image",
 "Create!",     
-"oh!",
+"Oh!",
 ]
 
 #twitter stuff
@@ -6456,11 +6456,11 @@ class ImageCog(commands.Cog):
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
-            embed_name = 'Character image'
+            embed_name = text=random.choice(keiki_title)
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
-            embed_name = 'Character image'
+            embed_name = text=random.choice(keiki_title)
         async with aiohttp.ClientSession() as session:
             async with session.get(booruurl) as r:
                 if r.status == 200:
