@@ -333,6 +333,8 @@ class ImageCog(commands.Cog):
                     sbooru_id = pic['id']
                     sbooru_tags = pic['tags']
                     sbooru_sauce = pic['source']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
