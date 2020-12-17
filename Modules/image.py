@@ -1,6 +1,17 @@
 #TenshiBot Image module
 
-#these have to be defined in here too
+import discord
+import requests
+import aiohttp
+#import praw
+import lxml
+import random
+import asyncio
+import twitter
+
+from discord.ext import commands
+from bs4 import BeautifulSoup
+
 #booru URL, used for touhou images and safebooru command
 booru = 'gelbooru.com'
 
@@ -22,19 +33,33 @@ boorublacklistgif = 'rating:safe+-underwear+-sideboob+-pov_feet+-underboob+-upsk
 #tag blacklist v2
 
 #base tags to apply to all levels (except gifs)
-boorutags_base = 'solo+rating:safe+-6%2Bgirls+-comic+-greyscale+-huge_filesize+-animated+-audio+-webm+-absurdres'
+boorutags_base = 'solo+rating:safe+-6%2Bgirls+-comic+-greyscale+-huge_filesize+-animated+-audio+-webm+-absurdres+-monochrome'
 #artists whose works slip by the tag filters
-badartists = '+-nori_tamago+-shiraue_yuu+-hammer_(sunset_beach)+-roke_(taikodon)+-guard_bento_atsushi+-kushidama_minaka+-manarou+-shounen_(hogehoge)+-fusu_(a95101221)+-guard_vent_jun+-teoi_(good_chaos)+-wowoguni'
+badartists = '+-nori_tamago+-shiraue_yuu+-hammer_(sunset_beach)+-roke_(taikodon)+-guard_bento_atsushi+-kushidama_minaka+-manarou+-shounen_(hogehoge)+-fusu_(a95101221)+-guard_vent_jun+-teoi_(good_chaos)+-wowoguni+-yadokari_genpachirou+-hydrant_(kasozama)'
 #base tags for gif command
 boorutags_gif = 'rating:safe+-6%2Bgirls+-comic+-greyscale+-huge_filesize+-audio+-webm+-absurdres'
 #default blacklisted tags (full SFW mode)
-badtags_strict = '-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini+-spread_legs+-bdsm+-lovestruck+-artificial_vagina+-swimsuit+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-off_shoulder+-breast_hold+-cleavage+-nude+-butt_crack+-naked_apron+-convenient_censoring+-bra+-trapped+-restrained+-skirt_lift+-open_shirt+-underwear+-evil_smile+-evil_grin+-choker+-head_under_skirt+-skeleton+-open_fly+-o-ring_bikini+-middle_finger+-white_bloomers+-hot+-tank_top_lift+-short_shorts+-alternate_breast_size+-belly+-wind_lift+-you_gonna_get_raped+-convenient_leg+-convenient_arm+-downblouse+-torn_clothes+-sweater_lift+-open-chest_sweater+-bunnysuit+-gag+-gagged+-ball_gag+-hanging+-erect_nipples+-head_out_of_frame+-covering+-skirt_around_ankles+-furry+-shirt_lift+-vest_lift+-lifted_by_self+-when_you_see_it+-feet+-thighs+-skirt_hold+-open_dress+-open_clothes+-naked_shirt+-shirt_tug+-hip_vent+-no_panties+-surprised+-onsen+-naked_towel+-have_to_pee+-skirt_tug+-pole_dancing+-stripper_pole+-dimples_of_venus+-topless'
+badtags_strict = '-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini+-spread_legs+-bdsm+-lovestruck+-artificial_vagina+-swimsuit+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-off_shoulder+-breast_hold+-cleavage+-nude+-butt_crack+-naked_apron+-convenient_censoring+-bra+-trapped+-restrained+-skirt_lift+-open_shirt+-underwear+-evil_smile+-evil_grin+-choker+-head_under_skirt+-skeleton+-open_fly+-o-ring_bikini+-middle_finger+-white_bloomers+-hot+-tank_top_lift+-short_shorts+-alternate_breast_size+-belly+-wind_lift+-you_gonna_get_raped+-convenient_leg+-convenient_arm+-downblouse+-torn_clothes+-sweater_lift+-open-chest_sweater+-bunnysuit+-gag+-gagged+-ball_gag+-hanging+-erect_nipples+-head_out_of_frame+-covering+-skirt_around_ankles+-furry+-shirt_lift+-vest_lift+-lifted_by_self+-when_you_see_it+-feet+-thighs+-skirt_hold+-open_dress+-open_clothes+-naked_shirt+-shirt_tug+-hip_vent+-no_panties+-surprised+-onsen+-naked_towel+-have_to_pee+-skirt_tug+-pole_dancing+-stripper_pole+-dimples_of_venus+-topless+-trembling+-no_humans+-creepy+-showgirl_skirt+-cookie_(touhou)+-pov+-fusion+-drugs+-weed+-forced_smile+-mouth_pull+-groin'
 #tags to blacklist in TenshiBot Hangout
 badtags_hangout = '-sideboob+-pov_feet+-upskirt+-sexually_suggestive+-bdsm+-lovestruck+-artificial_vagina+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-breast_hold+-nude+-butt_crack+-naked_apron'
 #tags to blacklist in moderate mode
 badtags_moderate = '-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-bdsm+-lovestruck+-artificial_vagina+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-breast_hold+-nude+-butt_crack+-naked_apron'
 #tags to blacklist in an NSFW channel
 badtags_nsfwmode = ''
+
+#image shuffler queries (experimental!, may return questionable images)
+last_updated = "+sort:updated:desc"
+random_hq = "+sort:random+score:>=10"
+
+#not used
+randomsort = "+sort:random"
+minscore = "score:>=0"
+sorting = "sort:updated:desc"
+startpage = "&pid=42"
+#+sort:random:123
+
+#max value for score rng
+score_rng_max = "5"
 
 #append text to the start of booru url output
 #change this if the bot is sending malformed booru urls
@@ -61,18 +86,6 @@ normalfooter,
 normalfooter,
 patreonnag,
 ]
-
-import discord
-import requests
-import aiohttp
-#import praw
-import lxml
-import random
-import asyncio
-import twitter
-
-from discord.ext import commands
-from bs4 import BeautifulSoup
 
 if booru == 'gelbooru.com':
     idtext = 'Gbooru ID'
@@ -177,8 +190,10 @@ class ImageCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def reimu(self, ctx):
+        score_rng = random.randint(0,5)
         em = discord.Embed(title='', description=' ', colour=0xb50404)
-        char = 'Hakurei_Reimu'
+        char = 'Hakurei_Reimu+score:>=' + str(score_rng)
+        print(score_rng)
         #check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
@@ -220,6 +235,7 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
                     em.add_field(name=idtext, value=sbooru_id, inline=True)
                     em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
+                    em.add_field(name="RNG", value=score_rng, inline=True)
                     #em.add_field(name="Creator ID", value=creator, inline=True)
                     sbooru_img = await ctx.send(embed=em)  
 					
@@ -227,8 +243,9 @@ class ImageCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def marisa(self, ctx):
+        score_rng = random.randint(0,5)
         em = discord.Embed(title='', description=' ', colour=0xf5e942)
-        char = 'kirisame_marisa'
+        char = 'kirisame_marisa+score:>=' + str(score_rng)
         #check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
@@ -269,6 +286,7 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
                     em.add_field(name=idtext, value=sbooru_id, inline=True)
                     em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
+                    em.add_field(name="RNG", value=score_rng, inline=True)
                     #em.add_field(name="Creator ID", value=creator, inline=True)
                     sbooru_img = await ctx.send(embed=em)
 
@@ -277,8 +295,9 @@ class ImageCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def tenshi(self, ctx):
+        score_rng = random.randint(0,5)
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
-        char = 'hinanawi_tenshi'
+        char = 'hinanawi_tenshi+score:>=' + str(score_rng)
         #check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
@@ -320,6 +339,7 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
                     em.add_field(name=idtext, value=sbooru_id, inline=True)
                     em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
+                    em.add_field(name="RNG", value=score_rng, inline=True)
                     #em.add_field(name="Creator ID", value=creator, inline=True)
                     sbooru_img = await ctx.send(embed=em)
 
