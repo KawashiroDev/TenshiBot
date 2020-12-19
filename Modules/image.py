@@ -122,7 +122,7 @@ class ImageCog(commands.Cog):
 
 #landscape
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def testimage(self, ctx):
         
         sbooru_sauce = "http://example.com"
@@ -150,7 +150,7 @@ class ImageCog(commands.Cog):
 
 #portrait
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def testimage2(self, ctx):
         
         sbooru_sauce = "http://example.com"
@@ -188,7 +188,7 @@ class ImageCog(commands.Cog):
         await ctx.send(booruurl)
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def reimu(self, ctx):
         score_rng = random.randint(0,5)
         em = discord.Embed(title='', description=' ', colour=0xb50404)
@@ -241,7 +241,7 @@ class ImageCog(commands.Cog):
 					
 					
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def marisa(self, ctx):
         score_rng = random.randint(0,5)
         em = discord.Embed(title='', description=' ', colour=0xf5e942)
@@ -293,7 +293,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def tenshi(self, ctx):
         score_rng = random.randint(0,5)
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
@@ -350,7 +350,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def tenshi_react(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'hinanawi_tenshi'
@@ -405,7 +405,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def tenshi2(self, ctx):
         em = discord.Embed(title='', description='' + source, colour=0x42D4F4)
         char = 'hinanawi_tenshi'
@@ -454,7 +454,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def tenshi3(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         #define the character tag
@@ -508,7 +508,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def tenshi4(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'hinanawi_tenshi'
@@ -561,7 +561,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def sakuya(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xc7c7c7)
         char = 'izayoi_sakuya'
@@ -610,7 +610,7 @@ class ImageCog(commands.Cog):
 
                     
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def cirno(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x00e5ff)
         char = 'cirno'
@@ -660,7 +660,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def meiling(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x04b548)
         char = 'hong_meiling'
@@ -710,7 +710,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def flandre(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xb50404)
         char = 'flandre_scarlet'
@@ -760,7 +760,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def rumia(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xf5da42)
         char = 'rumia'
@@ -811,7 +811,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def rinnosuke(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'morichika_rinnosuke'
@@ -863,7 +863,7 @@ class ImageCog(commands.Cog):
 					
 					
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def murasa(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'murasa_minamitsu'
@@ -915,7 +915,7 @@ class ImageCog(commands.Cog):
 					
 					
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def mamizou(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'futatsuiwa_mamizou'
@@ -967,7 +967,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def shou(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'toramaru_shou'
@@ -1019,7 +1019,7 @@ class ImageCog(commands.Cog):
 					
 					
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def nemuno(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'sakata_nemuno'
@@ -1070,7 +1070,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def eternity(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'eternity_larva'
@@ -1122,7 +1122,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def narumi(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'yatadera_narumi'
@@ -1173,7 +1173,7 @@ class ImageCog(commands.Cog):
 					
 					
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def daiyousei(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x04b548)
         char = 'daiyousei'
@@ -1224,7 +1224,7 @@ class ImageCog(commands.Cog):
 					
 					
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def ringo(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xe2a81e)
         char = 'ringo_(touhou)'
@@ -1275,7 +1275,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def kosuzu(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'motoori_kosuzu'
@@ -1326,7 +1326,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def akyuu(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'hieda_no_akyuu'
@@ -1377,7 +1377,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def hatate(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xb50480)
         char = 'himekaidou_hatate'
@@ -1428,7 +1428,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def mima(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'mima_(touhou)'
@@ -1480,7 +1480,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def sariel(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'sariel_(touhou)'
@@ -1532,7 +1532,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def yumemi(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'okazaki_yumemi'
@@ -1584,7 +1584,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def shinki(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'shinki'
@@ -1635,7 +1635,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def lily(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'lily_white'
@@ -1686,7 +1686,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def shion(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x048cb5)
         char = 'yorigami_shion'
@@ -1737,7 +1737,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def joon(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xaa4fa0)
         char = "yorigami_jo'on"
@@ -1788,7 +1788,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def seiran(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x6b87bd)
         char = 'seiran_(touhou)'
@@ -1839,7 +1839,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def koakuma(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x990000)
         char = 'koakuma'
@@ -1890,7 +1890,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def raiko(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xd25859)
         char = 'horikawa_raiko'
@@ -1941,7 +1941,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def okina(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xe69454)
         char = 'matara_okina'
@@ -1992,7 +1992,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def mai(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x4e7764)
         char = 'teireida_mai'
@@ -2043,7 +2043,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def satono(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xe262b0)
         char = 'nishida_satono'
@@ -2094,7 +2094,7 @@ class ImageCog(commands.Cog):
 					
 					
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def aunn(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'komano_aun'
@@ -2145,7 +2145,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def komachi(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xd25859)
         char = 'onozuka_komachi'
@@ -2196,7 +2196,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def wakasagihime(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'wakasagihime'
@@ -2245,7 +2245,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def seija(self, ctx):
         char = 'kijin_seija'
         em = discord.Embed(title='', description=' ', colour=0xaeb4c6)
@@ -2293,7 +2293,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def toyohime(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x583b80)
         char = 'watatsuki_no_toyohime'
@@ -2344,7 +2344,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def yorihime(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xa84384)
         char = 'watatsuki_no_yorihime'
@@ -2395,7 +2395,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def renko(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'usami_renko'
@@ -2446,7 +2446,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def maribel(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'maribel_hearn'
@@ -2497,7 +2497,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def nue(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x000000)
         char = 'houjuu_nue'
@@ -2548,7 +2548,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def iku(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'nagae_iku'
@@ -2599,7 +2599,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def elly(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'elly_(touhou)'
@@ -2650,7 +2650,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def kasen(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xfb959e)
         char = 'ibaraki_kasen'
@@ -2701,7 +2701,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def keine(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x574b8c)
         char = 'kamishirasawa_keine'
@@ -2752,7 +2752,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def konngara(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'konngara'
@@ -2803,7 +2803,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def yuyuko(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xff40d9)
         char = 'saigyouji_yuyuko'
@@ -2854,7 +2854,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def aya(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xe58a53)
         char = 'shameimaru_aya'
@@ -2905,7 +2905,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def nitori(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xb2daef)
         char = 'kawashiro_nitori'
@@ -2956,7 +2956,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def sumireko(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xaa6ad3)
         char = 'usami_sumireko'
@@ -3007,7 +3007,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def okuu(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x009917)
         char = 'reiuji_utsuho'
@@ -3058,7 +3058,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def patchouli(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xc646e0)
         char = 'patchouli_knowledge'
@@ -3109,7 +3109,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def youmu(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x79eb50)
         char = 'konpaku_youmu'
@@ -3160,7 +3160,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def koishi(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x62f500)
         char = 'komeiji_koishi'
@@ -3211,7 +3211,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def mokou(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xf50000)
         char = 'fujiwara_no_mokou'
@@ -3262,7 +3262,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def satori(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xa700f5)
         char = 'komeiji_satori'
@@ -3313,7 +3313,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def wan(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'inubashiri_momiji'
@@ -3364,7 +3364,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def momiji(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'inubashiri_momiji'
@@ -3415,7 +3415,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def ran(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'yakumo_ran'
@@ -3466,7 +3466,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def kagerou(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'imaizumi_kagerou'
@@ -3517,7 +3517,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def reisen(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xf94aff)
         char = 'reisen_udongein_inaba'
@@ -3569,7 +3569,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def reisen2(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x2291ba)
         char = 'reisen'
@@ -3621,7 +3621,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def rei(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x2291ba)
         char = 'reisen'
@@ -3673,7 +3673,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def letty(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'letty_whiterock'
@@ -3724,7 +3724,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def remilia(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xfd8cff)
         char = 'remilia_scarlet'
@@ -3774,7 +3774,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def suwako(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'moriya_suwako'
@@ -3825,7 +3825,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def shizuha(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'aki_shizuha'
@@ -3876,7 +3876,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def sanae(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x24b343)
         char = 'kochiya_sanae'
@@ -3927,7 +3927,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def clownpiece(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'clownpiece'
@@ -3978,7 +3978,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def yukari(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'yakumo_yukari'
@@ -4029,7 +4029,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def yuuka(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x24b343)
         char = 'kazami_yuuka'
@@ -4080,7 +4080,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def suika(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'ibuki_suika'
@@ -4131,7 +4131,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def sekibanki(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'sekibanki'
@@ -4182,7 +4182,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def wriggle(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'wriggle_nightbug'
@@ -4233,7 +4233,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def hina(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'kagiyama_hina'
@@ -4284,7 +4284,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def alice(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'alice_margatroid'
@@ -4335,7 +4335,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def kyouko(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'kasodani_kyouko'
@@ -4386,7 +4386,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def kisume(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'kisume'
@@ -4437,7 +4437,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def nazrin(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'nazrin'
@@ -4488,7 +4488,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def sukuna(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'sukuna_shinmyoumaru'
@@ -4536,7 +4536,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def kokoro(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'hata_no_kokoro'
@@ -4587,7 +4587,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def yoshika(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'miyako_yoshika'
@@ -4638,7 +4638,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def seiga(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'kaku_seiga'
@@ -4689,7 +4689,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def kogasa(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'tatara_kogasa'
@@ -4740,7 +4740,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def futo(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'mononobe_no_futo'
@@ -4791,7 +4791,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def miko(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'toyosatomimi_no_miko'
@@ -4842,7 +4842,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def mystia(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xff8ade)
         char = 'mystia_lorelei'
@@ -4893,7 +4893,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def genjii(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'genjii_(touhou)'
@@ -4944,7 +4944,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def byakuren(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x5b0082)
         char = 'hijiri_byakuren'
@@ -4995,7 +4995,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def hecatia(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x940f0f)
         char = 'hecatia_lapislazuli'
@@ -5046,7 +5046,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def junko(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xfbd55a)
         char = 'junko_(touhou)'
@@ -5097,7 +5097,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def sagume(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xb4449c)
         char = 'kishin_sagume'
@@ -5148,7 +5148,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def doremy(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'doremy_sweet'
@@ -5199,7 +5199,7 @@ class ImageCog(commands.Cog):
 					
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def minoriko(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'aki_minoriko'
@@ -5250,7 +5250,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def yamame(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'kurodani_yamame'
@@ -5301,7 +5301,7 @@ class ImageCog(commands.Cog):
 					
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def yuugi(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'hoshiguma_yuugi'
@@ -5352,7 +5352,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def parsee(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'mizuhashi_parsee'
@@ -5403,7 +5403,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def tewi(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xcc7c9c)
         char = 'inaba_tewi'
@@ -5454,7 +5454,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def medicine(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'medicine_melancholy'
@@ -5505,7 +5505,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def eiki(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x5b9c66)
         char = 'shiki_eiki'
@@ -5556,7 +5556,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def orin(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'kaenbyou_rin'
@@ -5607,7 +5607,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def kaguya(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xef61ff)
         char = 'houraisan_kaguya'
@@ -5658,7 +5658,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def eirin(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'yagokoro_eirin'
@@ -5709,7 +5709,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def kanako(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x977cac)
         char = 'yasaka_kanako'
@@ -5760,7 +5760,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def chen(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'chen'
@@ -5810,7 +5810,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def star(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'star_sapphire'
@@ -5861,7 +5861,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def star2(self, ctx):
         char = 'star_sapphire'
         #check if Tenshi has a flag enabled or not
@@ -5910,7 +5910,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def luna(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'luna_child'
@@ -5961,7 +5961,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def sunny(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'sunny_milk'
@@ -6012,7 +6012,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def eika(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'ebisu_eika'
@@ -6063,7 +6063,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def urumi(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'ushizaki_urumi'
@@ -6114,7 +6114,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def kutaka(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xdf9041)
         char = 'niwatari_kutaka'
@@ -6165,7 +6165,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def lunasa(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'lunasa_prismriver'
@@ -6216,7 +6216,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def lyrica(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'lyrica_prismriver'
@@ -6267,7 +6267,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def merlin(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'merlin_prismriver'
@@ -6318,7 +6318,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def prismriver(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'lunasa_prismriver+lyrica_prismriver+merlin_prismriver'
@@ -6361,7 +6361,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def moko(self, ctx):
         embed_name = 'Moko image'
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
@@ -6403,7 +6403,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def gif(self, ctx):
         char = 'touhou+animated_gif'
         async with aiohttp.ClientSession() as session:
@@ -6440,7 +6440,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def gif2(self, ctx):
         char = 'touhou+animated'
         async with aiohttp.ClientSession() as session:
@@ -6477,7 +6477,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def keiki(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'haniyasushin_keiki'
@@ -6529,7 +6529,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def saki(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'kurokoma_saki'
@@ -6581,7 +6581,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def mayumi(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'joutouguu_mayumi'
@@ -6633,7 +6633,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def yachie(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'kicchou_yachie'
@@ -6685,7 +6685,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def ichirin(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'kumoi_ichirin'
@@ -6736,7 +6736,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def miyoi(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'okunoda_miyoi'
@@ -6787,7 +6787,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def chiyuri(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'kitashirakawa_chiyuri'
@@ -6839,7 +6839,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def pc98(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'touhou_(pc-98)'
@@ -6889,7 +6889,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def satsuki(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'satsuki_rin'
@@ -6939,7 +6939,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def tokiko(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'tokiko_(touhou)'
@@ -6989,7 +6989,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def mimiqwertyuiop(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'mimi-chan'
@@ -7039,7 +7039,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def kotohime(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'kotohime'
@@ -7090,7 +7090,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def rikako(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'asakura_rikako'
@@ -7141,7 +7141,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def ruukoto(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'ruukoto'
@@ -7191,7 +7191,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def elis(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'elis_(touhou)'
@@ -7241,7 +7241,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def ellen(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'ellen'
@@ -7291,7 +7291,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def orange(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'orange_(touhou)'
@@ -7342,7 +7342,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def benben(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'tsukumo_benben'
@@ -7393,7 +7393,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def yatsuhashi(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'tsukumo_yatsuhashi'
@@ -7446,7 +7446,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def youka(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'kazami_youka'
@@ -7488,7 +7488,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def kokuu(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x14a625)
         char = 'kokuu_haruto'
@@ -7530,7 +7530,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def ex_rumia(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xf5da42)
         char = 'ex-rumia'
@@ -7572,7 +7572,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def hei(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x88008c)
         char = 'hei_meiling'
@@ -7614,7 +7614,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def flan_maman(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x8c0000)
         char = 'flan-maman'
@@ -7656,7 +7656,7 @@ class ImageCog(commands.Cog):
 #oj_img
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def oj(self, ctx):
         char = '100_percent_orange_juice'
         async with aiohttp.ClientSession() as session:
@@ -7698,7 +7698,7 @@ class ImageCog(commands.Cog):
 					
 					
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def suguri(self, ctx):
         char = 'suguri_(character)'
         async with aiohttp.ClientSession() as session:
@@ -7740,7 +7740,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def saki_oj(self, ctx):
         char = 'saki_(suguri)'
         async with aiohttp.ClientSession() as session:
@@ -7784,7 +7784,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def kongou(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'kongou_(kantai_collection)'
@@ -7835,7 +7835,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def haruna(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'haruna_(kantai_collection)'
@@ -7886,7 +7886,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def hiei(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'hiei_(kantai_collection)'
@@ -7936,7 +7936,7 @@ class ImageCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def kirishima(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'kirishima_(kantai_collection)'
