@@ -51,7 +51,7 @@ extractor = URLExtract()
 pf = ProfanityFilter()
 pf_extended = ProfanityFilter(extra_censor_list=["@"])
 
-user_blacklist = open("txt/badactors.txt", "r")
+user_blacklist = open("Config/Blacklist/twitter.txt", "r")
 badactors = user_blacklist.read()
 
 acc_age = datetime.now() - timedelta(days=dayspassed)
