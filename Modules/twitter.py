@@ -11,10 +11,10 @@ rlimit_time = 480
 dayspassed = 30
 
 #How many days since Tenshi was added to the server
-tenkojoin = 2
+tenkojoin = 7
 
 #How many days since user joined the server
-userjoin = 2
+userjoin = 5
 
 import discord
 import aiohttp
@@ -94,7 +94,7 @@ class twitterCog(commands.Cog):
             await ctx.send('Error: Tweet contains no alphanumeric characters')
         #check username for profanity
         if pf.is_profane(asciiusername) == True:
-            await ctx.send('Error: Your Discord username is unsupported')
+            await ctx.send('You need to change your Discord username to use this command')
             return
         #link check
         if extractor.has_urls(asciitext):
@@ -107,7 +107,7 @@ class twitterCog(commands.Cog):
             await ctx.send('Error: Hashtags are not supported at this time')
             return
         #prevent people from bypassing cooldown
-        if int(ctx.guild.member_count) < int("4"):
+        if int(ctx.guild.member_count) < int("5"):
             await ctx.send('The Twitter command cannot be used in this server')
             return
         #1cc detection 
@@ -116,15 +116,15 @@ class twitterCog(commands.Cog):
             return
         #blacklist check
         if str(ctx.author.id) in badactors:
-            await ctx.send('Error: You have been blacklisted')
+            await ctx.send('You have been blacklisted from using this command')
             return
         #account age check
         if ctx.author.created_at > acc_age:
-            await ctx.send('Error: Your Discord account is too new')
+            await ctx.send('Your Discord account is too new')
             return
         #Tenshi join check
         if ctx.me.joined_at > tenko_join:
-            await ctx.send("The twitter command can't be used because i haven't been in this server long enough\nWait at least " + str(tenkojoin) + " days")
+            await ctx.send("The twitter command can't be used because i haven't been in this server long enough, Wait at least " + str(tenkojoin) + " days.")# \nIf you have only added me because of the twitter command please remove me from this server")
             return
         #user join check
         if ctx.author.joined_at > user_join:
