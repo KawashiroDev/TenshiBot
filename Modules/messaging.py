@@ -2,7 +2,7 @@
 
 #ratelimiting options
 #number of commands which can be ran in timeframe
-rlimit_cmd = 2
+rlimit_cmd = 1
 #timeframe (seconds)
 rlimit_time = 60
 
@@ -29,7 +29,7 @@ extractor = URLExtract()
 pf = ProfanityFilter()
 pf_extended = ProfanityFilter(extra_censor_list=["@"])
 
-user_blacklist = open("txt/badactors.txt", "r")
+user_blacklist = open("Config/Blacklist/messagedev.txt", "r")
 badactors = user_blacklist.read()
 
 acc_age = datetime.now() - timedelta(days=dayspassed)
@@ -53,16 +53,17 @@ class messagingCog(commands.Cog):
 
 
     @commands.command()
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def messagedev(self, ctx, *, args):
         userid = str(ctx.author.id)
         username = str(ctx.author.name)
         yuyuko = await self.bot.fetch_user(166189271244472320)
         devmsg = ('[' + ctx.author.name + '] ' + args)
         
-#        if str(ctx.author.id) in badactors:
-#            await ctx.send('Error: You have been blacklisted')
-#            return
+        if str(ctx.author.id) in badactors:
+            #await ctx.send('Error: You have been blacklisted')
+            await ctx.send(file=discord.File('pics/laughing_guy.jpg'))            
+            return
         if ctx.author.created_at > acc_age:
             await ctx.send('Error: Your Discord account is too new')
             return
