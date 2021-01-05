@@ -58,8 +58,9 @@ sorting = "sort:updated:desc"
 startpage = "&pid=42"
 #+sort:random:123
 
-#max value for score rng
+#rng stuff
 score_rng_max = "5"
+score_rng = random.randint(0,5)
 
 #append text to the start of booru url output
 #change this if the bot is sending malformed booru urls
@@ -570,7 +571,7 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def sakuya(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xc7c7c7)
-        char = 'izayoi_sakuya'
+        char = 'izayoi_sakuya+score:>=' + str(score_rng)
         #check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
@@ -613,6 +614,7 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
                     em.add_field(name=idtext, value=sbooru_id, inline=True)
                     em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
+                    em.add_field(name="RNG", value=score_rng, inline=True)
                     #em.add_field(name="Creator ID", value=creator, inline=True)
                     sbooru_img = await ctx.send(embed=em)
 
@@ -621,7 +623,7 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def cirno(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x00e5ff)
-        char = 'cirno'
+        char = 'cirno+score:>=' + str(score_rng)
         #check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
@@ -664,6 +666,7 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
                     em.add_field(name=idtext, value=sbooru_id, inline=True)
                     em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
+                    em.add_field(name="RNG", value=score_rng, inline=True)
                     #em.add_field(name="Creator ID", value=creator, inline=True)
                     sbooru_img = await ctx.send(embed=em)
 
