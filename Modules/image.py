@@ -60,7 +60,7 @@ startpage = "&pid=42"
 
 #rng stuff
 score_rng_max = "5"
-score_rng = random.randint(0,5)
+#score_rng = random.randint(0,5)
 
 #append text to the start of booru url output
 #change this if the bot is sending malformed booru urls
@@ -570,6 +570,7 @@ class ImageCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def sakuya(self, ctx):
+        score_rng = random.randint(0,5)
         em = discord.Embed(title='', description=' ', colour=0xc7c7c7)
         char = 'izayoi_sakuya+score:>=' + str(score_rng)
         #check if Tenshi has a flag enabled or not
@@ -622,6 +623,7 @@ class ImageCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def cirno(self, ctx):
+        score_rng = random.randint(0,5)
         em = discord.Embed(title='', description=' ', colour=0x00e5ff)
         char = 'cirno+score:>=' + str(score_rng)
         #check if Tenshi has a flag enabled or not
