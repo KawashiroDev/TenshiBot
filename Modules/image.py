@@ -229,6 +229,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -280,6 +282,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -496,6 +500,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -599,6 +605,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -648,6 +656,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -698,6 +708,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -748,6 +760,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -798,6 +812,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -849,6 +865,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -901,6 +919,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -953,6 +973,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1005,6 +1027,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1057,6 +1081,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1108,6 +1134,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1160,6 +1188,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1211,6 +1241,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1262,6 +1294,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1313,6 +1347,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1364,6 +1400,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1415,6 +1453,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1466,6 +1506,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1518,6 +1560,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1570,6 +1614,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1622,6 +1668,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1673,6 +1721,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1724,6 +1774,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1775,6 +1827,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1826,6 +1880,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1877,6 +1933,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1928,6 +1986,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1979,6 +2039,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2030,6 +2092,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2081,6 +2145,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2132,6 +2198,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2183,6 +2251,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2234,6 +2304,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2283,6 +2355,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='ǝƃɐɯI ɹǝʇɔɐɹɐɥƆ')
                     em.set_image(url=booruappend + msg)
@@ -2331,6 +2405,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2382,6 +2458,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2433,6 +2511,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2484,6 +2564,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2535,6 +2617,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2586,6 +2670,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2637,6 +2723,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2688,6 +2776,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2739,6 +2829,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2790,6 +2882,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2841,6 +2935,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2892,6 +2988,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2943,6 +3041,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2994,6 +3094,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3045,6 +3147,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3096,6 +3200,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3147,6 +3253,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3198,6 +3306,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3249,6 +3359,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3300,6 +3412,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3351,6 +3465,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3402,6 +3518,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3453,6 +3571,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3504,6 +3624,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3555,6 +3677,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3607,6 +3731,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3659,6 +3785,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3711,6 +3839,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3762,6 +3892,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3812,6 +3944,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3863,6 +3997,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3914,6 +4050,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3965,6 +4103,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4016,6 +4156,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4067,6 +4209,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4118,6 +4262,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4169,6 +4315,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4220,6 +4368,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4271,6 +4421,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4322,6 +4474,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4373,6 +4527,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4424,6 +4580,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4475,6 +4633,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4526,6 +4686,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='ᶜʰᵃʳᵃᶜᵗᵉʳ ᶦᵐᵃᵍᵉ')
                     em.set_image(url=booruappend + msg)
@@ -4574,6 +4736,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4625,6 +4789,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4676,6 +4842,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4727,6 +4895,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4778,6 +4948,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4829,6 +5001,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4880,6 +5054,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4931,6 +5107,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4982,6 +5160,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5033,6 +5213,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5084,6 +5266,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name="Chang'e are you watching?")
                     em.set_image(url=booruappend + msg)
@@ -5135,6 +5319,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5186,6 +5372,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5237,6 +5425,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5288,6 +5478,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5339,6 +5531,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5390,6 +5584,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5441,6 +5637,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5492,6 +5690,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5543,6 +5743,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5594,6 +5796,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5645,6 +5849,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5696,6 +5902,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5747,6 +5955,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5798,6 +6008,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5848,6 +6060,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5948,6 +6162,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5999,6 +6215,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6050,6 +6268,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6101,6 +6321,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6152,6 +6374,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6203,6 +6427,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6254,6 +6480,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6305,6 +6533,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6348,6 +6578,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6391,6 +6623,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6515,6 +6749,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6567,6 +6803,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6619,6 +6857,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6671,6 +6911,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6723,6 +6965,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6774,6 +7018,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6825,6 +7071,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6877,6 +7125,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6927,6 +7177,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6977,6 +7229,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7027,6 +7281,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7077,6 +7333,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7128,6 +7386,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7179,6 +7439,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7229,6 +7491,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7279,6 +7543,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7329,6 +7595,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7380,6 +7648,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7431,6 +7701,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7475,6 +7747,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character image')
                     em.set_image(url=booruappend + msg)
@@ -7517,6 +7791,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character image')
                     em.set_image(url=booruappend + msg)
@@ -7559,6 +7835,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name="Character image")
                     em.set_image(url=booruappend + msg)
@@ -7601,6 +7879,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name="Character image")
                     em.set_image(url=booruappend + msg)
@@ -7643,6 +7923,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name="Character image")
                     em.set_image(url=booruappend + msg)
@@ -7684,6 +7966,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name="Character image")
@@ -7726,6 +8010,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name="Character image")
@@ -7768,6 +8054,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name="Character image")
@@ -7822,6 +8110,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7873,6 +8163,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7924,6 +8216,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7974,6 +8268,8 @@ class ImageCog(commands.Cog):
                     creator = pic['creator_id']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
