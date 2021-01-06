@@ -572,7 +572,7 @@ class ImageCog(commands.Cog):
     async def sakuya(self, ctx):
         score_rng = random.randint(0,5)
         em = discord.Embed(title='', description=' ', colour=0xc7c7c7)
-        char = 'izayoi_sakuya+score:>=' + str(score_rng)
+        char = 'izayoi_sakuya+-id:5237460+score:>=' + str(score_rng)
         #check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
