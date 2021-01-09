@@ -209,6 +209,24 @@ playingstatus = [
 "with the weather",
 "Touhou Hisoutensoku",
 "Touhou SWR",
+"Team Fortress 2",
+]
+
+playingstatus_console = [
+"Magnavox Odyssey",
+"Atari 2600",
+"Playstation 1",
+"Playstation 2",
+"SouljaGame",
+"Nintendo Switch",
+"Nintendo DS",
+"Game Boy Advance",
+"PSVita",
+"Sega RingEdge",
+"Taito Type X",
+"GPD Win"
+"GPD Win Max"
+"Smach Z"
 ]
 
 
