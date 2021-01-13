@@ -5711,7 +5711,7 @@ class ImageCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def medicine(self, ctx):
-        em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+        em = discord.Embed(title='', description=' ', colour=0xe37f7d)
         char = 'medicine_melancholy'
         #check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
@@ -7616,7 +7616,7 @@ class ImageCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def orange(self, ctx):
-        em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+        em = discord.Embed(title='', description=' ', colour=0xfDBE3B)
         char = 'orange_(touhou)'
         #check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
