@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.4.8'
+bot_version = '2.4.9'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -490,6 +490,7 @@ secure_random = random.SystemRandom()
 #other bot ignoring code 
 @bot.event
 async def on_message(message):
+    yuyuko = await bot.fetch_user(ownerid)
     # we do not want the bot to reply to itself
     if message.author == bot.user:
         return
@@ -556,6 +557,27 @@ async def on_message(message):
             await message.channel.send(message.author.display_name + ' has paid their respects')
             print("[command] f")
             return
+        
+#Check if someone uses tatsu's avatar command on tenshi
+    if message.content == 't!avatar <@' + str(bot.user.id) + '>' or message.content == 't!avatar <@!' + str(bot.user.id) + '>':
+        #start rng and print to console
+        avatar_rng = secure_random.randint(0,1000)
+        print('[Debug] avatar rng value = ' + str(avatar_rng))
+        #do stuff if rng is certian number
+        
+        if str(avatar_rng) == '420':
+            print('[System] Avatar change')
+            image =  "avatars/normal/" + random.choice(os.listdir("avatars/normal"))
+            newavatar = open(image, 'rb')
+            await bot.user.edit(avatar = newavatar.read())
+            await yuyuko.send("Avatar shuffled automatically")
+            return
+        
+        if str(avatar_rng) == '1001':
+            await message.channel.send('tenko_avatar_comment')
+            return
+            
+        return
 
 
 
