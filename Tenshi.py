@@ -561,19 +561,23 @@ async def on_message(message):
 #Check if someone uses tatsu's avatar command on tenshi
     if message.content == 't!avatar <@' + str(bot.user.id) + '>' or message.content == 't!avatar <@!' + str(bot.user.id) + '>':
         #start rng and print to console
-        avatar_rng = secure_random.randint(0,1000)
+        avatar_rng = secure_random.randint(420,420)
         #print('[Debug] avatar rng value = ' + str(avatar_rng))
         #do stuff if rng is certian number
         
         if str(avatar_rng) == '420':
             await asyncio.sleep(2)
             print('[System] Avatar change')
-            image =  "avatars/normal/" + random.choice(os.listdir("avatars/normal"))
-            newavatar = open(image, 'rb')
-            await bot.user.edit(avatar = newavatar.read())
+            #image =  "avatars/normal/" + random.choice(os.listdir("avatars/normal"))
+            #newavatar = open(image, 'rb')
+            #await bot.user.edit(avatar = newavatar.read())
             await yuyuko.send("Avatar shuffled automatically")
             #todo: add cooldown to not hit a ratelimit
             #await asyncio.sleep(500000)
+            f = open("Config/Tenshi/last_avatar_change.txt", "a")
+            f.write(str(datetime.now()))
+            f.close()
+            
             return
         
         if str(avatar_rng) == '1001':
