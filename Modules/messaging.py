@@ -67,6 +67,13 @@ class messagingCog(commands.Cog):
         if ctx.author.created_at > acc_age:
             await ctx.send('Error: Your Discord account is too new')
             return
+        if "kys" in args:
+            blacklist = open("Config/Blacklist/messagedev.txt", "a")
+            blacklist.write("\n" + userid + " [Auto] kys in message")
+            await ctx.send('\U0000274C Message not sent')
+            await yuyuko.send(userid + " (" + username + ") added to messagedev blacklist file \nTenshiBot/Config/Blacklist/messagedev.txt")
+            
+            return
 
         else:
             em = discord.Embed(colour=0x3ef1fa)
