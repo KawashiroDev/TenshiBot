@@ -139,9 +139,9 @@ class twitterCog(commands.Cog):
             return
         #Hi FBI
         #todo:obfuscate somehow
-        if "ktp" in asciitext:
-            await ctx.send('https://www.law.cornell.edu/uscode/text/18/871')
-            return
+        #if "ktp" in asciitext:
+        #    await ctx.send('https://www.law.cornell.edu/uscode/text/18/871')
+        #    return
 
         else:
             em = discord.Embed(title='Are you sure you want to tweet this?', description = asciitext, colour=0x6aeb7b)
