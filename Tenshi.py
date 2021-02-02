@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.4.9'
+bot_version = '2.4.9 R1'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -628,6 +628,21 @@ async def on_guild_remove(guild):
         payload = {"server_count"  : str(len(bot.guilds))}
         async with aiohttp.ClientSession() as aioclient:
             await aioclient.post(url, data=payload, headers=headers)
+
+async def server_update():
+    while True:
+        await bot.wait_until_ready()
+        await asyncio.sleep(86400)
+        print([System] Updating server)
+        os.system("chmod +x Update/server_bg_task.sh")
+        os.system("Update/server_bg_task.sh")
+        
+
+    else:
+        print(test2)
+
+
+
     
 #help command
 @bot.command()
@@ -1303,5 +1318,6 @@ if debugmode == True:
 else:
     tkn = open("Tokens/tenshi_production.txt", "r")
 token = tkn.read()
-tkn.close()    
+tkn.close()
+#bot.loop.create_task(task1())
 bot.run(token, bot=True, reconnect=True)
