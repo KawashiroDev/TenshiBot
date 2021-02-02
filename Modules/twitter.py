@@ -23,7 +23,8 @@ import lxml
 import random
 import asyncio
 import twitter
-import datetime 
+import datetime
+import base64
 
 from discord.ext import commands
 from urlextract import URLExtract
@@ -49,7 +50,7 @@ access_token_secret=tw_access_secret)
 extractor = URLExtract()
 
 pf = ProfanityFilter()
-pf_extended = ProfanityFilter(extra_censor_list=["@"])
+pf_extended = ProfanityFilter(extra_censor_list=["@", "kill", "essay"])
 
 user_blacklist = open("Config/Blacklist/twitter.txt", "r")
 badactors = user_blacklist.read()
@@ -129,6 +130,17 @@ class twitterCog(commands.Cog):
         #user join check
         if ctx.author.joined_at > user_join:
             await ctx.send("You have not been in this server long enough to use this command\nWait at least " + str(userjoin) + " days")
+            return
+        #Janky AF phrase blacklisting until i can figure out ProfanityFilter extended mode
+        
+        #seems to trigger some other twitter bots
+        if "essay" in asciitext:
+            await ctx.send('Error: Invalid tweet')
+            return
+        #Hi FBI
+        #todo:obfuscate somehow
+        if "ktp" in asciitext:
+            await ctx.send('https://www.law.cornell.edu/uscode/text/18/871')
             return
 
         else:
@@ -215,7 +227,9 @@ class twitterCog(commands.Cog):
     @commands.command()
     @is_owner()
     async def extendedcensortest(ctx, *, args):
-        await ctx.send(pf_extended.censor(args))    
+        print(args)
+        ext_cen = pf_extended.censor(args)
+        await ctx.send(ext_cen)    
 
 
     @commands.command()
