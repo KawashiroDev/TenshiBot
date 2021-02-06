@@ -629,15 +629,24 @@ async def on_guild_remove(guild):
         async with aiohttp.ClientSession() as aioclient:
             await aioclient.post(url, data=payload, headers=headers)
 
-async def server_update():
+#async def server_update():
+#    while True:
+#        await bot.wait_until_ready()
+#        await asyncio.sleep(86400)
+#        print([System] Updating server)
+        #set file as executable because linux
+#        os.system("chmod +x Update/server_bg_task.sh")
+        #execute script
+#        os.system("Update/server_bg_task.sh")
+#    else:
+#        print(test2)
+
+async def tenshi_update():
     while True:
         await bot.wait_until_ready()
         await asyncio.sleep(86400)
-        print([System] Updating server)
-        os.system("chmod +x Update/server_bg_task.sh")
-        os.system("Update/server_bg_task.sh")
-        
-
+        print([System] Updating Tenshi)
+        #put code from =update here
     else:
         print(test2)
 
