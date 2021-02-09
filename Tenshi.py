@@ -75,6 +75,7 @@ import shutil
 import hashlib
 import contextlib
 import io
+import psutil
 
 from discord.ext import commands
 from random import randint
@@ -565,7 +566,7 @@ async def on_message(message):
         #print('[Debug] avatar rng value = ' + str(avatar_rng))
         #do stuff if rng is certian number
         
-        if str(avatar_rng) == '420':
+        if str(avatar_rng) == '1001':
             await asyncio.sleep(2)
             print('[System] Avatar change')
             #image =  "avatars/normal/" + random.choice(os.listdir("avatars/normal"))
@@ -645,7 +646,7 @@ async def tenshi_update():
     while True:
         await bot.wait_until_ready()
         await asyncio.sleep(86400)
-        print([System] Updating Tenshi)
+        #print([System] Updating Tenshi)
         #put code from =update here
     else:
         print(test2)
@@ -1165,6 +1166,11 @@ async def about(ctx):
     day, hour = divmod(hour, 24)
     week, day = divmod(day, 7)
 
+    list_of_files = glob.glob('*')
+    latest_file = max(list_of_files, key=os.path.getctime)
+    newest_file = os.path.getmtime(latest_file)
+    utc_folder = datetime.fromtimestamp(newest_file, tz=timezone.utc).replace(microsecond=0, tzinfo=None)
+
     uptime='%dw,' % (week) + ' %dd,' % (day) + ' %dh,' % (hour) + ' %dm,' % (minute) + ' and %ds.' % (second)
     servercount=str(len(bot.guilds))
     buildinfo="%s" % time.ctime(os.path.getmtime("Tenshi.py"))
@@ -1175,8 +1181,20 @@ async def about(ctx):
     em.add_field(name="Servercount", value=servercount, inline=True)
     em.add_field(name="Uptime", value=uptime, inline=False)
     em.add_field(name="Tenshi.py timestamp", value=buildinfo, inline=False)
+    #em.add_field(name="Last update (UTC)", value=utc_folder, inline=False)
     em.set_footer(text="Created by KawashiroDev")
-    await ctx.send(embed=em)
+
+#check if debug mode is enabled via role or OS check
+    debugrole = discord.utils.get(ctx.guild.roles, name="tenko_debugmode")
+    if debugrole in ctx.guild.me.roles or debugmode == True:
+        #print("debugmode")
+        em.add_field(name="Discord.py version", value=discord.__version__, inline=False)
+        em.add_field(name="RAM info", value=psutil.virtual_memory(), inline=False)
+        print(psutil.virtual_memory())
+        await ctx.send(embed=em)
+        
+    else:
+        await ctx.send(embed=em)
 
 @bot.command()
 async def about_adv(ctx):    
