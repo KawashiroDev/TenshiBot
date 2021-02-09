@@ -13,3 +13,4 @@ playsound
 async_cleverbot
 langdetect
 PyGithub
+psutil
