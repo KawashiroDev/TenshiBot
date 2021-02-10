@@ -375,6 +375,16 @@ async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
         return
 
+    #debug mode check
+    debugrole = discord.utils.get(ctx.guild.roles, name="tenko_debugmode")
+    if debugrole in ctx.guild.me.roles or debugmode == True:
+        await ctx.send("**An error occured: **" + str(error))
+    if errordm == True:
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`")
+            return
+    return
+        
+
     #if isinstance(error, commands.BotMissingPermissions):
     #    self.missing.perms = 'send_messages'
     #    print('msg_send_fail')
@@ -387,6 +397,7 @@ async def on_command_error(ctx, error):
         await ctx.send(error)
         return
 
+    #user on cooldown
     if isinstance(error, commands.CommandOnCooldown):
         #em = discord.Embed(title='Error', description = error, colour=0xc91616)
         #em.set_author(icon_url=bot.user.avatar_url)
