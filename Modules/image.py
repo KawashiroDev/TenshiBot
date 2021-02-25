@@ -239,7 +239,7 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
                     em.add_field(name=idtext, value=sbooru_id, inline=True)
                     em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
-                    em.add_field(name="RNG", value=score_rng, inline=True)
+                    #em.add_field(name="RNG", value=score_rng, inline=True)
                     #em.add_field(name="Creator ID", value=creator, inline=True)
                     sbooru_img = await ctx.send(embed=em)  
 					
@@ -292,7 +292,7 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
                     em.add_field(name=idtext, value=sbooru_id, inline=True)
                     em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
-                    em.add_field(name="RNG", value=score_rng, inline=True)
+                    #em.add_field(name="RNG", value=score_rng, inline=True)
                     #em.add_field(name="Creator ID", value=creator, inline=True)
                     sbooru_img = await ctx.send(embed=em)
 
@@ -347,7 +347,7 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
                     em.add_field(name=idtext, value=sbooru_id, inline=True)
                     em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
-                    em.add_field(name="RNG", value=score_rng, inline=True)
+                    #em.add_field(name="RNG", value=score_rng, inline=True)
                     #em.add_field(name="Creator ID", value=creator, inline=True)
                     sbooru_img = await ctx.send(embed=em)
 
@@ -616,7 +616,7 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
                     em.add_field(name=idtext, value=sbooru_id, inline=True)
                     em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
-                    em.add_field(name="RNG", value=score_rng, inline=True)
+                    #em.add_field(name="RNG", value=score_rng, inline=True)
                     #em.add_field(name="Creator ID", value=creator, inline=True)
                     sbooru_img = await ctx.send(embed=em)
 
@@ -669,7 +669,7 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
                     em.add_field(name=idtext, value=sbooru_id, inline=True)
                     em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
-                    em.add_field(name="RNG", value=score_rng, inline=True)
+                    #em.add_field(name="RNG", value=score_rng, inline=True)
                     #em.add_field(name="Creator ID", value=creator, inline=True)
                     sbooru_img = await ctx.send(embed=em)
 
