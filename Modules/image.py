@@ -90,8 +90,12 @@ patreonnag,
 
 if booru == 'gelbooru.com':
     idtext = 'Gbooru ID'
+    idtext_seija = 'pᴉ nɹooqƃ'
+    idtext_sukuna = 'ᴳᵇᵒᵒʳᵘ ᴵᴰ'
 if booru == 'safebooru.org':
     idtext = 'Sbooru ID'
+    idtext_seija = 'pᴉ nɹooqs'
+    idtext_sukuna = 'ˢᵇᵒᵒʳᵘ ᴵᴰ'
     
 keiki_title = [
 "Character image",
@@ -2366,6 +2370,9 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='ǝƃɐɯI ɹǝʇɔɐɹɐɥƆ')
                     em.set_image(url=booruappend + msg)
+                    em.add_field(name="ǝɔɹnos ǝƃɐɯI", value=sbooru_sauce, inline=False)    
+                    em.add_field(name=idtext_seija, value=sbooru_id, inline=True)
+                    em.add_field(name="suoᴉsuǝɯᴉp", value=img_width + "x" + img_height, inline=True)
                     sbooru_img = await ctx.send(embed=em)
                     #fix
 
@@ -4697,7 +4704,9 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='ᶜʰᵃʳᵃᶜᵗᵉʳ ᶦᵐᵃᵍᵉ')
                     em.set_image(url=booruappend + msg)
-                    em.set_footer(text="Image Source: " + sbooru_sauce)    
+                    em.add_field(name="ᴵᵐᵃᵍᵉ ˢᵒᵘʳᶜᵉ", value=sbooru_sauce, inline=False)    
+                    em.add_field(name=idtext_sukuna, value=sbooru_id, inline=True)
+                    em.add_field(name="ᴰᶦᵐᵉⁿˢᶦᵒⁿˢ", value=img_width + "x" + img_height, inline=True)    
                     sbooru_img = await ctx.send(embed=em)
 
 
