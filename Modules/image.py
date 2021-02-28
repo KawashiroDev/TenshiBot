@@ -96,6 +96,9 @@ if booru == 'safebooru.org':
     idtext = 'Sbooru ID'
     idtext_seija = 'pᴉ nɹooqs'
     idtext_sukuna = 'ˢᵇᵒᵒʳᵘ ᴵᴰ'
+
+embedtitle = 'Character image'
+embedtitle_jp = 'キャラクター画像'
     
 keiki_title = [
 "Character image",
