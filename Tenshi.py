@@ -309,15 +309,15 @@ dbltoken = token_dbl
 url_dbl = ("https://discordbots.org/api/bots/252442396879486976/stats")
 headers_dbl = {"Authorization" : dbltoken}
 
-#if debugmode == True:        
-#    tkn_dbo = open("Tokens/dbo_api.txt", "r")
-#else:
-#    tkn_dbo = open("Tokens/dbo_api.txt", "r")
-#token_dbo = tkn_dbo.read()
-#tkn_dbo.close() 
-#dbotoken = token_dbo
-#url_dbo = ("https://discord.bots.gg/api/v1/bots/252442396879486976/stats")
-#headers_dbo = {"Authorization" : dbotoken}
+if debugmode == True:        
+    tkn_dbo = open("Tokens/dbo_api.txt", "r")
+else:
+    tkn_dbo = open("Tokens/dbo_api.txt", "r")
+token_dbo = tkn_dbo.read()
+tkn_dbo.close() 
+dbotoken = token_dbo
+url_dbo = ("https://discord.bots.gg/api/v1/bots/252442396879486976/stats")
+headers_dbo = {"Authorization" : dbotoken}
 
 
 @bot.event
@@ -516,11 +516,11 @@ async def on_message(message):
         return
 
     if message.content == '<@252442396879486976>':
-        await message.channel.send(secure_random.choice(mentioned_nomsg_halloween))
+        await message.channel.send(secure_random.choice(mentioned_nomsg))
         print("[command] mention_nomsg")
         return
     if message.content == '<@!252442396879486976>':
-        await message.channel.send(secure_random.choice(mentioned_nomsg_halloween))
+        await message.channel.send(secure_random.choice(mentioned_nomsg))
         print("[command] mention_nomsg")
         return
     
