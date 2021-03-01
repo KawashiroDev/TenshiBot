@@ -26,6 +26,11 @@ smartboot = False
 #DM on error
 errordm = True
 
+#Ghost mode
+#enable to run on Tenshi's production account but respond to a different prefix to not clash with the server instance
+#set prefix: =tb <command>
+ghost = True
+
 #commands to show in the help sections
 #general
 gen_command = "About, Support, Help, KoFi, Patreon, Messagedev <message>"
@@ -48,10 +53,10 @@ bootsound = True
 #windows check
 #if this directory exists then run in debug mode
 #if not then run in production mode
-win_dir_check = '/windows123'
+win_dir_check = '/windows'
 
 import discord
-import requests
+#import requests
 import aiohttp
 import random
 import asyncio
@@ -123,6 +128,12 @@ if (os.path.isdir(win_dir_check)) == True:
     if bootsound == True:
         playsound('Startup_98.wav', False)
         print('Loading program: TenshiBot.exe')
+if ghost == True:
+    print('[Startup] Running in ghost mode')
+    bot_mode = 'Ghost'
+    debugmode = False
+    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.messaging', 'Modules.cleverbot']
+
 else:
     print('[Startup] Running in production mode')
     bot_mode = 'Production'
@@ -239,13 +250,18 @@ playingstatus_console = [
 
 
 #define intents
-intents = discord.Intents(messages=True, guilds=True)
-intents.reactions = True
+intents = discord.Intents.default()
+intents.typing = False
+intents.presences = False
 
 #Disable sharding and = prefix if in debug mode
 #if you want to have the bot run as normal on a windows machine then change the windows folder check to a non existent folder
+if ghost == True:
+    bot = commands.AutoShardedBot(command_prefix=('=tb'), case_insensitive=True, shard_count=3, intents=intents)
+    
 if debugmode == True:
     bot = commands.Bot(command_prefix=commands.when_mentioned, case_insensitive=True)
+
 else:
     bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or('='), case_insensitive=True, shard_count=20, intents=intents)
     
@@ -254,7 +270,7 @@ else:
 bot.remove_command("help")
 
 #Sharding! should help with performance since the bot is on 1000+ servers
-client = discord.AutoShardedClient()
+#client = discord.AutoShardedClient()
 #client = discord.Client()
 
 st = time.time()
@@ -350,7 +366,13 @@ async def on_ready():
             #blank status fix
             await bot.change_presence(activity=discord.Game(name=random.choice(playingstatus)))
             return
-
+        
+    if ghost == True:
+        await yuyuko.send("System ready! (running in ghost mode)")
+        print('TenshiBot startup complete ')
+        print(discord.version_info)
+        return
+    
     else:
         await yuyuko.send("System ready!")
         
