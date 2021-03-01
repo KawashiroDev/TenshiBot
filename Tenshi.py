@@ -48,7 +48,7 @@ bootsound = True
 #windows check
 #if this directory exists then run in debug mode
 #if not then run in production mode
-win_dir_check = '/windows'
+win_dir_check = '/windows123'
 
 import discord
 import requests
@@ -75,6 +75,7 @@ import shutil
 import hashlib
 import contextlib
 import io
+import logging
 
 from discord.ext import commands
 from random import randint
@@ -98,6 +99,13 @@ print('[Startup] Please wait warmly...')
 #start logging console
 #sys.stdout = open("test.txt", "w")
 #print('test')
+
+
+logger = logging.getLogger('discord')
+logger.setLevel(logging.DEBUG)
+handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
+handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
+logger.addHandler(handler)
 
 #Windows or linux check
 #used to autoswitch the bot between debug/production modes
@@ -230,12 +238,16 @@ playingstatus_console = [
 ]
 
 
+#define intents
+intents = discord.Intents(messages=True, guilds=True)
+intents.reactions = True
+
 #Disable sharding and = prefix if in debug mode
 #if you want to have the bot run as normal on a windows machine then change the windows folder check to a non existent folder
 if debugmode == True:
     bot = commands.Bot(command_prefix=commands.when_mentioned, case_insensitive=True)
 else:
-    bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or('='), case_insensitive=True, shard_count=4)
+    bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or('='), case_insensitive=True, shard_count=20, intents=intents)
     
 #bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned, case_insensitive=True)
 #removes the built in help command, we don't need it
