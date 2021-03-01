@@ -29,7 +29,7 @@ errordm = True
 #Ghost mode
 #enable to run on Tenshi's production account but respond to a different prefix to not clash with the server instance
 #set prefix: =tb <command>
-ghost = True
+ghost = False
 
 #commands to show in the help sections
 #general
@@ -106,11 +106,11 @@ print('[Startup] Please wait warmly...')
 #print('test')
 
 
-logger = logging.getLogger('discord')
-logger.setLevel(logging.DEBUG)
-handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
-handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
-logger.addHandler(handler)
+#logger = logging.getLogger('discord')
+#logger.setLevel(logging.DEBUG)
+#handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
+#handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
+#logger.addHandler(handler)
 
 #Windows or linux check
 #used to autoswitch the bot between debug/production modes
@@ -257,13 +257,13 @@ intents.presences = False
 #Disable sharding and = prefix if in debug mode
 #if you want to have the bot run as normal on a windows machine then change the windows folder check to a non existent folder
 if ghost == True:
-    bot = commands.AutoShardedBot(command_prefix=('=tb'), case_insensitive=True, shard_count=3, intents=intents)
+    bot = commands.AutoShardedBot(command_prefix=('=='), case_insensitive=True, shard_count=3, intents=intents)
     
 if debugmode == True:
     bot = commands.Bot(command_prefix=commands.when_mentioned, case_insensitive=True)
 
 else:
-    bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or('='), case_insensitive=True, shard_count=20, intents=intents)
+    bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or('='), case_insensitive=True, shard_count=4, intents=intents)
     
 #bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned, case_insensitive=True)
 #removes the built in help command, we don't need it
@@ -277,24 +277,9 @@ st = time.time()
 
 pf = ProfanityFilter()
 
-t_api = open("Tokens/twitter_consumer.txt", "r")
-tw_api = t_api.read()
-t_secret = open("Tokens/twitter_consumer_secret.txt", "r")
-tw_secret = t_secret.read()
-t_access = open("Tokens/twitter_access.txt", "r")
-tw_access = t_access.read()
-t_access_secret = open("Tokens/twitter_access_secret.txt", "r")
-tw_access_secret = t_access_secret.read()
-
 git = open("Tokens/github.txt", "r")
 git_token = git.read()
 g = Github(git_token)
-
-#twitter stuff
-api = twitter.Api(consumer_key=tw_api,
-consumer_secret=tw_secret,
-access_token_key=tw_access,
-access_token_secret=tw_access_secret)
 
 
 #url extractor stuff
@@ -524,17 +509,12 @@ secure_random = random.SystemRandom()
 #other bot ignoring code 
 @bot.event
 async def on_message(message):
-    yuyuko = await bot.fetch_user(ownerid)
     # we do not want the bot to reply to itself
     if message.author == bot.user:
         return
     if message.author.bot:
         return
-    #non command test
-    #debug id - 571094749537239042
-    #production id - 252442396879486976
 
-    #! is needed if Tenshi has a nickname set on the server
     if message.content == '<@252442396879486976>':
         await message.channel.send(secure_random.choice(mentioned_nomsg_halloween))
         print("[command] mention_nomsg")
@@ -552,80 +532,18 @@ async def on_message(message):
     #Discord bot list
     if message.guild.id == int('264445053596991498') and message.content.startswith('='):
         return
-
-    #CB immersive flag check
-    immersiveflag = discord.utils.get(message.guild.roles, name="tenko_immersiveai")
-    if immersiveflag in message.guild.me.roles:
-        return
-
     #= prefix ignoring code (role)
     role = discord.utils.get(message.guild.roles, name="mention_only")
     if role in message.guild.me.roles and message.content.startswith('='):
         #print ('[Debug] = prefix disabled via role')
         return
-
-#'f' command uses on_message instead of async def due to ayana clash
-    if message.content == '<@252442396879486976> f':
-        if '@everyone' in message.author.display_name:
-            await message.channel.send('`' + message.author.display_name + '` has paid their respects')
-            print("[command] f")
-            return
-        if '@here' in message.author.display_name:
-            await message.channel.send('`' + message.author.display_name + '` has paid their respects')
-            print("[command] f")
-            return
-        else:
-            await message.channel.send(message.author.display_name + ' has paid their respects')
-            print("[command] f")
-            return
-    if message.content == '<@!252442396879486976> f':
-        if '@everyone' in message.author.display_name:
-            await message.channel.send('`' + message.author.display_name + '` has paid their respects')
-            print("[command] f")
-            return
-        if '@here' in message.author.display_name:
-            await message.channel.send('`' + message.author.display_name + '` has paid their respects')
-            print("[command] f")
-            return
-        else:
-            await message.channel.send(message.author.display_name + ' has paid their respects')
-            print("[command] f")
-            return
-        
-#Check if someone uses tatsu's avatar command on tenshi
-    if message.content == 't!avatar <@' + str(bot.user.id) + '>' or message.content == 't!avatar <@!' + str(bot.user.id) + '>':
-        #start rng and print to console
-        avatar_rng = secure_random.randint(0,1000)
-        #print('[Debug] avatar rng value = ' + str(avatar_rng))
-        #do stuff if rng is certian number
-        
-        if str(avatar_rng) == '1001':
-            await asyncio.sleep(2)
-            print('[System] Avatar change')
-            image =  "avatars/normal/" + random.choice(os.listdir("avatars/normal"))
-            newavatar = open(image, 'rb')
-            await bot.user.edit(avatar = newavatar.read())
-            await yuyuko.send("Avatar shuffled automatically")
-            #todo: add cooldown to not hit a ratelimit
-            #await asyncio.sleep(500000)
-            return
-        
-        if str(avatar_rng) == '1001':
-            await message.channel.send('tenko_avatar_comment')
-            return
-            
-        return
-
-
-
-#    print(message.content)
     await bot.process_commands(message)
 
 #command logging
 @bot.event
 async def on_command(ctx):
     print("[command] " + ctx.message.content + " / " + str(ctx.guild))
-#    print (ctx.author.display_name)
+    #print (ctx.author.display_name)
     return
 
 #    if str(ctx.author.display_name) == 'Yukari' or 'Yukari Yakumo':
@@ -639,10 +557,10 @@ def is_owner():
     return commands.check(predicate)
 
 #TenshiBot Hangout check (the name of the Tenshi's server)
-def is_hangout():
-    async def predicate(ctx):
-        return ctx.guild.id == 273086604866748426
-    return commands.check(predicate)
+#def is_hangout():
+#    async def predicate(ctx):
+#        return ctx.guild.id == 273086604866748426
+#    return commands.check(predicate)
 
 #bot added/kicked from server messages
 @bot.event
@@ -904,28 +822,23 @@ async def ping2(ctx):
     await ctx.send('pong')
 
 @bot.command()
-@is_hangout()
-async def ping3(ctx):
-    await ctx.send('ok')    
-
-@bot.command()
 async def errortest(ctx):
     await()
 
 past = datetime.now() - timedelta(days=9999)
 
-@bot.command()
-async def accdatetest(ctx):
-    yuyuko = bot.get_user(166189271244472320)
-    await ctx.send("Yuyuko created at " + str(yuyuko.created_at))
-    await ctx.send(str(past))
+#@bot.command()
+#async def accdatetest(ctx):
+#    yuyuko = bot.get_user(166189271244472320)
+#    await ctx.send("Yuyuko created at " + str(yuyuko.created_at))
+#    await ctx.send(str(past))
     #if account creation date is newer than specified date
-    if yuyuko.created_at > past:
-        await ctx.send("fail")
-        return
-    else:
-        await ctx.send("pass")
-        return
+#    if yuyuko.created_at > past:
+#        await ctx.send("fail")
+#        return
+#    else:
+#        await ctx.send("pass")
+#        return
 
 @bot.command()
 async def accdatetest2(ctx):
@@ -1071,96 +984,6 @@ async def console(ctx):
     #os.system(ctx.message.content)
     await ctx.send(result)
 
-#role creation testing command
-#this may be intresting to have as a hangout exclusive command
-#and let users make roles with custom colours
-
-#role creation command V2, currently throws an error when trying to assign the role
-@bot.command()
-@is_owner()
-async def makerole(ctx, colour):
-    perms=discord.Permissions(0)
-    col=discord.Colour(int(colour))
-    userid=ctx.author.id
-    await ctx.guild.create_role(name=userid, permissions=perms, colour=col, reason='role creation test')
-    user=ctx.message.author
-    role=discord.utils.get(ctx.guild.roles, name=str(userid))
-    await user.add_roles(role)
-   
-@bot.command()
-@is_owner()
-async def makerole2(ctx, *, args):
-    #refer to this for permissions values https://discordapi.com/permissions.html
-    #it's best to leave this on 0 unless testing
-    perms=discord.Permissions(0)
-    #col=discord.Colour(510)
-    #this also supports hex
-    col=discord.Colour(args)
-    await ctx.guild.create_role(name='test', permissions=perms, colour=col, reason='role creation test')
-    #await ctx.guild.create_role(name='test')
-
-
-#safebooru reaction support test
-booru = 'safebooru.org'
-boorurating = 'safe'
-booruappend = ''
-@bot.command()
-async def safebooru_react(ctx, *, tags):
-    async with aiohttp.ClientSession() as session:
-        async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=+' + tags) as r:
-            if r.status == 200:
-                soup = BeautifulSoup(await r.text(), "lxml")
-                num = int(soup.find('posts')['count'])
-                maxpage = int(round(num/100))
-                page = random.randint(0, maxpage)
-                t = soup.find('posts')
-                p = t.find_all('post')
-                if num == 0: 
-                    msg = 'No posts found, are the tags spelt correctly?'
-                    await ctx.send(msg)
-                    return
-
-                else:
-                    source = ((soup.find('post'))['source'])
-                    if num < 100:
-                        pic = p[random.randint(0,num-1)]
-                    elif page == maxpage:
-                        pic = p[random.randint(0,num%100 - 1)]
-                    else:
-                        pic = p[random.randint(0,99)]
-                    msg = pic['file_url']
-                    em = discord.Embed(title='', description='', colour=0x42D4F4)
-                    em.set_author(name='Booru image')
-                    em.set_image(url=booruappend + msg)
-                    sb_img = await ctx.send(embed=em)
-
-
-                    def img_check(reaction, user):
-                        return (str(reaction.emoji) == '\U0001f351')or(str(reaction.emoji) == '\U0000274c')
-                                   
-                    try:
-                        reaction, user = await bot.wait_for('reaction_add', timeout=30, check=img_check)
-                    except asyncio.TimeoutError:
-                        return
-                    else:
-                        #x emoji
-                        if ((reaction.emoji) == '\U0000274c') and reaction.message.id == sb_img.id:
-                            await ctx.send("1")
-                            await ctx.message.delete(sb_img)
-                        #peach emoji    
-                        if ((reaction.emoji) == '\U0001f351') and reaction.message.id == sb_img.id:
-                            await ctx.send("2")
-            else:
-                msg = 'Safebooru is unavailable at this time'
-                await ctx.send(msg)
-                return    
-
-
-@bot.command()
-@is_owner()
-async def saucenao(ctx, link):
-    sauce = sn.get_sauce(link)
-    await ctx.send(sauce)
     
 
 @bot.command()
