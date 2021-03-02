@@ -1093,7 +1093,19 @@ async def banana(ctx, arg):
         return
     else:    
         await ctx.send(arg + ' has been banaed!', file=discord.File('pics/banana.png'))
-        return    
+        return
+
+@bot.command()
+async def cirnoed(ctx, arg):
+    if "@everyone" in arg:
+        await ctx.send("`" + arg + "`" + ' has been cirnoed!', file=discord.File('pics/cirnoed.jpg'))
+        return
+    if "@here" in arg:
+        await ctx.send("`" + arg + "`" + ' has been cirnoed!', file=discord.File('pics/cirnoed.jpg'))
+        return
+    else:    
+        await ctx.send(arg + ' has been cirnoed!', file=discord.File('pics/cirnoed.jpg'))
+        return
 
 @bot.command()
 async def oil(ctx, arg):
