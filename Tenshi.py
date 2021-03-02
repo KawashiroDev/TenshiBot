@@ -128,13 +128,14 @@ if (os.path.isdir(win_dir_check)) == True:
     if bootsound == True:
         playsound('Startup_98.wav', False)
         print('Loading program: TenshiBot.exe')
+    
 if ghost == True:
     print('[Startup] Running in ghost mode')
     bot_mode = 'Ghost'
     debugmode = False
     initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.messaging', 'Modules.cleverbot']
 
-else:
+if (os.path.isdir(win_dir_check)) == False:
     print('[Startup] Running in production mode')
     bot_mode = 'Production'
     debugmode = False
@@ -845,10 +846,14 @@ past = datetime.now() - timedelta(days=9999)
 #        return
 
 @bot.command()
-@is_owner()
 async def restart(ctx):
-    bot.logout()
-    os.system("python3.7 root/TenshiBot/Tenshi.py")
+    if ctx.author.id != ownerid:
+        return
+    else:
+        await ctx.send("Restarting...")
+        os.system("root/tenshilauncher.sh &")
+        await bot.logout()
+        exit()
 
 @bot.command()
 async def accdatetest2(ctx):
