@@ -747,7 +747,11 @@ async def techno(ctx):
 
 @bot.command()
 async def honk(ctx):
-    await ctx.send(file=discord.File("pics/honk/" + random.choice(os.listdir("pics/honk"))))    
+    await ctx.send(file=discord.File("pics/honk/" + random.choice(os.listdir("pics/honk"))))
+
+    @bot.command()
+async def fumo(ctx):
+    await ctx.send(file=discord.File("pics/fumo/" + random.choice(os.listdir("pics/fumo"))))
 
 @bot.command()
 async def dumpserverid(ctx):
