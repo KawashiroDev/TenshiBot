@@ -749,7 +749,7 @@ async def techno(ctx):
 async def honk(ctx):
     await ctx.send(file=discord.File("pics/honk/" + random.choice(os.listdir("pics/honk"))))
 
-    @bot.command()
+@bot.command()
 async def fumo(ctx):
     await ctx.send(file=discord.File("pics/fumo/" + random.choice(os.listdir("pics/fumo"))))
 
@@ -843,6 +843,12 @@ past = datetime.now() - timedelta(days=9999)
 #    else:
 #        await ctx.send("pass")
 #        return
+
+@bot.command()
+@is_owner()
+async def restart(ctx):
+    bot.logout()
+    os.system("python3.7 root/TenshiBot/Tenshi.py")
 
 @bot.command()
 async def accdatetest2(ctx):
