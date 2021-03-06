@@ -103,7 +103,7 @@ from profanityfilter import ProfanityFilter
 print('[Startup] Please wait warmly...')
 
 #change process title
-setproctitle.setproctitle('TenshiSlipstream')
+setproctitle.setproctitle('Tenshi')
 
 #start logging console
 #sys.stdout = open("test.txt", "w")
