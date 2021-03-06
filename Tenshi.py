@@ -81,6 +81,7 @@ import hashlib
 import contextlib
 import io
 import logging
+import setproctitle
 
 from discord.ext import commands
 from random import randint
@@ -100,6 +101,9 @@ from zipfile import ZipFile
 from profanityfilter import ProfanityFilter
 
 print('[Startup] Please wait warmly...')
+
+#change process title
+setproctitle.setproctitle('TenshiSlipstream')
 
 #start logging console
 #sys.stdout = open("test.txt", "w")
