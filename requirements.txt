@@ -14,3 +14,4 @@ async_cleverbot
 langdetect
 PyGithub
 psutil
+setproctitle
