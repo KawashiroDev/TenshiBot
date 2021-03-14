@@ -3,7 +3,7 @@
 #https://github.com/KaitoKid/EcchiBot
 
 #booru URL, used for safebooru command
-booru = 'safebooru.org'
+booru = 'gelbooru.com'
 
 #NSFW booru URL, used for gelbooru command
 booru_nsfw = 'gelbooru.com'
@@ -16,6 +16,9 @@ boorurating = 'safe'
 #loli and shota are against Discord TOS
 #Could also blacklist things like guro and futa but i don't want to become too restrictive with the booru stuff
 boorublacklist_nsfw = '-loli+-lolicon+-shota+-shotacon'
+
+badtags_moderate = '-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-bdsm+-lovestruck+-artificial_vagina+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-breast_hold+-nude+-butt_crack+-naked_apron+'
+
 
 #appends text to the start of booru url output, gelbooru doesn't use this
 booruappend = ''
@@ -71,7 +74,7 @@ class booruCog(commands.Cog):
         
             async with aiohttp.ClientSession() as session:
                 #async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=+' + tags) as r:
-                async with session.get('http://' + 'safebooru.org' + '/index.php?page=dapi&s=post&q=index&tags=rating:safe+-animated+-audio+-webm+' + tags) as r:
+                async with session.get('http://' + 'gelbooru.com' + '/index.php?page=dapi&s=post&q=index&tags=rating:safe+-animated+-audio+-webm+' + badtags_moderate + tags) as r:
                     if r.status == 200:
                         soup = BeautifulSoup(await r.text(), "lxml")
                         num = int(soup.find('posts')['count'])
