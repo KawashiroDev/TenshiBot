@@ -134,7 +134,10 @@ class twitterCog(commands.Cog):
         #Janky AF phrase blacklisting until i can figure out ProfanityFilter extended mode
         
         #seems to trigger some other twitter bots
-        if "essay" in asciitext:
+        if "essay" in asciitext.lower():
+            await ctx.send('Error: Invalid tweet')
+            return
+        if "memphis" in asciitext.lower():
             await ctx.send('Error: Invalid tweet')
             return
         #Hi FBI
