@@ -8,6 +8,7 @@ import lxml
 import random
 import asyncio
 import twitter
+import re
 
 from discord.ext import commands
 from bs4 import BeautifulSoup
@@ -35,7 +36,7 @@ boorublacklistgif = 'rating:safe+-underwear+-sideboob+-pov_feet+-underboob+-upsk
 #base tags to apply to all levels (except gifs)
 boorutags_base = 'solo+rating:safe+-6%2Bgirls+-comic+-greyscale+-huge_filesize+-animated+-audio+-webm+-absurdres+-monochrome'
 #artists whose works slip by the tag filters
-badartists = '+-nori_tamago+-shiraue_yuu+-hammer_(sunset_beach)+-roke_(taikodon)+-guard_bento_atsushi+-kushidama_minaka+-manarou+-shounen_(hogehoge)+-fusu_(a95101221)+-guard_vent_jun+-teoi_(good_chaos)+-wowoguni+-yadokari_genpachirou+-hydrant_(kasozama)+-e.o.+-fusu_(a95101221)+-nishiuri+-freeze-ex'
+badartists = '+-nori_tamago+-shiraue_yuu+-hammer_(sunset_beach)+-roke_(taikodon)+-guard_bento_atsushi+-kushidama_minaka+-manarou+-shounen_(hogehoge)+-fusu_(a95101221)+-guard_vent_jun+-teoi_(good_chaos)+-wowoguni+-yadokari_genpachirou+-hydrant_(kasozama)+-e.o.+-fusu_(a95101221)+-nishiuri+-freeze-ex+-yuhito_(ablbex)'
 #base tags for gif command
 boorutags_gif = 'rating:safe+-6%2Bgirls+-comic+-greyscale+-huge_filesize+-audio+-webm+-absurdres'
 #default blacklisted tags (full SFW mode)
@@ -88,6 +89,8 @@ normalfooter,
 patreonnag,
 ]
 
+
+#text config
 if booru == 'gelbooru.com':
     idtext = 'Gbooru ID'
     idtext_seija = 'pᴉ nɹooqƃ'
@@ -233,6 +236,7 @@ class ImageCog(commands.Cog):
                     sbooru_id = pic['id']
                     sbooru_tags = pic['tags']
                     sbooru_sauce = pic['source']
+                    #sbooru_sauce = "https://i.pximg.net/img-original/img/2020/12/25/18/14/37/86528174_p0.png"
                     img_width = pic['width']
                     img_height = pic['height']
                     creator = pic['creator_id']
@@ -240,6 +244,29 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -293,6 +320,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -310,7 +361,7 @@ class ImageCog(commands.Cog):
     async def tenshi(self, ctx):
         score_rng = random.randint(0,5)
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
-        char = 'hinanawi_tenshi'#+score:>=' + str(score_rng)
+        char = 'hinanawi_tenshi+score:>=' + str(score_rng)
         #check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
@@ -348,6 +399,32 @@ class ImageCog(commands.Cog):
                     sbooru_sauce = pic['source']
                     if sbooru_sauce == '':
                         sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -511,6 +588,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -617,6 +718,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -670,6 +795,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -723,6 +872,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -775,6 +948,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -827,6 +1024,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -880,6 +1101,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -934,6 +1179,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -988,6 +1257,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1042,6 +1335,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1096,6 +1413,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1149,6 +1490,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1203,6 +1568,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1256,6 +1645,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1309,6 +1722,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1362,6 +1799,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1415,6 +1876,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1468,6 +1953,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1521,6 +2030,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1575,6 +2108,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1629,6 +2186,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1683,6 +2264,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1736,6 +2341,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1789,6 +2418,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1842,6 +2495,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1895,6 +2572,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -1948,6 +2649,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2001,6 +2726,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2054,6 +2803,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2107,6 +2880,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2160,6 +2957,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2213,6 +3034,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2266,6 +3111,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2319,6 +3188,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2370,6 +3263,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='ǝƃɐɯI ɹǝʇɔɐɹɐɥƆ')
                     em.set_image(url=booruappend + msg)
@@ -2423,6 +3340,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2476,6 +3417,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2529,6 +3494,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2582,6 +3571,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2635,6 +3648,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2688,6 +3725,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2741,6 +3802,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2794,6 +3879,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2847,6 +3956,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2900,6 +4033,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -2953,6 +4110,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3006,6 +4187,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3059,6 +4264,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3112,6 +4341,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3165,6 +4418,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3218,6 +4495,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3271,6 +4572,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3324,6 +4649,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3377,6 +4726,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3430,6 +4803,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3483,6 +4880,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3536,6 +4957,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3589,6 +5034,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3642,6 +5111,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3695,6 +5188,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3749,6 +5266,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3803,6 +5344,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3857,6 +5422,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3910,6 +5499,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -3962,6 +5575,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4015,6 +5652,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4068,6 +5729,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4121,6 +5806,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4174,6 +5883,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4227,6 +5960,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4280,6 +6037,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4333,6 +6114,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4386,6 +6191,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4439,6 +6268,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4492,6 +6345,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4545,6 +6422,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4598,6 +6499,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4651,6 +6576,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4704,6 +6653,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='ᶜʰᵃʳᵃᶜᵗᵉʳ ᶦᵐᵃᵍᵉ')
                     em.set_image(url=booruappend + msg)
@@ -4756,6 +6729,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4809,6 +6806,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4862,6 +6883,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4915,6 +6960,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -4968,6 +7037,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5021,6 +7114,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5073,6 +7190,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5126,6 +7267,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5179,6 +7344,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5232,6 +7421,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5285,6 +7498,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5338,6 +7575,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name="Chang'e are you watching?")
                     em.set_image(url=booruappend + msg)
@@ -5391,6 +7652,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5444,6 +7729,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5497,6 +7806,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5550,6 +7883,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5603,6 +7960,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5656,6 +8037,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5709,6 +8114,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5762,6 +8191,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5815,6 +8268,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5868,6 +8345,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5921,6 +8422,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -5974,6 +8499,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6027,6 +8576,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6080,6 +8653,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6132,6 +8729,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6234,6 +8855,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6287,6 +8932,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6340,6 +9009,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6393,6 +9086,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6446,6 +9163,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6499,6 +9240,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6552,6 +9317,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6605,6 +9394,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6650,6 +9463,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6695,6 +9532,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6821,6 +9682,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6875,6 +9760,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6929,6 +9838,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -6983,6 +9916,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7037,6 +9994,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7090,6 +10071,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7143,6 +10148,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7197,6 +10226,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7249,6 +10302,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7301,6 +10378,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7353,6 +10454,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7405,6 +10530,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7458,6 +10607,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7511,6 +10684,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7563,6 +10760,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7615,6 +10836,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7667,6 +10912,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7720,6 +10989,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7773,6 +11066,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -7819,6 +11136,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character image')
                     em.set_image(url=booruappend + msg)
@@ -7863,6 +11204,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='Character image')
                     em.set_image(url=booruappend + msg)
@@ -7907,6 +11272,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name="Character image")
                     em.set_image(url=booruappend + msg)
@@ -7951,6 +11340,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name="Character image")
                     em.set_image(url=booruappend + msg)
@@ -7995,6 +11408,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name="Character image")
                     em.set_image(url=booruappend + msg)
@@ -8038,6 +11475,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name="Character image")
@@ -8082,6 +11543,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name="Character image")
@@ -8126,6 +11611,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name="Character image")
@@ -8182,6 +11691,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -8235,6 +11768,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -8288,6 +11845,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
@@ -8340,6 +11921,30 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = 'No source listed'
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            print (pixivid)
+                            #reconstruct pixiv url
+                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        else:
+                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
                     em.set_image(url=booruappend + msg)
