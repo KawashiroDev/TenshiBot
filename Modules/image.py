@@ -133,7 +133,7 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def testimage(self, ctx):
         
-        sbooru_sauce = "http://example.com"
+        sbooru_sauce = "[Source](http://reallylongurl2345678.com)"
         sbooru_id = "123456"
         img_width = "1920"
         img_height = "1080"
