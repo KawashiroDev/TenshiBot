@@ -573,14 +573,14 @@ async def on_guild_join(guild):
         print("[Info] New server get! - " + str(guild))
         payload = {"server_count"  : str(len(bot.guilds))}
         async with aiohttp.ClientSession() as aioclient:
-            await aioclient.post(url_dbl, data=payload, headers=headers)
+            await aioclient.post(url_dbl, data=payload, headers=headers_dbl)
         
 @bot.event
 async def on_guild_remove(guild):
         print("[Info] Kicked from a server - " + str(guild))
         payload = {"server_count"  : str(len(bot.guilds))}
         async with aiohttp.ClientSession() as aioclient:
-            await aioclient.post(url_dbl, data=payload, headers=headers)
+            await aioclient.post(url_dbl, data=payload, headers=headers_dbl)
     
 #help command
 @bot.command()
