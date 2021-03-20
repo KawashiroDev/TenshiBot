@@ -16,6 +16,10 @@ ownerid = 166189271244472320
 #hangout ID
 hangoutid = 273086604866748426
 
+#Limited network mode
+#enable to reduce Tenshi's data usage if running on slow wifi or 3g/4g
+limit_net = False
+
 #DM on boot (production only)
 bootdm = True
 
@@ -756,6 +760,9 @@ async def honk(ctx):
 
 @bot.command()
 async def fumo(ctx):
+    if limit_net == True:
+        await ctx.send('fumo')
+        return
     await ctx.send(file=discord.File("pics/fumo/" + random.choice(os.listdir("pics/fumo"))))
 
 @bot.command()
