@@ -474,6 +474,13 @@ async def on_command_error(ctx, error):
             await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Cleverbot module may need updating, run =vpsreboot_u)")
             return
 
+    #Travitia connection failure
+    if str(error) == "Command raised an exception: AttributeError: 'NoneType' object has no attribute 'group'":
+        await ctx.send("There was an issue getting an image, Try that command again")
+        if errordm == True:
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(issue with pixiv id extractor)")
+            return
+
     #Permissions error
     if str(error) == "Command raised an exception: Forbidden: 403 Forbidden (error code: 50013): Missing Permissions":
         #try to determine if the user owns/moderates the server or not
