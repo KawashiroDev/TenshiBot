@@ -86,6 +86,7 @@ import contextlib
 import io
 import logging
 import setproctitle
+import psutil
 
 from discord.ext import commands
 from random import randint
