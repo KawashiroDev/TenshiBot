@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.4.9'
+bot_version = '2.4.9 R1'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -489,6 +489,13 @@ async def on_command_error(ctx, error):
             return
         else:        
             await ctx.author.send("It looks like i don't have permission to do that in this channel. \nYour server may have a dedicated bot channel or ask a moderator to fix my permissions for <#" + str(ctx.message.channel.id) + ">")
+            return
+
+    #booru connection timed out (Gbooru)
+    if str(error) == "Command raised an exception: ClientConnectorError: Cannot connect to host gelbooru.com:80 ssl:default [The semaphore timeout period has expired]":
+        await ctx.send("There seems to be an issue retrieving an image for this command, try again later\n(Timed out trying to connect to Gbooru)")
+        if errordm == True:
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Current booru may be slow down)")
             return
     
 
