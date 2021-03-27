@@ -17,7 +17,7 @@ boorurating = 'safe'
 #Could also blacklist things like guro and futa but i don't want to become too restrictive with the booru stuff
 boorublacklist_nsfw = '-loli+-lolicon+-shota+-shotacon'
 
-badtags_moderate = '-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-bdsm+-lovestruck+-artificial_vagina+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-breast_hold+-nude+-butt_crack+-naked_apron+-cock+-yaoi+-penis+-shota+-loli+'
+badtags_moderate = '-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-bdsm+-lovestruck+-artificial_vagina+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-breast_hold+-nude+-butt_crack+-naked_apron+-cock+-yaoi+-penis+-shota+-loli+-sex+-femdom+-thighs+-smelling+-nazi+-swastika+-naked_cloak+-undressing+-naked_sheet+-groin+-drugs+-weed+-topless+-have_to_pee+-naked_towel+-no_panties+-naked_shirt+-shirt_lift+-erect_nipples+-gag+-gagged+-ball_gag+-downblouse+-you_gonna_get_raped+-convenient_leg+-convenient_arm+-underwear+-convenient_censoring+-bra+-trapped+-restrained+-skirt_lift+'
 
 
 #appends text to the start of booru url output, gelbooru doesn't use this
@@ -43,6 +43,34 @@ rlimit_cmd = 5
 #timeframe (seconds)
 rlimit_time = 10
 #
+
+noposts_safe_en = '**No posts found, Try:**\nChecking the tags are spelt correctly\nChanging your search query\nSearching with the Gelbooru command'
+noposts_gel_en = '**No posts found, Try:**\nChecking the tags are spelt correctly\nChanging your search query'
+unavailable_safe_en = 'Safebooru is unavailable at this time'
+unavailable_gel_en = 'Gelbooru is unavailable at this time'
+
+noposts_safe_jp = '投稿は見つかりませんでした'
+noposts_gel_jp = '投稿は見つかりませんでした'
+unavailable_safe_jp = 'Safebooru is unavailable at this time'
+unavailable_gel_jp = 'Gelbooru is unavailable at this time'
+
+embedtitle_en = "Booru image"
+source_en = "Image source"
+res_en = "Dimensions"
+query_en = "Query"
+nosource_en = "No source listed"
+disabled_en = "This command cannot be used in this server"
+nsfwchan_en = "This command can only be used in NSFW channels"
+
+embedtitle_jp = "Booru画像"
+source_jp = "画像ソース"
+res_jp = "画像の解像度"
+query_jp = "クエリ"
+nosource_jp = "ソースがリストされていません"
+disabled_jp = "disabledstring_jp"
+nsfwchan_jp = "nsfwstring_jp"
+
+
 
 import discord
 import aiohttp
@@ -86,7 +114,7 @@ class booruCog(commands.Cog):
                         t = soup.find('posts')
                         p = t.find_all('post')
                         if num == 0: 
-                            msg = 'No posts found, are the tags spelt correctly?'
+                            msg = noposts_safe_en
                             await ctx.send(msg)
                             return
 
