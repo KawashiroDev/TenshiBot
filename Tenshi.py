@@ -497,6 +497,13 @@ async def on_command_error(ctx, error):
         if errordm == True:
             await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Current booru may be slow down)")
             return
+
+    #Pixiv id extractor broke
+    if str(error) == "Command raised an exception: AttributeError: 'NoneType' object has no attribute 'group'":
+        await ctx.send("There was an issue getting an image, Try that command again")
+        if errordm == True:
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(issue with pixiv id extractor)")
+            return
     
 
     #none of the above         
