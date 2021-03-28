@@ -326,14 +326,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -407,14 +407,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -594,14 +594,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -724,14 +724,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -801,14 +801,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -878,14 +878,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -954,14 +954,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -1030,14 +1030,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -1107,14 +1107,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -1185,14 +1185,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -1263,14 +1263,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -1341,14 +1341,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -1419,14 +1419,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -1496,14 +1496,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -1574,14 +1574,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -1651,14 +1651,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -1728,14 +1728,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -1805,14 +1805,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -1882,14 +1882,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -1959,14 +1959,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -2036,14 +2036,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -2114,14 +2114,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -2192,14 +2192,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -2270,14 +2270,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -2347,14 +2347,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -2424,14 +2424,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -2501,14 +2501,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -2578,14 +2578,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -2655,14 +2655,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -2732,14 +2732,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -2809,14 +2809,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -2886,14 +2886,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -2963,14 +2963,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -3040,14 +3040,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -3117,14 +3117,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -3194,14 +3194,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -3269,14 +3269,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -3346,14 +3346,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -3423,14 +3423,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -3500,14 +3500,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -3577,14 +3577,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -3654,14 +3654,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -3731,14 +3731,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -3808,14 +3808,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -3885,14 +3885,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -3962,14 +3962,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -4039,14 +4039,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -4116,14 +4116,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -4193,14 +4193,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -4270,14 +4270,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -4347,14 +4347,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -4424,14 +4424,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -4501,14 +4501,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -4578,14 +4578,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -4655,14 +4655,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -4732,14 +4732,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -4809,14 +4809,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -4886,14 +4886,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -4963,14 +4963,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -5040,14 +5040,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -5117,14 +5117,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -5194,14 +5194,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -5272,14 +5272,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -5350,14 +5350,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -5428,14 +5428,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -5505,14 +5505,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -5581,14 +5581,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -5658,14 +5658,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -5735,14 +5735,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -5812,14 +5812,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -5889,14 +5889,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -5966,14 +5966,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -6043,14 +6043,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -6120,14 +6120,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -6197,14 +6197,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -6274,14 +6274,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -6351,14 +6351,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -6428,14 +6428,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -6505,14 +6505,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -6582,14 +6582,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -6659,14 +6659,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -6735,14 +6735,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -6812,14 +6812,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -6889,14 +6889,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -6966,14 +6966,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -7043,14 +7043,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -7120,14 +7120,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -7196,14 +7196,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -7273,14 +7273,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -7350,14 +7350,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -7427,14 +7427,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -7504,14 +7504,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -7581,14 +7581,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -7658,14 +7658,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -7735,14 +7735,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -7812,14 +7812,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -7889,14 +7889,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -7966,14 +7966,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -8043,14 +8043,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -8120,14 +8120,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -8197,14 +8197,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -8274,14 +8274,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -8351,14 +8351,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -8428,14 +8428,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -8505,14 +8505,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -8582,14 +8582,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -8659,14 +8659,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -8735,14 +8735,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -8861,14 +8861,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -8938,14 +8938,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -9015,14 +9015,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -9092,14 +9092,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -9169,14 +9169,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -9246,14 +9246,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -9323,14 +9323,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -9400,14 +9400,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -9469,14 +9469,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -9538,14 +9538,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -9688,14 +9688,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -9766,14 +9766,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -9844,14 +9844,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -9922,14 +9922,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -10000,14 +10000,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -10077,14 +10077,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -10154,14 +10154,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -10232,14 +10232,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -10308,14 +10308,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -10384,14 +10384,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -10460,14 +10460,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -10536,14 +10536,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -10613,14 +10613,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -10690,14 +10690,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -10766,14 +10766,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -10842,14 +10842,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -10918,14 +10918,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -10995,14 +10995,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -11072,14 +11072,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -11148,14 +11148,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -11224,14 +11224,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -11300,14 +11300,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -11370,14 +11370,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -11438,14 +11438,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -11506,14 +11506,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -11574,14 +11574,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -11642,14 +11642,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -11709,14 +11709,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -11777,14 +11777,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -11845,14 +11845,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -11925,14 +11925,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -12002,14 +12002,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -12079,14 +12079,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
@@ -12155,14 +12155,14 @@ class ImageCog(commands.Cog):
                     if "hentai" in sbooru_sauce:
                         sbooru_sauce = "Source hidden\n(NSFW website)"
                     if "pixiv" in sbooru_sauce:
-                        if "img" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
                             #extract pixiv id
-                            pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
-                            print (pixivid)
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
                             #reconstruct pixiv url
-                            sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
-                        else:
-                            sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
