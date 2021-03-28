@@ -44,34 +44,6 @@ rlimit_cmd = 5
 rlimit_time = 10
 #
 
-noposts_safe_en = '**No posts found, Try:**\nChecking the tags are spelt correctly\nChanging your search query\nSearching with the Gelbooru command'
-noposts_gel_en = '**No posts found, Try:**\nChecking the tags are spelt correctly\nChanging your search query'
-unavailable_safe_en = 'Safebooru is unavailable at this time'
-unavailable_gel_en = 'Gelbooru is unavailable at this time'
-
-noposts_safe_jp = '投稿は見つかりませんでした'
-noposts_gel_jp = '投稿は見つかりませんでした'
-unavailable_safe_jp = 'Safebooru is unavailable at this time'
-unavailable_gel_jp = 'Gelbooru is unavailable at this time'
-
-embedtitle_en = "Booru image"
-source_en = "Image source"
-res_en = "Dimensions"
-query_en = "Query"
-nosource_en = "No source listed"
-disabled_en = "This command cannot be used in this server"
-nsfwchan_en = "This command can only be used in NSFW channels"
-
-embedtitle_jp = "Booru画像"
-source_jp = "画像ソース"
-res_jp = "画像の解像度"
-query_jp = "クエリ"
-nosource_jp = "ソースがリストされていません"
-disabled_jp = "disabledstring_jp"
-nsfwchan_jp = "nsfwstring_jp"
-
-
-
 import discord
 import aiohttp
 #import praw
@@ -91,6 +63,67 @@ class booruCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    @commands.Cog.listener()
+    async def on_message(self, message):
+        #print(message)
+        lang_jp = discord.utils.get(message.guild.roles, name="tenko_jp")
+        #lang_fr = discord.utils.get(message.guild.roles, name="tenko_fr")
+        if lang_jp in message.guild.me.roles:
+
+            noposts_safe = '投稿は見つかりませんでした'
+            noposts_gel = '投稿は見つかりませんでした'
+            unavailable_safe = 'Safebooru is unavailable at this time'
+            unavailable_gel = 'Gelbooru is unavailable at this time'
+            embedtitle = "Booru画像"
+            sourcetitle = "画像ソース"
+            res_string = "画像の解像度"
+            query_string = "クエリ"
+            nosource_string = "ソースがリストされていません"
+            disabled = "disabledstring_jp"
+            nsfwchan = "nsfwstring_jp"
+
+        else:
+
+            noposts_safe = '**No posts found, Try:**\nChecking the tags are spelt correctly\nChanging your search query\nSearching with the Gelbooru command'
+            noposts_gel = '**No posts found, Try:**\nChecking the tags are spelt correctly\nChanging your search query'
+            unavailable_safe = 'Safebooru is unavailable at this time'
+            unavailable_gel = 'Gelbooru is unavailable at this time'
+            embedtitle = "Booru image"
+            sourcetitle = "Image source"
+            res_string = "Dimensions"
+            query_string = "Query"
+            nosource_string = "No source listed"
+            disabled = "This command cannot be used in this server"
+            nsfwchan = "This command can only be used in NSFW channels"
+
+
+        if japanese == True:
+
+            noposts_safe = '投稿は見つかりませんでした'
+            noposts_gel = '投稿は見つかりませんでした'
+            unavailable_safe = 'Safebooru is unavailable at this time'
+            unavailable_gel = 'Gelbooru is unavailable at this time'
+            embedtitle = "Booru画像"
+            sourcetitle = "画像ソース"
+            res_string = "画像の解像度"
+            query_string = "クエリ"
+            nosource_string = "ソースがリストされていません"
+            disabled = "disabledstring_jp"
+            nsfwchan = "nsfwstring_jp"
+
+        else:
+
+            noposts_safe = '**No posts found, Try:**\nChecking the tags are spelt correctly\nChanging your search query\nSearching with the Gelbooru command'
+            noposts_gel = '**No posts found, Try:**\nChecking the tags are spelt correctly\nChanging your search query'
+            unavailable_safe = 'Safebooru is unavailable at this time'
+            unavailable_gel = 'Gelbooru is unavailable at this time'
+            embedtitle = "Booru image"
+            sourcetitle = "Image source"
+            res_string = "Dimensions"
+            query_string = "Query"
+            nosource_string = "No source listed"
+            disabled = "This command cannot be used in this server"
+            nsfwchan = "This command can only be used in NSFW channels"    
 
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
@@ -114,7 +147,7 @@ class booruCog(commands.Cog):
                         t = soup.find('posts')
                         p = t.find_all('post')
                         if num == 0: 
-                            msg = noposts_safe_en
+                            msg = noposts_safe
                             await ctx.send(msg)
                             return
 
@@ -143,25 +176,7 @@ class booruCog(commands.Cog):
                             em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
                             em.add_field(name="Query", value="`" + tags + "`", inline=False)
                             #em.set_image(url=booruappend + msg)
-                            
-                            if str(ctx.guild.id) in safeservers and any(c in sbooru_tags for c in unsafetags):
-                                        unsafeimg = await ctx.send("This image may not be safe to view in public, React to view")
-                                        await unsafeimg.add_reaction('\U0001f351')
-                                        await asyncio.sleep(0.7)
-                                        def check(reaction, user):
-                                            return (str(reaction.emoji) == '\U0001f351')
-                                       
-                                        try:
-                                            reaction, user = await self.bot.wait_for('reaction_add', timeout=30, check=check)
-                                        except asyncio.TimeoutError:
-                                            return
-                                        else:
-                                            if ((reaction.emoji) == '\U0001f351') and reaction.message.id == unsafeimg.id:
-                                                em.set_footer(text="test")
-                                                await ctx.send(embed=em)
-                                                return
-                            else:
-                                await ctx.send(embed=em)
+                            await ctx.send(embed=em)
                                 #print(tags)
                                 #print (str(unsafetags))
                                 #print (sbooru_tags)
