@@ -66,7 +66,7 @@ class booruCog(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message):
         #print(message)
-        lang_jp = discord.utils.get(message.guild.roles, name="tenko_jp")
+        #lang_jp = discord.utils.get(message.guild.roles, name="tenko_jp")
         #print (message.guild.me.roles)
         #lang_fr = discord.utils.get(message.guild.roles, name="tenko_fr")
         #if lang_jp in message.guild.me.roles:
