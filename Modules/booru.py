@@ -96,7 +96,6 @@ class booruCog(commands.Cog):
             #nosource_string = "No source listed"
             #disabled = "This command cannot be used in this server"
             #nsfwchan = "This command can only be used in NSFW channels"
-)
 
 
     @commands.command()
