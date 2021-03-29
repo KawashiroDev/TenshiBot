@@ -63,8 +63,8 @@ class booruCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.Cog.listener()
-    async def on_message(self, message):
+    #@commands.Cog.listener()
+    #async def on_message(self, message):
         #print(message)
         #lang_jp = discord.utils.get(message.guild.roles, name="tenko_jp")
         #print (message.guild.me.roles)
