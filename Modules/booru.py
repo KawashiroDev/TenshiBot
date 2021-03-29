@@ -67,63 +67,37 @@ class booruCog(commands.Cog):
     async def on_message(self, message):
         #print(message)
         lang_jp = discord.utils.get(message.guild.roles, name="tenko_jp")
+        #print (message.guild.me.roles)
         #lang_fr = discord.utils.get(message.guild.roles, name="tenko_fr")
-        if lang_jp in message.guild.me.roles:
+        #if lang_jp in message.guild.me.roles:
+            #print ("jp")
+            #noposts_safe = '投稿は見つかりませんでした'
+            #noposts_gel = '投稿は見つかりませんでした'
+            #unavailable_safe = 'Safebooru is unavailable at this time'
+            #unavailable_gel = 'Gelbooru is unavailable at this time'
+            #embedtitle = "Booru画像"
+            #sourcetitle = "画像ソース"
+            #res_string = "画像の解像度"
+            #query_string = "クエリ"
+            #nosource_string = "ソースがリストされていません"
+            #disabled = "disabledstring_jp"
+            #nsfwchan = "nsfwstring_jp"
 
-            noposts_safe = '投稿は見つかりませんでした'
-            noposts_gel = '投稿は見つかりませんでした'
-            unavailable_safe = 'Safebooru is unavailable at this time'
-            unavailable_gel = 'Gelbooru is unavailable at this time'
-            embedtitle = "Booru画像"
-            sourcetitle = "画像ソース"
-            res_string = "画像の解像度"
-            query_string = "クエリ"
-            nosource_string = "ソースがリストされていません"
-            disabled = "disabledstring_jp"
-            nsfwchan = "nsfwstring_jp"
+        #else:
 
-        else:
+            #noposts_safe = '**No posts found, Try:**\nChecking the tags are spelt correctly\nChanging your search query\nSearching with the Gelbooru command'
+            #noposts_gel = '**No posts found, Try:**\nChecking the tags are spelt correctly\nChanging your search query'
+            #unavailable_safe = 'Safebooru is unavailable at this time'
+            #unavailable_gel = 'Gelbooru is unavailable at this time'
+            #embedtitle = "Booru image"
+            #sourcetitle = "Image source"
+            #res_string = "Dimensions"
+            #query_string = "Query"
+            #nosource_string = "No source listed"
+            #disabled = "This command cannot be used in this server"
+            #nsfwchan = "This command can only be used in NSFW channels"
+)
 
-            noposts_safe = '**No posts found, Try:**\nChecking the tags are spelt correctly\nChanging your search query\nSearching with the Gelbooru command'
-            noposts_gel = '**No posts found, Try:**\nChecking the tags are spelt correctly\nChanging your search query'
-            unavailable_safe = 'Safebooru is unavailable at this time'
-            unavailable_gel = 'Gelbooru is unavailable at this time'
-            embedtitle = "Booru image"
-            sourcetitle = "Image source"
-            res_string = "Dimensions"
-            query_string = "Query"
-            nosource_string = "No source listed"
-            disabled = "This command cannot be used in this server"
-            nsfwchan = "This command can only be used in NSFW channels"
-
-
-        if japanese == True:
-
-            noposts_safe = '投稿は見つかりませんでした'
-            noposts_gel = '投稿は見つかりませんでした'
-            unavailable_safe = 'Safebooru is unavailable at this time'
-            unavailable_gel = 'Gelbooru is unavailable at this time'
-            embedtitle = "Booru画像"
-            sourcetitle = "画像ソース"
-            res_string = "画像の解像度"
-            query_string = "クエリ"
-            nosource_string = "ソースがリストされていません"
-            disabled = "disabledstring_jp"
-            nsfwchan = "nsfwstring_jp"
-
-        else:
-
-            noposts_safe = '**No posts found, Try:**\nChecking the tags are spelt correctly\nChanging your search query\nSearching with the Gelbooru command'
-            noposts_gel = '**No posts found, Try:**\nChecking the tags are spelt correctly\nChanging your search query'
-            unavailable_safe = 'Safebooru is unavailable at this time'
-            unavailable_gel = 'Gelbooru is unavailable at this time'
-            embedtitle = "Booru image"
-            sourcetitle = "Image source"
-            res_string = "Dimensions"
-            query_string = "Query"
-            nosource_string = "No source listed"
-            disabled = "This command cannot be used in this server"
-            nsfwchan = "This command can only be used in NSFW channels"    
 
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
@@ -147,7 +121,7 @@ class booruCog(commands.Cog):
                         t = soup.find('posts')
                         p = t.find_all('post')
                         if num == 0: 
-                            msg = noposts_safe
+                            msg = "**No posts found, Try:**\nChecking the tags are spelt correctly\nChanging your search query\nSearching with the Gelbooru command"
                             await ctx.send(msg)
                             return
 
