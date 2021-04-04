@@ -8,13 +8,19 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.4.9 R1'
+bot_version = '2.5.0'
 
 #Owner ID
 ownerid = 166189271244472320
 
 #hangout ID
 hangoutid = 273086604866748426
+
+#Patreon role ID
+patreonrole = 367069832405057546
+
+#YT membership role ID
+yt_member = 454051781371232291
 
 #Limited network mode
 #enable to reduce Tenshi's data usage if running on slow wifi or 3g/4g
@@ -166,7 +172,7 @@ mentioned_nomsg = [
 "You picked the wrong heaven fool!",
 "A red spy is in the base?!",
 "Eh?!, some MrBeast guy just gave Shion ¥100,000",
-"You seen John Connor around here? Tell him i said hi",
+"You seen John Connor around here?",
 #"CrashOverride? What kind of username is that?",
 #"ZeroCool? Sounds like one of Cirno's aliases",
 "Wait... Yukari is here?",
@@ -175,6 +181,8 @@ mentioned_nomsg = [
 "Guys the thermal drill, go get it",
 "Am i a joke to you?",
 "You do not spark joy",
+#"I am inevitable",
+#"You can't do anything so don't even try, get some help. Don't do what Sonic does \n **Sonic, dead or alive is mine**",
 "!",
 "!!",
 "?!",
@@ -186,7 +194,10 @@ mentioned_nomsg = [
 "*Is eating a peach~*",
 "*Is eating a corndog~*",
 "*Is looking at Shion~*",
+"*Is cuddling Shion~*",
 "*Is playing with Shion's hair~*",
+"*Looks away*",
+"*Is watching RWBY~*",
 "*Zzz...*",
 #"U+1F351",
 "*Humming Wonderful Heaven~*",
@@ -264,13 +275,18 @@ intents = discord.Intents.default()
 intents.typing = False
 intents.presences = False
 
+debugintents = discord.Intents.default()
+debugintents.typing = True
+debugintents.presences = True
+debugintents.members = True
+
 #Disable sharding and = prefix if in debug mode
 #if you want to have the bot run as normal on a windows machine then change the windows folder check to a non existent folder
 if ghost == True:
     bot = commands.AutoShardedBot(command_prefix=('=='), case_insensitive=True, shard_count=3, intents=intents)
     
 if debugmode == True:
-    bot = commands.Bot(command_prefix=commands.when_mentioned, case_insensitive=True)
+    bot = commands.Bot(command_prefix=commands.when_mentioned, case_insensitive=True, intents=debugintents)
 
 else:
     bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or('='), case_insensitive=True, shard_count=4, intents=intents)
@@ -378,7 +394,6 @@ async def on_ready():
         print('Username - ' + bot.user.name)
         print('Shard Count - ' + str(bot.shard_count))
         print('TenshiBot Ver - ' + bot_version)
-        print('System Variant - ' + bot_variant)
         print('System Mode - ' + bot_mode)
         print(' ')
         print('servercount - ' + str(len(bot.guilds)))
@@ -387,9 +402,9 @@ async def on_ready():
         async with aiohttp.ClientSession() as aioclient:
             await aioclient.post(url_dbl, data=payload_dbl, headers=headers_dbl)
         await bot.change_presence(activity=discord.Game(name="TB [" + bot_version + "]"))
-        await asyncio.sleep(15)
-        await bot.change_presence(activity=discord.Game(name="Startup complete"))
         await asyncio.sleep(5)
+        #await bot.change_presence(activity=discord.Game(name="Startup complete"))
+        #await asyncio.sleep(5)
         #await bot.change_presence(activity=discord.Streaming(name="TenshiBot", url='https://twitch.tv/99710'))
         await bot.change_presence(activity=discord.Game(name=random.choice(playingstatus)))
 
@@ -626,10 +641,21 @@ async def help2(ctx):
     em.set_footer(text="Version " + bot_version + " ,Created by KawashiroDev")
     await ctx.send(embed=em)
 
+@bot.command()
+async def getpatreons(ctx):
+    patreons=bot.get_guild(hangoutid).get_role(patreonrole)
+    print(patreons)
+    donators = patreons.members
+    membernames = [donators.name for donators in donators]
+    print(membernames)
+    patreonlist = "\n".join(membernames)
+    await ctx.send(patreonlist)
+
 #@bot.command()
 #async def ping(ctx):
 #    await ctx.send('pong')
 #    await bot.send_typing(channel)
+
 
 @bot.command()
 @is_owner()
