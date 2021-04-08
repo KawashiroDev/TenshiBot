@@ -65,6 +65,9 @@ bootsound = True
 #if not then run in production mode
 win_dir_check = '/windows'
 
+#Spicetools URL
+spiceURL = "http://onlyone.cab/downloads/spicetools-latest.zip"
+
 import discord
 #import requests
 import aiohttp
@@ -569,6 +572,21 @@ async def on_message(message):
         await message.channel.send(secure_random.choice(mentioned_nomsg))
         print("[command] mention_nomsg")
         return
+
+    if message.content == '<@!252442396879486976>':
+        await message.channel.send(secure_random.choice(mentioned_nomsg))
+        print("[command] mention_nomsg")
+        return
+    
+    #1ccbot commands
+    if message.content == '<@!577823040147161088> spicetools':
+        if message.guild.id != int('162861213309599744'):
+            return
+        
+        else:
+            await message.channel.send("Spicetools can be downloaded from " + spiceURL)
+            print("[command] spicetools")
+            return
     
     #= prefix ignoring code (bot list servers)
 
@@ -642,6 +660,7 @@ async def help2(ctx):
     await ctx.send(embed=em)
 
 @bot.command()
+@is_owner()
 async def getpatreons(ctx):
     patreons=bot.get_guild(hangoutid).get_role(patreonrole)
     print(patreons)
