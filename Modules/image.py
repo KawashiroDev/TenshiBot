@@ -204,7 +204,7 @@ class ImageCog(commands.Cog):
     async def reimu(self, ctx):
         score_rng = random.randint(0,5)
         em = discord.Embed(title='', description=' ', colour=0xb50404)
-        char = 'Hakurei_Reimu'#+score:>=' + str(score_rng)
+        char = 'Hakurei_Reimu+score:>=' + str(score_rng)
         print(score_rng)
         #check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
@@ -288,7 +288,7 @@ class ImageCog(commands.Cog):
     async def marisa(self, ctx):
         score_rng = random.randint(0,5)
         em = discord.Embed(title='', description=' ', colour=0xf5e942)
-        char = 'kirisame_marisa'#+score:>=' + str(score_rng)
+        char = 'kirisame_marisa+score:>=' + str(score_rng)
         #check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
@@ -686,7 +686,7 @@ class ImageCog(commands.Cog):
     async def sakuya(self, ctx):
         score_rng = random.randint(0,5)
         em = discord.Embed(title='', description=' ', colour=0xc7c7c7)
-        char = 'izayoi_sakuya+-id:5237460'#+score:>=' + str(score_rng)
+        char = 'izayoi_sakuya+-id:5237460+score:>=' + str(score_rng)
         #check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
@@ -763,7 +763,7 @@ class ImageCog(commands.Cog):
     async def cirno(self, ctx):
         score_rng = random.randint(0,5)
         em = discord.Embed(title='', description=' ', colour=0x00e5ff)
-        char = 'cirno'#+score:>=' + str(score_rng)
+        char = 'cirno+score:>=' + str(score_rng)
         #check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
@@ -839,8 +839,9 @@ class ImageCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def meiling(self, ctx):
+        score_rng = random.randint(0,5)
         em = discord.Embed(title='', description=' ', colour=0x04b548)
-        char = 'hong_meiling'
+        char = 'hong_meiling+score:>=' + str(score_rng)
         #check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
@@ -5155,8 +5156,9 @@ class ImageCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def reisen(self, ctx):
+        score_rng = random.randint(0,5)
         em = discord.Embed(title='', description=' ', colour=0xf94aff)
-        char = 'reisen_udongein_inaba'
+        char = 'reisen_udongein_inaba+score:>=' + str(score_rng)
         #check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
