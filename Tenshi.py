@@ -579,14 +579,14 @@ async def on_message(message):
         return
     
     #1ccbot commands
-    if message.content == '<@!577823040147161088> spicetools':
-        if message.guild.id != int('162861213309599744'):
-            return
+    #if message.content == '<@!577823040147161088> spicetools':
+        #if message.guild.id != int('162861213309599744'):
+            #return
         
-        else:
-            await message.channel.send("Spicetools can be downloaded from " + spiceURL)
-            print("[command] spicetools")
-            return
+        #else:
+            #await message.channel.send("Spicetools can be downloaded from " + spiceURL)
+            #print("[command] spicetools")
+            #return
     
     #= prefix ignoring code (bot list servers)
 
