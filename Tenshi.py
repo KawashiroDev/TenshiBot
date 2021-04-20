@@ -929,9 +929,9 @@ async def restart(ctx):
         return
     else:
         await ctx.send("Restarting...")
-        os.system("root/tenshilauncher.sh &")
-        await bot.logout()
-        exit()
+        os.system("chmod +x reboot.sh")        
+        os.system("./reboot.sh")
+        return
 
 @bot.command()
 async def accdatetest2(ctx):
