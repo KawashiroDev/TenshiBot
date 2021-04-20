@@ -1,0 +1,3 @@
+echo Restarting Tenshi...
+pkill Tenshi
+python3.7 Tenshi.py
