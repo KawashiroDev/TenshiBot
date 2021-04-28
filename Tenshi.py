@@ -417,6 +417,8 @@ async def on_ready():
 @bot.event
 async def on_command_error(ctx, error):
     yuyuko = await bot.fetch_user(ownerid)
+
+    
     #command not found
     if isinstance(error, commands.CommandNotFound):
         return
@@ -537,6 +539,13 @@ async def on_command_error(ctx, error):
             errormsg = await ctx.send("An error has occured, The dev has been notified")
             #todo: actually put code here that notifies me
             await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`")
+
+            #trace = exc.__traceback__            
+            #etype = type(exc)
+            #lines = traceback.format_exception(etype, exc, trace)
+            #traceback_text = ''.join(lines)
+            #await ctx.send(traceback_text)
+            traceback.print_tb(error.original.__traceback__)
         if errordm == False:
             errormsg = await ctx.send("An error has occured")
 
