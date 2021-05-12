@@ -5,6 +5,14 @@
 rlimit_cmd = 2
 #timeframe (seconds)
 rlimit_time = 480
+#time since last sucessful tweet from user/server (seconds)
+tweet_time = 480
+
+#ratelimits for sendtweet2 command
+#number of commands which can be ran in timeframe
+rlimit_cmd_2 = 1
+#timeframe (seconds)
+rlimit_time_2 = 10
 
 #Account age options
 #How many days old the account needs to be 
@@ -25,6 +33,8 @@ import asyncio
 import twitter
 import datetime
 import base64
+import os
+
 
 from discord.ext import commands
 from urlextract import URLExtract
@@ -178,6 +188,120 @@ class twitterCog(commands.Cog):
                 elif ((reaction.emoji) == '\U0000274e'):
                     await ctx.send('Operation canceled')
                     return
+
+
+    @commands.command()
+    @is_owner()
+    #@commands.cooldown(rlimit_cmd_2, rlimit_time_2, commands.BucketType.guild)
+    async def sendtweet2(self, ctx, *, args):
+        userid = str(ctx.author.id)
+        serverid = str(ctx.guild.id)
+        servername = str(ctx.guild.name)
+        lasttweetfile_userpath = "/Config/User/" + userid + "/last_tweet.txt"
+        print(lasttweetfile_userpath)
+        lasttweetfile_user = os.path.isfile(lasttweetfile_userpath)
+        #lasttweetfile_server= os.path.isfile(/Config/) 
+        #print (ctx.me.joined_at)
+        #print (serverid)
+        #print (servername)
+        #print (ctx.guild.member_count)
+        print (lasttweetfile_user)
+
+        #check if a last tweet marker exists for either the user or server
+        if lasttweetfile_user == True:
+            print("aa")
+        
+        #convert text to ascii
+        asciitext = strip_non_ascii(args)
+        asciiusername = strip_non_ascii(ctx.author.name)
+        if asciitext == '':
+            await ctx.send('Error: Tweet contains no alphanumeric characters')
+        #check username for profanity
+        if pf.is_profane(asciiusername) == True:
+            await ctx.send('You need to change your Discord username to use this command')
+            return
+        #link check
+        if extractor.has_urls(asciitext):
+            await ctx.send('Error: URL is unsupported')
+            return
+        if "@" in asciitext:
+            await ctx.send('Error: Invalid tweet')
+            return
+        if "#" in asciitext:
+            await ctx.send('Error: Hashtags are not supported at this time')
+            return
+        #prevent people from bypassing cooldown
+        if int(ctx.guild.member_count) < int("5"):
+            await ctx.send('The Twitter command cannot be used in this server')
+            return
+        #1cc detection 
+        if int(ctx.guild.id) == int("162861213309599744"):
+            await ctx.send('Error: Please use 1CCBot here')
+            return
+        #blacklist check
+        if str(ctx.author.id) in badactors:
+            await ctx.send('You have been blacklisted from using this command')
+            return
+        #account age check
+        if ctx.author.created_at > acc_age:
+            await ctx.send('Your Discord account is too new')
+            return
+        #Tenshi join check
+        if ctx.me.joined_at > tenko_join:
+            await ctx.send("The twitter command can't be used because i haven't been in this server long enough, Wait at least " + str(tenkojoin) + " days.")# \nIf you have only added me because of the twitter command please remove me from this server")
+            return
+        #user join check
+        if ctx.author.joined_at > user_join:
+            await ctx.send("You have not been in this server long enough to use this command\nWait at least " + str(userjoin) + " days")
+            return
+        #Janky AF phrase blacklisting until i can figure out ProfanityFilter extended mode
+        
+        #seems to trigger some other twitter bots
+        if "essay" in asciitext.lower():
+            await ctx.send('Error: Invalid tweet')
+            return
+        if "memphis" in asciitext.lower():
+            await ctx.send('Error: Invalid tweet')
+            return
+        #Hi FBI
+        #todo:obfuscate somehow
+        #if "ktp" in asciitext:
+        #    await ctx.send('https://www.law.cornell.edu/uscode/text/18/871')
+        #    return
+
+        else:
+            em = discord.Embed(title='Are you sure you want to tweet this?', description = asciitext, colour=0x6aeb7b)
+            em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
+            em.set_footer(text="Follow me @HinanawiBot")
+            tweetconfirm = await ctx.send(embed=em)
+            #tweetconfirm = await ctx.send('Are you sure you want to tweet this?')
+            #add tick and X reactions for user to react to
+            await tweetconfirm.add_reaction('\U00002705')
+            await tweetconfirm.add_reaction('\U0000274e')
+
+            def ays_tweet(reaction, user):
+                return (user == ctx.author and str(reaction.emoji) == '\U00002705') or (user == ctx.author and str(reaction.emoji) == '\U0000274e')
+                                   
+            try:
+                reaction, user = await self.bot.wait_for('reaction_add', timeout=30, check=ays_tweet)
+            except asyncio.TimeoutError:
+                await ctx.send('Error: Timed out waiting for user response')
+                return
+            else:
+                if ((reaction.emoji) == '\U00002705') and reaction.message.id == tweetconfirm.id:
+                    #Profanity check tweet and add username before sending
+                    finaltweet = ('[' + ctx.author.name + '] ' + pf.censor(asciitext))
+                    api.PostUpdate(finaltweet)
+                    print('[tweet] "' + finaltweet + '" User ID: :' + str(ctx.author.id))
+                    await ctx.send('Tweet Posted')
+                    #DM me about the tweet if i need to go delete it
+                    yuyuko = await self.bot.fetch_user(166189271244472320)
+                    await yuyuko.send("**--A tweet was sent--** \nContents: " + finaltweet + "\nUnfiltered contents: " + asciitext + "\nUser ID: " + userid + "\nServer ID: " + serverid + "\nServer name: " + servername)
+                    return
+                elif ((reaction.emoji) == '\U0000274e'):
+                    await ctx.send('Operation canceled')
+                    return
+
 
 
     @commands.command()
