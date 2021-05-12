@@ -199,16 +199,17 @@ class twitterCog(commands.Cog):
         servername = str(ctx.guild.name)
         lasttweetfile_userpath = "/Config/User/" + userid + "/last_tweet.txt"
         print(lasttweetfile_userpath)
-        lasttweetfile_user = os.path.isfile(lasttweetfile_userpath)
+        #lasttweetfile_user = os.path.isfile(lasttweetfile_userpath)
         #lasttweetfile_server= os.path.isfile(/Config/) 
         #print (ctx.me.joined_at)
         #print (serverid)
         #print (servername)
         #print (ctx.guild.member_count)
-        print (lasttweetfile_user)
+        if os.path.isfile(lasttweetfile_userpath):
+            print(aa)
 
         #check if a last tweet marker exists for either the user or server
-        if lasttweetfile_user == True:
+        if lasttweetfile_user:
             print("aa")
         
         #convert text to ascii
