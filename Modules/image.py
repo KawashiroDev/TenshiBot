@@ -11519,7 +11519,7 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def chimata(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x5368AF)
-        char = 'tenkyuu chimata'
+        char = 'tenkyuu_chimata'
         #check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
