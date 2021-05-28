@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.5.0 R1'
+bot_version = '2.5.0 R2'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -517,6 +517,13 @@ async def on_command_error(ctx, error):
         await ctx.send("There seems to be an issue retrieving an image for this command, try again later\n(Timed out trying to connect to Gbooru)")
         if errordm == True:
             await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Current booru may be slow down)")
+            return
+
+    #booru connection broke (Gbooru)
+    if str(error) == "Command raised an exception: ClientConnectorError: Cannot connect to host gelbooru.com:80 ssl:default [Temporary failure in name resolution]":
+        await ctx.send("There seems to be an issue retrieving an image for this command, try again later\n(Failed to connect to Gbooru)")
+        if errordm == True:
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Gbooru issue?)")
             return
 
     #Pixiv id extractor broke
