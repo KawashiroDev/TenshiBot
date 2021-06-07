@@ -21,6 +21,7 @@
 <li><a href="https://discord.gg/vAbzRG9">Tenshi's server</a></li>
 <li><a href="https://github.com/kawashirodev/TenshiBot/wiki/Commands">Commands page on the wiki</a></li>
 <li><a href="https://top.gg/bot/252442396879486976">Tenshi on Top.gg</a></li>
+<li><a href="https://discord.gg/rfauVPS9xj">Test</a></li>
 </ul>
 
 <h2>You can also find Tenshi on Top.gg</h2>
