@@ -532,6 +532,13 @@ async def on_command_error(ctx, error):
         if errordm == True:
             await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(issue with pixiv id extractor)")
             return
+
+    #Gelbooru down
+    if str(error) == "Command raised an exception: ClientConnectorError: Cannot connect to host gelbooru.com:80 ssl:default [Network is unreachable]":
+        await ctx.send("There seems to be an issue retrieving an image for this command, try again later\n(Gelbooru is currently down)")
+        if errordm == True:
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Gbooru issue?)")
+            return
     
 
     #none of the above         
