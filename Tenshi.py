@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.5.0 R2'
+bot_version = '2.5.1'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -410,6 +410,8 @@ async def on_ready():
         #await asyncio.sleep(5)
         #await bot.change_presence(activity=discord.Streaming(name="TenshiBot", url='https://twitch.tv/99710'))
         await bot.change_presence(activity=discord.Game(name=random.choice(playingstatus)))
+            if os.path.isfile('rebootfail.iku'):
+        os.remove("rebootfail.iku")
 
     
 #error event code
@@ -991,7 +993,7 @@ async def vpsreboot(ctx):
 async def vpsreboot_u(ctx):
     await bot.change_presence(activity=discord.Game(name="Updating..."))
     await ctx.send('Updating...')
-    os.system("python3.5 -m pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U")
+    os.system("python3.7 -m pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U")
     await bot.change_presence(activity=discord.Game(name="Rebooting..."))
     await ctx.send('Updates complete, Restarting server')
     os.system("sudo reboot")
