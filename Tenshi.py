@@ -410,8 +410,8 @@ async def on_ready():
         #await asyncio.sleep(5)
         #await bot.change_presence(activity=discord.Streaming(name="TenshiBot", url='https://twitch.tv/99710'))
         await bot.change_presence(activity=discord.Game(name=random.choice(playingstatus)))
-            if os.path.isfile('rebootfail.iku'):
-        os.remove("rebootfail.iku")
+            #if os.path.isfile('rebootfail.iku'):
+        #os.remove("rebootfail.iku")
 
     
 #error event code
