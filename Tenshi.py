@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.5.1'
+bot_version = '2.5.1 R1'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -540,6 +540,13 @@ async def on_command_error(ctx, error):
         await ctx.send("There seems to be an issue retrieving an image for this command, try again later\n(Gelbooru is currently down)")
         if errordm == True:
             await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Gbooru issue?)")
+            return
+
+    #Tweet too long
+    if str(error) == "Command raised an exception: TwitterError: Text must be less than or equal to CHARACTER_LIMIT characters.":
+        await ctx.send("Your tweet was too long")
+        if errordm == True:
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content)
             return
     
 
