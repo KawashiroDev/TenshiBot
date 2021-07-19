@@ -9716,7 +9716,7 @@ class ImageCog(commands.Cog):
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='GIF Image')
                     em.set_image(url=booruappend + msg)
-                    em.set_footer(text="GIF Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    em.set_footer(text="GIF Gbooru ID: " + sbooru_id)
                     sbooru_img = await ctx.send(embed=em)
 
 
