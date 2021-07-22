@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.5.1 R1'
+bot_version = '2.5.2'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -456,10 +456,19 @@ async def on_command_error(ctx, error):
 
     #user ran command without an argument         
     if isinstance(error, commands.MissingRequiredArgument):
-        await ctx.send("Error: This command requires an argument")
+        #check if the user was using the help command
+        #print (ctx.command.name)
+        if ctx.command.name == "help":
+            hlp = open("txt/help.txt", "r")
+            help_cmd = hlp.read()
+            await ctx.send(help_cmd)
+            return
+
+        else:
+            await ctx.send("The " + ctx.command.name + " command requires an argument")
         #em = discord.Embed(title='Error', description = 'a required argument is missing', colour=0xc91616, icon_url=bot.user.avatar_url)
         #await ctx.send(embed=em)
-        return
+            return
 
     #Discord API having issues (it always returns a content-type message when it is)
     if str(error) == "Command raised an exception: KeyError: 'content-type'":
@@ -675,10 +684,19 @@ async def on_guild_remove(guild):
     
 #help command
 @bot.command()
-async def help(ctx):
-    hlp = open("txt/help.txt", "r")
-    help_cmd = hlp.read()
-    await ctx.send(help_cmd)
+async def help(ctx, *, eirin):
+    #help me eirin!
+    print (eirin)
+    if eirin.lower() == "me eirin":
+        #await ctx.send("a")
+        hlp = open("txt/help.txt", "r")
+        help_cmd = hlp.read()
+        await ctx.send(help_cmd)
+    
+    else:    
+        hlp = open("txt/help.txt", "r")
+        help_cmd = hlp.read()
+        await ctx.send(help_cmd)
 
 @bot.command()
 async def help2(ctx):
