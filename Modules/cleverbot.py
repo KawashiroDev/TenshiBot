@@ -28,13 +28,13 @@ class cleverbotCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def ai(self, ctx, *, query: str):
-        ai_disable = discord.utils.get(message.guild.roles, name="tenko_disableai")
+        ai_disable = discord.utils.get(ctx.guild.roles, name="tenko_disableai")
         """Ask Cleverbot a question!"""
         #disable AI command in TPL
         #if int(ctx.guild.id) == int("486699197131915264"):
             #await ctx.send('Error: AI command cannot be used in TPL')
         #disable ai command via role
-        if ai_disable in message.guild.me.roles
+        if ai_disable in ctx.guild.me.roles:
             await ctx.send("`=ai` has been disabled on this server")
             return
         
