@@ -7,7 +7,3 @@ safebooru <tag(s)> - Search safebooru
 gif - Random Touhou GIF
 ```
 To view all commands visit <https://github.com/KawashiroDev/TenshiBot/wiki/Commands>
-**Patreon supporters**
-```
-Sousy
-```
