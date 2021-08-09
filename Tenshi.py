@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.5.2'
+bot_version = '2.5.3'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -269,7 +269,8 @@ playingstatus_console = [
 "Taito Type X",
 "GPD Win"
 "GPD Win Max"
-"Smach Z"
+"Smach Z" #rip smach z 2015(?)-2021
+"Steam Deck"
 ]
 
 
@@ -277,6 +278,7 @@ playingstatus_console = [
 intents = discord.Intents.default()
 intents.typing = False
 intents.presences = False
+intents.members = True
 
 debugintents = discord.Intents.default()
 debugintents.typing = True
@@ -456,12 +458,20 @@ async def on_command_error(ctx, error):
 
     #user ran command without an argument         
     if isinstance(error, commands.MissingRequiredArgument):
-        #check if the user was using the help command
+        #check if the user was using the help command without an arg
         #print (ctx.command.name)
         if ctx.command.name == "help":
+            patreons=bot.get_guild(hangoutid).get_role(patreonrole)
+            donators = patreons.members
+            membernames = [donators.name for donators in donators]
+            patreonlist = ", ".join(membernames)
             hlp = open("txt/help.txt", "r")
             help_cmd = hlp.read()
-            await ctx.send(help_cmd)
+            if patreonlist == "":
+                patreonlist = "Nobody :("
+                await ctx.send(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
+            else:
+                await ctx.send(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
             return
 
         else:
@@ -686,17 +696,35 @@ async def on_guild_remove(guild):
 @bot.command()
 async def help(ctx, *, eirin):
     #help me eirin!
-    print (eirin)
+    #print (eirin)
     if eirin.lower() == "me eirin":
         #await ctx.send("a")
+        patreons=bot.get_guild(hangoutid).get_role(patreonrole)
+        donators = patreons.members
+        membernames = [donators.name for donators in donators]
+        patreonlist = ", ".join(membernames)
         hlp = open("txt/help.txt", "r")
         help_cmd = hlp.read()
-        await ctx.send(help_cmd)
+        if patreonlist == "":
+            patreonlist = "Nobody :("
+            await ctx.send(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
+        else:
+            await ctx.send(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
+        return
     
-    else:    
+    else:
+        patreons=bot.get_guild(hangoutid).get_role(patreonrole)
+        donators = patreons.members
+        membernames = [donators.name for donators in donators]
+        patreonlist = ", ".join(membernames)
         hlp = open("txt/help.txt", "r")
         help_cmd = hlp.read()
-        await ctx.send(help_cmd)
+        if patreonlist == "":
+            patreonlist = "Nobody :("
+            await ctx.send(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
+        else:
+            await ctx.send(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
+        return
 
 @bot.command()
 async def help2(ctx):
@@ -717,8 +745,18 @@ async def getpatreons(ctx):
     donators = patreons.members
     membernames = [donators.name for donators in donators]
     print(membernames)
-    patreonlist = "\n".join(membernames)
+    patreonlist = ", ".join(membernames)
     await ctx.send(patreonlist)
+
+@bot.command()
+async def showpatreons(ctx):
+    patreons=bot.get_guild(hangoutid).get_role(patreonrole)
+    print(patreons)
+    donators = patreons.members
+    membernames = [donators.name for donators in donators]
+    print(membernames)
+    patreonlist = ", ".join(membernames)
+    await ctx.send("TenshiBot Patreons: " + patreonlist)
 
 #@bot.command()
 #async def ping(ctx):
