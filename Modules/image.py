@@ -99,7 +99,7 @@ fumofooter = [
 ]
 
 #char fun fact footers
-https://www.wattpad.com/story/100667279-touhou-fun-facts
+#https://www.wattpad.com/story/100667279-touhou-fun-facts
 
 reimuff = [
 "Reimu appeared on the cover of all the PC-98 Touhou games.",
