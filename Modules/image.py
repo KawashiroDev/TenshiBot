@@ -89,6 +89,22 @@ normalfooter,
 patreonnag,
 ]
 
+fumofooter = [
+"Do not buy fumos from scalpers",
+"Fumo is love, Fumo is life",
+"ᗜˬᗜ",
+"Fumo Fumo",
+"Fumo",
+"Does anyone actually read this text?"
+]
+
+#char fun fact footers
+https://www.wattpad.com/story/100667279-touhou-fun-facts
+
+reimuff = [
+"Reimu appeared on the cover of all the PC-98 Touhou games.",
+]
+
 
 #text config
 if booru == 'gelbooru.com':
@@ -12165,8 +12181,83 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
                     await asyncio.sleep(0.15)
                     sbooru_img = await ctx.send(embed=em)
+
                     
 
+#misc
+
+
+
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
+    async def fumo(self, ctx):
+        em = discord.Embed(title='', description=' ', colour=0x8c0000)
+        char = 'fumo_(doll)'
+        async with aiohttp.ClientSession() as session:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorublacklist + '+' + char) as r:
+                if r.status == 200:
+                    soup = BeautifulSoup(await r.text(), "lxml")
+                    num = int(soup.find('posts')['count'])
+                    maxpage = int(round(num/100))
+                    page = random.randint(0, maxpage)
+                    t = soup.find('posts')
+                    p = t.find_all('post')
+                    source = ((soup.find('post'))['source'])
+                    if num < 100:
+                        pic = p[random.randint(0,num-1)]
+                    elif page == maxpage:
+                        pic = p[random.randint(0,99)]
+                    else:
+                        pic = p[random.randint(0,99)]
+                    msg = pic['file_url']
+                    sbooru_id = pic['id']
+                    sbooru_tags = pic['tags']
+                    sbooru_sauce = pic['source']
+                    img_width = pic['width']
+                    img_height = pic['height']
+                    creator = pic['creator_id']
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        #if "img" in sbooru_sauce:
+                            #extract pixiv id
+                            #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce) 
+                            #print (pixivid)
+                            #reconstruct pixiv url
+                            #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        #else:
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[DeviantArt](" + sbooru_sauce + ")"
+                    #try to detect pixiv direct image links
+                    #if "img" in sbooru_sauce:
+                        #extract pixiv id
+                        #pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        #reconstruct pixiv url
+                        #sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    #else:
+                        #sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                    #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                    em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+                    em.set_author(name="ᗜˬᗜ")
+                    em.set_image(url=booruappend + msg)
+                    em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
+                    em.add_field(name=idtext, value=sbooru_id, inline=True)
+                    em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
+                    #em.set_footer(text="Don't buy them from scalpers")
+                    await asyncio.sleep(0.15)
+                    sbooru_img = await ctx.send(embed=em)
+                    
+
+    
 #oj_img
 
     @commands.command()
