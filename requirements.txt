@@ -16,3 +16,4 @@ PyGithub
 psutil
 setproctitle
 py7zr
+discord-py-slash-command
