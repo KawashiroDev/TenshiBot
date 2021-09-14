@@ -22,6 +22,9 @@ patreonrole = 367069832405057546
 #YT membership role ID
 yt_member = 454051781371232291
 
+#needed for slash commands?
+#guild_ids = [273086604866748426]
+
 #Limited network mode
 #enable to reduce Tenshi's data usage if running on slow wifi or 3g/4g
 limit_net = False
@@ -110,6 +113,9 @@ from langdetect import detect_langs
 from langdetect import DetectorFactory
 from github import Github
 from zipfile import ZipFile
+#from discord_slash import SlashCommand, SlashContext
+#from discord_slash.utils.manage_components import create_button, create_actionrow
+#from discord_slash.model import ButtonStyle
 
 #https://www.microsoft.com/en-us/download/details.aspx?id=48159
 from profanityfilter import ProfanityFilter
@@ -144,7 +150,7 @@ if (os.path.isdir(win_dir_check)) == True:
     if bootsound == False:
         print('Loading program: TenshiBot.exe')
     if bootsound == True:
-        playsound('Startup_98.wav', False)
+        #playsound('Startup_98.wav', False)
         print('Loading program: TenshiBot.exe')
     
 if ghost == True:
@@ -292,6 +298,7 @@ if ghost == True:
     
 if debugmode == True:
     bot = commands.Bot(command_prefix=commands.when_mentioned, case_insensitive=True, intents=debugintents)
+#    slash = SlashCommand(bot, sync_commands=True)
 
 else:
     bot = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or('='), case_insensitive=True, shard_count=4, intents=intents)
@@ -762,6 +769,11 @@ async def showpatreons(ctx):
 #async def ping(ctx):
 #    await ctx.send('pong')
 #    await bot.send_typing(channel)
+
+#@slash.slash(name="test", guild_ids=guild_ids, description="Does exactly what it says on the tin")
+#@bot.command()
+#async def testcommand(ctx):
+#    await ctx.send('test')
 
 
 @bot.command()
