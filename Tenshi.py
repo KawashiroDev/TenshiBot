@@ -926,7 +926,7 @@ async def honk(ctx):
     await ctx.send(file=discord.File("pics/honk/" + random.choice(os.listdir("pics/honk"))))
 
 @bot.command()
-async def fumo(ctx):
+async def fumo_local(ctx):
     if limit_net == True:
         await ctx.send('fumo')
         return
