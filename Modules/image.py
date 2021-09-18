@@ -12121,7 +12121,7 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def flan_maman(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x8c0000)
-        char = 'flan-maman'
+        char = 'flan-maman_(goma)'
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
