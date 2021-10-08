@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.5.3'
+bot_version = '2.5.4'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -273,10 +273,16 @@ playingstatus_console = [
 "PSVita",
 "Sega RingEdge",
 "Taito Type X",
-"GPD Win"
+"GPD Win" #rip my Win 2
 "GPD Win Max"
 "Smach Z" #rip smach z 2015(?)-2021
 "Steam Deck"
+]
+
+scamlinks = [
+"http://dlscord.app/airdrop/nitro",
+"https://dlscord.org/airdrop/nitro",
+" https://dlscord ",
 ]
 
 
@@ -659,6 +665,28 @@ async def on_message(message):
     if role in message.guild.me.roles and message.content.startswith('='):
         #print ('[Debug] = prefix disabled via role')
         return
+
+    #Nitro scam link detection
+    #maybe i could try doing this with a txt file like the blacklist files...
+    
+    #if message.content in scamlinks:
+    #if str(scamlinks) in message.content:
+        #await message.channel.send("\U000026A0 Known scam URL!")
+        #Avoid tenshi also spamming every channel
+        #await asyncio.sleep(5)
+        #return
+
+    #Nitro scam link detection 2 - Electric Boogaloo
+    #i can do this this way but it's clunky af
+    
+    if "https://dlscord" in message.content.lower():
+        await message.channel.send("\U000026A0 Scam URL!")
+        return
+    
+    #https://ostack.cn/?qa=172698/
+        
+    
+        
     await bot.process_commands(message)
 
 #command logging
