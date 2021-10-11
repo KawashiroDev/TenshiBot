@@ -25,8 +25,8 @@
 
 <h2>You can also find Tenshi on Top.gg</h2>
 
-<a href="https://top.gg/bot/252442396879486976" >
-  <img src="https:/top.gg/api/widget/252442396879486976.svg" alt="TenshiBot" />
+<a href="https://top.gg/bot/252442396879486976">
+  <img src="https://top.gg/api/widget/252442396879486976.svg">
 </a>
 
 <h2>Known issues</h2>
