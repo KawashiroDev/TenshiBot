@@ -11849,7 +11849,7 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def youka(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
-        char = 'kazami_youka'
+        char = 'kazami_youka_(yokochu)'
         async with aiohttp.ClientSession() as session:
             async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
