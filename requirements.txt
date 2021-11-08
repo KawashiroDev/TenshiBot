@@ -1,7 +1,3 @@
-discord.py[voice]
-youtube_dl
-cleverwrap
-cleverbot
 beautifulsoup4
 praw
 lxml
@@ -16,4 +12,4 @@ PyGithub
 psutil
 setproctitle
 py7zr
-discord-py-slash-command
+pycord
