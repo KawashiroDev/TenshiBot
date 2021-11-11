@@ -101,6 +101,7 @@ import setproctitle
 import psutil
 
 from discord.ext import commands
+#from discord.commands import slash_command
 from random import randint
 from bs4 import BeautifulSoup
 from urlextract import URLExtract
@@ -1025,7 +1026,11 @@ async def nsfwtest(ctx):
 @commands.has_permissions(administrator=True)
 @bot.command()
 async def permstest(ctx):
-    await ctx.send('ok')       
+    await ctx.send('ok')
+
+#@bot.slash_command()  # create a slash command for the supplied guilds
+#async def hello(ctx):
+#    await ctx.respond(f"Hello {ctx.author}!")
 
 @bot.command()
 @is_owner()
