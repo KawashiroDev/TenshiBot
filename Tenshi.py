@@ -144,7 +144,7 @@ if (os.path.isdir(win_dir_check)) == True:
     print('[Startup] Detected a windows PC, running in debug mode')
     bot_mode = 'Debug'
     debugmode = True
-    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.debug', 'Modules.messaging', 'Modules.cleverbot']
+    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.debug', 'Modules.messaging', 'Modules.cleverbot']#, 'Modules.slash_cmd']
     print('[Debug] /Modules/debug.py loaded')
     print('')
     print('Welcome to CelestialOS 98...')
@@ -164,7 +164,7 @@ if (os.path.isdir(win_dir_check)) == False:
     print('[Startup] Running in production mode')
     bot_mode = 'Production'
     debugmode = False
-    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.messaging', 'Modules.cleverbot']
+    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.messaging', 'Modules.cleverbot']#, 'Modules.slash_cmd']
 
 test = "test"
 
@@ -799,12 +799,6 @@ async def showpatreons(ctx):
 #    await ctx.send('pong')
 #    await bot.send_typing(channel)
 
-#@slash.slash(name="test", guild_ids=guild_ids, description="Does exactly what it says on the tin")
-#@bot.command()
-#async def testcommand(ctx):
-#    await ctx.send('test')
-
-
 @bot.command()
 @is_owner()
 async def githubtest(ctx):
@@ -1028,7 +1022,7 @@ async def nsfwtest(ctx):
 async def permstest(ctx):
     await ctx.send('ok')
 
-#@bot.slash_command()  # create a slash command for the supplied guilds
+#@commands.slash_command()  # create a slash command for the supplied guilds
 #async def hello(ctx):
 #    await ctx.respond(f"Hello {ctx.author}!")
 
@@ -1387,6 +1381,17 @@ async def tenko_ai2(ctx, *, args):
     answer2 = cb.say(args)
     await ctx.send(answer2)
 
+#Slash commands
+
+@bot.slash_command(name="test", description="Test command")
+async def testcommand(ctx):
+    await ctx.respond('it works')
+
+@bot.slash_command(name="about", description="View Tenshi info")
+async def about_slash(ctx):
+    await ctx.respond('it works')
+
+
 #this has to be at the end of the code
 #client.run(token)
 if debugmode == True:
@@ -1395,4 +1400,5 @@ else:
     tkn = open("Tokens/tenshi_production.txt", "r")
 token = tkn.read()
 tkn.close()    
-bot.run(token, bot=True, reconnect=True)
+#bot.run(token, bot=True, reconnect=True)
+bot.run(token, reconnect=True)
