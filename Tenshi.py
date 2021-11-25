@@ -680,9 +680,9 @@ async def on_message(message):
     #Nitro scam link detection 2 - Electric Boogaloo
     #i can do this this way but it's clunky af
     
-    if "https://dlscord" in message.content.lower():
-        await message.channel.send("\U000026A0 Scam URL!")
-        return
+    #if "https://dlscord" in message.content.lower():
+        #await message.channel.send("\U000026A0 Scam URL!")
+        #return
     
     #https://ostack.cn/?qa=172698/
         
@@ -1433,9 +1433,9 @@ async def help_slash(ctx):
         await ctx.respond(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
     return
 
-@bot.slash_command(name="patreon", description="Patreon link")
-async def patreon(ctx):
-    await ctx.respond('Want to support TenshiBot on patreon? \nPatreon donators get featued in the help command as well as a donator role in the TenshiBot Hangout Discord\nhttp://patreon.com/tenshibot')
+#@bot.slash_command(name="patreon", description="Patreon link")
+#async def patreon_slash(ctx):
+#    await ctx.respond('Want to support TenshiBot on patreon? \nPatreon donators get featued in the help command as well as a donator role in the TenshiBot Hangout Discord\nhttp://patreon.com/tenshibot')
 
 #this has to be at the end of the code
 #client.run(token)
