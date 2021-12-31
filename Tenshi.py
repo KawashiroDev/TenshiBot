@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.5.5'
+bot_version = '2.5.6'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -1036,7 +1036,7 @@ async def permstest(ctx):
 @bot.command()
 @is_owner()
 async def ping2(ctx):
-    await ctx.send('pong')
+    await ctx.respond('pong')
 
 @bot.command()
 async def errortest(ctx):
@@ -1099,6 +1099,23 @@ async def vpsreboot(ctx):
 
 @bot.command()
 @is_owner()
+async def update_pycord(ctx):
+    await ctx.send("Updating pycord and restarting")
+    #does it even work like this?
+    #will KawashiroDev stop writing these random comments?
+    #tune into whenever 99710 next uploads a video to find out!
+
+    #go into the update folder
+    os.system("cd Update")
+    #make file executeable because "what is security"
+    os.system("chmod +x pycord_update.sh")
+    #execute script
+    os.system("./pycord_update.sh")
+    return
+
+#todo: fix this
+@bot.command()
+@is_owner()
 async def vpsreboot_u(ctx):
     await bot.change_presence(activity=discord.Game(name="Updating..."))
     await ctx.send('Updating...')
@@ -1121,6 +1138,7 @@ async def setstatus(ctx, *, args):
     await ctx.send("status set to " + "`" + args + "`")
 
 #command doesn't work on a verified bot
+#rip CirnoBot/OkuuBot 2016-2019(i think)
 @bot.command()
 @is_owner()  
 async def setname(ctx, *, args):
@@ -1224,13 +1242,16 @@ async def about(ctx):
     uptime='%dw,' % (week) + ' %dd,' % (day) + ' %dh,' % (hour) + ' %dm,' % (minute) + ' and %ds.' % (second)
     servercount=str(len(bot.guilds))
     buildinfo="%s" % time.ctime(os.path.getmtime("Tenshi.py"))
+    pycordver=(discord.__version__)
+    
 
     em=discord.Embed(colour=0x00ffff)
-    em.set_author(name= bot.user.name + ' info', icon_url=bot.user.avatar_url)
+    em.set_author(name= bot.user.name + ' info')#, icon_url=bot.user.avatar_url)
     em.add_field(name="Version", value=bot_version, inline=True)
     em.add_field(name="Servercount", value=servercount, inline=True)
     em.add_field(name="Uptime", value=uptime, inline=False)
     em.add_field(name="Tenshi.py timestamp", value=buildinfo, inline=False)
+    em.add_field(name="Pycord version", value=pycordver, inline=False)
     em.set_footer(text="Created by KawashiroDev")
     await ctx.send(embed=em)
 
@@ -1389,61 +1410,66 @@ async def tenko_ai2(ctx, *, args):
     await ctx.send(answer2)
 
 #Slash commands
-#disabled due to the stable version of py-cord not supporting them yet
 
-#@bot.slash_command(name="test", description="Test command")
-#async def testcommand(ctx):
-#    await ctx.respond('Thats not it')
+@bot.slash_command(name="test", description="Test command")
+async def testcommand(ctx):
+    await ctx.respond('Thats not it')
 
-#@bot.slash_command(name="about", description="View Tenshi info")
-#async def about_slash(ctx):
-#    second = time.time() - st
-#    minute, second = divmod(second, 60)
-#    hour, minute = divmod(minute, 60)
-#    day, hour = divmod(hour, 24)
-#    week, day = divmod(day, 7)
+@bot.slash_command(name="test2", description="Test command")
+async def testcommand2(ctx):
+    await ctx.send('Thats not it')
 
-#    uptime='%dw,' % (week) + ' %dd,' % (day) + ' %dh,' % (hour) + ' %dm,' % (minute) + ' and %ds.' % (second)
-#    servercount=str(len(bot.guilds))
-#    buildinfo="%s" % time.ctime(os.path.getmtime("Tenshi.py"))
+@bot.slash_command(name="about", description="View Tenshi info")
+async def about_slash(ctx):
+    second = time.time() - st
+    minute, second = divmod(second, 60)
+    hour, minute = divmod(minute, 60)
+    day, hour = divmod(hour, 24)
+    week, day = divmod(day, 7)
 
-#    em=discord.Embed(colour=0x00ffff)
-#    em.set_author(name= bot.user.name + ' info')#, icon_url=bot.user.avatar_url)
-#    em.add_field(name="Version", value=bot_version, inline=True)
-#    em.add_field(name="Servercount", value=servercount, inline=True)
-#    em.add_field(name="Uptime", value=uptime, inline=False)
-#    em.add_field(name="Tenshi.py timestamp", value=buildinfo, inline=False)
-#    em.set_footer(text="Created by KawashiroDev")
-#    await ctx.respond(embed=em)
+    uptime='%dw,' % (week) + ' %dd,' % (day) + ' %dh,' % (hour) + ' %dm,' % (minute) + ' and %ds.' % (second)
+    servercount=str(len(bot.guilds))
+    buildinfo="%s" % time.ctime(os.path.getmtime("Tenshi.py"))
+    pycordver=(discord.__version__)
+
+    em=discord.Embed(colour=0x00ffff)
+    em.set_author(name= bot.user.name + ' info')#, icon_url=bot.user.avatar_url)
+    em.add_field(name="Version", value=bot_version, inline=True)
+    em.add_field(name="Servercount", value=servercount, inline=True)
+    em.add_field(name="Uptime", value=uptime, inline=False)
+    em.add_field(name="Tenshi.py timestamp", value=buildinfo, inline=False)
+    em.add_field(name="Pycord version", value=pycordver, inline=False)
+    em.set_footer(text="Created by KawashiroDev")
+    await ctx.respond(embed=em)
 
 
-#@bot.slash_command(name="support", description="Invite link for Tenshi's server")
-#async def support_slash(ctx):
-#    await ctx.respond('Need help with something or just want to chat with other users? Join TenshiBot Hangout: https://discord.gg/vAbzRG9')
+@bot.slash_command(name="support", description="Invite link for Tenshi's server")
+async def support_slash(ctx):
+    await ctx.respond('Need help with something or just want to chat with other users? Join TenshiBot Hangout: https://discord.gg/vAbzRG9')
 
 
-#@bot.slash_command(name="honk", description="Send a random Chen honk image")
-#async def honk_slash(ctx):
-#    await ctx.respond(file=discord.File("pics/honk/" + random.choice(os.listdir("pics/honk"))))
+@bot.slash_command(name="honk", description="Send a random Chen honk image")
+async def honk_slash(ctx):
+    await ctx.respond(file=discord.File("pics/honk/" + random.choice(os.listdir("pics/honk"))))
 
-#@bot.slash_command(name="help", description="Command information")
-#async def help_slash(ctx):
-#    patreons=bot.get_guild(hangoutid).get_role(patreonrole)
-#    donators = patreons.members
-#    membernames = [donators.name for donators in donators]
-#    patreonlist = ", ".join(membernames)
-#    hlp = open("txt/help.txt", "r")
-#    help_cmd = hlp.read()
-#    if patreonlist == "":
-#        patreonlist = "Nobody :("
-#        await ctx.respond(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
-#    else:
-#        await ctx.respond(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
-#    return
+@bot.slash_command(name="help", description="Command information")
+async def help_slash(ctx):
+    patreons=bot.get_guild(hangoutid).get_role(patreonrole)
+    donators = patreons.members
+    membernames = [donators.name for donators in donators]
+    patreonlist = ", ".join(membernames)
+    hlp = open("txt/help.txt", "r")
+    help_cmd = hlp.read()
+    if patreonlist == "":
+        patreonlist = "Nobody :("
+        await ctx.respond(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
+    else:
+        await ctx.respond(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
+    return
 
-#@bot.slash_command(name="patreon", description="Patreon link")
-#async def patreon_slash(ctx):
-#    await ctx.respond('Want to support TenshiBot on patreon? \nPatreon donators get featued in the help command as well as a donator role in the TenshiBot Hangout Discord\nhttp://patreon.com/tenshibot')
+@bot.slash_command(name="patreon", description="Patreon link")
+async def patreon_slash(ctx):
+    await ctx.respond('Want to support TenshiBot on patreon? \nPatreon donators get featued in the help command as well as a donator role in the TenshiBot Hangout Discord\nhttp://patreon.com/tenshibot')
 
 #this has to be at the end of the code
 #client.run(token)
