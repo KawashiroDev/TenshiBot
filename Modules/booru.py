@@ -215,7 +215,122 @@ class booruCog(commands.Cog):
             await ctx.send('Error: This command can only be used in NSFW channels')
             return
 
+    @commands.slash_command(name="safebooru", description="Search Safebooru")
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    async def safebooru_slash(self, ctx, *, tags: str):
+        if int(ctx.guild.id) == int("486699197131915264"):
+            await ctx.send('Error: command cannot be used in TPL')
+            return
+        else:
+        
+            async with aiohttp.ClientSession() as session:
+                #async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=+' + tags) as r:
+                async with session.get('http://' + 'gelbooru.com' + '/index.php?page=dapi&s=post&q=index&tags=rating:safe+-animated+-audio+-webm+' + badtags_moderate + tags) as r:
+                    if r.status == 200:
+                        soup = BeautifulSoup(await r.text(), "lxml")
+                        num = int(soup.find('posts')['count'])
+                        #print ('[Debug] num = ' + str(num))
+                        maxpage = int(round(num/100))
+                        #print ('[Debug] maxpage = ' + str(maxpage))
+                        page = random.randint(0, maxpage)
+                        #print ('[Debug] page = ' + str(page))
+                        t = soup.find('posts')
+                        p = t.find_all('post')
+                        if num == 0: 
+                            msg = "**No posts found, Try:**\nChecking the tags are spelt correctly\nChanging your search query\nSearching with the Gelbooru command"
+                            await ctx.send(msg)
+                            return
 
+                        else:
+                            source = ((soup.find('post'))['source'])
+                            if num < 100:
+                                pic = p[random.randint(0,num-1)]
+                            elif page == maxpage:
+                                pic = p[random.randint(0,99)]
+                            else:
+                                pic = p[random.randint(0,99)]
+                            msg = pic['file_url']
+                            sbooru_id = pic['id']
+                            sbooru_tags = pic['tags']
+                            sbooru_sauce = pic['source']
+                            img_width = pic['width']
+                            img_height = pic['height']
+                            creator = pic['creator_id']
+                            if sbooru_sauce == '':
+                                sbooru_sauce = 'No source listed'
+                            em = discord.Embed(title='', description='', colour=0x42D4F4)
+                            em.set_author(name='Booru image')
+                            em.set_image(url=booruappend + msg)
+                            em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
+                            em.add_field(name="Sbooru ID", value=sbooru_id, inline=True)
+                            em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
+                            em.add_field(name="Query", value="`" + tags + "`", inline=False)
+                            #em.set_image(url=booruappend + msg)
+                            await ctx.respond(embed=em)
+                                #print(tags)
+                                #print (str(unsafetags))
+                                #print (sbooru_tags)
+                    
+                    else:
+                        msg = 'Safebooru is unavailable at this time'
+                        await ctx.respond(msg)
+                        return
+
+
+#This command requires the channel to be marked as a NSFW channel to work, this should prevent people abusing it
+    @commands.slash_command(name="gelbooru", description="Search Gelbooru (NSFW channels only)")
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    async def gelbooru_slash(self, ctx, *, tags: str):
+        if ctx.channel.is_nsfw():
+            async with aiohttp.ClientSession() as session:
+                async with session.get('http://' + booru_nsfw + '/index.php?page=dapi&s=post&q=index&tags=+' + boorublacklist_nsfw + '+'  + tags) as r:
+                    if r.status == 200:
+                        soup = BeautifulSoup(await r.text(), "lxml")
+                        num = int(soup.find('posts')['count'])
+                        maxpage = int(round(num/100))
+                        page = random.randint(0, maxpage)
+                        t = soup.find('posts')
+                        p = t.find_all('post')
+                        if num == 0: 
+                            msg = 'No posts found, are the tags spelt correctly?'
+                            await ctx.respond(msg)
+                            return
+
+                        else:
+                            source = ((soup.find('post'))['source'])
+                            if num < 100:
+                                pic = p[random.randint(0,num-1)]
+                            elif page == maxpage:
+                                pic = p[random.randint(0,99)]
+                            else:
+                                pic = p[random.randint(0,99)]
+                            msg = pic['file_url']
+                            sbooru_id = pic['id']
+                            sbooru_tags = pic['tags']
+                            sbooru_sauce = pic['source']
+                            img_width = pic['width']
+                            img_height = pic['height']
+                            creator = pic['creator_id']
+                            if sbooru_sauce == '':
+                                sbooru_sauce = 'No source listed'
+                            em = discord.Embed(title='', description='', colour=0x42D4F4)
+                            em.set_author(name='Booru image')
+                            em.set_image(url=booruappend + msg)
+                            em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
+                            em.add_field(name="Gbooru ID", value=sbooru_id, inline=True)
+                            em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
+                            em.add_field(name="Query", value="`" + tags + "`", inline=False)
+                            #em.set_footer(text="you may need to add rating:explict to your query if you were looking for nsfw images")
+                            await ctx.respond(embed=em)
+                            return
+
+                            
+                    msg = 'Gelbooru is unavailable at this time'
+                    await ctx.respond(msg)
+                    return
+        else:
+            await ctx.respond('This command can only be used in NSFW channels')
+            return
 					                    
 
 def setup(bot):
