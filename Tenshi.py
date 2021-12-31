@@ -87,7 +87,7 @@ import lxml
 #import saucenaopy
 import twitter
 import datetime
-import playsound
+#import playsound
 import async_cleverbot as ac
 import sys
 import glob
@@ -108,7 +108,7 @@ from urlextract import URLExtract
 #from Cleverbotio import 'async' as cleverbot
 #from saucenaopy import SauceNAO
 from datetime import datetime, timedelta, timezone
-from playsound import playsound
+#from playsound import playsound
 from langdetect import detect
 from langdetect import detect_langs
 from langdetect import DetectorFactory
@@ -1415,9 +1415,9 @@ async def tenko_ai2(ctx, *, args):
 async def testcommand(ctx):
     await ctx.respond('Thats not it')
 
-@bot.slash_command(name="test2", description="Test command")
-async def testcommand2(ctx):
-    await ctx.send('Thats not it')
+#@bot.slash_command(name="test2", description="Test command")
+#async def testcommand2(ctx):
+    #await ctx.send('Thats not it')
 
 @bot.slash_command(name="about", description="View Tenshi info")
 async def about_slash(ctx):
