@@ -575,6 +575,13 @@ async def on_command_error(ctx, error):
             await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Gbooru issue?)")
             return
 
+    #Gelbooru down/server ca issue
+    if str(error) == "Command raised an exception: ClientConnectorError: Cannot connect to host gelbooru.com:443 ssl:default [Network is unreachable]":
+        await ctx.send("There seems to be an issue retrieving an image for this command, try again later\n(Gelbooru is either down or there is an internal issue)")
+        if errordm == True:
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Gbooru issue?)")
+            return
+
     #Tweet too long
     if str(error) == "Command raised an exception: TwitterError: Text must be less than or equal to CHARACTER_LIMIT characters.":
         await ctx.send("Your tweet was too long")
