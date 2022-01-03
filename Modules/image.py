@@ -1836,25 +1836,36 @@ class ImageCog(commands.Cog):
                     page = random.randint(0, maxpage)
                     t = soup.find('posts')
                     p = t.find_all('post')
-                    source = ((soup.find('post'))['source'])
+                    source = ((soup.find('post'))('source'))
                     if num < 100:
                         pic = p[random.randint(0,num-1)]
                     elif page == maxpage:
                         pic = p[random.randint(0,99)]
                     else:
                         pic = p[random.randint(0,99)]
-                    msg = pic['file_url']
-                    sbooru_id = pic['id']
-                    sbooru_tags = pic['tags']
-                    sbooru_sauce = pic['source']
-                    img_width = pic['width']
-                    img_height = pic['height']
-                    creator = pic['creator_id']
+                    img_url = pic('file_url')
+                    url_strip_start = str(img_url).strip('[<file_url>')
+                    raw_url = str(url_strip_start).strip('</file_url>]')
+                    img_id = pic('id')
+                    id_strip_start = str(img_id).strip('[<id>')
+                    sbooru_id = str(id_strip_start).strip('</id>]')
+                    #sbooru_tags = pic['tags']
+                    #img_sauce = pic('source')
+                    #if img_sauce == '':
+                        #img_sauce = '[<source>No source listed</source>]'
+                    #source_strip_start = str(img_sauce).strip('[<source>')
+                    #sbooru_sauce = str(source_strip_start).strip('</source>]')
+                    #img_width = pic['width']
+                    #img_height = pic['height']
+                    #creator = pic['creator_id']
                     em = discord.Embed(title='', description=' ', colour=0x42D4F4)
                     #em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name='GIF Image')
-                    em.set_image(url=booruappend + msg)
-                    em.set_footer(text="GIF Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
+                    em.set_image(url= raw_url + "if")
+                    #await ctx.send(raw_url)
+                    #await ctx.send(img_url)
+                    em.add_field(name='Gbooru ID', value=sbooru_id, inline=True)
+                    #em.set_footer(text="GIF Source: https://safebooru.org/index.php?page=post&s=view&id=" + sbooru_id)
                     sbooru_img = await ctx.send(embed=em)
 
 
