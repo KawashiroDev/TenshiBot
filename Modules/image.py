@@ -172,12 +172,12 @@ class ImageCog(commands.Cog):
                     #bs4 does have a way to do this
                     url_strip_start = str(img_url).strip('[<file_url>')
                     raw_url = str(url_strip_start).strip('</file_url>]')
-                    print(raw_url)
+                    #print(raw_url)
                     
                     img_id = pic('id')
                     id_strip_start = str(img_id).strip('[<id>')
                     sbooru_id = str(id_strip_start).strip('</id>]')
-                    print(sbooru_id)
+                    #print(sbooru_id)
                     
                     img_tags = pic('tags')
                     
@@ -186,7 +186,7 @@ class ImageCog(commands.Cog):
                         img_sauce = '[<source>No source listed</source>]'
                     source_strip_start = str(img_sauce).strip('[<source>')
                     sbooru_sauce = str(source_strip_start).strip('</source>]')
-                    print(sbooru_sauce)
+                    #print(sbooru_sauce)
                     
                     # sbooru_sauce = "https://i.pximg.net/img-original/img/2020/12/25/18/14/37/86528174_p0.png"
                     img_width = pic('width')
@@ -433,9 +433,9 @@ class ImageCog(commands.Cog):
     async def tenshi(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'hinanawi_tenshi+score:>='
-        print(ctx)
-        print(char)
-        print(em)
+        #print(ctx)
+        #print(char)
+        #print(em)
         await self.imagefetch(ctx, char, em)
 
 
