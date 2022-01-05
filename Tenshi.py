@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.5.6'
+bot_version = '2.5.7'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -587,6 +587,27 @@ async def on_command_error(ctx, error):
         await ctx.send("Your tweet was too long")
         if errordm == True:
             await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content)
+            return
+
+    #Y2K22 bug(?)
+    if str(error) == "Command raised an exception: TypeError: can't compare offset-naive and offset-aware datetimes":
+        await ctx.send("This command is is broken due to a Y2K22 issue, the dev is looking into this")
+        if errordm == True:
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content)
+            return
+
+    #image command not updated yet
+    if str(error) == "Command raised an exception: KeyError: 'source'":
+        await ctx.send("There was an issue retrieving an image for this command\n(This command hasn't been updated yet)")
+        if errordm == True:
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Command needs updating)")
+            return
+
+    #Another image command bug
+    if str(error) == "Command raised an exception: TypeError: 'NoneType' object is not callable":
+        await ctx.send("There was an issue getting an image, Try that command again")
+        if errordm == True:
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(image command bug?)")
             return
     
 
