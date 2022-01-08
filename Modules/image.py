@@ -1048,6 +1048,7 @@ class ImageCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def sukuna(self, ctx):
+        em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'sukuna_shinmyoumaru'
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
@@ -1152,6 +1153,7 @@ class ImageCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def seija(self, ctx):
+        em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'kijin_seija'
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
