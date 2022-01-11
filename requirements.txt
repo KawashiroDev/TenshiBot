@@ -1,5 +1,4 @@
 beautifulsoup4
-praw
 lxml
 saucenaopy
 python-twitter
@@ -13,3 +12,4 @@ psutil
 setproctitle
 py7zr
 py-cord
+pytz
