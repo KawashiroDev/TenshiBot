@@ -64,9 +64,9 @@ class messagingCog(commands.Cog):
             #await ctx.send('Error: You have been blacklisted')
             await ctx.send(file=discord.File('pics/laughing_guy.jpg'))            
             return
-        if ctx.author.created_at > acc_age:
-            await ctx.send('Error: Your Discord account is too new')
-            return
+        #if ctx.author.created_at > acc_age:
+            #await ctx.send('Error: Your Discord account is too new')
+            #return
         #if "kys" in args:
         #    blacklist = open("Config/Blacklist/messagedev.txt", "a")
         #    blacklist.write("\n" + userid + " [Auto] kys in message")

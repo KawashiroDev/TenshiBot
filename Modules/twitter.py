@@ -34,6 +34,7 @@ import twitter
 import datetime
 import base64
 import os
+import pytz
 
 
 from discord.ext import commands
@@ -65,9 +66,11 @@ pf_extended = ProfanityFilter(extra_censor_list=["@", "kill", "essay"])
 user_blacklist = open("Config/Blacklist/twitter.txt", "r")
 badactors = user_blacklist.read()
 
-acc_age = datetime.now() - timedelta(days=dayspassed)
-tenko_join = datetime.now() - timedelta(days=tenkojoin)
-user_join = datetime.now() - timedelta(days=userjoin)
+utc=pytz.UTC
+
+acc_age = utc.localize(datetime.now()) - timedelta(days=dayspassed)
+tenko_join = utc.localize(datetime.now()) - timedelta(days=tenkojoin)
+user_join = utc.localize(datetime.now()) - timedelta(days=userjoin)
 
 #owner check
 #19/05 U+1F382
@@ -158,7 +161,7 @@ class twitterCog(commands.Cog):
 
         else:
             em = discord.Embed(title='Are you sure you want to tweet this?', description = asciitext, colour=0x6aeb7b)
-            em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar_url)
+            em.set_author(name='KawashiroLink Subsystem' , icon_url=self.bot.user.avatar)
             em.set_footer(text="Follow me @HinanawiBot")
             tweetconfirm = await ctx.send(embed=em)
             #tweetconfirm = await ctx.send('Are you sure you want to tweet this?')
