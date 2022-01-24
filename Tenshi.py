@@ -137,6 +137,9 @@ setproctitle.setproctitle('Tenshi')
 #handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 #logger.addHandler(handler)
 
+
+pf = ProfanityFilter()
+
 #Windows or linux check
 #used to autoswitch the bot between debug/production modes
 
@@ -196,6 +199,9 @@ mentioned_nomsg = [
 "!",
 "!!",
 "?!",
+"That's not it!",
+"Da Ze~... or whatever Marisa usually says",
+
 
 "*Stares*",
 "*Looks around*",
@@ -714,7 +720,16 @@ async def on_message(message):
     
     #https://ostack.cn/?qa=172698/
         
-    
+
+    #enforce english mode 1
+    enforce_en1 = discord.utils.get(message.guild.roles, name="tenko_force_en1")
+    if role in message.guild.me.roles:
+        return
+
+    #enforce english mode 2
+    enforce_en2 = discord.utils.get(message.guild.roles, name="tenko_force_en2")
+    if role in message.guild.me.roles:
+        return
         
     await bot.process_commands(message)
 
