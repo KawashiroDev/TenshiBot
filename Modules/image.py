@@ -2447,7 +2447,7 @@ class ImageCog(commands.Cog):
 
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
-    async def kokuu(self, ctx):
+    async def oj(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = '100_percent_orange_juice'
         booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + 'char'
