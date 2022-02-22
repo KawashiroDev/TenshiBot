@@ -676,6 +676,20 @@ async def on_message(message):
         await message.channel.send(secure_random.choice(mentioned_nomsg))
         print("[command] mention_nomsg")
         return
+
+    if message.content == '<@252442396879486976> f':
+        await message.channel.send(message.author.nick + " has paid their respects")
+        print("[command] mention_nomsg")
+        return
+    if message.content == '<@!252442396879486976> f':
+        await message.channel.send(message.author.nick + " has paid their respects")
+        print("[command] mention_nomsg")
+        return
+
+    if message.content == '<@!252442396879486976> f':
+        await message.channel.send(message.author.nick + " has paid their respects")
+        print("[command] mention_nomsg")
+        return
     
     #1ccbot commands
     #if message.content == '<@!577823040147161088> spicetools':
