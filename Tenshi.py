@@ -678,17 +678,17 @@ async def on_message(message):
         return
 
     if message.content == '<@252442396879486976> f':
-        await message.channel.send(message.author.nick + " has paid their respects")
-        print("[command] mention_nomsg")
+        await message.channel.send(message.author.name + " has paid their respects")
+        print("[command] f")
         return
     if message.content == '<@!252442396879486976> f':
-        await message.channel.send(message.author.nick + " has paid their respects")
-        print("[command] mention_nomsg")
+        await message.channel.send(message.author.name + " has paid their respects")
+        print("[command] f")
         return
 
     if message.content == '<@!252442396879486976> f':
-        await message.channel.send(message.author.nick + " has paid their respects")
-        print("[command] mention_nomsg")
+        await message.channel.send(message.author.name + " has paid their respects")
+        print("[command] f")
         return
     
     #1ccbot commands
