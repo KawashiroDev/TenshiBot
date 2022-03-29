@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.5.8'
+bot_version = '2.5.8 R1'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -612,6 +612,20 @@ async def on_command_error(ctx, error):
     #Another image command bug
     if str(error) == "Command raised an exception: TypeError: 'NoneType' object is not callable":
         await ctx.send("There was an issue getting an image, Try that command again")
+        if errordm == True:
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(image command bug?)")
+            return
+
+    #generic safebooru
+    if 'safebooru' in ctx.message.content:
+        await ctx.message.author.send("There was an issue getting an image, Try that again")
+        if errordm == True:
+            await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(image command bug?)")
+            return
+
+    #generic gelbooru
+    if 'gelbooru' in ctx.message.content:
+        await ctx.message.author.send("There was an issue getting an image, Try that again")
         if errordm == True:
             await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(image command bug?)")
             return
