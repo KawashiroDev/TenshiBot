@@ -305,6 +305,7 @@ debugintents = discord.Intents.default()
 debugintents.typing = True
 debugintents.presences = True
 debugintents.members = True
+debugintents.message_content = True
 
 #Disable sharding and = prefix if in debug mode
 #if you want to have the bot run as normal on a windows machine then change the windows folder check to a non existent folder
@@ -444,6 +445,9 @@ async def on_ready():
 async def on_command_error(ctx, error):
     yuyuko = await bot.fetch_user(ownerid)
 
+    if debugmode == True:
+        await ctx.send(error)
+        return
     
     #command not found
     if isinstance(error, commands.CommandNotFound):
@@ -1016,6 +1020,19 @@ async def techno(ctx):
     await ctx.send("***     TECHNO TECHNO TECHNO***")
     await asyncio.sleep(0.9)
     await ctx.send(file=discord.File('pics/techno.png'))
+
+@bot.command()
+@is_owner()
+async def content_test(ctx):
+    #get last 50 messages in channel
+    history = (await ctx.guild.get_channel(ctx.channel.id).history(limit=10).flatten())
+    #messages = await ctx.channel.fetch_message(limit=5).flatten()
+    messages = await ctx.channel.history.content(limit=5).flatten()
+    lastmessage = await ctx.channel.fetch_message(ctx.channel.last_message_id)
+    print (messages)
+    return
+    #check if
+    #if str(message.guild.me.id) in str(history):
 
 @bot.command()
 async def honk(ctx):
