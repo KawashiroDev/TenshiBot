@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.5.8 R1'
+bot_version = '2.5.9'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -298,6 +298,8 @@ intents = discord.Intents.default()
 intents.typing = False
 intents.presences = False
 intents.members = True
+#This needs to be enabled for = prefix to work in newer versions of py-cord
+#intents.message_content = True
 
 debugintents = discord.Intents.default()
 debugintents.typing = True
