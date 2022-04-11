@@ -45,9 +45,11 @@ class cleverbotCog(commands.Cog):
         except ac.InvalidKey:
             return await ctx.send("An error has occurred. The API key provided was not valid.")
         except ac.APIDown:
-            return await ctx.send("Celestials have to sleep sometimes. Please ask me later!")
+            #print(ac.APIDown)
+            return await ctx.send("Celestials have to sleep sometimes. Please ask me later! \n(Travitia API is down)")
         else:            
             await ctx.send("{}, {}".format(ctx.author.mention, r.text))
+            return
          
 #    @commands.Cog.listener()
 #    async def on_message(self, message):
