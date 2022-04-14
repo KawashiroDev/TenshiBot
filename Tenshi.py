@@ -542,7 +542,7 @@ async def on_command_error(ctx, error):
             await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(Cleverbot module may need updating, run =vpsreboot_u)")
             return
 
-    #Travitia connection failure
+    #Image command issue
     if str(error) == "Command raised an exception: AttributeError: 'NoneType' object has no attribute 'group'":
         await ctx.send("There was an issue getting an image, Try that command again")
         if errordm == True:
