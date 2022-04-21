@@ -106,6 +106,7 @@ class twitterCog(commands.Cog):
         asciiusername = strip_non_ascii(ctx.author.name)
         if asciitext == '':
             await ctx.send('Error: Tweet contains no alphanumeric characters')
+            return
         #check username for profanity
         if pf.is_profane(asciiusername) == True:
             await ctx.send('You need to change your Discord username to use this command')
