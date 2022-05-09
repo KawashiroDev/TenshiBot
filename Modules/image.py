@@ -2551,6 +2551,7 @@ class ImageCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def suguri(self, ctx):
+        em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'suguri_(character)'
         await self.imagefetch(ctx, char, em, 0)
 
