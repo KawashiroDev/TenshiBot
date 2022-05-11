@@ -305,7 +305,7 @@ debugintents = discord.Intents.default()
 debugintents.typing = True
 debugintents.presences = True
 debugintents.members = True
-debugintents.message_content = True
+#debugintents.message_content = True
 
 #Disable sharding and = prefix if in debug mode
 #if you want to have the bot run as normal on a windows machine then change the windows folder check to a non existent folder
