@@ -147,7 +147,7 @@ if (os.path.isdir(win_dir_check)) == True:
     print('[Startup] Detected a windows PC, running in debug mode')
     bot_mode = 'Debug'
     debugmode = True
-    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.debug', 'Modules.messaging', 'Modules.cleverbot']#, 'Modules.slash_cmd']
+    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.debug', 'Modules.messaging']#, 'Modules.cleverbot']#, 'Modules.slash_cmd']
     print('[Debug] /Modules/debug.py loaded')
     print('')
     print('Welcome to CelestialOS 98...')
@@ -161,13 +161,13 @@ if ghost == True:
     print('[Startup] Running in ghost mode')
     bot_mode = 'Ghost'
     debugmode = False
-    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.messaging', 'Modules.cleverbot']
+    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.messaging']#, 'Modules.cleverbot']
 
 if (os.path.isdir(win_dir_check)) == False:
     print('[Startup] Running in production mode')
     bot_mode = 'Production'
     debugmode = False
-    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.messaging', 'Modules.cleverbot']#, 'Modules.slash_cmd']
+    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.messaging']#, 'Modules.cleverbot']#, 'Modules.slash_cmd']
 
 test = "test"
 
