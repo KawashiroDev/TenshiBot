@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.5.9 R1'
+bot_version = '2.6.0'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -475,12 +475,9 @@ async def on_command_error(ctx, error):
     #user failed check
     if isinstance(error, commands.CheckFailure):
     #note to self: fix this when adding hangout commands       
-        if ctx.author.id != 166189271244472320:
-            await ctx.send("Error: Only the owner can use this command")
-            return
-            
-        else:
-            await ctx.send("Error: This command can only be used in TenshiBot Hangout")#
+        #if ctx.author.id != 166189271244472320:
+        await ctx.send("Error: Only the owner can use this command")
+        return
 
     #user ran command without an argument         
     if isinstance(error, commands.MissingRequiredArgument):
@@ -757,13 +754,79 @@ async def on_message(message):
 
     #enforce english mode 1
     enforce_en1 = discord.utils.get(message.guild.roles, name="tenko_force_en1")
-    if role in message.guild.me.roles:
-        return
+    msg = message.content
+    userid = bot.user.id
+    if enforce_en1 in message.guild.me.roles:
+        
+
+        DetectorFactory.seed = 0
+        results = (detect_langs(msg))
+        results2 = (detect(msg))
+        #print ("[debug] all langs in message: " + str(results))
+        #print ("[debug] main lang in message: " + str(results2))
+        #print (bot.user.id)
+
+        check if the user is a mod
+        if message.author.guild_permissions.administrator or message.author.guild_permissions.manage_messages:
+            #print ("[debug] user has diplomatic immunity, ignoring")
+            await bot.process_commands(message)
+            return
+
+        #check if user was using a command
+        if message.content.startswith('='):
+            #print ("[debug] command used, ignoring")
+            await bot.process_commands(message)
+            return
+
+        if message.content.startswith ('<@!252442396879486976>'):
+            #print ("[debug] command used, ignoring")
+            await bot.process_commands(message)
+            return
+
+        if message.content.startswith ('<@252442396879486976>'):
+            #print ("[debug] command used, ignoring")
+            await bot.process_commands(message)
+            return
+
+        if len(message.content) < 5:
+            #print ("[debug] message less than 5 chars, ignoring")
+            await bot.process_commands(message)
+            return
+        
+        #check if message has any english at all
+        if "en" in str(results):
+            #do nothing if english detected
+            await bot.process_commands(message)
+            return
+
+        if "fr" in str(results2):
+            await message.channel.send("Parlez Anglais, s'il vous plaît")
+            return
+
+        if "es" in str(results2):
+            await message.channel.send("Habla inglés por favor")
+            return
+        
+        if "de" in str(results2):
+            await message.channel.send("Englisch sprechen bitte")
+            return
+
+        if "jp" in str(results2):
+            await message.channel.send("英語でお話ください")
+            return
+            
+            
+        else:
+            await message.channel.send("Please speak english in this server")
+            return
+
 
     #enforce english mode 2
     enforce_en2 = discord.utils.get(message.guild.roles, name="tenko_force_en2")
-    if role in message.guild.me.roles:
+    msg = message.content
+    if enforce_en2 in message.guild.me.roles:
         return
+    
         
     await bot.process_commands(message)
 
