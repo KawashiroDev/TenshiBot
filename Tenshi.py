@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.6.0'
+bot_version = '2.6.0 R1'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -305,7 +305,7 @@ debugintents = discord.Intents.default()
 debugintents.typing = True
 debugintents.presences = True
 debugintents.members = True
-#debugintents.message_content = True
+debugintents.message_content = True
 
 #Disable sharding and = prefix if in debug mode
 #if you want to have the bot run as normal on a windows machine then change the windows folder check to a non existent folder
@@ -766,11 +766,11 @@ async def on_message(message):
         #print ("[debug] main lang in message: " + str(results2))
         #print (bot.user.id)
 
-        check if the user is a mod
-        if message.author.guild_permissions.administrator or message.author.guild_permissions.manage_messages:
+        #check if the user is a mod
+        #if message.author.guild_permissions.administrator or message.author.guild_permissions.manage_messages:
             #print ("[debug] user has diplomatic immunity, ignoring")
-            await bot.process_commands(message)
-            return
+            #await bot.process_commands(message)
+            #return
 
         #check if user was using a command
         if message.content.startswith('='):
@@ -811,7 +811,7 @@ async def on_message(message):
             await message.channel.send("Englisch sprechen bitte")
             return
 
-        if "jp" in str(results2):
+        if "ja" in str(results2):
             await message.channel.send("英語でお話ください")
             return
             
