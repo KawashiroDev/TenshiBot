@@ -298,8 +298,7 @@ intents = discord.Intents.default()
 intents.typing = False
 intents.presences = False
 intents.members = True
-#This needs to be enabled for = prefix to work in newer versions of py-cord
-#intents.message_content = True
+intents.message_content = True
 
 debugintents = discord.Intents.default()
 debugintents.typing = True
