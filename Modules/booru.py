@@ -317,9 +317,10 @@ class booruCog(commands.Cog):
                             em.add_field(name="Dimensions", value=width + "x" + height, inline=True)
                             em.add_field(name="Query", value="`" + tags + "`", inline=False)
                             #em.set_image(url=booruappend + msg)
-                            await ctx.send(embed=em)
+                            await ctx.respond(embed=em)
+                            return
 
-                    msg = 'Gelbooru is unavailable at this time'
+                    msg = 'safebooru is unavailable at this time'
                     await ctx.respond(msg)
                     return
 
@@ -386,6 +387,7 @@ class booruCog(commands.Cog):
                             em.add_field(name="Query", value="`" + tags + "`", inline=False)
                             #em.set_image(url=booruappend + msg)
                             await ctx.respond(embed=em)
+                            return
 
                             
                     msg = 'Gelbooru is unavailable at this time'
