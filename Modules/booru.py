@@ -39,7 +39,7 @@ unsafetags = [
 
 #ratelimiting options
 #number of commands which can be ran in timeframe
-rlimit_cmd = 5
+rlimit_cmd = 4
 #timeframe (seconds)
 rlimit_time = 10
 #
@@ -56,6 +56,12 @@ from bs4 import BeautifulSoup
 
 wou = open("txt/warn_on_unsafe.txt", "r")
 safeservers = wou.read()
+
+#Gelbooru API keys
+gbooru_api = open("Tokens/gelbooru_api.txt", "r")
+g_api = gbooru_api.read()
+gbooru_user = open("Tokens/gelbooru_userid.txt", "r")
+g_user = gbooru_user.read()
 
 
 class booruCog(commands.Cog):
@@ -108,7 +114,7 @@ class booruCog(commands.Cog):
         
             async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
                 #async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=+' + tags) as r:
-                async with session.get('http://' + 'gelbooru.com' + '/index.php?page=dapi&s=post&q=index&tags=rating:general+-animated+-audio+-webm+' + badtags_moderate + tags) as r:
+                async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=rating:general+-animated+-audio+-webm+' + badtags_moderate + tags) as r:
                     if r.status == 200:
                         soup = BeautifulSoup(await r.text(), "lxml")
                         num = int(soup.find('posts')['count'])
@@ -183,7 +189,7 @@ class booruCog(commands.Cog):
     async def gelbooru(self, ctx, *, tags):
         if ctx.channel.is_nsfw():
             async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
-                async with session.get('http://' + booru_nsfw + '/index.php?page=dapi&s=post&q=index&tags=+' + boorublacklist_nsfw + '+'  + tags) as r:
+                async with session.get('http://' + booru_nsfw + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=+' + boorublacklist_nsfw + '+'  + tags) as r:
                     if r.status == 200:
                         soup = BeautifulSoup(await r.text(), "lxml")
                         num = int(soup.find('posts')['count'])
@@ -259,7 +265,7 @@ class booruCog(commands.Cog):
         
             async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
                 #async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=+' + tags) as r:
-                async with session.get('http://' + 'gelbooru.com' + '/index.php?page=dapi&s=post&q=index&tags=rating:general+-animated+-audio+-webm+' + badtags_moderate + tags) as r:
+                async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=rating:general+-animated+-audio+-webm+' + badtags_moderate + tags) as r:
                     if r.status == 200:
                         soup = BeautifulSoup(await r.text(), "lxml")
                         num = int(soup.find('posts')['count'])
@@ -331,7 +337,7 @@ class booruCog(commands.Cog):
     async def gelbooru_slash(self, ctx, *, tags: str):
         if ctx.channel.is_nsfw():
             async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
-                async with session.get('http://' + booru_nsfw + '/index.php?page=dapi&s=post&q=index&tags=+' + boorublacklist_nsfw + '+'  + tags) as r:
+                async with session.get('http://' + booru_nsfw + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=+' + boorublacklist_nsfw + '+'  + tags) as r:
                     if r.status == 200:
                         soup = BeautifulSoup(await r.text(), "lxml")
                         num = int(soup.find('posts')['count'])
