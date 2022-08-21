@@ -77,7 +77,7 @@ class messagingCog(commands.Cog):
 
         else:
             em = discord.Embed(colour=0x3ef1fa)
-            em.set_author(name='Message recieved from a user', icon_url=self.bot.user.avatar_url)
+            em.set_author(name='Message recieved from a user')
             em.add_field(name="Message", value=args, inline=False)
             em.add_field(name="Users name", value=username, inline=False)
             em.add_field(name="Users ID", value=userid, inline=False)
