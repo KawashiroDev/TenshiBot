@@ -47,7 +47,7 @@ badartists = '+-nori_tamago+-shiraue_yuu+-hammer_(sunset_beach)+-roke_(taikodon)
 #base tags for gif command
 boorutags_gif = '-rating:questionable+-rating:explicit+-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini+-6%2Bgirls+-comic+-greyscale+-bdsm+-huge_filesize+-lovestruck+-absurdres+-artificial_vagina+-swimsuit+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-audio+-webm+-seductive_smile+-no_bra+-off_shoulder+-breast_hold+-cleavage+-nori_tamago+-nude+-butt_crack+-naked_apron+-what'
 #default blacklisted tags (full SFW mode)
-badtags_strict = "-rating:senstive+-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini+-spread_legs+-bdsm+-lovestruck+-artificial_vagina+-swimsuit+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-off_shoulder+-breast_hold+-cleavage+-nude+-butt_crack+-naked_apron+-convenient_censoring+-bra+-trapped+-restrained+-skirt_lift+-open_shirt+-underwear+-evil_smile+-evil_grin+-choker+-head_under_skirt+-skeleton+-open_fly+-o-ring_bikini+-middle_finger+-white_bloomers+-hot+-tank_top_lift+-short_shorts+-alternate_breast_size+-belly+-wind_lift+-you_gonna_get_raped+-convenient_leg+-convenient_arm+-downblouse+-torn_clothes+-sweater_lift+-open-chest_sweater+-bunnysuit+-gag+-gagged+-ball_gag+-hanging+-erect_nipples+-head_out_of_frame+-covering+-skirt_around_ankles+-furry+-shirt_lift+-vest_lift+-lifted_by_self+-when_you_see_it+-feet+-thighs+-skirt_hold+-open_dress+-open_clothes+-naked_shirt+-shirt_tug+-hip_vent+-no_panties+-surprised+-onsen+-naked_towel+-have_to_pee+-skirt_tug+-pole_dancing+-stripper_pole+-dimples_of_venus+-topless+-trembling+-no_humans+-creepy+-showgirl_skirt+-cookie_(touhou)+-pov+-fusion+-drugs+-weed+-forced_smile+-mouth_pull+-groin+-corruption+-dark_persona+-arms_behind_head+-crop_top+-gluteal_fold+-pregnant+-younger+-white_swimsuit+-tsundere+-crying+-naked_sheet+-undressing+-parody+-under_covers+-genderswap+-real_life_insert+-what+-confession+-race_queen+-naked_cloak+-latex+-bodysuit+-nazi+-swastika+-strap_slip+-chemise+-see-through+-dark+-bad_anatomy+-poorly_drawn+-messy+-you're_doing_it_wrong+-midriff+-large_breasts+-embarrassed+-smelling+-chains+-collar+-arms_up+-blurry_vision+-obese+-miniskirt+-leg_hold+-knees_to_chest+-knees_up+-clothes_pull+-giantess+-stepping+-shirtless+-3d+-smoking+-wall_slam+-noose+-4chan+-sheet_grab+-m_legs+-magnifying_glass+-fingering+-bandaid_on_pussy+-bandaids_on_nipples+-censored+-double_penetration+-erection+-group_sex+-double_handjob+-naizuri+-pasties+-penis+-sex+-pussy+-vaginal+-anal+-nipples+-aerolae+-large_areolae+-breasts_out+-breast_grab+-futanari+-implied_futanari+-condom+-condom_in_mouth+-cum+-used_condom"
+badtags_strict = "-rating:senstive+-underwear+-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-ass+-bikini+-spread_legs+-bdsm+-lovestruck+-artificial_vagina+-swimsuit+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-off_shoulder+-breast_hold+-cleavage+-nude+-butt_crack+-naked_apron+-convenient_censoring+-bra+-trapped+-restrained+-skirt_lift+-open_shirt+-underwear+-evil_smile+-evil_grin+-choker+-head_under_skirt+-skeleton+-open_fly+-o-ring_bikini+-middle_finger+-white_bloomers+-hot+-tank_top_lift+-short_shorts+-alternate_breast_size+-belly+-wind_lift+-you_gonna_get_raped+-convenient_leg+-convenient_arm+-downblouse+-torn_clothes+-sweater_lift+-open-chest_sweater+-bunnysuit+-gag+-gagged+-ball_gag+-hanging+-erect_nipples+-head_out_of_frame+-covering+-skirt_around_ankles+-furry+-shirt_lift+-vest_lift+-lifted_by_self+-when_you_see_it+-feet+-thighs+-skirt_hold+-open_dress+-open_clothes+-naked_shirt+-shirt_tug+-hip_vent+-no_panties+-surprised+-onsen+-naked_towel+-have_to_pee+-skirt_tug+-pole_dancing+-stripper_pole+-dimples_of_venus+-topless+-trembling+-no_humans+-creepy+-showgirl_skirt+-cookie_(touhou)+-pov+-fusion+-drugs+-weed+-forced_smile+-mouth_pull+-groin+-corruption+-dark_persona+-arms_behind_head+-crop_top+-gluteal_fold+-pregnant+-younger+-white_swimsuit+-tsundere+-crying+-naked_sheet+-undressing+-parody+-under_covers+-genderswap+-real_life_insert+-what+-confession+-race_queen+-naked_cloak+-latex+-bodysuit+-nazi+-swastika+-strap_slip+-chemise+-see-through+-dark+-bad_anatomy+-poorly_drawn+-messy+-you're_doing_it_wrong+-midriff+-large_breasts+-embarrassed+-smelling+-chains+-collar+-arms_up+-blurry_vision+-obese+-miniskirt+-leg_hold+-knees_to_chest+-knees_up+-clothes_pull+-giantess+-stepping+-shirtless+-3d+-smoking+-wall_slam+-noose+-4chan+-sheet_grab+-m_legs+-magnifying_glass+-fingering+-bandaid_on_pussy+-bandaids_on_nipples+-censored+-double_penetration+-erection+-group_sex+-double_handjob+-naizuri+-pasties+-penis+-sex+-pussy+-vaginal+-anal+-nipples+-aerolae+-large_areolae+-breasts_out+-breast_grab+-futanari+-implied_futanari+-condom+-condom_in_mouth+-cum+-used_condom+-breast_conscious"
 #tags to blacklist in TenshiBot Hangout
 badtags_hangout = '-sideboob+-pov_feet+-upskirt+-sexually_suggestive+-bdsm+-lovestruck+-artificial_vagina+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-breast_hold+-nude+-butt_crack+-naked_apron'
 #tags to blacklist in moderate mode
@@ -133,6 +133,13 @@ consumer_secret=tw_secret,
 access_token_key=tw_access,
 access_token_secret=tw_access_secret)
 
+
+#Gelbooru API keys
+gbooru_api = open("Tokens/gelbooru_api.txt", "r")
+g_api = gbooru_api.read()
+gbooru_user = open("Tokens/gelbooru_userid.txt", "r")
+g_user = gbooru_user.read()
+
 class ImageCog(commands.Cog):
 
     def __init__(self, bot):
@@ -147,11 +154,11 @@ class ImageCog(commands.Cog):
         # check if Tenshi has a flag enabled or not
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
             async with session.get(booruurl) as r:
@@ -1058,14 +1065,14 @@ class ImageCog(commands.Cog):
         char = 'sukuna_shinmyoumaru+score:>=' + str(score_rng)
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'ᶜʰᵃʳᵃᶜᵗᵉʳ ᶦᵐᵃᵍᵉ'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'ᶜʰᵃʳᵃᶜᵗᵉʳ ᶦᵐᵃᵍᵉ'
         async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char) as r:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_strict + badartists + '+' + char) as r:
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
@@ -1164,14 +1171,14 @@ class ImageCog(commands.Cog):
         char = 'kijin_seija+score:>=' + str(score_rng)
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'ǝƃɐɯI ɹǝʇɔɐɹɐɥƆ'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'ǝƃɐɯI ɹǝʇɔɐɹɐɥƆ'
         async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char) as r:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_strict + badartists + '+' + char) as r:
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
@@ -1547,10 +1554,10 @@ class ImageCog(commands.Cog):
     async def prismriver(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'lunasa_prismriver+lyrica_prismriver+merlin_prismriver'
-        booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorublacklist + '+' + 'char'
+        booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorublacklist + '+' + 'char'
         embed_name = 'Character image'
         async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char) as r:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_strict + badartists + '+' + char) as r:
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
@@ -1656,7 +1663,7 @@ class ImageCog(commands.Cog):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'jokanhiyou+fujiwara_no_mokou'
         async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
-            async with session.get('http://' + 'gelbooru.com' + '/index.php?page=dapi&s=post&q=index&tags=' + boorublacklist + '+' + char) as r:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
@@ -1722,7 +1729,7 @@ class ImageCog(commands.Cog):
     async def gif(self, ctx):
         char = 'touhou+animated_gif'
         async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_gif + '+' + char) as r:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_gif + '+' + char) as r:
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
@@ -1770,7 +1777,7 @@ class ImageCog(commands.Cog):
     async def gif2(self, ctx):
         char = 'touhou+animated'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorublacklist + '+' + char) as r:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
@@ -1858,14 +1865,14 @@ class ImageCog(commands.Cog):
         char = 'touhou_(pc-98)'
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'Character image'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char) as r:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_strict + badartists + '+' + char) as r:
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
@@ -2104,14 +2111,14 @@ class ImageCog(commands.Cog):
         char = 'fumo_(doll)'
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_moderate + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_moderate + '+' + char
             embed_name = 'ᗜˬᗜ'
             em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
         else:
-            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'ᗜˬᗜ'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorutags_base + badtags_strict + badartists + '+' + char) as r:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_strict + badartists + '+' + char) as r:
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
@@ -2212,10 +2219,10 @@ class ImageCog(commands.Cog):
     async def youka(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'kazami_youka_(yokochu)'
-        booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorublacklist + '+' + 'char'
+        booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorublacklist + '+' + 'char'
         embed_name = 'Character image'
         async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + badtags_strict + '+' + char) as r:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + badtags_strict + '+' + char) as r:
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
@@ -2313,10 +2320,10 @@ class ImageCog(commands.Cog):
     async def kokuu(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'kokuu_haruto'
-        booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + 'char'
+        booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + 'char'
         embed_name = 'Character image'
         async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + badtags_strict + '+' + char) as r:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + badtags_strict + '+' + char) as r:
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
@@ -2453,10 +2460,10 @@ class ImageCog(commands.Cog):
     async def oj(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = '100_percent_orange_juice'
-        booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + 'char'
+        booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + 'char'
         embed_name = 'Character image'
         async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + badtags_strict + '+' + char) as r:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + badtags_strict + '+' + char) as r:
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
@@ -2566,7 +2573,7 @@ class ImageCog(commands.Cog):
     async def saki_oj(self, ctx):
         char = 'saki_(suguri)'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&tags=' + boorublacklist + '+' + char) as r:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
