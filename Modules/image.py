@@ -2463,7 +2463,7 @@ class ImageCog(commands.Cog):
         booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + 'char'
         embed_name = 'Character image'
         async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + badtags_strict + '+' + char) as r:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=-rating:explicit+-rating:questionable+' + badtags_strict + '+' + char) as r:
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
@@ -2573,7 +2573,7 @@ class ImageCog(commands.Cog):
     async def saki_oj(self, ctx):
         char = 'saki_(suguri)'
         async with aiohttp.ClientSession() as session:
-            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorublacklist + '+' + char) as r:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=-rating:explicit+-rating:questionable+' + boorublacklist + '+' + char) as r:
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
