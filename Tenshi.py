@@ -117,6 +117,7 @@ from zipfile import ZipFile
 #from discord_slash import SlashCommand, SlashContext
 #from discord_slash.utils.manage_components import create_button, create_actionrow
 #from discord_slash.model import ButtonStyle
+#from text_to_speech import speak
 
 #https://www.microsoft.com/en-us/download/details.aspx?id=48159
 from profanityfilter import ProfanityFilter
@@ -1463,6 +1464,12 @@ async def dsay(ctx, *, args):
         await ctx.send(args)    
         await ctx.message.delete()
         return
+
+#@bot.command()
+#@is_owner()
+#async def ttstest(ctx, *, args):
+    #await speak(args, "en", save=True, file="voice.mp3", speak=False)
+    #return
 
 @bot.command()
 async def patreon(ctx):
