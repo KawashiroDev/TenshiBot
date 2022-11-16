@@ -284,7 +284,7 @@ class booruCog(commands.Cog):
                         p = t.find_all('post')
                         if num == 0: 
                             msg = "**No posts found, Try:**\nChecking the tags are spelt correctly\nChanging your search query\nSearching with the Gelbooru command"
-                            await ctx.send(msg)
+                            await ctx.respond(msg)
                             return
 
                         else:
