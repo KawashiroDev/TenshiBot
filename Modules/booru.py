@@ -9,15 +9,15 @@ booru = 'gelbooru.com'
 booru_nsfw = 'gelbooru.com'
 
 #safebooru rating
-#options are: safe, questionable, explicit
-boorurating = 'safe'
+#options are: general, sensitive, questionable, explicit
+boorurating = 'general'
 
 #NSFW tag blacklist
 #loli and shota are against Discord TOS
 #Could also blacklist things like guro and futa but i don't want to become too restrictive with the booru stuff
 boorublacklist_nsfw = '-loli+-lolicon+-shota+-shotacon'
 
-badtags_moderate = '-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-bdsm+-lovestruck+-artificial_vagina+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-breast_hold+-nude+-butt_crack+-naked_apron+-cock+-yaoi+-penis+-shota+-loli+-sex+-femdom+-thighs+-smelling+-nazi+-swastika+-naked_cloak+-undressing+-naked_sheet+-groin+-drugs+-weed+-topless+-have_to_pee+-naked_towel+-no_panties+-naked_shirt+-shirt_lift+-erect_nipples+-gag+-gagged+-ball_gag+-downblouse+-you_gonna_get_raped+-convenient_leg+-convenient_arm+-underwear+-convenient_censoring+-bra+-trapped+-restrained+-skirt_lift+-vore+'
+badtags_moderate = '-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-bdsm+-lovestruck+-artificial_vagina+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-breast_hold+-nude+-butt_crack+-naked_apron+-cock+-yaoi+-penis+-shota+-loli+-sex+-femdom+-thighs+-smelling+-nazi+-swastika+-naked_cloak+-undressing+-naked_sheet+-groin+-drugs+-weed+-topless+-have_to_pee+-naked_towel+-no_panties+-naked_shirt+-shirt_lift+-erect_nipples+-gag+-gagged+-ball_gag+-downblouse+-you_gonna_get_raped+-convenient_leg+-convenient_arm+-underwear+-convenient_censoring+-bra+-trapped+-restrained+-skirt_lift+-vore+-yuri+-kiss'
 
 
 #appends text to the start of booru url output, gelbooru doesn't use this
@@ -110,6 +110,9 @@ class booruCog(commands.Cog):
         if int(ctx.guild.id) == int("486699197131915264"):
             await ctx.send('Error: command cannot be used in TPL')
             return
+        #if int(ctx.channel.id) == int("382177207851941889"):
+            #await ctx.send('Error: This command cannot be used in 1CC')
+            #return
         else:
         
             async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
@@ -261,6 +264,9 @@ class booruCog(commands.Cog):
         if int(ctx.guild.id) == int("486699197131915264"):
             await ctx.send('Error: command cannot be used in TPL')
             return
+        #if int(ctx.guild.id) == int("162861213309599744"):
+            #await ctx.respond('Error: command cannot be used in 1CC')
+            #return
         else:
         
             async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
