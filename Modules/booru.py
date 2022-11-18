@@ -107,12 +107,17 @@ class booruCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def safebooru(self, ctx, *, tags):
+        nobooru = discord.utils.get(ctx.guild.roles, name="tenko_nobooru")
+
         if int(ctx.guild.id) == int("486699197131915264"):
             await ctx.send('Error: command cannot be used in TPL')
             return
         #if int(ctx.channel.id) == int("382177207851941889"):
             #await ctx.send('Error: This command cannot be used in 1CC')
             #return
+        if nobooru in ctx.guild.me.roles:
+            await ctx.send('The safebooru command has been disabled in this server')
+            return
         else:
         
             async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
