@@ -195,6 +195,12 @@ class booruCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
     async def gelbooru(self, ctx, *, tags):
+        nobooru = discord.utils.get(ctx.guild.roles, name="tenko_nobooru")
+
+        if nobooru in ctx.guild.me.roles:
+            await ctx.send('The gelbooru command has been disabled in this server')
+            return
+
         if ctx.channel.is_nsfw():
             async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
                 async with session.get('http://' + booru_nsfw + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=+' + boorublacklist_nsfw + '+'  + tags) as r:
