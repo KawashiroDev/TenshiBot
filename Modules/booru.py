@@ -17,6 +17,13 @@ boorurating = 'general'
 #Could also blacklist things like guro and futa but i don't want to become too restrictive with the booru stuff
 boorublacklist_nsfw = '-loli+-lolicon+-shota+-shotacon'
 
+#Gelbooru slash command tag blacklist
+#Slightly more strict gelbooru blacklist to try and comply with Discord app directory rules
+#https://support-dev.discord.com/hc/en-us/articles/8852009977879-App-Directory-Inclusion-Guidelines
+#https://support-dev.discord.com/hc/en-us/articles/9489299950487
+boorublacklist_nsfw_slash = '-loli+-lolicon+-shota+-shotacon+-rating:explicit+-furry+-guro+-blood+-sex+-pussy+-nipples+-penis+-maebari'
+
+#safebooru command tag blacklist
 badtags_moderate = '-sideboob+-pov_feet+-underboob+-upskirt+-sexually_suggestive+-bdsm+-lovestruck+-artificial_vagina+-covering_breasts+-huge_breasts+-blood+-penetration_gesture+-seductive_smile+-no_bra+-breast_hold+-nude+-butt_crack+-naked_apron+-cock+-yaoi+-penis+-shota+-loli+-sex+-femdom+-thighs+-smelling+-nazi+-swastika+-naked_cloak+-undressing+-naked_sheet+-groin+-drugs+-weed+-topless+-have_to_pee+-naked_towel+-no_panties+-naked_shirt+-shirt_lift+-erect_nipples+-gag+-gagged+-ball_gag+-downblouse+-you_gonna_get_raped+-convenient_leg+-convenient_arm+-underwear+-convenient_censoring+-bra+-trapped+-restrained+-skirt_lift+-vore+-yuri+-kiss+'
 
 
@@ -354,7 +361,7 @@ class booruCog(commands.Cog):
     async def gelbooru_slash(self, ctx, *, tags: str):
         if ctx.channel.is_nsfw():
             async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
-                async with session.get('http://' + booru_nsfw + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=+' + boorublacklist_nsfw + '+'  + tags) as r:
+                async with session.get('http://' + booru_nsfw + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=+' + boorublacklist_nsfw_slash + '+'  + tags) as r:
                     if r.status == 200:
                         soup = BeautifulSoup(await r.text(), "lxml")
                         num = int(soup.find('posts')['count'])
