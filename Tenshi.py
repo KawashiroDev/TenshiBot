@@ -295,6 +295,46 @@ scamlinks = [
 " https://dlscord ",
 ]
 
+food = [
+    "🍑",
+    "🍪",
+    "🍣",
+    "🍟",
+    "🍕",
+    "🍚",
+    "🍇",
+    "🍓",
+    "🍔",
+    "🍰",
+    "🍄",
+    "🍡",
+    "🍛",
+    "🌵",
+    "🍜",
+    "🌽",
+    "🍬",
+    "🍋",
+    "🍹",
+    "🍝",
+    "🍮",
+    "🎂",
+    "🍏",
+    "🍈",
+    "🍠",
+    "☕",
+    "🍺",
+    "🍷",
+    "🍥",
+    "🥚",
+    "🍨",
+    "🍭",
+    "🍊",
+    "🍉",
+    "🍞",
+    "🍍",
+    "🍘",
+    "🍧"
+]
 
 #define intents
 intents = discord.Intents.default()
@@ -499,6 +539,11 @@ async def on_command_error(ctx, error):
                 await ctx.send(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
             return
 
+        if ctx.command.name == "feed":
+            await ctx.send ("Who should i feed?")
+            return
+            
+
         else:
             await ctx.send("The " + ctx.command.name + " command requires an argument")
         #em = discord.Embed(title='Error', description = 'a required argument is missing', colour=0xc91616, icon_url=bot.user.avatar_url)
@@ -641,6 +686,7 @@ async def on_command_error(ctx, error):
         if errordm == True:
             await yuyuko.send("\U000026A0 Error occured: `" + str(error) + "`\nCommand: `" + ctx.message.content + "`\n(image command bug?)")
             return
+    
     
 
     #none of the above         
@@ -942,6 +988,29 @@ async def showpatreons(ctx):
     print(membernames)
     patreonlist = ", ".join(membernames)
     await ctx.send("TenshiBot Patreons: " + patreonlist)
+
+@bot.command()
+#@commands.cooldown(1, 20, commands.BucketType.user)
+async def isnowillegal(ctx, legal : str):
+    """Make Stuff Illegal!"""
+    legal = legal.upper()
+    url = "https://storage.googleapis.com/is-now-illegal.appspot.com/gifs/" + legal +".gif"
+    em = discord.Embed(title="{} is now Illegal!".format(legal))
+    em.set_image(url=url)
+    await ctx.send(embed=em)
+
+@bot.command()
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def feed(ctx, user : discord.Member):
+    if user == None:
+        await ctx.send(f" {ctx.message.author.mention} eats {random.choice(food)} ")
+        return
+    if user == ctx.message.author:
+        await ctx.send(f" {ctx.message.author.mention} eats {random.choice(food)} ")
+        return
+    else:
+        await ctx.send(f"** Hands {user.name} a {random.choice(food)} **")
+        return
 
 #@bot.command()
 #async def ping(ctx):
