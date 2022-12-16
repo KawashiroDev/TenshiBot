@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.6.1 R1'
+bot_version = '2.6.2'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -989,15 +989,15 @@ async def showpatreons(ctx):
     patreonlist = ", ".join(membernames)
     await ctx.send("TenshiBot Patreons: " + patreonlist)
 
-@bot.command()
+#@bot.command()
 #@commands.cooldown(1, 20, commands.BucketType.user)
-async def isnowillegal(ctx, legal : str):
-    """Make Stuff Illegal!"""
-    legal = legal.upper()
-    url = "https://storage.googleapis.com/is-now-illegal.appspot.com/gifs/" + legal +".gif"
-    em = discord.Embed(title="{} is now Illegal!".format(legal))
-    em.set_image(url=url)
-    await ctx.send(embed=em)
+#async def isnowillegal(ctx, legal : str):
+#    """Make Stuff Illegal!"""
+#    legal = legal.upper()
+#    url = "https://storage.googleapis.com/is-now-illegal.appspot.com/gifs/" + legal +".gif"
+#    em = discord.Embed(title="{} is now Illegal!".format(legal))
+#    em.set_image(url=url)
+#    await ctx.send(embed=em)
 
 @bot.command()
 @commands.cooldown(1, 5, commands.BucketType.user)
