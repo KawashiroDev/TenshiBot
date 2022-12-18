@@ -402,7 +402,7 @@ else:
 token_dbl = tkn_dbl.read()
 tkn_dbl.close() 
 dbltoken = token_dbl
-url_dbl = ("https://discordbots.org/api/bots/252442396879486976/stats")
+url_dbl = ("https://top.gg/api/bots/252442396879486976/stats")
 headers_dbl = {"Authorization" : dbltoken}
 
 if debugmode == True:        
