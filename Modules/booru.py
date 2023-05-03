@@ -273,7 +273,7 @@ class booruCog(commands.Cog):
                     await ctx.send(msg)
                     return
         else:
-            await ctx.send('Error: This command can only be used in NSFW channels')
+            #await ctx.send('Error: This command can only be used in NSFW channels')
             return
 
     @commands.slash_command(name="safebooru", description="Search Safebooru")
