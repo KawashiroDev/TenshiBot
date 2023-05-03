@@ -356,76 +356,76 @@ class booruCog(commands.Cog):
 
 
 #This command requires the channel to be marked as a NSFW channel to work, this should prevent people abusing it
-    @commands.slash_command(name="gelbooru", description="Search Gelbooru (NSFW channels only)")
-    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
-    async def gelbooru_slash(self, ctx, *, tags: str):
-        if ctx.channel.is_nsfw():
-            async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
-                async with session.get('http://' + booru_nsfw + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=+' + boorublacklist_nsfw_slash + '+'  + tags) as r:
-                    if r.status == 200:
-                        soup = BeautifulSoup(await r.text(), "lxml")
-                        num = int(soup.find('posts')['count'])
-                        maxpage = int(round(num/100))
-                        page = random.randint(0, maxpage)
-                        t = soup.find('posts')
-                        p = t.find_all('post')
-                        if num == 0: 
-                            msg = 'No posts found, are the tags spelt correctly?'
-                            await ctx.respond(msg)
-                            return
+    #@commands.slash_command(name="gelbooru", description="Search Gelbooru (NSFW channels only)")
+    #@commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.default)
+    #async def gelbooru_slash(self, ctx, *, tags: str):
+    #    if ctx.channel.is_nsfw():
+    #        async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
+    #            async with session.get('http://' + booru_nsfw + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=+' + boorublacklist_nsfw_slash + '+'  + tags) as r:
+    #                if r.status == 200:
+    #                    soup = BeautifulSoup(await r.text(), "lxml")
+    #                    num = int(soup.find('posts')['count'])
+    #                    maxpage = int(round(num/100))
+    #                    page = random.randint(0, maxpage)
+    #                    t = soup.find('posts')
+    #                    p = t.find_all('post')
+    #                    if num == 0: 
+    #                        msg = 'No posts found, are the tags spelt correctly?'
+    #                        await ctx.respond(msg)
+    #                        return
 
-                        else:
-                            source = ((soup.find('post'))('source'))
-                            if num < 100:
-                                pic = p[random.randint(0,num-1)]
-                            elif page == maxpage:
-                                pic = p[random.randint(0,99)]
-                            else:
-                                pic = p[random.randint(0,99)]
-                            img_url = pic('file_url')
-                            url_strip_start = str(img_url).strip('[<file_url>')
-                            raw_url = str(url_strip_start).strip('</file_url>]')
-                            img_id = pic('id')
-                            id_strip_start = str(img_id).strip('[<id>')
-                            sbooru_id = str(id_strip_start).strip('</id>]')
+    #                   else:
+    #                       source = ((soup.find('post'))('source'))
+    #                       if num < 100:
+    #                            pic = p[random.randint(0,num-1)]
+    #                        elif page == maxpage:
+    #                            pic = p[random.randint(0,99)]
+    #                        else:
+    #                            pic = p[random.randint(0,99)]
+    #                        img_url = pic('file_url')
+    #                        url_strip_start = str(img_url).strip('[<file_url>')
+    #                        raw_url = str(url_strip_start).strip('</file_url>]')
+    #                        img_id = pic('id')
+    #                        id_strip_start = str(img_id).strip('[<id>')
+    #                        sbooru_id = str(id_strip_start).strip('</id>]')
 
-                            #sbooru_tags = pic['tags']
-                            img_sauce = pic('source')
-                            if img_sauce == '':
-                                img_sauce = '[<source>No source listed</source>]'
-                            source_strip_start = str(img_sauce).strip('[<source>')
-                            sbooru_sauce = str(source_strip_start).strip('</source>]')
+    #                        #sbooru_tags = pic['tags']
+    #                        img_sauce = pic('source')
+    #                        if img_sauce == '':
+    #                            img_sauce = '[<source>No source listed</source>]'
+    #                        source_strip_start = str(img_sauce).strip('[<source>')
+    #                        sbooru_sauce = str(source_strip_start).strip('</source>]')
+    #                        
+    #                        img_width = pic('width')
+    #                
+    #                        width_strip_start = str(img_width).strip('[<width>')
+    #                        width = str(width_strip_start).strip('</width>]')
+
+    #                        img_height = pic('height')
+    #                        height_strip_start = str(img_height).strip('[<height>')
+    #                        height = str(height_strip_start).strip('</height>]')
+    #                        
+    #                        #creator = pic['creator_id']
+    #                        if sbooru_sauce == '':
+    #                            sbooru_sauce = 'No source listed'
+    #                        em = discord.Embed(title='', description='', colour=0x42D4F4)
+    #                        em.set_author(name='Booru image')
+    #                        em.set_image(url=booruappend + str(raw_url))
+    #                        em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
+    #                        em.add_field(name="Sbooru ID", value=sbooru_id, inline=True)
+    #                        em.add_field(name="Dimensions", value=width + "x" + height, inline=True)
+    #                        em.add_field(name="Query", value="`" + tags + "`", inline=False)
+    #                        #em.set_image(url=booruappend + msg)
+    #                        await ctx.respond(embed=em)
+    #                        return
+
                             
-                            img_width = pic('width')
-                    
-                            width_strip_start = str(img_width).strip('[<width>')
-                            width = str(width_strip_start).strip('</width>]')
-
-                            img_height = pic('height')
-                            height_strip_start = str(img_height).strip('[<height>')
-                            height = str(height_strip_start).strip('</height>]')
-                            
-                            #creator = pic['creator_id']
-                            if sbooru_sauce == '':
-                                sbooru_sauce = 'No source listed'
-                            em = discord.Embed(title='', description='', colour=0x42D4F4)
-                            em.set_author(name='Booru image')
-                            em.set_image(url=booruappend + str(raw_url))
-                            em.add_field(name="Image source", value=sbooru_sauce, inline=False)    
-                            em.add_field(name="Sbooru ID", value=sbooru_id, inline=True)
-                            em.add_field(name="Dimensions", value=width + "x" + height, inline=True)
-                            em.add_field(name="Query", value="`" + tags + "`", inline=False)
-                            #em.set_image(url=booruappend + msg)
-                            await ctx.respond(embed=em)
-                            return
-
-                            
-                    msg = 'Gelbooru is unavailable at this time'
-                    await ctx.respond(msg)
-                    return
-        else:
-            await ctx.respond('This command can only be used in NSFW channels')
-            return
+    #                msg = 'Gelbooru is unavailable at this time'
+    #                await ctx.respond(msg)
+    #                return
+    #    else:
+    #        await ctx.respond('This command can only be used in NSFW channels')
+    #        return
 					                    
 
 def setup(bot):
