@@ -313,7 +313,7 @@ class twitterCog(commands.Cog):
     @is_owner()
     async def posttweet(self, ctx, *, args):
         em = discord.Embed(title='Are you sure you want to tweet this?', description = args, colour=0x6aeb7b)
-        em.set_author(name='KawashiroLink (Admin Mode)' , icon_url=self.bot.user.avatar_url)
+        em.set_author(name='KawashiroLink (Admin Mode)')
         tweetconfirm = await ctx.send(embed=em)
         #tweetconfirm = await ctx.send('Are you sure you want to tweet this?')
         #add tick and X reactions for user to react to
