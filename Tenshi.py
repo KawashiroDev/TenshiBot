@@ -168,7 +168,7 @@ if (os.path.isdir(win_dir_check)) == False:
     print('[Startup] Running in production mode')
     bot_mode = 'Production'
     debugmode = False
-    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.messaging']#, 'Modules.cleverbot']#, 'Modules.slash_cmd']
+    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.messaging']#, 'Modules.cleverbot']#, 'Modules.slash_cmd']
 
 test = "test"
 
@@ -233,6 +233,13 @@ mentioned_nomsg = [
 "♪*I'll never find the sound of silence*♪",
 "♪*Stay where you are~*♪",
 "♪*Take my hand we drift away♪\n♪To a place beyond the stars♪*",
+]
+
+mentioned_nomsg_penny = [
+"Salutations",     
+"Salutations!",    
+"Salutations, Meat person",
+"Hello meat person",
 ]
 
 mentioned_nomsg_christmas = [
