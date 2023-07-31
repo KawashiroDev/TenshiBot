@@ -903,6 +903,12 @@ async def on_message(message):
             #run commands as normal in case someone already uses image commands and role mentions together
             await bot.process_commands(message)
 
+            
+        #check if Tenshi has mention only role and do nothing if true
+        role = discord.utils.get(message.guild.roles, name="mention_only")
+        if role in message.guild.me.roles:
+            return
+
     
         await message.channel.send(msg[7:29] + " has been sanae'd", file=discord.File('pics/sanaed.jpg'))
         print("[command] sanaed")
