@@ -30,11 +30,12 @@ import aiohttp
 import lxml
 import random
 import asyncio
-import twitter
+#import twitter
 import datetime
 import base64
 import os
 import pytz
+import tweepy
 
 
 from discord.ext import commands
@@ -52,10 +53,12 @@ tw_access = t_access.read()
 t_access_secret = open("Tokens/twitter_access_secret.txt", "r")
 tw_access_secret = t_access_secret.read()
 
-api = twitter.Api(consumer_key=tw_api,
+auth = tweepy.OAuth1UserHandler(consumer_key=tw_api,
 consumer_secret=tw_secret,
-access_token_key=tw_access,
+access_token=tw_access,
 access_token_secret=tw_access_secret)
+
+api = tweepy.API(auth)
 
 #url extractor stuff
 extractor = URLExtract()
@@ -182,7 +185,8 @@ class twitterCog(commands.Cog):
                 if ((reaction.emoji) == '\U00002705') and reaction.message.id == tweetconfirm.id:
                     #Profanity check tweet and add username before sending
                     finaltweet = ('[' + ctx.author.name + '] ' + pf.censor(asciitext))
-                    api.PostUpdate(finaltweet)
+                    #api.PostUpdate(finaltweet)
+                    api.update_status(finaltweet)
                     print('[tweet] "' + finaltweet + '" User ID: :' + str(ctx.author.id))
                     await ctx.send('Tweet Posted')
                     #DM me about the tweet if i need to go delete it
