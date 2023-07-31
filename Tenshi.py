@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.6.2'
+bot_version = '2.6.3'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -85,7 +85,7 @@ import traceback
 #import praw
 import lxml
 #import saucenaopy
-import twitter
+#import twitter
 import datetime
 #import playsound
 import async_cleverbot as ac
@@ -888,6 +888,57 @@ async def on_message(message):
     msg = message.content
     if enforce_en2 in message.guild.me.roles:
         return
+
+
+    #"sanaed" check
+    #check if the user is trying to @ someone (or something) using the sanae command
+    
+    if message.content.startswith('=sanae <@'):
+        #store the message content as a variable an add a blank space to account for people with nicknames
+        msg = message.content + ' '
+        
+        #check if the user is trying to rolemention
+        if "<@&" in msg:
+            #await message.channel.send("I can't sanae a role")
+            #run commands as normal in case someone already uses image commands and role mentions together
+            await bot.process_commands(message)
+
+    
+        await message.channel.send(msg[7:29] + " has been sanae'd", file=discord.File('pics/sanaed.jpg'))
+        print("[command] sanaed")
+        return
+
+    if message.content.startswith('<@!252442396879486976>sanae <@'):
+        #store the message content as a variable an add a blank space to account for people with nicknames
+        msg = message.content + ' '
+        
+        #check if the user is trying to rolemention
+        if "<@&" in msg:
+            #await message.channel.send("I can't sanae a role")
+            #run commands as normal in case someone already uses image commands and role mentions together
+            await bot.process_commands(message)
+
+    
+        await message.channel.send(msg[7:29] + " has been sanae'd", file=discord.File('pics/sanaed.jpg'))
+        print("[command] sanaed")
+        return
+
+    if message.content.startswith('<@252442396879486976>sanae <@'):
+        #store the message content as a variable an add a blank space to account for people with nicknames
+        msg = message.content + ' '
+        
+        #check if the user is trying to rolemention
+        if "<@&" in msg:
+            #await message.channel.send("I can't sanae a role")
+            #run commands as normal in case someone already uses image commands and role mentions together
+            await bot.process_commands(message)
+
+    
+        await message.channel.send(msg[7:29] + " has been sanae'd", file=discord.File('pics/sanaed.jpg'))
+        print("[command] sanaed")
+        return
+
+    
     
         
     await bot.process_commands(message)
@@ -1611,6 +1662,10 @@ async def hooray(ctx):
 @bot.command()
 async def thonk(ctx):
     await ctx.send(file=discord.File('pics/thonk.gif'))
+
+@bot.command()
+async def touhover(ctx):
+    await ctx.send(file=discord.File('pics/touhover.png'))
 
 
 #ai stuff
