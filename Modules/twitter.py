@@ -58,7 +58,7 @@ consumer_secret=tw_secret,
 access_token=tw_access,
 access_token_secret=tw_access_secret)
 
-api = tweepy.API(auth)
+client = tweepy.Client(auth)
 
 #url extractor stuff
 extractor = URLExtract()
@@ -186,12 +186,12 @@ class twitterCog(commands.Cog):
                     #Profanity check tweet and add username before sending
                     finaltweet = ('[' + ctx.author.name + '] ' + pf.censor(asciitext))
                     #api.PostUpdate(finaltweet)
-                    api.update_status(finaltweet)
+                    response = client.create_tweet(text=finaltweet)
                     print('[tweet] "' + finaltweet + '" User ID: :' + str(ctx.author.id))
                     await ctx.send('Tweet Posted')
                     #DM me about the tweet if i need to go delete it
                     yuyuko = await self.bot.fetch_user(166189271244472320)
-                    await yuyuko.send("**--A tweet was sent--** \nContents: " + finaltweet + "\nUnfiltered contents: " + asciitext + "\nUser ID: " + userid + "\nServer ID: " + serverid + "\nServer name: " + servername)
+                    await yuyuko.send("**--A tweet was sent--** \nContents: " + finaltweet + "\nUnfiltered contents: " + asciitext + "\nUser ID: " + userid + "\nServer ID: " + serverid + "\nServer name: " + servername + "\nTwitter response: " + response)
                     return
                 elif ((reaction.emoji) == '\U0000274e'):
                     await ctx.send('Operation canceled')
