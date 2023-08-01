@@ -155,7 +155,10 @@ if (os.path.isdir(win_dir_check)) == True:
     if bootsound == False:
         print('Loading program: TenshiBot.exe')
     if bootsound == True:
-        #playsound('Startup_98.wav', False)
+        #rest in pepperonis startup sound
+        #startupsound = os.path.dirname(__file__) + '\Entry_3DX+.mp3'
+        #playsound(startupsound, False)
+        #playsound("Startup_98.wav", False)
         print('Loading program: TenshiBot.exe')
     
 if ghost == True:
