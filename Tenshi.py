@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.6.3'
+bot_version = '2.6.3 R1'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -988,25 +988,21 @@ async def on_guild_remove(guild):
             await aioclient.post(url_dbl, data=payload, headers=headers_dbl)
     
 #help command
+#todo: figure out why command can no longer be used without eirin
 @bot.command()
 async def help(ctx, *, eirin):
     #help me eirin!
     #print (eirin)
     if eirin.lower() == "me eirin":
-        #await ctx.send("a")
-        patreons=bot.get_guild(hangoutid).get_role(patreonrole)
-        donators = patreons.members
-        membernames = [donators.name for donators in donators]
-        patreonlist = ", ".join(membernames)
-        hlp = open("txt/help.txt", "r")
-        help_cmd = hlp.read()
-        if patreonlist == "":
-            patreonlist = "Nobody :("
-            await ctx.send(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
-        else:
-            await ctx.send(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
+        em = discord.Embed(title='But why?', colour=0x606D97)
+        #em.set_author(icon_url=bot.user.avatar_url)
+        file = discord.File("pics/butwhy.jpg", filename="butwhy.jpg")
+        em.set_image(url="attachment://butwhy.jpg")
+        em.set_footer(text="Why tho?")
+        await ctx.send(file=file, embed=em)
+        #await ctx.send("https://www.youtube.com/watch?v=wEv7YzFfTFE")
         return
-    
+
     else:
         patreons=bot.get_guild(hangoutid).get_role(patreonrole)
         donators = patreons.members
@@ -1017,6 +1013,7 @@ async def help(ctx, *, eirin):
         if patreonlist == "":
             patreonlist = "Nobody :("
             await ctx.send(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
+            return
         else:
             await ctx.send(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
         return
