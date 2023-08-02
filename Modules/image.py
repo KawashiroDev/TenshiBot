@@ -226,7 +226,7 @@ class ImageCog(commands.Cog):
                         # sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                         sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
-                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                        sbooru_sauce = "[Twitter / X](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
                         sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
                     if "deviantart" in sbooru_sauce:
@@ -1136,7 +1136,7 @@ class ImageCog(commands.Cog):
                         # sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                         sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
-                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                        sbooru_sauce = "[Twitter / X](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
                         sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
                     if "deviantart" in sbooru_sauce:
@@ -1242,7 +1242,7 @@ class ImageCog(commands.Cog):
                         # sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                         sbooru_sauce = "[ʌᴉxᴉԀ](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
-                        sbooru_sauce = "[ɹǝʇʇᴉʍʇ](" + sbooru_sauce + ")"
+                        sbooru_sauce = "[X / ɹǝʇʇᴉʍʇ](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
                         sbooru_sauce = "[oɔᴉNoɔᴉN](" + sbooru_sauce + ")"
                     if "deviantart" in sbooru_sauce:
@@ -1621,7 +1621,7 @@ class ImageCog(commands.Cog):
                         # sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                         sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
-                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                        sbooru_sauce = "[Twitter / X](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
                         sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
                     if "deviantart" in sbooru_sauce:
@@ -1699,7 +1699,7 @@ class ImageCog(commands.Cog):
                         #else:
                         sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
-                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                        sbooru_sauce = "[Twitter / X](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
                         sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
                     if "deviantart" in sbooru_sauce:
@@ -1936,7 +1936,7 @@ class ImageCog(commands.Cog):
                         # sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                         sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
-                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                        sbooru_sauce = "[Twitter / X](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
                         sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
                     if "deviantart" in sbooru_sauce:
@@ -2203,7 +2203,7 @@ class ImageCog(commands.Cog):
                         # sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                         sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
-                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                        sbooru_sauce = "[Twitter / X](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
                         sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
                     if "deviantart" in sbooru_sauce:
@@ -2307,7 +2307,7 @@ class ImageCog(commands.Cog):
                         # sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                         sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
-                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                        sbooru_sauce = "[Twitter / X](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
                         sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
                     if "deviantart" in sbooru_sauce:
@@ -2410,7 +2410,7 @@ class ImageCog(commands.Cog):
                         # sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                         sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
-                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                        sbooru_sauce = "[Twitter / X](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
                         sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
                     if "deviantart" in sbooru_sauce:
@@ -2550,7 +2550,7 @@ class ImageCog(commands.Cog):
                         # sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                         sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
-                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                        sbooru_sauce = "[Twitter / X](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
                         sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
                     if "deviantart" in sbooru_sauce:
@@ -2630,7 +2630,7 @@ class ImageCog(commands.Cog):
                         #else:
                         sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
-                        sbooru_sauce = "[Twitter](" + sbooru_sauce + ")"
+                        sbooru_sauce = "[Twitter / X](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
                         sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
                     if "deviantart" in sbooru_sauce:
