@@ -279,6 +279,15 @@ playingstatus = [
 "Touhou Hisoutensoku",
 "Touhou SWR",
 "Team Fortress 2",
+"Portal 2",
+"Tekken 4",
+"Slipstream",
+"Teardown",
+"007 Nightfire",
+"007 Everything or Nothing",
+"007 Goldeneye",
+"Maximum Tune 3",
+"Half Life 2: Survivor",
 ]
 
 playingstatus_console = [
