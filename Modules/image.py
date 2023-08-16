@@ -2127,6 +2127,41 @@ class ImageCog(commands.Cog):
 
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
+    async def hisami(self, ctx):
+        em = discord.Embed(title='', description=' ', colour=0x583b91)
+        char = 'yomotsu_hisami'
+        await self.imagefetch(ctx, char, em, 0)
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
+    async def enoko(self, ctx):
+        em = discord.Embed(title='', description=' ', colour=0xc9cbf4)
+        char = 'mitsugashira_enoko'
+        await self.imagefetch(ctx, char, em, 0)
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
+    async def chiyari(self, ctx):
+        em = discord.Embed(title='', description=' ', colour=0xb0db99)
+        char = 'tenkajin_chiyari'
+        await self.imagefetch(ctx, char, em, 0)
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
+    async def zanmu(self, ctx):
+        em = discord.Embed(title='', description=' ', colour=0x66a35e)
+        char = 'nippaku_zanmu'
+        await self.imagefetch(ctx, char, em, 0)
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
+    async def biten(self, ctx):
+        em = discord.Embed(title='', description=' ', colour=0x0081f3)
+        char = 'son_biten'
+        await self.imagefetch(ctx, char, em, 0)
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def fumo(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'fumo_(doll)'
