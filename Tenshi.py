@@ -1530,6 +1530,9 @@ async def console(ctx):
 
 @bot.command()
 async def about(ctx):
+
+    debugmoderole = discord.utils.get(ctx.guild.roles, name="tenko_debugmode")
+    
     second = time.time() - st
     minute, second = divmod(second, 60)
     hour, minute = divmod(minute, 60)
@@ -1540,15 +1543,50 @@ async def about(ctx):
     servercount=str(len(bot.guilds))
     buildinfo="%s" % time.ctime(os.path.getmtime("Tenshi.py"))
     pycordver=(discord.__version__)
+
+    ramtotal = psutil.virtual_memory()[0]/(1024.0 ** 3)
+    ramavail = psutil.virtual_memory()[1]/(1024.0 ** 2)
+    rampercent = psutil.virtual_memory()[2]
+    ramused = psutil.virtual_memory()[3]
+    ramfree = psutil.virtual_memory()[4]
+
+    print(ramtotal)
+    print(ramavail)
+    print(rampercent)
+    print(ramused)
+    print(ramfree)
+
+    #get latest .py file in "TenshiBot" directory
+    #list_of_files = glob.glob('/.py') # * means all if need specific format then *.csv
+    #print(str(list_of_files))
+    #latest_file = max(list_of_files, key=os.path.getmtime)
+    #print(latest_file)
     
+    if debugmoderole in ctx.guild.me.roles:
+        debugmodetrigger = "Role"
+        em=discord.Embed(colour=0x00ffff)
+        em.set_author(name= bot.user.name + ' info')#, icon_url=bot.user.avatar_url)
+        em.add_field(name="Version", value=bot_version, inline=True)
+        em.add_field(name="Servercount", value=servercount, inline=True)
+        em.add_field(name="Uptime", value=uptime, inline=False)
+        em.add_field(name="Tenshi.py timestamp", value=buildinfo, inline=False)
+        em.add_field(name="Pycord version", value=pycordver, inline=False)
+        #em.add_field(name="Trigger", value=debugmodetrigger, inline=True)
+        em.add_field(name="Mode", value=bot_mode, inline=True)
+        em.add_field(name="RAM", value=rampercent, inline=True)
+
+        em.set_footer(text="Created by KawashiroDev")
+        await ctx.send(embed=em)
+        return
 
     em=discord.Embed(colour=0x00ffff)
     em.set_author(name= bot.user.name + ' info')#, icon_url=bot.user.avatar_url)
     em.add_field(name="Version", value=bot_version, inline=True)
     em.add_field(name="Servercount", value=servercount, inline=True)
     em.add_field(name="Uptime", value=uptime, inline=False)
-    em.add_field(name="Tenshi.py timestamp", value=buildinfo, inline=False)
-    em.add_field(name="Pycord version", value=pycordver, inline=False)
+    #em.add_field(name="Tenshi.py timestamp", value=buildinfo, inline=False)
+    #em.add_field(name="Updated on", value=buildinfo, inline=False)    
+    #em.add_field(name="Pycord version", value=pycordver, inline=False)
     em.set_footer(text="Created by KawashiroDev")
     await ctx.send(embed=em)
 
