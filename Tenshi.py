@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.6.3 R1'
+bot_version = '2.6.3 R2'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -1014,6 +1014,10 @@ async def help(ctx, *, eirin):
         await ctx.send(file=file, embed=em)
         #await ctx.send("https://www.youtube.com/watch?v=wEv7YzFfTFE")
         return
+
+    #if eirin.lower() == "games":
+        #await ctx.send("'Games' refers to models, simulations and games which have tactical and strategic applications.")
+        #return
 
     else:
         patreons=bot.get_guild(hangoutid).get_role(patreonrole)
