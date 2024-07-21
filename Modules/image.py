@@ -2274,7 +2274,7 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def youka(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
-        char = 'kazami_youka_(yokochu)'
+        char = 'kazami_youka_(yokochou)'
         booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorublacklist + '+' + 'char'
         embed_name = 'Character image'
         async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
