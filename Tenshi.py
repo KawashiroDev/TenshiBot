@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.6.3 R2'
+bot_version = '2.6.3'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -29,7 +29,7 @@ yt_member = 454051781371232291
 #enable to reduce Tenshi's data usage if running on slow wifi or 3g/4g
 limit_net = False
 
-#DM on boot (production only)
+#DM on boot (production only)a
 bootdm = True
 
 #Smart DM on boot
@@ -155,10 +155,7 @@ if (os.path.isdir(win_dir_check)) == True:
     if bootsound == False:
         print('Loading program: TenshiBot.exe')
     if bootsound == True:
-        #rest in pepperonis startup sound
-        #startupsound = os.path.dirname(__file__) + '\Entry_3DX+.mp3'
-        #playsound(startupsound, False)
-        #playsound("Startup_98.wav", False)
+        #playsound('Startup_98.wav', False)
         print('Loading program: TenshiBot.exe')
     
 if ghost == True:
@@ -279,15 +276,6 @@ playingstatus = [
 "Touhou Hisoutensoku",
 "Touhou SWR",
 "Team Fortress 2",
-"Portal 2",
-"Tekken 4",
-"Slipstream",
-"Teardown",
-"007 Nightfire",
-"007 Everything or Nothing",
-"007 Goldeneye",
-"Maximum Tune 3",
-"Half Life 2: Survivor",
 ]
 
 playingstatus_console = [
@@ -1000,25 +988,25 @@ async def on_guild_remove(guild):
             await aioclient.post(url_dbl, data=payload, headers=headers_dbl)
     
 #help command
-#todo: figure out why command can no longer be used without eirin
 @bot.command()
 async def help(ctx, *, eirin):
     #help me eirin!
     #print (eirin)
     if eirin.lower() == "me eirin":
-        em = discord.Embed(title='But why?', colour=0x606D97)
-        #em.set_author(icon_url=bot.user.avatar_url)
-        file = discord.File("pics/butwhy.jpg", filename="butwhy.jpg")
-        em.set_image(url="attachment://butwhy.jpg")
-        em.set_footer(text="Why tho?")
-        await ctx.send(file=file, embed=em)
-        #await ctx.send("https://www.youtube.com/watch?v=wEv7YzFfTFE")
+        #await ctx.send("a")
+        patreons=bot.get_guild(hangoutid).get_role(patreonrole)
+        donators = patreons.members
+        membernames = [donators.name for donators in donators]
+        patreonlist = ", ".join(membernames)
+        hlp = open("txt/help.txt", "r")
+        help_cmd = hlp.read()
+        if patreonlist == "":
+            patreonlist = "Nobody :("
+            await ctx.send(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
+        else:
+            await ctx.send(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
         return
-
-    #if eirin.lower() == "games":
-        #await ctx.send("'Games' refers to models, simulations and games which have tactical and strategic applications.")
-        #return
-
+    
     else:
         patreons=bot.get_guild(hangoutid).get_role(patreonrole)
         donators = patreons.members
@@ -1029,7 +1017,6 @@ async def help(ctx, *, eirin):
         if patreonlist == "":
             patreonlist = "Nobody :("
             await ctx.send(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
-            return
         else:
             await ctx.send(help_cmd + "**Patreon Supporters** ```" + patreonlist + " ```")
         return
@@ -1534,9 +1521,6 @@ async def console(ctx):
 
 @bot.command()
 async def about(ctx):
-
-    debugmoderole = discord.utils.get(ctx.guild.roles, name="tenko_debugmode")
-    
     second = time.time() - st
     minute, second = divmod(second, 60)
     hour, minute = divmod(minute, 60)
@@ -1547,50 +1531,15 @@ async def about(ctx):
     servercount=str(len(bot.guilds))
     buildinfo="%s" % time.ctime(os.path.getmtime("Tenshi.py"))
     pycordver=(discord.__version__)
-
-    ramtotal = psutil.virtual_memory()[0]/(1024.0 ** 3)
-    ramavail = psutil.virtual_memory()[1]/(1024.0 ** 2)
-    rampercent = psutil.virtual_memory()[2]
-    ramused = psutil.virtual_memory()[3]
-    ramfree = psutil.virtual_memory()[4]
-
-    print(ramtotal)
-    print(ramavail)
-    print(rampercent)
-    print(ramused)
-    print(ramfree)
-
-    #get latest .py file in "TenshiBot" directory
-    #list_of_files = glob.glob('/.py') # * means all if need specific format then *.csv
-    #print(str(list_of_files))
-    #latest_file = max(list_of_files, key=os.path.getmtime)
-    #print(latest_file)
     
-    if debugmoderole in ctx.guild.me.roles:
-        debugmodetrigger = "Role"
-        em=discord.Embed(colour=0x00ffff)
-        em.set_author(name= bot.user.name + ' info')#, icon_url=bot.user.avatar_url)
-        em.add_field(name="Version", value=bot_version, inline=True)
-        em.add_field(name="Servercount", value=servercount, inline=True)
-        em.add_field(name="Uptime", value=uptime, inline=False)
-        em.add_field(name="Tenshi.py timestamp", value=buildinfo, inline=False)
-        em.add_field(name="Pycord version", value=pycordver, inline=False)
-        #em.add_field(name="Trigger", value=debugmodetrigger, inline=True)
-        em.add_field(name="Mode", value=bot_mode, inline=True)
-        em.add_field(name="RAM", value=rampercent, inline=True)
-
-        em.set_footer(text="Created by KawashiroDev")
-        await ctx.send(embed=em)
-        return
 
     em=discord.Embed(colour=0x00ffff)
     em.set_author(name= bot.user.name + ' info')#, icon_url=bot.user.avatar_url)
     em.add_field(name="Version", value=bot_version, inline=True)
     em.add_field(name="Servercount", value=servercount, inline=True)
     em.add_field(name="Uptime", value=uptime, inline=False)
-    #em.add_field(name="Tenshi.py timestamp", value=buildinfo, inline=False)
-    #em.add_field(name="Updated on", value=buildinfo, inline=False)    
-    #em.add_field(name="Pycord version", value=pycordver, inline=False)
+    em.add_field(name="Tenshi.py timestamp", value=buildinfo, inline=False)
+    em.add_field(name="Pycord version", value=pycordver, inline=False)
     em.set_footer(text="Created by KawashiroDev")
     await ctx.send(embed=em)
 
