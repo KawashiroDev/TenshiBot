@@ -573,7 +573,7 @@ class ImageCog(commands.Cog):
 
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
-    async def akyuu(self, ctx):
+    async def akyuu2(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'hieda_no_akyuu'
         await self.imagefetch(ctx, char, em, 0)
@@ -1265,6 +1265,112 @@ class ImageCog(commands.Cog):
                     em.add_field(name="ǝɔɹnos ǝƃɐɯI", value=sbooru_sauce, inline=False)
                     em.add_field(name="pI nɹooqפ", value=sbooru_id, inline=True)
                     em.add_field(name="suoᴉsuǝɯᴉp", value=str(width) + "x" + str(height), inline=True)
+                    # em.add_field(name="RNG", value=score_rng, inline=True)
+                    await asyncio.sleep(0.15)
+                    sbooru_img = await ctx.send(embed=em)
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
+    async def akyuu(self, ctx):
+        score_rng = random.randint(0,5)
+        em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+        char = 'hieda_no_akyuu+score:>=' + str(score_rng)
+        moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
+        if moderate_role in ctx.guild.me.roles:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_moderate + '+' + char
+            embed_name = 'It is good day to be Not Dead'
+            em.set_footer(text="Moderate mode is enabled on this server, image may not be SFW")
+        else:
+            booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
+            embed_name = 'It is good day to be Not Dead'
+        async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
+            async with session.get('http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_strict + badartists + '+' + char) as r:
+                if r.status == 200:
+                    soup = BeautifulSoup(await r.text(), "lxml")
+                    num = int(soup.find('posts')['count'])
+                    maxpage = int(round(num / 100))
+                    page = random.randint(0, maxpage)
+                    t = soup.find('posts')
+                    p = t.find_all('post')
+                    source = ((soup.find('post'))('source'))
+                    if num < 100:
+                        pic = p[random.randint(0, num - 1)]
+                    elif page == maxpage:
+                        pic = p[random.randint(0, 99)]
+                    else:
+                        pic = p[random.randint(0, 99)]
+                    img_url = pic('file_url')
+                    #for link in img_url:
+                        #print(img_url.text)
+                    #and cue the jankyness
+                    #bs4 does have a way to do this
+                    url_strip_start = str(img_url).strip('[<file_url>')
+                    raw_url = str(url_strip_start).strip('</file_url>]')
+                    #print(raw_url)
+                    
+                    img_id = pic('id')
+                    id_strip_start = str(img_id).strip('[<id>')
+                    sbooru_id = str(id_strip_start).strip('</id>]')
+                    #print(sbooru_id)
+                    
+                    img_tags = pic('tags')
+                    
+                    img_sauce = pic('source')
+                    if img_sauce == '':
+                        img_sauce = '[<source>No source listed</source>]'
+                    source_strip_start = str(img_sauce).strip('[<source>')
+                    sbooru_sauce = str(source_strip_start).strip('</source>]')
+                    #print(sbooru_sauce)
+                    
+                    # sbooru_sauce = "https://i.pximg.net/img-original/img/2020/12/25/18/14/37/86528174_p0.png"
+                    img_width = pic('width')
+                    
+                    width_strip_start = str(img_width).strip('[<width>')
+                    width = str(width_strip_start).strip('</width>]')
+                    
+                    img_height = pic('height')
+                    height_strip_start = str(img_height).strip('[<height>')
+                    height = str(height_strip_start).strip('</height>]')
+                    
+                    creator = pic('creator_id')
+                    if sbooru_sauce == '':
+                        sbooru_sauce = 'No source listed'
+                    if "hentai" in sbooru_sauce:
+                        sbooru_sauce = "Source hidden\n(NSFW website)"
+                    if "pixiv" in sbooru_sauce:
+                        # if "img" in sbooru_sauce:
+                        # extract pixiv id
+                        # pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                        # print (pixivid)
+                        # reconstruct pixiv url
+                        # sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                        # else:
+                        # sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                        sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
+                    if "twitter" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter / X](" + sbooru_sauce + ")"
+                    if "nicovideo" in sbooru_sauce:
+                        sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
+                    if "deviantart" in sbooru_sauce:
+                        sbooru_sauce = "[Deviantart](" + sbooru_sauce + ")"
+                    # try to detect pixiv direct image links
+                    # if "img" in sbooru_sauce:
+                    # extract pixiv id
+                    # pixivid = re.search('(?<!\d)(\d{8})(?!\d)', sbooru_sauce)
+                    # check if there's an actual pixiv id in the source link or not
+                    # if pixivid == "":
+                    # sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    # else:
+                    # reconstruct pixiv url
+                    # sbooru_sauce = "[Pixiv](http://www.pixiv.net/member_illust.php?mode=medium&illust_id=" + pixivid.group(1) + ")"
+                    # else:
+                    # sbooru_sauce = "[Source](" + sbooru_sauce + ")"
+                    # em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
+                    em.set_author(name=embed_name)
+                    em.set_image(url=booruappend + str(raw_url))
+                    em.add_field(name="Image source", value=sbooru_sauce, inline=False)
+                    em.add_field(name="Gbooru ID", value=sbooru_id, inline=True)
+                    em.add_field(name="Dimensions", value=str(width) + "x" + str(height), inline=True)
                     # em.add_field(name="RNG", value=score_rng, inline=True)
                     await asyncio.sleep(0.15)
                     sbooru_img = await ctx.send(embed=em)
@@ -2276,7 +2382,7 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def zun(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
-        char = 'zun'
+        char = 'zun+-zun_(style)'
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_moderate + '+' + char
