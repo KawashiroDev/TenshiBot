@@ -2734,7 +2734,7 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def ramlethal(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0xcfd0d4)
-        char = 'ramlethal_valentine'
+        char = 'ramlethal_valentine+-navel '
         await self.imagefetch(ctx, char, em, 0)                    
 
 #oj_img
