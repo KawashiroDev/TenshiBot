@@ -148,7 +148,7 @@ if (os.path.isdir(win_dir_check)) == True:
     print('[Startup] Detected a windows PC, running in debug mode')
     bot_mode = 'Debug'
     debugmode = True
-    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.twitter', 'Modules.debug', 'Modules.messaging']#, 'Modules.cleverbot']#, 'Modules.slash_cmd']
+    initial_extensions = ['Modules.image', 'Modules.booru', 'Modules.debug', 'Modules.messaging']#, 'Modules.cleverbot']#, 'Modules.slash_cmd']
     print('[Debug] /Modules/debug.py loaded')
     print('')
     print('Welcome to CelestialOS 98...')
