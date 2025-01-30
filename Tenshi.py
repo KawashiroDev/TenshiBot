@@ -186,7 +186,7 @@ mentioned_nomsg = [
 "You picked the wrong heaven fool!",
 "A red spy is in the base?!",
 "Eh?!, some MrBeast guy just gave Shion ¥100,000",
-"You seen John Connor around here?",
+#"You seen John Connor around here?",
 #"CrashOverride? What kind of username is that?",
 #"ZeroCool? Sounds like one of Cirno's aliases",
 "Wait... Yukari is here?",
@@ -202,8 +202,12 @@ mentioned_nomsg = [
 "?!",
 "That's not it!",
 "Da Ze~... or whatever Marisa usually says",
-"Did you know that Hector is gonna be running three Honda Civics with Spoon engines.",
+#"Did you know that Hector is gonna be running three Honda Civics with Spoon engines.",
+"Don’t let this distract you from the fact that Hector is going to be running three Honda civics with spoon engines, and on top of that, he just went into Harry’s and bought three t66 turbos with NOS, and a motec exhaust system."
 "Do you have time to talk about our lord and saviour Byakuren?",
+"Greetings Professor Falken.",
+"Shall we play a game?",
+
 
 
 "*Stares*",
