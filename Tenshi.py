@@ -71,6 +71,12 @@ win_dir_check = '/windows'
 #Spicetools URL
 spiceURL = "http://onlyone.cab/downloads/spicetools-latest.zip"
 
+#Ollama config (tenshichat command)
+#URL
+ollamaurl = "http://haruhi:11434/api/generate"
+#Model
+chatmodel = "llama3.2"
+
 import discord
 #import requests
 import aiohttp
@@ -99,6 +105,8 @@ import io
 import logging
 import setproctitle
 import psutil
+import json
+
 
 from discord.ext import commands
 #from discord.commands import slash_command
@@ -118,6 +126,9 @@ from zipfile import ZipFile
 #from discord_slash.utils.manage_components import create_button, create_actionrow
 #from discord_slash.model import ButtonStyle
 #from text_to_speech import speak
+#from ollama import chat
+#from ollama import ChatResponse
+#from ollama import AsyncClient
 
 #https://www.microsoft.com/en-us/download/details.aspx?id=48159
 from profanityfilter import ProfanityFilter
@@ -1242,6 +1253,52 @@ async def content_test(ctx):
     return
     #check if
     #if str(message.guild.me.id) in str(history):
+
+
+@bot.command()
+@is_owner()
+async def tenshichat(ctx, *, prompt: str):
+    print("[Debug] AI prompt = " + prompt)
+    
+    #trigger typing state
+    async with ctx.typing():
+
+        full_response = ""
+        typing_task = None
+
+    async with aiohttp.ClientSession() as session:
+        async with session.post(ollamaurl, json={"model": chatmodel, "prompt": prompt}) as response:
+            print("[Debug] Posted prompt to server")
+
+            async def keep_typing():
+                while True:
+                    async with ctx.typing():
+                        await asyncio.sleep(5)
+                        print("[Debug] Typing task running")
+
+            typing_task = asyncio.create_task(keep_typing())
+            print("[Debug] Started typing task")
+
+            async for line in response.content:
+                line_text = line.decode("utf-8").strip()
+                print("[Debug] Raw response = " + line_text)
+                
+                try:
+                    data = json.loads(line_text)
+                    if "response" in data:
+                        full_response += data["response"]
+                except json.JSONDecodeError:
+                    print("[Debug] JSON error on line:", line_text)
+
+
+            typing_task.cancel()
+            print("[Debug] Stopped typing task")
+    if full_response:
+        print("[Debug] Full response = " + full_response)
+        await ctx.send(full_response[:2000])
+    else:
+        await ctx.send("Failed")
+        return
 
 @bot.command()
 async def honk(ctx):
