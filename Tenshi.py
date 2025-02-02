@@ -120,7 +120,7 @@ from datetime import datetime, timedelta, timezone
 from langdetect import detect
 from langdetect import detect_langs
 from langdetect import DetectorFactory
-from github import Github
+#from github import Github
 from zipfile import ZipFile
 #from discord_slash import SlashCommand, SlashContext
 #from discord_slash.utils.manage_components import create_button, create_actionrow
@@ -395,9 +395,9 @@ st = time.time()
 
 pf = ProfanityFilter()
 
-git = open("Tokens/github.txt", "r")
-git_token = git.read()
-g = Github(git_token)
+#git = open("Tokens/github.txt", "r")
+#git_token = git.read()
+#g = Github(git_token)
 
 
 #url extractor stuff
@@ -957,6 +957,15 @@ async def on_message(message):
     
         await message.channel.send(msg[7:29] + " has been sanae'd", file=discord.File('pics/sanaed.jpg'))
         print("[command] sanaed")
+        return
+
+
+#ollama trigger
+#check if in TenshiBot Hangout
+    role = discord.utils.get(message.guild.roles, name="tenko_skynet")
+    if message.guild.id == int('273086604866748426'):# and message.content.startswith('<@!252442396879486976>'):
+        print("test")
+        await bot.process_commands(message)
         return
 
     
