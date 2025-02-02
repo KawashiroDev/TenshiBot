@@ -961,8 +961,9 @@ async def on_message(message):
 
 
 #ollama trigger
-#check if in TenshiBot Hangout
+    #Number 5 is alive
     role = discord.utils.get(message.guild.roles, name="tenko_johnny5")
+    #check if in TenshiBot Hangout
     if message.guild.id == int('273086604866748426'):# and message.content.startswith('<@!252442396879486976>'):
         print("test")
         await bot.process_commands(message)
