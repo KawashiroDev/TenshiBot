@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.6.3'
+bot_version = '2.6.4'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -1276,18 +1276,18 @@ async def tenshichat(ctx, *, prompt: str):
         full_response = ""
         typing_task = None
 
+        async def keep_typing():
+            while True:
+                async with ctx.typing():
+                    await asyncio.sleep(5)
+                    print("[Debug] Typing task running")
+
+        typing_task = asyncio.create_task(keep_typing())
+        print("[Debug] Started typing task")
+
     async with aiohttp.ClientSession() as session:
         async with session.post(ollamaurl, json={"model": chatmodel, "prompt": prompt}) as response:
             print("[Debug] Posted prompt to server")
-
-            async def keep_typing():
-                while True:
-                    async with ctx.typing():
-                        await asyncio.sleep(5)
-                        print("[Debug] Typing task running")
-
-            typing_task = asyncio.create_task(keep_typing())
-            print("[Debug] Started typing task")
 
             async for line in response.content:
                 line_text = line.decode("utf-8").strip()
