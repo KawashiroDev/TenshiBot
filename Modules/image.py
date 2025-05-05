@@ -2266,6 +2266,27 @@ class ImageCog(commands.Cog):
         char = 'son_biten'
         await self.imagefetch(ctx, char, em, 0)
 
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
+    async def ubame(self, ctx):
+        em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+        char = 'chirizuka_ubame'
+        await self.imagefetch(ctx, char, em, 0)
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
+    async def chimi(self, ctx):
+        em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+        char = 'houjuu_chimi'
+        await self.imagefetch(ctx, char, em, 0)
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
+    async def nareko(self, ctx):
+        em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+        char = 'michigami_nareko'
+        await self.imagefetch(ctx, char, em, 0)
+
 #    @commands.command()
 #    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
 #    async def zun(self, ctx):
