@@ -2863,7 +2863,7 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def ramlethal(self, ctx):
         score_rng = random.randint(0,5)
-        em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+        em = discord.Embed(title='', description=' ', colour=0xcfd0d4)
         char = 'ramlethal_valentine+-navel '
         moderate_role = discord.utils.get(ctx.guild.roles, name="tenko_moderatemode")
         if moderate_role in ctx.guild.me.roles:
