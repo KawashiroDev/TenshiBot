@@ -2289,6 +2289,27 @@ class ImageCog(commands.Cog):
 
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
+    async def ariya(self, ctx):
+        em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+        char = 'iwanaga_ariya'
+        await self.imagefetch(ctx, char, em, 0)
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
+    async def asama(self, ctx):
+        em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+        char = 'yuiman_asama'
+        await self.imagefetch(ctx, char, em, 0)
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
+    async def nina(self, ctx):
+        em = discord.Embed(title='', description=' ', colour=0x42D4F4)
+        char = 'watari_nina'
+        await self.imagefetch(ctx, char, em, 0)
+
+    @commands.command()
+    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def chimi(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
         char = 'houjuu_chimi'
