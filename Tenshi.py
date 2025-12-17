@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.6.4 R1'
+bot_version = '2.6.4 R2'
 
 #Owner ID
 ownerid = 166189271244472320
@@ -76,6 +76,13 @@ spiceURL = "http://onlyone.cab/downloads/spicetools-latest.zip"
 ollamaurl = "http://haruhi:11434/api/generate"
 #Model
 chatmodel = "llama3.2"
+
+#Tenshi's filepath
+#Has to be double backslashes... Because python
+filepath = '\\Users\\Harry\\Documents\\GitHub\\TenshiBot\\'
+filepath_actual = "\\root\\TenshiBot\\"
+
+
 
 import discord
 #import requests
@@ -149,6 +156,23 @@ setproctitle.setproctitle('Tenshi')
 #handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 #logger.addHandler(handler)
 
+#Last modified time checking
+allfiles = []
+
+#Check Tenshi's dir
+#for root, dirs, files in os.walk(filepath):
+#    for file in files:
+#        file_path = os.path.join(root, file)
+#        if os.path.isfile(file_path):
+#            mtime = os.path.getmtime(file_path)
+            #print (mtime)
+#            allfiles.append((mtime, file_path))
+            
+        #find the latest file
+#        latest_file, newest_file = max(allfiles)
+#        lastupdate = datetime.fromtimestamp(latest_file)
+    
+        #print(f"[Debug] Last Update: {lastupdate.strftime('%Y-%m-%d %H:%M:%S')}")
 
 pf = ProfanityFilter()
 
@@ -1587,8 +1611,8 @@ async def console(ctx):
     result = subprocess.check_output([cmd], stderr=subprocess.STDOUT)
     #os.system(ctx.message.content)
     await ctx.send(result)
-
     
+
 
 @bot.command()
 async def about(ctx):
@@ -1610,9 +1634,10 @@ async def about(ctx):
     em.add_field(name="Servercount", value=servercount, inline=True)
     em.add_field(name="Uptime", value=uptime, inline=False)
     em.add_field(name="Tenshi.py timestamp", value=buildinfo, inline=False)
-    em.add_field(name="Pycord version", value=pycordver, inline=False)
+    #em.add_field(name="Pycord version", value=pycordver, inline=False)
     em.set_footer(text="Created by KawashiroDev")
     await ctx.send(embed=em)
+
 
 @bot.command()
 async def about_adv(ctx):    
