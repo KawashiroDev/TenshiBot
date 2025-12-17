@@ -8,7 +8,7 @@
 bot_variant = 'slipstream'
 
 #Version
-bot_version = '2.6.4'
+bot_version = '2.6.4 R1'
 
 #Owner ID
 ownerid = 166189271244472320
