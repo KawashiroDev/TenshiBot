@@ -1656,7 +1656,7 @@ async def about(ctx):
     em.add_field(name="Servercount", value=servercount, inline=True)
     em.add_field(name="Uptime", value=uptime, inline=False)
     #em.add_field(name="Tenshi.py timestamp", value=buildinfo, inline=False)
-    em.add_field(name="Last update", value=lastupdate_date, inline=False)
+    #em.add_field(name="Last update", value=lastupdate_date, inline=False)
     #em.add_field(name="Pycord version", value=pycordver, inline=False)
     em.set_footer(text="Created by KawashiroDev")
     await ctx.send(embed=em)
