@@ -160,19 +160,36 @@ setproctitle.setproctitle('Tenshi')
 allfiles = []
 
 #Check Tenshi's dir
-#for root, dirs, files in os.walk(filepath):
-#    for file in files:
-#        file_path = os.path.join(root, file)
-#        if os.path.isfile(file_path):
-#            mtime = os.path.getmtime(file_path)
+for root, dirs, files in os.walk(filepath):
+    for file in files:
+        file_path = os.path.join(root, file)
+        if os.path.isfile(file_path):
+            mtime = os.path.getmtime(file_path)
             #print (mtime)
-#            allfiles.append((mtime, file_path))
+            allfiles.append((mtime, file_path))
             
         #find the latest file
-#        latest_file, newest_file = max(allfiles)
-#        lastupdate = datetime.fromtimestamp(latest_file)
+        latest_file, newest_file = max(allfiles)
+        lastupdate = datetime.fromtimestamp(latest_file)
     
         #print(f"[Debug] Last Update: {lastupdate.strftime('%Y-%m-%d %H:%M:%S')}")
+        #print(lastupdate)
+        #store the value in a text file
+        lastupdate_txt = open("Config/Tenshi/last_update.txt", "w")
+        #each line in lastupdate overwites the last one so there's only the last line actually written to that file
+        #this somehow works out for what i need it for
+        lastupdate_txt.write(str(lastupdate))
+        lastupdate_txt.close()
+        
+#print a message saying it's done outside the for loop
+print ("[Startup] Written date to Config/Tenshi/last_update.txt")
+
+#now open it again to read it
+#lastupdate_txt = open("Config/Tenshi/last_update.txt", "r")
+#filecontents = lastupdate_txt.read()
+#print (filecontents)
+#lastupdate_txt.close()
+        
 
 pf = ProfanityFilter()
 
@@ -1626,6 +1643,11 @@ async def about(ctx):
     servercount=str(len(bot.guilds))
     buildinfo="%s" % time.ctime(os.path.getmtime("Tenshi.py"))
     pycordver=(discord.__version__)
+    lastupdate_txt = open("Config/Tenshi/last_update.txt", "r")
+    lastupdate_date = lastupdate_txt.read()[:-7]
+    lastupdate_txt.close()
+
+
     
 
     em=discord.Embed(colour=0x00ffff)
@@ -1633,7 +1655,8 @@ async def about(ctx):
     em.add_field(name="Version", value=bot_version, inline=True)
     em.add_field(name="Servercount", value=servercount, inline=True)
     em.add_field(name="Uptime", value=uptime, inline=False)
-    em.add_field(name="Tenshi.py timestamp", value=buildinfo, inline=False)
+    #em.add_field(name="Tenshi.py timestamp", value=buildinfo, inline=False)
+    em.add_field(name="Last update", value=lastupdate_date, inline=False)
     #em.add_field(name="Pycord version", value=pycordver, inline=False)
     em.set_footer(text="Created by KawashiroDev")
     await ctx.send(embed=em)
