@@ -175,11 +175,20 @@ for root, dirs, files in os.walk(filepath):
         #print(f"[Debug] Last Update: {lastupdate.strftime('%Y-%m-%d %H:%M:%S')}")
         #print(lastupdate)
         #store the value in a text file
-        lastupdate_txt = open("Config/Tenshi/last_update.txt", "w")
-        #each line in lastupdate overwites the last one so there's only the last line actually written to that file
-        #this somehow works out for what i need it for
-        lastupdate_txt.write(str(lastupdate))
-        lastupdate_txt.close()
+        if (os.path.isdir(win_dir_check)) == True:
+            #print("windows")
+            lastupdate_txt = open("Config/Tenshi/last_update.txt", "w")
+            #each line in lastupdate overwites the last one so there's only the last line actually written to that file
+            #this somehow works out for what i need it for
+            lastupdate_txt.write(str(lastupdate))
+            lastupdate_txt.close()
+
+        if (os.path.isdir(win_dir_check)) == False:
+            #also doesn't write the file on linux for some reason
+            #print("not windows")
+            lastupdate_txt = open("/root/TenshiBot/Config/Tenshi/last_update.txt", "w")
+            lastupdate_txt.write(str(lastupdate))
+            lastupdate_txt.close()
         
 #print a message saying it's done outside the for loop
 print ("[Startup] Written date to Config/Tenshi/last_update.txt")
