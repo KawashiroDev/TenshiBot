@@ -79,8 +79,8 @@ chatmodel = "llama3.2"
 
 #Tenshi's filepath
 #Has to be double backslashes... Because python
-filepath = '\\Users\\Harry\\Documents\\GitHub\\TenshiBot\\'
-filepath_actual = "\\root\\TenshiBot\\"
+filepath_debug = '\\Users\\Harry\\Documents\\GitHub\\TenshiBot\\'
+filepath_server = "\\root\\TenshiBot\\"
 
 
 
@@ -113,6 +113,7 @@ import logging
 import setproctitle
 import psutil
 import json
+import aiofile
 
 
 from discord.ext import commands
@@ -159,6 +160,12 @@ setproctitle.setproctitle('Tenshi')
 #Last modified time checking
 allfiles = []
 
+if (os.path.isdir(win_dir_check)) == True:
+    filepath = filepath_debug
+
+if (os.path.isdir(win_dir_check)) == False:
+    filepath = filepath_server
+    
 #Check Tenshi's dir
 for root, dirs, files in os.walk(filepath):
     for file in files:
