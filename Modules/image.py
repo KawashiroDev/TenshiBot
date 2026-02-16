@@ -12,7 +12,6 @@ import random
 import asyncio
 import twitter
 import re
-import aiofile
 import os
 
 from discord.ext import commands
