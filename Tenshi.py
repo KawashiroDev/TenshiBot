@@ -113,7 +113,6 @@ import logging
 import setproctitle
 import psutil
 import json
-import aiofile
 
 
 from discord.ext import commands
