@@ -244,6 +244,10 @@ class ImageCog(commands.Cog):
                         sbooru_sauce = "[Pixiv](" + sbooru_sauce + ")"
                     if "twitter" in sbooru_sauce:
                         sbooru_sauce = "[Twitter / X](" + sbooru_sauce + ")"
+                    if "x.com" in sbooru_sauce:
+                        sbooru_sauce = "[Twitter / X](" + sbooru_sauce + ")"
+                    if "bsky.app" in sbooru_sauce:
+                        sbooru_sauce = "[Bluesky](" + sbooru_sauce + ")"
                     if "nicovideo" in sbooru_sauce:
                         sbooru_sauce = "[NicoNico](" + sbooru_sauce + ")"
                     if "deviantart" in sbooru_sauce:
