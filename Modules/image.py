@@ -12,6 +12,8 @@ import random
 import asyncio
 import twitter
 import re
+import aiofile
+import os
 
 from discord.ext import commands
 from bs4 import BeautifulSoup
@@ -140,6 +142,16 @@ g_api = gbooru_api.read()
 gbooru_user = open("Tokens/gelbooru_userid.txt", "r")
 g_user = gbooru_user.read()
 
+
+#http headers
+#https://x.com/gelbooru/status/2023412352482480467
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+    "Referer": "https://gelbooru.com/",
+    "Accept": "application/json, text/plain, */*",
+    "Accept-Language": "en-US,en;q=0.9",
+}
+
 class ImageCog(commands.Cog):
 
     def __init__(self, bot):
@@ -161,8 +173,10 @@ class ImageCog(commands.Cog):
             booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + boorutags_base + badtags_strict + badartists + '+' + char
             embed_name = 'Character image'
         async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
-            async with session.get(booruurl) as r:
-                # print(booruurl)
+            async with session.get(booruurl, headers=headers) as r:
+                print(booruurl)
+                print(r.status)
+                print(r)
                 if r.status == 200:
                     soup = BeautifulSoup(await r.text(), "lxml")
                     num = int(soup.find('posts')['count'])
@@ -178,12 +192,16 @@ class ImageCog(commands.Cog):
                     else:
                         pic = p[random.randint(0, 99)]
                     img_url = pic('file_url')
+                    p_img_url = pic('preview_url')
                     #for link in img_url:
                         #print(img_url.text)
                     #and cue the jankyness
                     #bs4 does have a way to do this
                     url_strip_start = str(img_url).strip('[<file_url>')
                     raw_url = str(url_strip_start).strip('</file_url>]')
+                    #also extract the preview url
+                    p_url_strip_start = str(p_img_url).strip('[<preview_url>')
+                    p_raw_url = str(p_url_strip_start).strip('</preview_url>]')
                     #print(raw_url)
                     
                     img_id = pic('id')
@@ -245,13 +263,29 @@ class ImageCog(commands.Cog):
                     # sbooru_sauce = "[Source](" + sbooru_sauce + ")"
                     # em.set_author(name='Character Image', icon_url=bot.user.avatar_url)
                     em.set_author(name=embed_name)
-                    em.set_image(url=booruappend + str(raw_url))
+                    #em.set_image(url=booruappend + str(raw_url))
                     em.add_field(name="Image source", value=sbooru_sauce, inline=False)
                     em.add_field(name=idtext, value=sbooru_id, inline=True)
                     em.add_field(name="Dimensions", value=str(width) + "x" + str(height), inline=True)
                     # em.add_field(name="RNG", value=score_rng, inline=True)
                     await asyncio.sleep(0.15)
-                    sbooru_img = await ctx.send(embed=em)
+                    #print(booruappend + str(raw_url))
+                    imageurl=booruappend + str(raw_url)
+                    p_imageurl=booruappend + str(raw_url)
+
+                    #gelbooru workaround. They no longer allow direct linking to the image url
+                    #janky test using requests
+                    #get the preview image url. smaller image size used for thumbnails, should use less bandwith?
+                    print(p_imageurl)
+                    #download the image using the same headers as before otherwise gbooru will redirect to the image page
+                    r = requests.get(p_imageurl, headers=headers)
+                    #save as image.jpg for testing
+                    with open('image.jpg', 'wb') as f:
+                        f.write(r.content)
+                    #attach image.jpg to the embed
+                    file = discord.File("image.jpg", filename="image.jpg")
+                    em.set_image(url="attachment://image.jpg")    
+                    sbooru_img = await ctx.send(file=file, embed=em)
 
 
 #landscape
