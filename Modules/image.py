@@ -3212,7 +3212,7 @@ class ImageCog(commands.Cog):
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
     async def oj(self, ctx):
         em = discord.Embed(title='', description=' ', colour=0x42D4F4)
-        char = '100_percent_orange_juice'
+        char = '100%_orange_juice'
         booruurl = 'http://' + booru + '/index.php?page=dapi&s=post&q=index&api_key=' + g_api + '&user_id=' + g_user + '&tags=' + 'char'
         embed_name = 'Character image'
         async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(verify_ssl=False)) as session:
