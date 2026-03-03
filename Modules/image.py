@@ -1198,7 +1198,23 @@ class ImageCog(commands.Cog):
                     em.add_field(name="ᴰᶦᵐᵉⁿˢᶦᵒⁿˢ", value=str(width) + "x" + str(height), inline=True)
                     # em.add_field(name="RNG", value=score_rng, inline=True)
                     await asyncio.sleep(0.15)
-                    sbooru_img = await ctx.send(embed=em)
+                    #print(booruappend + str(raw_url))
+                    imageurl=booruappend + str(raw_url)
+                    p_imageurl=booruappend + str(raw_url)
+
+                    #gelbooru workaround. They no longer allow direct linking to the image url
+                    #janky test using requests
+                    #get the preview image url. smaller image size used for thumbnails, should use less bandwith?
+                    print(p_imageurl)
+                    #download the image using the same headers as before otherwise gbooru will redirect to the image page
+                    r = requests.get(p_imageurl, headers=headers)
+                    #save as image.jpg for testing
+                    with open('image.jpg', 'wb') as f:
+                        f.write(r.content)
+                    #attach image.jpg to the embed
+                    file = discord.File("image.jpg", filename="image.jpg")
+                    em.set_image(url="attachment://image.jpg")    
+                    sbooru_img = await ctx.send(file=file, embed=em)
 
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
@@ -1304,7 +1320,23 @@ class ImageCog(commands.Cog):
                     em.add_field(name="suoᴉsuǝɯᴉp", value=str(width) + "x" + str(height), inline=True)
                     # em.add_field(name="RNG", value=score_rng, inline=True)
                     await asyncio.sleep(0.15)
-                    sbooru_img = await ctx.send(embed=em)
+                    #print(booruappend + str(raw_url))
+                    imageurl=booruappend + str(raw_url)
+                    p_imageurl=booruappend + str(raw_url)
+
+                    #gelbooru workaround. They no longer allow direct linking to the image url
+                    #janky test using requests
+                    #get the preview image url. smaller image size used for thumbnails, should use less bandwith?
+                    print(p_imageurl)
+                    #download the image using the same headers as before otherwise gbooru will redirect to the image page
+                    r = requests.get(p_imageurl, headers=headers)
+                    #save as image.jpg for testing
+                    with open('image.jpg', 'wb') as f:
+                        f.write(r.content)
+                    #attach image.jpg to the embed
+                    file = discord.File("image.jpg", filename="image.jpg")
+                    em.set_image(url="attachment://image.jpg")    
+                    sbooru_img = await ctx.send(file=file, embed=em)
 
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
@@ -1410,7 +1442,23 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Dimensions", value=str(width) + "x" + str(height), inline=True)
                     # em.add_field(name="RNG", value=score_rng, inline=True)
                     await asyncio.sleep(0.15)
-                    sbooru_img = await ctx.send(embed=em)
+                    #print(booruappend + str(raw_url))
+                    imageurl=booruappend + str(raw_url)
+                    p_imageurl=booruappend + str(raw_url)
+
+                    #gelbooru workaround. They no longer allow direct linking to the image url
+                    #janky test using requests
+                    #get the preview image url. smaller image size used for thumbnails, should use less bandwith?
+                    print(p_imageurl)
+                    #download the image using the same headers as before otherwise gbooru will redirect to the image page
+                    r = requests.get(p_imageurl, headers=headers)
+                    #save as image.jpg for testing
+                    with open('image.jpg', 'wb') as f:
+                        f.write(r.content)
+                    #attach image.jpg to the embed
+                    file = discord.File("image.jpg", filename="image.jpg")
+                    em.set_image(url="attachment://image.jpg")    
+                    sbooru_img = await ctx.send(file=file, embed=em)
 
 
     @commands.command()
@@ -1789,7 +1837,23 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Dimensions", value=str(width) + "x" + str(height), inline=True)
                     # em.add_field(name="RNG", value=score_rng, inline=True)
                     await asyncio.sleep(0.15)
-                    sbooru_img = await ctx.send(embed=em)
+                    #print(booruappend + str(raw_url))
+                    imageurl=booruappend + str(raw_url)
+                    p_imageurl=booruappend + str(raw_url)
+
+                    #gelbooru workaround. They no longer allow direct linking to the image url
+                    #janky test using requests
+                    #get the preview image url. smaller image size used for thumbnails, should use less bandwith?
+                    print(p_imageurl)
+                    #download the image using the same headers as before otherwise gbooru will redirect to the image page
+                    r = requests.get(p_imageurl, headers=headers)
+                    #save as image.jpg for testing
+                    with open('image.jpg', 'wb') as f:
+                        f.write(r.content)
+                    #attach image.jpg to the embed
+                    file = discord.File("image.jpg", filename="image.jpg")
+                    em.set_image(url="attachment://image.jpg")    
+                    sbooru_img = await ctx.send(file=file, embed=em)
 
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
@@ -2104,7 +2168,23 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Dimensions", value=str(width) + "x" + str(height), inline=True)
                     # em.add_field(name="RNG", value=score_rng, inline=True)
                     await asyncio.sleep(0.15)
-                    sbooru_img = await ctx.send(embed=em)
+                    #print(booruappend + str(raw_url))
+                    imageurl=booruappend + str(raw_url)
+                    p_imageurl=booruappend + str(raw_url)
+
+                    #gelbooru workaround. They no longer allow direct linking to the image url
+                    #janky test using requests
+                    #get the preview image url. smaller image size used for thumbnails, should use less bandwith?
+                    print(p_imageurl)
+                    #download the image using the same headers as before otherwise gbooru will redirect to the image page
+                    r = requests.get(p_imageurl, headers=headers)
+                    #save as image.jpg for testing
+                    with open('image.jpg', 'wb') as f:
+                        f.write(r.content)
+                    #attach image.jpg to the embed
+                    file = discord.File("image.jpg", filename="image.jpg")
+                    em.set_image(url="attachment://image.jpg")    
+                    sbooru_img = await ctx.send(file=file, embed=em)
 
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
@@ -2449,7 +2529,23 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Dimensions", value=str(width) + "x" + str(height), inline=True)
                     # em.add_field(name="RNG", value=score_rng, inline=True)
                     await asyncio.sleep(0.15)
-                    sbooru_img = await ctx.send(embed=em)
+                    #print(booruappend + str(raw_url))
+                    imageurl=booruappend + str(raw_url)
+                    p_imageurl=booruappend + str(raw_url)
+
+                    #gelbooru workaround. They no longer allow direct linking to the image url
+                    #janky test using requests
+                    #get the preview image url. smaller image size used for thumbnails, should use less bandwith?
+                    print(p_imageurl)
+                    #download the image using the same headers as before otherwise gbooru will redirect to the image page
+                    r = requests.get(p_imageurl, headers=headers)
+                    #save as image.jpg for testing
+                    with open('image.jpg', 'wb') as f:
+                        f.write(r.content)
+                    #attach image.jpg to the embed
+                    file = discord.File("image.jpg", filename="image.jpg")
+                    em.set_image(url="attachment://image.jpg")    
+                    sbooru_img = await ctx.send(file=file, embed=em)
 
 #    @commands.command()
 #    @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
@@ -2561,7 +2657,23 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Dimensions", value=str(width) + "x" + str(height), inline=True)
                     # em.add_field(name="RNG", value=score_rng, inline=True)
                     await asyncio.sleep(0.15)
-                    sbooru_img = await ctx.send(embed=em)
+                    #print(booruappend + str(raw_url))
+                    imageurl=booruappend + str(raw_url)
+                    p_imageurl=booruappend + str(raw_url)
+
+                    #gelbooru workaround. They no longer allow direct linking to the image url
+                    #janky test using requests
+                    #get the preview image url. smaller image size used for thumbnails, should use less bandwith?
+                    print(p_imageurl)
+                    #download the image using the same headers as before otherwise gbooru will redirect to the image page
+                    r = requests.get(p_imageurl, headers=headers)
+                    #save as image.jpg for testing
+                    with open('image.jpg', 'wb') as f:
+                        f.write(r.content)
+                    #attach image.jpg to the embed
+                    file = discord.File("image.jpg", filename="image.jpg")
+                    em.set_image(url="attachment://image.jpg")    
+                    sbooru_img = await ctx.send(file=file, embed=em)
 
     @commands.command()
     @commands.cooldown(rlimit_cmd, rlimit_time, commands.BucketType.user)
@@ -2666,7 +2778,23 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Dimensions", value=str(width) + "x" + str(height), inline=True)
                     # em.add_field(name="RNG", value=score_rng, inline=True)
                     await asyncio.sleep(0.15)
-                    sbooru_img = await ctx.send(embed=em)
+                    #print(booruappend + str(raw_url))
+                    imageurl=booruappend + str(raw_url)
+                    p_imageurl=booruappend + str(raw_url)
+
+                    #gelbooru workaround. They no longer allow direct linking to the image url
+                    #janky test using requests
+                    #get the preview image url. smaller image size used for thumbnails, should use less bandwith?
+                    print(p_imageurl)
+                    #download the image using the same headers as before otherwise gbooru will redirect to the image page
+                    r = requests.get(p_imageurl, headers=headers)
+                    #save as image.jpg for testing
+                    with open('image.jpg', 'wb') as f:
+                        f.write(r.content)
+                    #attach image.jpg to the embed
+                    file = discord.File("image.jpg", filename="image.jpg")
+                    em.set_image(url="attachment://image.jpg")    
+                    sbooru_img = await ctx.send(file=file, embed=em)
 
 
 #th_img_fan
@@ -2770,7 +2898,23 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Dimensions", value=str(width) + "x" + str(height), inline=True)
                     # em.add_field(name="RNG", value=score_rng, inline=True)
                     await asyncio.sleep(0.15)
-                    sbooru_img = await ctx.send(embed=em)
+                    #print(booruappend + str(raw_url))
+                    imageurl=booruappend + str(raw_url)
+                    p_imageurl=booruappend + str(raw_url)
+
+                    #gelbooru workaround. They no longer allow direct linking to the image url
+                    #janky test using requests
+                    #get the preview image url. smaller image size used for thumbnails, should use less bandwith?
+                    print(p_imageurl)
+                    #download the image using the same headers as before otherwise gbooru will redirect to the image page
+                    r = requests.get(p_imageurl, headers=headers)
+                    #save as image.jpg for testing
+                    with open('image.jpg', 'wb') as f:
+                        f.write(r.content)
+                    #attach image.jpg to the embed
+                    file = discord.File("image.jpg", filename="image.jpg")
+                    em.set_image(url="attachment://image.jpg")    
+                    sbooru_img = await ctx.send(file=file, embed=em)
 
 
 
@@ -2873,7 +3017,23 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Dimensions", value=str(width) + "x" + str(height), inline=True)
                     # em.add_field(name="RNG", value=score_rng, inline=True)
                     await asyncio.sleep(0.15)
-                    sbooru_img = await ctx.send(embed=em)
+                    #print(booruappend + str(raw_url))
+                    imageurl=booruappend + str(raw_url)
+                    p_imageurl=booruappend + str(raw_url)
+
+                    #gelbooru workaround. They no longer allow direct linking to the image url
+                    #janky test using requests
+                    #get the preview image url. smaller image size used for thumbnails, should use less bandwith?
+                    print(p_imageurl)
+                    #download the image using the same headers as before otherwise gbooru will redirect to the image page
+                    r = requests.get(p_imageurl, headers=headers)
+                    #save as image.jpg for testing
+                    with open('image.jpg', 'wb') as f:
+                        f.write(r.content)
+                    #attach image.jpg to the embed
+                    file = discord.File("image.jpg", filename="image.jpg")
+                    em.set_image(url="attachment://image.jpg")    
+                    sbooru_img = await ctx.send(file=file, embed=em)
 
 
 
@@ -3028,7 +3188,23 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Dimensions", value=str(width) + "x" + str(height), inline=True)
                     # em.add_field(name="RNG", value=score_rng, inline=True)
                     await asyncio.sleep(0.15)
-                    sbooru_img = await ctx.send(embed=em)
+                    #print(booruappend + str(raw_url))
+                    imageurl=booruappend + str(raw_url)
+                    p_imageurl=booruappend + str(raw_url)
+
+                    #gelbooru workaround. They no longer allow direct linking to the image url
+                    #janky test using requests
+                    #get the preview image url. smaller image size used for thumbnails, should use less bandwith?
+                    print(p_imageurl)
+                    #download the image using the same headers as before otherwise gbooru will redirect to the image page
+                    r = requests.get(p_imageurl, headers=headers)
+                    #save as image.jpg for testing
+                    with open('image.jpg', 'wb') as f:
+                        f.write(r.content)
+                    #attach image.jpg to the embed
+                    file = discord.File("image.jpg", filename="image.jpg")
+                    em.set_image(url="attachment://image.jpg")    
+                    sbooru_img = await ctx.send(file=file, embed=em)
 
 #oj_img
 
@@ -3131,7 +3307,23 @@ class ImageCog(commands.Cog):
                     em.add_field(name="Dimensions", value=str(width) + "x" + str(height), inline=True)
                     # em.add_field(name="RNG", value=score_rng, inline=True)
                     await asyncio.sleep(0.15)
-                    sbooru_img = await ctx.send(embed=em)
+                    #print(booruappend + str(raw_url))
+                    imageurl=booruappend + str(raw_url)
+                    p_imageurl=booruappend + str(raw_url)
+
+                    #gelbooru workaround. They no longer allow direct linking to the image url
+                    #janky test using requests
+                    #get the preview image url. smaller image size used for thumbnails, should use less bandwith?
+                    print(p_imageurl)
+                    #download the image using the same headers as before otherwise gbooru will redirect to the image page
+                    r = requests.get(p_imageurl, headers=headers)
+                    #save as image.jpg for testing
+                    with open('image.jpg', 'wb') as f:
+                        f.write(r.content)
+                    #attach image.jpg to the embed
+                    file = discord.File("image.jpg", filename="image.jpg")
+                    em.set_image(url="attachment://image.jpg")    
+                    sbooru_img = await ctx.send(file=file, embed=em)
 					
 					
 					
@@ -3208,7 +3400,23 @@ class ImageCog(commands.Cog):
                     em.add_field(name=idtext, value=sbooru_id, inline=True)
                     em.add_field(name="Dimensions", value=img_width + "x" + img_height, inline=True)
                     await asyncio.sleep(0.15)
-                    sbooru_img = await ctx.send(embed=em)
+                    #print(booruappend + str(raw_url))
+                    imageurl=booruappend + str(raw_url)
+                    p_imageurl=booruappend + str(raw_url)
+
+                    #gelbooru workaround. They no longer allow direct linking to the image url
+                    #janky test using requests
+                    #get the preview image url. smaller image size used for thumbnails, should use less bandwith?
+                    print(p_imageurl)
+                    #download the image using the same headers as before otherwise gbooru will redirect to the image page
+                    r = requests.get(p_imageurl, headers=headers)
+                    #save as image.jpg for testing
+                    with open('image.jpg', 'wb') as f:
+                        f.write(r.content)
+                    #attach image.jpg to the embed
+                    file = discord.File("image.jpg", filename="image.jpg")
+                    em.set_image(url="attachment://image.jpg")    
+                    sbooru_img = await ctx.send(file=file, embed=em)
 					
 #kantai_img
 
